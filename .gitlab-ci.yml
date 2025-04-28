@@ -1,14 +1,11 @@
-pages:
+stages:
+  - build
 
-  tags: 
+upload_to_server:
+  stage: build
+  image: wiimart-page-updater:latest
+  tags:
     - shell
-  stage: deploy
-  script:
-    - mkdir public
-    - cp -r *.html CNAME README.md *.ico media meta wad public
-  artifacts:
-    paths:
-      - WiiMart-github-io
-  only:
-    - main
 
+  script:
+    - ./WiiMartOrgSernder.sh
