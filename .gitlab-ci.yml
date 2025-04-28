@@ -7,6 +7,9 @@ upload_to_server:
     name: wiimartorg-updater:latest
     pull_policy: never
 
+  tags:
+    - dkp
+    
   script:
     - ls
     - ls /opt
