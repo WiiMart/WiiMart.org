@@ -3,7 +3,7 @@ stages:
 
 upload_to_server:
   stage: build
-  image: wiimart-page-updater:latest
+  image: wiimarorg-updater:latest
   tags:
     - shell
 
