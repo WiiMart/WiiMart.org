@@ -5,7 +5,7 @@ pages:
   stage: deploy
   script:
     - mkdir public
-    - mv -a -r *.html CNAME README.md *.ico media meta wad public
+    - cp -r *.html CNAME README.md *.ico media meta wad public
   artifacts:
     paths:
       - WiiMart-github-io
