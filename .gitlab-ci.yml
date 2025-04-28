@@ -9,9 +9,8 @@ deploy:
     - mkdir -p ~/.ssh
     - echo "$SSH_PRIVATE_KEY" | base64 -d > ~/.ssh/id_ed25519
     - chmod 600 ~/.ssh/id_ed25519
-    - echo "Host deploy-target" >> ~/.ssh/config
-    - echo "  HostName 192.168.1.14" >> ~/.ssh/config
+    - echo "Host deploy" >> ~/.ssh/config
+    - echo "  HostName your-server-ip" >> ~/.ssh/config
     - echo "  User gitdeploy" >> ~/.ssh/config
-    - echo "  StrictHostKeyChecking no" >> ~/.ssh/config
   script:
-    - ssh deploy-target "true"  # Trigger forced command (will auto-run git pull)
+    - ssh deploy "cd /var/www/wiimart.org && git pull && sudo systemctl reload httpd"
