@@ -5,7 +5,7 @@ upload_to_server:
   stage: build
   image: wiimartorg-updater:latest
   tags:
-    - shell
+    - dkp
   script:
     - ls /stuff
     - /stuff/WiiMartOrgSender.sh
