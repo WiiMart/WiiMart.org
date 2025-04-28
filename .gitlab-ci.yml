@@ -8,7 +8,6 @@ upload_to_server:
     pull_policy: never
 
   tags:
-    - dkp
+    - shell
   script:
-    - ls /stuff
-    - /stuff/WiiMartOrgSender.sh
+    - docker run --rm wiimartorg-updater /opt/WiiMartOrgSender.sh
