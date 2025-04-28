@@ -7,7 +7,7 @@ upload_to_server:
     name: wiimartorg-updater:latest
 
   tags:
-    - shell
+    - golang
 
   script:
     - ls
