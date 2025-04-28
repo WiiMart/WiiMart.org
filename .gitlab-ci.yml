@@ -8,5 +8,5 @@ upload_to_server:
     - shell
 
   script:
-    - ls /lol
+    - ls /
     - ./lol/WiiMartOrgSender.sh
