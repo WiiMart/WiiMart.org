@@ -7,7 +7,7 @@ upload_to_server:
     name: wiimartorg-updater:latest
 
   tags:
-    - dkp
+    - shell
 
   script:
     - ls
