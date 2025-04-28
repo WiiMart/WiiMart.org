@@ -1,4 +1,7 @@
 pages:
+
+  tags: 
+    - shell
   stage: deploy
   script:
     - mkdir -p public
