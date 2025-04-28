@@ -1,16 +1,15 @@
 stages:
-  - build
+  - deploy
 
-upload_to_server:
-  stage: build
-  #image:
-    #name: wiimartorg-updater:latest
-
-  tags:
-    - dkp
-
+deploy:
+  stage: deploy
+  before_script:
+    - mkdir -p ~/.ssh
+    - echo "$SSH_PRIVATE_KEY" | base64 -d > ~/.ssh/id_ed25519
+    - chmod 600 ~/.ssh/id_ed25519
+    - echo "Host deploy-target" >> ~/.ssh/config
+    - echo "  HostName 192.168.1.14" >> ~/.ssh/config
+    - echo "  User http" >> ~/.ssh/config
+    - echo "  StrictHostKeyChecking no" >> ~/.ssh/config
   script:
-    - ls
-    - ls /opt
-    - ls /opt/.ssh
-    - ./opt/WiiMartOrgSender.sh
+    - ssh deploy-target "true"  # Trigger forced command (will auto-run git pull)
