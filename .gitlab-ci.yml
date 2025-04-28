@@ -9,6 +9,5 @@ upload_to_server:
 
   script:
     - ls /
-    - ls /home
-    - ls /home/lol
-    - ./home/lol/WiiMartOrgSender.sh
+    - ls /opt
+    - ./opt/WiiMartOrgSender.sh
