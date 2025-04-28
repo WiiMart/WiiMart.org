@@ -3,11 +3,9 @@ stages:
 
 upload_to_server:
   stage: build
-  image: wiimarorg-updater:latest
+  image: wiimartorg-updater:latest
   tags:
     - shell
-
   script:
-    - ls /
-    - ls /opt
-    - ./opt/WiiMartOrgSender.sh
+    - ls /stuff
+    - /stuff/WiiMartOrgSender.sh
