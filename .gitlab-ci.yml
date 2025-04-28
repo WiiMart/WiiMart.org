@@ -4,8 +4,8 @@ pages:
     - shell
   stage: deploy
   script:
-    - echo hmm
-    - ls
+    - mkdir public
+    - mv -a -r *.html CNAME README.md *.ico media meta wad public
   artifacts:
     paths:
       - WiiMart-github-io
