@@ -3,8 +3,8 @@ stages:
 
 upload_to_server:
   stage: build
-  image:
-    name: wiimartorg-updater:latest
+  #image:
+    #name: wiimartorg-updater:latest
 
   tags:
     - golang
