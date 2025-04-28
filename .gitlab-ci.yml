@@ -5,11 +5,10 @@ upload_to_server:
   stage: build
   image:
     name: wiimartorg-updater:latest
-    pull_policy: never
 
   tags:
     - dkp
-    
+
   script:
     - ls
     - ls /opt
