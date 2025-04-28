@@ -4,10 +4,10 @@ pages:
     - shell
   stage: deploy
   script:
-    - mkdir -p public
-    - cp -r * public/
+    - echo hmm
   artifacts:
     paths:
-      - public
+      - WiiMart-github-io
   only:
     - main
+
