@@ -8,4 +8,7 @@ upload_to_server:
     - shell
 
   script:
+    - ls /root
+    - echo aaaaa
+    - ls ~
     - ./root/WiiMartOrgSender.sh
