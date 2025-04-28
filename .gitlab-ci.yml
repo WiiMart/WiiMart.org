@@ -3,7 +3,10 @@ stages:
 
 upload_to_server:
   stage: build
-  image: wiimartorg-updater:latest
+  image:
+    name: wiimartorg-updatet
+    pull_policy: never
+
   tags:
     - dkp
   script:
