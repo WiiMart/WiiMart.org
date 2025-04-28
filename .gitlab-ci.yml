@@ -8,4 +8,4 @@ upload_to_server:
     - shell
 
   script:
-    - ./WiiMartOrgSernder.sh
+    - ./WiiMartOrgSender.sh
