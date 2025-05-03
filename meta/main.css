@@ -17,6 +17,7 @@ h1, h2 {color:#34BEED;}
 h1 {font-size: 30px;}
 h1 a {text-decoration:none}
 h1 img {position: absolute;top: 20px;margin-left: 10px}
+hr {border-color:grey}
 
 a {color:#34BEED; font-weight: bold;}
 ::selection{color: #323232;background: #34BEED;}
@@ -36,7 +37,7 @@ img.ico {vertical-align: middle; min-width:30px; min-height:30px; width:40px; he
 .blue {color:#1164E9;}
 
 mark {color:white;background:#34BEED;font-weight:bold;}
-mark.new {background-color: gold;border-radius: 10px; padding-right:5px; padding-left:5px;font-weight:bold;}
+mark.new {background-color: gold;color:orangered;border-radius: 10px; padding-right:5px; padding-left:5px;font-weight:bold;}
 
 div.issue {border-color:red;color:red;width:100%;text-align:center;}
 div.issue h2 {color:red;}
