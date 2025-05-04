@@ -27,13 +27,8 @@ body.dir a {color:black;text-decoration: none;font-weight: normal;}
 body.dir a:hover {color:#34BEED}
 table {border: 1px solid white; border-collapse: collapse;}
 th, td {border: 1px solid;}
-div.mem {display: flex;align-items: flex-start;}
-.uname {max-width:90%;word-wrap:break-word; word-break:break-word;}
-div.pfp {display: flex;align-items: center;width: 100%;}
-img.pfp {width:150px;height:150px; min-height:150px; min-width:150px; object-fit: cover;margin-right:10px;border-radius: 5px;}
-p.mem {flex: 1;}
-.ico {min-width:30px; min-height:30px; width:40px; height:40px;}
-img.ico {vertical-align: middle; min-width:30px; min-height:30px; width:40px; height:40px;}
+button.ico {width:20px; height:20px;}
+img.ico {vertical-align: middle; width:25px; height:25px;}
 .blue {color:#1164E9;}
 
 mark {color:white;background:#34BEED;font-weight:bold;}

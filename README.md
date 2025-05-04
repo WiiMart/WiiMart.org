@@ -1,17 +1,28 @@
-# Website of WiiMart
+# [WiiMart.org](https://wiimart.org)
 
 <img src="media/branding-bag-no-bg.png" width="100" height="100" align="right" />
 
 This is the source code of WiiMart's website. It contains WADs, branding, and project information.
 
+## Folders and build script
+* `/inst` ZIP files of the WiiMart Installer
+* `/media` Media files used throughout the site (profile pictures, branding, screenshots, sound effects)
+* `/meta` Files used for the website (CSS, JS, images, music)
+* `/wad` WAD files (patched IOS and shop)
+* `.gitlab-ci.yml` Build script for the website
+
+## Content pages
 * `404.html` 404 page
 * `branding.html` Branding for WiiMart
-* `install.html` Installation guide
-* `download.html` Same as `install.html`
+* `credits.html` Credits for WiiMart
+* `CNAME` Domain text file
+* `download.html` Redirect for `install.html`
+* `errors.html` Error Code Checker
+* `favicon.ico` Favicon
 * `fishiemart.html` ;D
 * `index.html` Main page
-* `/media` Media files used throughout the site (profile pictures, branding, screenshots)
-* `/meta` Files used for the website (CSS, JS, arrow images)
-* `/wad` WAD files (patched IOS and shop)
+* `install.html` Installation guide
+* `support.html` Support/FAQ page
+
 
 *WiiMart is not affiliated with Nintendo or any related parties. To contact, please send an email to support@wiimart.org*
