@@ -19,7 +19,7 @@
    <link rel="icon" type="image/x-icon" href="favicon.ico" />
    <style>img, img.slide {width:100%} input {border: 2px solid #CCCCCC;border-bottom-color: #EAEAEA;margin-bottom: 15px;} #results {display:none;} div.err {border-color:red;text-align:left; h2 {color: #FF0000;} p {color: #FF0000;}}</style>
 </head>
-<body  onload="loadafterwednesdaycheck();">
+<body onload="loadafterwednesdaycheck();">
 <div id="bgmplayer">
   <h2>BGM player</h2>
   <a href="javascript:playBGM();" id="shopbgmselector"><button id="shopbgm">Play</button></a>
@@ -29,7 +29,7 @@
 
 <h1><a href="/">WiiMart</a></h1>
 
-<a href="install"><button>Install</button></a> <button disabled>Support</button> <a href="errors"><button>Errors</button></a> <a href="branding"><button>Branding</button></a><br><br>
+<a href="install"><button>Install</button></a> <button disabled>Support</button> <a href="errors"><button>Errors</button></a> <a href="branding"><button>Branding</button></a> <a href="credits"><button>Credits</button></a><br><br>
 
 <h2>Shop-related</h2>
 
@@ -40,6 +40,8 @@
   <p>Check it with <a href="errors">this tool</a>, otherwise ask for help in the <b>#support</b> channel on <a href="https://wiimart.org">Discord</a>.</p>
   <h3>Why did the gift button dissappear?</h3>
   <p>Gifting was available using a WiiConnect24 revival. Unfortunately we were asked to stop sending out gifts via their service.</p>
+  <h3 id="IOS80">Why can't I install titles to the SD Card?</h3>
+  <p>A patched IOS80 WAD is needed. To get it, go through the <a href="install">Install</a> page.</p>
   <h3>How do I change the region?</h3>
   <div class="gallery" style="width:100%">
     <img src="media/screenshot-region-help-1.png" class="slide">
@@ -75,9 +77,11 @@
     <p>Install the following WADs, they will overwrite WiiMart and the patched IOS associated.</p>
     <h4>Wii</h4>
     <p><a href="wad/IOS56(WiiOriginal).wad"><button>Download IOS56 for Wii</button></a></p>
+    <p><a href="wad/IOS80(vWiiOriginal).wad"><button>Download IOS80 for Wii</button></a></p>
     <p><a href="wad/Wii-Shop-Wii-Original.wad"><button>Download Wii Shop for Wii</button></a></p>
     <h4>vWii</h4>
     <p><a href="wad/IOS56(vWiiOriginal).wad"><button>Download IOS56 for vWii</button></a></p>
+    <p><a href="wad/IOS80(vWiiOriginal).wad"><button>Download IOS80 for vWii</button></a></p>
     <p><a href="wad/Wii-Shop-vWii-Original.wad"><button>Download Wii Shop for vWii</button></a></p> 
 </div>
 
@@ -159,4 +163,5 @@
 
 <footer><p>WiiMart is not affiliated with Nintendo or any related parties. To contact, please send an email to <a href="mailto:support@wiimart.org"><b>support@wiimart.org</b></a>.</p></footer>
 
-</body</html>
+</body>
+</html>

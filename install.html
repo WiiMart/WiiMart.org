@@ -15,9 +15,9 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
    <link rel="stylesheet" href="meta/main.css" />
    <link rel="icon" type="image/x-icon" href="favicon.ico" />
-   <style>img {width:100%} .r {outline: 2px solid #9A9A9A} div#start button {width:60%;margin-bottom: 10px;}</style>
+   <style>img {width:100%} .r {outline: 2px solid #9A9A9A} div#start button {width:60%;margin-bottom: 10px;} div.question a {text-decoration:none}</style>
 </head>
-<body  onload="loadafterwednesdaycheck();">
+<body onload="loadafterwednesdaycheck();">
 <div id="bgmplayer">
    <h2>BGM player</h2>
    <a href="javascript:playBGM();" id="shopbgmselector"><button id="shopbgm">Play</button></a>
@@ -26,23 +26,43 @@
 
 <h1><a href="/">WiiMart</a></h1>
 
-<button disabled>Install</button> <a href="support"><button>Support</button></a> <a href="errors"><button>Errors</button></a> <a href="branding"><button>Branding</button></a>
+<button disabled>Install</button> <a href="support"><button>Support</button></a> <a href="errors"><button>Errors</button></a> <a href="branding"><button>Branding</button></a> <a href="credits"><button>Credits</button></a><br><br>
 
-<script>
-   function showDiv(divId) {
-      const divs = document.querySelectorAll('.question');
-      divs.forEach(div => { div.style.display = 'none'; });
-      document.getElementById(divId).style.display = 'block';
-   }
-</script>
+<script>function showDiv(divId) {const divs = document.querySelectorAll('.question'); divs.forEach(div => { div.style.display = 'none'; });document.getElementById(divId).style.display = 'block';}</script>
 
 <div id="start" class="question">
-   <h2>What platform are you on?</h2>
+   <h2 id="Auto">Automatic Installation</h2>
+   <button onclick="showDiv('inst')" style="background-image: url(media/screenshot-hbc-blank.png);background-size: cover;"><img src="media/button-inst.png"><b>WiiMart Installer</b> for<br>The Homebrew Channel</button><br>
+   <p><mark class="new">NEW!</mark> This in-progress installer tool can install WiiMart and IOS WADs with just one app!</p>
+   <hr>
+   <h2 id="Manual">Manual Installation</h2>
+   <h3>What platform are you on?</h3>
    <button onclick="showDiv('wii')"><img src="media/button-wii.png">Wii</button><br>
    <button onclick="showDiv('vWii')"><img src="media/button-vwii.png">vWii</button><br>
    <button onclick="showDiv('dolphin')"><img src="media/button-dolphin-desktop.png">Dolphin</button>
+   <hr>
    <p><b>Important:</b> No matter which option you pick, you will need to have a homebrewed console. If you don't have it homebrewed, see <a href="https://wii.hacks.guide"><b>wii.hacks.guide</b></a> before looking at this guide.</p>
 </div>
+
+<div id="inst" class="question" style="display:none">
+   <h2>WiiMart Installer</h2>
+   <span style="color:red;font-weight:bold">Do not use on Korean Wii consoles.</span>
+   <h3>Download and Placing</h3>
+   <p><a href="inst/WiiMartInstaller.V1.3.zip"><button>Download WiiMart Installer</button></a></p>
+   <p>Put the <b>wiimartinstaller</b> folder in the <b>apps</b> folder of your SD Card or USB Drive. Like 
+      in the example shown.</p>
+   <img src="media/screenshot-files-1.png">
+   <p><b>wiimartinstaller</b> will go with the rest of your apps.</p>
+   <img src="media/screenshot-files-2-issue.png" style="outline: solid 2px red">
+   <p style="color:red">Do not nest it under an extra folder. It has to be drive://apps/wiimartinstaller</p>
+   <h3>Launching</h3>
+   <img src="media/screenshot-hbc-wm-inst-2.png">
+   <p>Simply press <b>Load</b> and you will be taken to the installer.</p>
+   <p>If anything goes wrong involving tickets (e.g. TView), it is recommended that you head over to the <a href="#Manual" onclick="showDiv('start')">Manual Installation</a>.</p>
+
+   <button onclick="showDiv('start')" class="r">↩</button>
+</div>
+
 
 <div id="dolphin" class="question" style="display: none;">
    <h2>Dolphin</h2>
@@ -70,7 +90,7 @@
    <h3>Downloading WADs</h3>
    <p>Download <i>one</i> of the WADs below.</p>
    <p><a href="wad/WiiMart.wad"><button>Download WiiMart</button></a></p>
-   <p><a href="wad/WiiMartOB.wad"><button>Download WiiMart (old banner)</button></a> <a href="support#OldBanner">(?)</a></p>
+   <p><a href="wad/WiiMartOB.wad"><button>Download WiiMart (old banner)</button></a> <a href="support#OldBanner"><button>?</button></a></p>
    <h3>Installing WADs</h3>
    <img src="media/screenshot-dolphin-vwii-install.png">
    <p>Go to <b>Tools</b>, <b>Install WAD</b>, and select the WAD you downloaded.</p>
@@ -88,8 +108,9 @@
    <h3>Downloading WADs</h3>
    <p>Download IOS56 for vWii and <i>one</i> of the WiiMart WADs below.</p>
    <p><a href="wad/IOS56(vWii).wad"><button>Download IOS56 for vWii</button></a></p>
+   <p>IOS80 can be installed from the <a href="https://oscwii.org/library/app/Patched_IOS80_Installer_for_vWii">homebrew patcher</a>.</p>
    <p><a href="wad/WiiMart.wad"><button>Download WiiMart</button></a></p>
-   <p><a href="wad/WiiMartOB.wad"><button>Download WiiMart (old banner)</button></a> <a href="support#OldBanner">(?)</a></p>
+   <p><a href="wad/WiiMartOB.wad"><button>Download WiiMart (2006 banner)</button></a> <a href="support#OldBanner"><button>?</button></a></p>
    <h3>Installing WADs</h3>
    <p>Use <a href="https://oscwii.org/library/app/yawmME">YAWWME</a> as it is <i>the</i> recommended WAD manager for it's brick protection.</p>
    <img src="media/screenshot-yawmme-vwii.png">
@@ -108,8 +129,9 @@
    <h3>Downloading WADs</h3>
    <p>Download IOS56 for Wii and <i>one</i> of the WiiMart WADs below.</p>
    <p><a href="wad/IOS56(Wii).wad"><button>Download IOS56 for Wii</button></a></p>
+   <p><a href="wad/IOS80(Wii).wad"><button>Download IOS80 for Wii</button></a> <a href="support#IOS80"><button>?</button></a></p>
    <p><a href="wad/WiiMart.wad"><button>Download WiiMart</button></a></p>
-   <p><a href="wad/WiiMartOB.wad"><button>Download WiiMart (old banner)</button></a> <a href="support#OldBanner">(?)</a></p>
+   <p><a href="wad/WiiMartOB.wad"><button>Download WiiMart (2006 banner)</button></a> <a href="support#OldBanner"><button>?</button></a></p>
    <h3>Installing WADs</h3>
    <p>Use <a href="https://oscwii.org/library/app/yawmME">YAWWME</a> as it is <i>the</i> recommended WAD manager for it's brick protection.</p>
    <img src="media/screenshot-yawmme-wii.png">
