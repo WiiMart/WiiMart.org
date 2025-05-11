@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta charset="utf-8" />
+   <meta http-equiv="x-ua-compatible" content="ie=edge" />
+   <style>@font-face {font-family:'Shop';src:url('meta/shop.ttf') format('truetype');font-weight: normal;font-style: normal;}</style>
+   <script src="meta/music.js" preload></script>
+   <title>WiiMart Specials</title>
+   <meta content="WiiMart Specials" property="og:title" />
+   <meta content="This page contains some special things about WiiMart." property="og:description" />
+   <meta content="https://wiimart.org/media/branding-bag.png" property="og:image"/>
+   <meta content="https://wiimart.org/specials" property="og:url" />
+   <meta content="#FF0000" data-react-helmet="true" name="theme-color" />
+   <meta name="keywords" content="Wii Shop, homebrew"/>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="stylesheet" href="meta/main.css" />
+   <script src="meta/gallery.js" defer></script>
+   <link rel="icon" type="image/x-icon" href="favicon.ico" />
+   <style>a {text-decoration: none;} ul {text-align: left;}</style>
+</head>
+<body onload="loadafterwednesdaycheck();">
+<div id="bgmplayer">
+  <h2>BGM player</h2>
+  <a href="javascript:playBGM();" id="shopbgmselector"><button id="shopbgm">Play</button></a>
+  <p><br>Enable audio autoplay in your browser for it to continue playing throughout the website.</p>
+</div>
+
+
+<h1><a href="/">WiiMart</a></h1>
+
+<a href="install"><button>Install</button></a> <a href="support"><button>Support</button></a> <a href="errors"><button>Errors</button></a> <a href="branding"><button>Branding</button></a> <button disabled>Specials</button> <a href="credits"><button>Credits</button></a><br><br>
+
+<div>
+  <h2>Easily access to Wii Shop on a browser!</h2>
+  <p>If you weren't already aware, the Wii Shop Channel is a web app. The original Wii Shop Channel was hosted at
+     <b>oss-auth.shop.wii.com</b>, while ours is hosted at <b>oss-auth.thecheese.io</b>.</p>
+  <p>To go on the official one you'd need a special certificate and user agent, WiiMart's server does not need those.</p>
+  <h3>Shop URLs</h3>
+    <ul>
+      <li><a href="https://oss-auth.thecheese.io/oss/serv/index.jsp">Index page</a></li>
+      <li><a href="https://oss-auth.thecheese.io/oss/serv/W_01.jsp">W_01</a> (Recommend titles)</li>
+      <li><a href="https://oss-auth.thecheese.io/oss/serv/W_02.jsp">W_02</a> (Imporant Info)</li>
+      <li><a href="https://oss-auth.thecheese.io/oss/serv/W_03.jsp">W_03</a> (Main menu)</li>
+      <li><a href="https://oss-auth.thecheese.io/oss/serv/W_04.jsp">W_04</a> (Gift notice page)</li>
+      <li><a href="https://oss-auth.thecheese.io/oss/serv/B_01.jsp">B_01</a> (Virtual Console sort options)</li>
+      <li><a href="https://oss-auth.thecheese.io/oss/serv/B_02.jsp">B_02</a> (WiiWare info page, shows Internet Channel)</li>
+      <li><a href="https://oss-auth.thecheese.io/oss/serv/B_05.jsp">B_05</a> (Blank title page)</li>
+      <li><a href="https://oss-auth.thecheese.io/oss/serv/B_08.jsp">B_08</a> (Blank Controller Confirmation page)</li>
+      <li><a href="https://oss-auth.thecheese.io/oss/serv/B_09.jsp">B_09</a> (Blank Download Confirmation page)</li>
+      <li><a href="https://oss-auth.thecheese.io/oss/serv/B_19.jsp">B_19</a> (Blank gift message send)</li>
+      <li><a href="https://oss-auth.thecheese.io/oss/serv/S_10.jsp">S_10</a> (Remove account)</li>
+      <li><a href="https://oss-auth.thecheese.io/oss/serv/S_30.jsp">S_30</a> (One Free Title page)</li>
+      <li><a href="https://oss-auth.thecheese.io/oss/serv/S_14.jsp">S_14</a> (Wii Download Ticket page)</li>
+    </ul>
+</div>
+
+
+
+<footer><p>WiiMart is not affiliated with Nintendo or any related parties. To contact, please send an email to <a href="mailto:support@wiimart.org"><b>support@wiimart.org</b></a>.</p></footer>
+
+</body>
+</html>

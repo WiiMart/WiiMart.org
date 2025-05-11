@@ -1,0 +1,4 @@
+When adding WAD files to this directory,
+please make sure you follow the naming scheme.
+
+If you can, add the files to the index.html file.
