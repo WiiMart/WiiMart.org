@@ -5,8 +5,8 @@
 This is the source code of WiiMart's website. It contains WADs, branding, and project information.
 
 ## Folders and build script
-* `/inst` ZIP files of the WiiMart Installer
-* `/media` Media files used throughout the site (profile pictures, branding, screenshots, sound effects)
+* `/extras` Files used for the Specials page (Themes, forwarders)
+* `/media` Media files used throughout the site (pictures, branding, sound effects)
 * `/meta` Files used for the website (CSS, JS, images, music)
 * `/wad` WAD files (patched IOS and shop)
 * `.gitlab-ci.yml` Build script for the website
