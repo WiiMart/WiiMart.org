@@ -1,6 +1,6 @@
 # [WiiMart.org](https://wiimart.org)
 
-<img src="media/branding-bag-no-bg.png" width="100" height="100" align="right" />
+<img src="media/branding-bag-no-bg.png" width="100" height="100" align="right">
 
 This is the source code of WiiMart's website. It contains WADs, branding, and project information.
 
