@@ -16,13 +16,18 @@ This is the source code of WiiMart's website. It contains WADs, branding, and pr
 * `branding.html` Branding for WiiMart
 * `credits.html` Credits for WiiMart
 * `CNAME` Domain text file
-* `download.html` Redirect for `install.html`
 * `errors.html` Error Code Checker
 * `favicon.ico` Favicon
 * `fishiemart.html` ;D
 * `index.html` Main page
 * `install.html` Installation guide
 * `support.html` Support/FAQ page
+
+### Redirects
+
+* `download.html` Redirect for `install.html`
+* `title-sheet.html` Redirect for the WiiMart Titles spreadsheet
+
 
 
 *WiiMart is not affiliated with Nintendo or any related parties. To contact, please send an email to support@wiimart.org*
