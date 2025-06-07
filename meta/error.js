@@ -200,7 +200,7 @@ const errorCodes = {
     "206112": "The free title promotion has ended (ICR_END)",
     "206401": "Invalid characters in nick or password",
     "206499": "Maintenance. Login not possible",
-    "206601": "OSS_ERROR_INVALID_PARAM. Triggered by B_24 in Wii Shop (Invalid parameter)",
+    "206601": "Authentication error, missing required parameters",
     "206602": "Error while entering Wii Points Card code. Try again later.",
     "206603": "Unable to confirm credit card information",
     "206607": "Error while retrieving the served content",
