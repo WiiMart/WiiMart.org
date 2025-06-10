@@ -5,9 +5,10 @@ body {scroll-behavior:smooth;text-align: center;font-family: sans-serif;font-fam
 div {line-height:23.3px; background-color: white;border-radius: 5px;border-color: #34BEED;box-shadow: 0 0 10px #2525255d; box-sizing: border-box;border-width: 2px;border-style: solid; width: 35%; text-align: center;margin: 0 auto;padding: 5px;margin-top: 8px; overflow: auto;}
 div.clear {border:none;background: none;box-shadow: none;}
 
-nav {margin-bottom: 20px;}
+h1 {margin-bottom: 10px;}
+nav {margin-bottom: 20px;line-height: 35px;}
 
-a.btn {background-color: #E6FFF2;border-radius: 10px;padding: 4px;color:black;text-decoration: none;filter: drop-shadow(1px 1px 1px black);font-weight: 100;display:inline}
+a.btn {background-color: #E6FFF2;border-radius: 10px;padding: 4px;margin-bottom: 10px;color:black;text-decoration: none;filter: drop-shadow(1px 1px 1px black);font-weight: 100;display:inline}
 a.btn:hover {background-color: #C7FDFF;}
 a.btn:active {filter: none;}
 span.active {background-color: #c7c7c7;border-radius: 10px;padding: 4px;font-weight: 100;display:inline;cursor:auto;user-select:none}

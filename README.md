@@ -20,6 +20,7 @@ This is the source code of WiiMart's website. It contains WADs, branding, and pr
 * `favicon.ico` Favicon
 * `fishiemart.html` ;D
 * `index.html` Main page
+* `info-log.html` 'Important Info' log
 * `install.html` Installation guide
 * `support.html` Support/FAQ page
 
