@@ -2,12 +2,18 @@
 
 /*Main things*/
 body {scroll-behavior:smooth;text-align: center;font-family: sans-serif;font-family:'Shop',sans-serif; overflow-x:hidden;transition:.1s ease-in-out;}
-div {line-height:23.3px; background-color: white;border-radius: 5px;border-color: #34BEED;box-shadow: 0 0 10px #2525255d; box-sizing: border-box;border-width: 5px;border-style: solid; width: 35%; text-align: center;margin: 0 auto;padding: 5px;margin-top: 8px; overflow: auto;}
+div {line-height:23.3px; background-color: white;border-radius: 5px;border-color: #34BEED;box-shadow: 0 0 10px #2525255d; box-sizing: border-box;border-width: 2px;border-style: solid; width: 35%; text-align: center;margin: 0 auto;padding: 5px;margin-top: 8px; overflow: auto;}
 div.clear {border:none;background: none;box-shadow: none;}
-button {margin-bottom: 6px;background-color: grey;font-family:'Shop',sans-serif;padding: 5px; border:none;outline:2px solid #34BEED; color:black;background-color:white;border-radius: 5px;background-color:#f6fdff;filter: drop-shadow(1px 1px 3.4px #bbbbbb);box-shadow:inset 1px 1px 12px #46464615;}
-button:hover {border:none;outline:3px solid #34BEED;cursor: pointer;filter: drop-shadow(1px 1px 3.4px #34BEED7c);box-shadow:inset 1px 1px 12px #46464615;}
-button:active {box-shadow: none;}
-button:disabled {outline:2px solid grey;color:darkgrey;cursor: not-allowed;filter:none;}
+
+nav {margin-bottom: 20px;}
+
+a.btn {background-color: #E6FFF2;border-radius: 10px;padding: 4px;color:black;text-decoration: none;filter: drop-shadow(1px 1px 1px black);font-weight: 100;display:inline}
+a.btn:hover {background-color: #C7FDFF;}
+a.btn:active {filter: none;}
+span.active {background-color: #c7c7c7;border-radius: 10px;padding: 4px;font-weight: 100;display:inline;cursor:auto;user-select:none}
+
+button {margin-bottom: 6px;font-family:'Shop',sans-serif;padding: 5px;outline: 1px solid #34BEED;border-radius: 3px;filter: drop-shadow(1px 1px 3.4px #bbbbbb);border:none}
+button:hover {box-shadow: inset 0 0 0 3px #34BEED;cursor:pointer}
 
 footer {color:grey}
 footer a {color:grey}
@@ -16,7 +22,6 @@ footer a {color:grey}
 h1, h2 {color:#34BEED;}
 h1 {font-size: 30px;}
 h1 a {text-decoration:none}
-h1 img {position: absolute;top: 20px;margin-left: 10px}
 hr {border-color:grey}
 
 a {color:#34BEED; font-weight: bold;}
@@ -29,15 +34,11 @@ table {border: 1px solid white; border-collapse: collapse;}
 th, td {border: 1px solid;}
 button.ico {width:20px; height:20px;}
 img.ico {vertical-align: middle; width:25px; height:25px;}
+img.wb {outline: solid 1px black}
 .blue {color:#1164E9;}
 
 mark {color:white;background:#34BEED;font-weight:bold;}
 mark.new {background-color: gold;color:orangered;border-radius: 10px; padding-right:5px; padding-left:5px;font-weight:bold;}
-
-div.issue {border-color:red;color:red;width:100%;text-align:center;}
-div.issue h2 {color:red;}
-button.issue-button {outline: 2px solid red;}
-.issue-detail {display:none;}
 
 /* Gallery */
 div.gallery {position: relative; overflow: hidden;width:100%;}
@@ -76,15 +77,17 @@ div#bgmplayer p {line-height:20px;color:#9A9A9A;margin-top:-10px;font-style:ital
 {
   body {background-color: black; color: #e0e0e0;}
   div {background-color: #1e1e1e; border-color: #34BEED; box-shadow: 0 0 10px #000000CC;}
-  button {background-color: #3b3b3b; color: #e0e0e0; outline: 2px solid #34BEED; filter: drop-shadow(1px 1px 3.4px #00000099);}
-  button:hover {border:none;outline:3px solid #34BEED;cursor: pointer;filter: drop-shadow(1px 1px 3.4px #34BEED7c);box-shadow:inset 1px 1px 12px #46464615;}
+  a.btn {background-color: #587566;color:white}
+  a.btn:hover {background-color: #7da2a3;}
+  span.active {background-color: #313131}
+  button {background-color: #3b3b3b; color: #e0e0e0;filter: drop-shadow(1px 1px 3.4px #747474)}
   button:active {box-shadow: none;}
-  button:disabled {outline:2px solid grey;color:darkgrey;cursor: not-allowed;}
   footer, footer a {color: #9A9A9A;}
   h1, h2, a {color: #34BEED;}
   ::selection {color: #e0e0e0; background: #34BEED;}
   ::-moz-selection {color: #e0e0e0; background: #34BEED;}
   mark {color:black;background:#34BEED;font-weight:bold;}
+  img.wb {outline: solid 1px white}
   .blue {color:#5898ff;}
   #errorCode {background-color: black;border: 2px solid grey;color:white;}
   body.dir a {color:white}

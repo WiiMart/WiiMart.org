@@ -8,7 +8,7 @@
    <title>WiiMart: an active Wii Shop revival!</title>
    <meta content="WiiMart: an active Wii Shop revival!" property="og:title">
    <meta content="WiiMart is an open-source revival of the defunct Wii Shop Channel. This website contains information about it and the project team behind it!" property="og:description">
-   <meta content="https://wiimart.org/media/branding-bag.png" property="og:image"/>
+   <meta content="https://wiimart.org/media/branding-bag.png" property="og:image">
    <meta content="https://wiimart.org" property="og:url">
    <meta content="#1164E9" data-react-helmet="true" name="theme-color">
    <meta name="keywords" content="WiiMart, Wii Shop, homebrew">
@@ -16,6 +16,11 @@
    <link rel="stylesheet" href="meta/main.css">
    <script src="meta/gallery.js" defer></script>
    <link rel="icon" type="image/x-icon" href="favicon.ico">
+   <style>
+      details {text-align: left;padding-left: 5px;padding-right: 5px;}
+      summary {padding-left: 5px;padding-right: 5px;cursor: pointer;user-select: none}
+      details li {font-size: smaller;}
+   </style>
 </head>
 <body>
 <div id="bgmplayer">
@@ -26,18 +31,36 @@
 
 <h1>WiiMart</h1>
 
-<a href="install"><button>Install</button></a> <a href="support"><button>Support</button></a> <a href="errors"><button>Errors</button></a> <a href="branding"><button>Branding</button></a> <a href="specials"><button>Specials</button></a> <a href="credits"><button>Credits</button></a><br><br>
+<nav><a href="install" class="btn">Install</a> <a href="support" class="btn">Support</a> <a href="errors" class="btn">Errors</a> <a href="branding" class="btn">Branding</a> <a href="specials" class="btn">Specials</a> <a href="credits" class="btn">Credits</a></nav>
 
 <script>function WiiMartWednesday() {const today = new Date(); const dayOfWeek = today.getDay();if (dayOfWeek === 3) {const wednesdayDiv = document.getElementById('wednesdaytitles'); if (wednesdayDiv) {wednesdayDiv.style.display = 'block';} }}; function whatiswmw()  {const wswbox = document.getElementById("whatiswsw"); wswbox.style.display="block"; } function whatiswmwclose()  { const wswbox = document.getElementById("whatiswsw"); wswbox.style.display="none";} window.onload = WiiMartWednesday(); loadafterwednesdaycheck(); function whatiswmw() {const wswbox = document.getElementById("whatiswsw");wswbox.style.display="block";} function whatiswmwclose()  { const wswbox = document.getElementById("whatiswsw"); wswbox.style.display="none";}</script>
 <div id="wednesdaytitles" style="display:none"><img loading="lazy" src="meta/NEW_en.gif" alt="NEW" style="margin-right:5px;">It's WiiMart Wednesday, The catalog has been updated with new games! <br><a href="javascript:whatiswmw();" style="font-size:11px; font-style:italic; cursor:help;" id="helpwed">What is WiiMart Wednesday?</a></div><div id="whatiswsw" style="display:none;"><h3>What is Wii Shop/WiiMart Wednesday?</h3><hr><p>"Update Day" also known as "Wii Shop Wednesday is a song that Nirvana The Band The Show made. <br> it was a song about the latest games added to the shop channel on that wednesday as they sang to the titles on the catalog pages. <br><br> We decided to bring it back and now every wednesday, new games are added to the WiiMart catalog. <br><br> <a href="https://www.youtube.com/watch?v=XQ0lnz1iv3k&t=0s" target="_blank">Visit this link to watch the Update day video</a></p><br><button onclick="whatiswmwclose();">Close</button></div>
 
-<div style="border-color:red">
-   <p>WiiMart is currently down for server maintenance.</p>
-</div>
-
-<div style="border-color:green">
-   <h2 style="color:green">Update your WiiMart!</h2>
-   <p>For this update, you'll need to download new WADs.<br>Go to the <a href="install">Install</a> page.</p>
+<div style="padding: 0;">
+   <header style="background-color:#34BEED;color:white;text-align:left;font-weight:bold;">Important Info</header>
+   <details>
+      <summary>WiiMart is down for maintenance.</summary>
+      <p>The WiiMart service is currently offline as we are handling DSiMart testing.</p>
+   </details>
+   <details>
+      <summary>WiiMart Wednesday for June 6th.</summary>
+      <p>These titles were added this Wednesday.</p>
+      <ul>
+         <li><i>Super Mario Star Road</i> (Nintendo 64, dustinbriggs1991/Ryoku)</li>
+         <li><i>Super Mario Bros. 2: Master Quest</i> (NES/Famicom, Subnetic)</li>
+         <li><i>Super Mario RPG: Master Quest</i> (SNES/Super Famicom, Subnetic)</li>
+         <li><i>Chrono Trigger: Master Quest</i> (SNES/Super Famicom, Subnetic)</li>
+         <li><i>The Legend of Zelda: A Link to the Past (Master Quest)</i> (SNES/Super Famicom, Subnetic)</li>
+         <li><i>The Legend of Zelda: Ocarina of Time (Master Quest)</i> (Nintendo 64 (NTSC Only), dustinbriggs1991/Ryoku)</li>
+         <li><i>The Legend of Zelda: Majora's Mask (Master Quest)</i> (Nintendo 64 (NTSC Only), Subnetic)</li>
+         <li><i>Bubsy in Claws Encounters of the Furred Kind</i> (SNES/Super Famicom, Onion Mastori)</li>
+         <li><i>Pocky & Rocky</i> (SNES/Super Famicom, Onion Mastori)</li>
+      </ul>
+   </details>
+   <details>
+      <summary>Update your WiiMart!</summary>
+      <p>Since May 2nd, WiiMart has been relocated to a new domain. For this update, you'll need to download new WADs. Go to the <a href="install">Install</a> page.</p>
+   </details>
 </div>
 
 <div id="about">
@@ -49,7 +72,7 @@
 <div>
    <img loading="lazy" src="media/martyna-looking.png" style="height:100%; width:25%; float: left; min-width:25%; min-height:100%;">
    <p class="blue">If WiiMart sounds like what you are looking for, try it out for yourself! WiiMart can be used on Wii, Wii U, and partially Dolphin.</p>
-   <a href="install"><button style="font-size: larger">Get Started</button></a>
+   <a href="install" class="btn" style="font-size: larger;">Get Started</a><br><br>
 </div>
 
 <div>
@@ -81,7 +104,7 @@
       and <b>Mortal Kombat</b>.</p>
    <p>New titles are added every <b>WiiMart Wednesday</b>. If you want to check out what new titles have been added,
       or just see what we have, check out the (in-progress) WiiMart Title sheet!</p>
-   <a href="https://docs.google.com/spreadsheets/d/1rG8Qtwe8_qXcdXv8dTvU_2ibIsRtgLUS7NW70DMTF2Q"><button style="outline:3px solid #13b313;font-size: larger;">View Titles</button></a>
+   <a href="https://docs.google.com/spreadsheets/d/1rG8Qtwe8_qXcdXv8dTvU_2ibIsRtgLUS7NW70DMTF2Q" class="btn" style="font-size:larger">View Titles</a><br><br>
 </div>
 
 <h1>How do I get support?</h1>
@@ -112,7 +135,7 @@
       <b>Region Free EVERYTHING</b> option in System Menu Hacks, then launch it again.</p>
 </div>
 
-<p style="margin-bottom: 0px"><img src="media/branding-button.png" style="outline: solid 1px white"></p>
+<p style="margin-bottom: 0px"><img src="media/branding-button.png" class="wb"> <a href="https://dsimart.org/"><img src="media/branding-button-dsimart.png" class="wb"></a></p>
 
 <footer><p>The WiiMart Team is not affiliated with Nintendo or any related parties. To contact, please send an email to <a href="mailto:support@wiimart.org"><b>support@wiimart.org</b></a>.</p></footer>
 

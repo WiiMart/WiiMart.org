@@ -8,7 +8,7 @@
    <title>WiiMart Specials</title>
    <meta content="WiiMart Specials" property="og:title">
    <meta content="This page contains some special content for WiiMart." property="og:description">
-   <meta content="https://wiimart.org/media/branding-bag.png" property="og:image"/>
+   <meta content="https://wiimart.org/media/branding-bag.png" property="og:image">
    <meta content="https://wiimart.org/specials" property="og:url">
    <meta content="#FF0000" data-react-helmet="true" name="theme-color">
    <meta name="keywords" content="Wii Shop, homebrew">
@@ -28,31 +28,41 @@
 
 <h1><a href="/">WiiMart</a></h1>
 
-<a href="install"><button>Install</button></a> <a href="support"><button>Support</button></a> <a href="errors"><button>Errors</button></a> <a href="branding"><button>Branding</button></a> <button disabled>Specials</button> <a href="credits"><button>Credits</button></a><br><br>
+<nav><a href="install" class="btn">Install</a> <a href="support" class="btn">Support</a> <a href="errors" class="btn">Errors</a> <a href="branding" class="btn">Branding</a> <span class="active">Specials</span> <a href="credits" class="btn">Credits</a></nav>
 
 <div class="3DS">
   <h2>3DS Theme</h2>
-    <img src="media/screenshot-3ds-theme.png" style="width: 100%;border-radius: 5px;">
+    <img src="media/screenshot-3ds-theme.png" style="width: 100%;border-radius: 5px;" alt="Theme screenshots">
   <p>This cute theme brings WiiMart to your 3DS alongside the Wii Shop Channel background music.</p>
-  <a href="extras/WiiMart3DS.zip" download><button>Download</button></a>
+  <a href="extras/WiiMart3DS.zip" class="btn" download>Download</a>
   <p>Put the ZIP file into <b>sd:/Themes</b> and install it with the Anenome themeing tool.</p>
 </div>
 
 <div>
   <h2>Wii U Forwarder</h2>
     <div class="gallery">
-    <img src="media/screenshot-wii-u-forwarder-icon.png" class="slide">
-    <img src="media/screenshot-wii-u-forwarder-banner.png" class="slide">
+    <img src="media/screenshot-wii-u-forwarder-icon.png" class="slide" alt="Forwarder icon in the Wii U Menu">
+    <img src="media/screenshot-wii-u-forwarder-banner.png" class="slide" alt="Forwarder's launching banner">
   </div>
   <p>This handy forwarder takes you from the Wii U Menu straight to WiiMart!<!--ha--> (Launches in TV and GamePad view.)</p>
-  <a href="extras/WiiMartForwarder.wuhb"><button>Download</button></a>
+  <a href="extras/WiiMartForwarder.wuhb" class="btn" download>Download</a>
   <p>Put this WUHB file into <b>SD:/wiiu/apps</b>. Aroma required!</p>
+</div>
+
+<div>
+  <h2>Wii Points Generator</h2>
+  <p id="code">XXXX-XXXX-XXXX-XXXX</p>
+  <button onclick="generateCode()">Generate</button>
+  <p>Click on the button below to generate a random Wii Points Card number. It will not work when used on WiiMart.</p>
+
+  <script>function generateCode() {const charset = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; let code = ""; for (let i = 0; i < 4; i++) {let segment = ""; for (let j = 0; j < 4; j++) {segment += charset.charAt(Math.floor(Math.random() * charset.length));} code += segment + (i < 3 ? "-" : "");} document.getElementById("code").textContent = code;}</script>
+
 </div>
 
 <div>
   <h2>PC Client</h2>
   <p>Browse the entire catalog of WiiMart from your computer's browser!</p>
-  <button disabled>Coming soon!</button>
+  <span class="active">Coming soon!</span><br><br>
 </div>
 
 <div>
