@@ -21,6 +21,8 @@
     summary {color:red;text-decoration: underline;list-style: none;font-weight: bold;user-select: none;cursor: pointer;}
     details {color:red;outline: solid 1px red;padding-bottom: 5px;margin-bottom: 10px;}
     details h2 {color:red}
+    button#scrollUp {position:fixed;bottom: 10px; right: 10px; display: none; transform: translateY(20px); transition: opacity 0.3s ease, transform 0.3s ease;padding-bottom:0;z-index:1000;}
+    button#scrollUp.show {display:block;opacity:1;transform: translateY(0);}
    </style>
 </head>
 <body onload="loadafterwednesdaycheck();">
@@ -34,6 +36,8 @@
 <h1><a href="/">WiiMart</a></h1>
 
 <nav><a href="install" class="btn">Install</a> <span class="active">Support</span> <a href="errors" class="btn">Errors</a> <a href="branding" class="btn">Branding</a> <a href="specials" class="btn">Specials</a> <a href="credits" class="btn">Credits</a></nav>
+
+<button id="scrollUp" title="Go to top"><img src="meta/scroll-up.svg" style="width: 30px;" alt="Scroll up"></button>
 
 <h2>Shop-related</h2>
 
@@ -170,6 +174,30 @@
 </div>
 
 <footer><p>The WiiMart Team is not affiliated with Nintendo or any related parties. To contact, please send an email to <a href="mailto:support@wiimart.org"><b>support@wiimart.org</b></a>.</p></footer>
+
+<script>
+  const scrollUp = document.getElementById("scrollUp");
+
+  window.addEventListener("scroll", () => {
+    const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
+    const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrollPercent = scrollTop / scrollHeight;
+
+    if (scrollPercent > 0.3) {
+      scrollUp.classList.add("show");
+    } else {
+      scrollUp.classList.remove("show");
+    }
+  });
+
+  scrollUp.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+</script>
+
 
 </body>
 </html>
