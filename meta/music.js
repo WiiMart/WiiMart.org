@@ -53,7 +53,7 @@ function pauseBGM() {
 }
 
 function playBGMonload() {
-  // this version has it fade in for smoother experince between pages uwu (i could of used set interval, but memory issues?)
+  // this version has it fade in for smoother experince between pages  (i could of used set interval, but memory issues?)
   fadeinbgm();
   localStorage.setItem("shopmusic", "playing");
   shoploop.play();
