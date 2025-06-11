@@ -28,9 +28,6 @@ hr {border-color:grey}
 a {color:#34BEED; font-weight: bold;}
 ::selection{color: #323232;background: #34BEED;}
 ::-moz-selection{color: #323232;background:#34BEED;}
-body.dir {text-align: left;}
-body.dir a {color:black;text-decoration: none;font-weight: normal;}
-body.dir a:hover {color:#34BEED}
 table {border: 1px solid white; border-collapse: collapse;}
 th, td {border: 1px solid;}
 button.ico {width:20px; height:20px;}
@@ -91,7 +88,6 @@ div#bgmplayer p {line-height:20px;color:#9A9A9A;margin-top:-10px;font-style:ital
   img.wb {outline: solid 1px white}
   .blue {color:#5898ff;}
   #errorCode {background-color: black;border: 2px solid grey;color:white;}
-  body.dir a {color:white}
   mark {color:white}
   #wednesdaytitles {color:white; background-color:#3b3b3b}
 }
