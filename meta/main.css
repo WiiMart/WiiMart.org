@@ -7,17 +7,19 @@ div.clear {border:none;background: none;box-shadow: none;}
 
 h1 {margin-bottom: 10px;}
 nav {margin-bottom: 20px;line-height: 35px;}
+footer {color:grey}
+footer a {color:grey}
 
 a.btn {background-color: #E6FFF2;border-radius: 10px;padding: 4px;margin-bottom: 10px;color:black;text-decoration: none;filter: drop-shadow(1px 1px 1px black);font-weight: 100;display:inline}
 a.btn:hover {background-color: #C7FDFF;}
 a.btn:active {filter: none;}
 span.active {background-color: #c7c7c7;border-radius: 10px;padding: 4px;font-weight: 100;display:inline;cursor:auto;user-select:none}
-
+span.date {float: right;}
 button {margin-bottom: 6px;font-family:'Shop',sans-serif;padding: 5px;outline: 1px solid #34BEED;border-radius: 3px;filter: drop-shadow(1px 1px 3.4px #bbbbbb);border:none}
 button:hover {box-shadow: inset 0 0 0 3px #34BEED;cursor:pointer}
 
-footer {color:grey}
-footer a {color:grey}
+details {text-align: left;padding-left: 5px;padding-right: 5px;li {font-size: smaller;};}
+summary {padding-left: 5px;padding-right: 5px;cursor: pointer;user-select: none}
 
 /* Text stuff */
 h1, h2 {color:#34BEED;}
