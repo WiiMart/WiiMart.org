@@ -45,7 +45,6 @@
    <p>WiiMart can utilize most things on on Wii and Wii U consoles, like downloading and changing settings.</p>
    <p>Dolphin users may need some extra configuration.</p>
    <button onclick="showDiv('warning')">Start</button>
-
 </div>
 
 <div id="warning" class="question">
@@ -58,7 +57,7 @@
    <p>To backup individual saves, go to Wii Settings, then Data Management and copy to an SD Card.
       Once you are done you can move it back to the Wii System Memory.</p>
 
-   <button onclick="showDiv('question')">Back</button> <button onclick="showDiv('platform')">Next</button><br>
+   <button onclick="showDiv('start')" class="r">Back</button> <button onclick="showDiv('platform')">Next</button><br>
 </div>
 
 
@@ -77,7 +76,7 @@
    <button onclick="showDiv('dolphin')"><img src="media/button-dolphin-desktop.png" alt="">Dolphin</button>
    <hr>
    <p><b>Important:</b> No matter which option you pick, you will need to have a homebrewed console. If you don't have it homebrewed, see <a href="https://wii.hacks.guide"><b>wii.hacks.guide</b></a> before looking at this guide.</p>
-   <button onclick="showDiv('warning')" style="width:auto">Back</button><br>
+   <button onclick="showDiv('warning')" style="width:auto" class="r">Back</button><br>
 </div>
 <!--
 
@@ -97,14 +96,14 @@
    <p>Simply press <b>Load</b> and you will be taken to the installer.</p>
    <p>If anything goes wrong involving tickets (e.g. TView), it is recommended that you head over to the <a href="#Manual" onclick="showDiv('start')">Manual Installation</a>.</p>
 
-   <button onclick="showDiv('start')" class="r">↩</button>
+   <button onclick="showDiv('start')" class="r">Back</button>
 </div>
 -->
 
 <div id="dolphin" class="question">
    <h2>Dolphin</h2>
    <h3>Do you have a console NAND backup?</h3>
-   <button onclick="showDiv('start')" class="r">↩</button>
+   <button onclick="showDiv('platform')" class="r">Back</button>
    <button onclick="showDiv('noNAND')">No</button>
    <button onclick="showDiv('withNAND')">Yes</button>
 </div>
@@ -113,7 +112,7 @@
    <h2>Dolphin</h2>
    <h2 style="color:red">No NAND!</h2>
    <p>We are sorry, but WiiMart requires a real console's NAND backup. Using one from the Internet may not work.</p>
-   <button onclick="showDiv('dolphin')" class="r">↩</button>
+   <button onclick="showDiv('dolphin')" class="r">Back</button>
 </div>
 
 <div id="withNAND" class="question">
@@ -137,7 +136,7 @@
    <img src="media/screenshot-system-menu-wii.png" alt="Wii Menu with the cursor hovering over Wii Shop">
    <p>You can now go to the Wii Menu and launch the Wii Shop Channel.</p>
 
-   <button onclick="showDiv('dolphin')" class="r">↩</button>
+   <button onclick="showDiv('dolphin')" class="r">Back</button>
 </div>
 
 <div id="vWii" class="question">
@@ -159,7 +158,7 @@
    <img src="media/screenshot-system-menu-vwii.png" alt="Wii Menu with the cursor hovering over Wii Shop">
    <p>You can now go to the Wii Menu and launch the Wii Shop Channel.</p>
 
-   <button onclick="showDiv('start')" class="r">↩</button>
+   <button onclick="showDiv('platform')" class="r">Back</button>
 </div>
 
 <div id="wii" class="question">
@@ -180,7 +179,7 @@
    <h3>Finished!</h3>
    <img src="media/screenshot-system-menu-wii.png" alt="Wii Menu with the cursor hovering over Wii Shop">
    <p>You can now go to the Wii Menu and launch the Wii Shop Channel.</p>
-   <button onclick="showDiv('start')" class="r">↩</button>
+   <button onclick="showDiv('platform')" class="r">Back</button>
 </div>
 
 <footer><p>The WiiMart Team is not affiliated with Nintendo or any related parties. To contact, please send an email to <a href="mailto:support@wiimart.org"><b>support@wiimart.org</b></a>.</p></footer>
