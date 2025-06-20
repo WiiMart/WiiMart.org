@@ -1,3 +1,16 @@
+function preloadArrows() {
+    function preloadImages() {//v1.0
+        var doc = document, args = arguments; if (!doc.img) doc.img = new Array();
+        for (var i = 0; i < args.length; i++) { doc.img[i] = new Image; doc.img[i].src = args[i]; }
+    }
+    preloadImages(
+        "/meta/arrow-right-hover.png",
+        "/meta/arrow-left-hover.png",
+        "/meta/arrow-right-pressed.png",
+        "/meta/arrow-left-pressed.png"
+    );
+}
+
 const galleries = document.querySelectorAll('.gallery');
 
 galleries.forEach(gallery => {
