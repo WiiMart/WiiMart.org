@@ -30,65 +30,65 @@
 
 <nav><a href="install" class="btn">Install</a> <a href="support" class="btn">Support</a> <a href="errors" class="btn">Errors</a> <a href="branding" class="btn">Branding</a> <span class="active">Specials</span> <a href="credits" class="btn">Credits</a></nav>
 
-<div class="3DS">
-  <h2>3DS Theme</h2>
-    <img src="media/screenshot-3ds-theme.png" style="width: 100%;border-radius: 5px;" alt="Theme screenshots">
-  <p>This cute theme brings WiiMart to your 3DS alongside the Wii Shop Channel background music.</p>
-  <a href="extras/WiiMart3DS.zip" class="btn" download>Download</a>
-  <p>Put the ZIP file into <b>sd:/Themes</b> and install it with the Anenome themeing tool.</p>
-</div>
-
-<div>
-  <h2>Wii U Forwarder</h2>
-    <div class="gallery">
-    <img src="media/screenshot-wii-u-forwarder-icon.png" class="slide" alt="Forwarder icon in the Wii U Menu">
-    <img src="media/screenshot-wii-u-forwarder-banner.png" class="slide" alt="Forwarder's launching banner">
+<div class="row">
+  <div class="box" id="3DS">
+    <h2>3DS Theme</h2>
+      <img src="media/screenshot-3ds-theme.png" style="width: 100%;border-radius: 5px;" alt="Theme screenshots">
+    <p>This cute theme brings WiiMart to your 3DS alongside the Wii Shop Channel background music.</p>
+    <a href="extras/WiiMart3DS.zip" class="btn" download>Download</a>
+    <p>Put the ZIP file into <b>sd:/Themes</b> and install it with the Anenome themeing tool.</p>
   </div>
-  <p>This handy forwarder takes you from the Wii U Menu straight to WiiMart!<!--ha--> (Launches in TV and GamePad view.)</p>
-  <a href="extras/WiiMartForwarder.wuhb" class="btn" download>Download</a>
-  <p>Put this WUHB file into <b>SD:/wiiu/apps</b>. Aroma required!</p>
+
+  <div class="box">
+    <h2>Wii U Forwarder</h2>
+      <div class="gallery">
+      <img src="media/screenshot-wii-u-forwarder-icon.png" class="slide" alt="Forwarder icon in the Wii U Menu">
+      <img src="media/screenshot-wii-u-forwarder-banner.png" class="slide" alt="Forwarder's launching banner">
+    </div>
+    <p>This handy forwarder takes you from the Wii U Menu straight to WiiMart!<!--ha--> (Launches in TV and GamePad view.)</p>
+    <a href="extras/WiiMartForwarder.wuhb" class="btn" download>Download</a>
+    <p>Put this WUHB file into <b>SD:/wiiu/apps</b>. Aroma required!</p>
+  </div>
+
+  <div class="box">
+    <h2>Wii Points Generator</h2>
+    <p id="code">XXXX-XXXX-XXXX-XXXX</p>
+    <button onclick="generateCode()">Generate</button>
+    <p>Click on the button below to generate a random Wii Points Card number. It will not work when used on WiiMart.</p>
+
+    <script>function generateCode() {const charset = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; let code = ""; for (let i = 0; i < 4; i++) {let segment = ""; for (let j = 0; j < 4; j++) {segment += charset.charAt(Math.floor(Math.random() * charset.length));} code += segment + (i < 3 ? "-" : "");} document.getElementById("code").textContent = code;}</script>
+
+  </div>
+
+  <div class="box">
+    <h2>PC Client</h2>
+    <p>Browse the entire catalog of WiiMart from your computer's browser!</p>
+    <p><span class="active">Coming soon!</span></p>
+  </div>
+
+  <div class="box">
+    <h2>List of Shop URLs</h2>
+    <p>If you weren't already aware, the Wii Shop Channel is a web app. The original Wii Shop Channel was hosted at
+      <b>oss-auth.shop.wii.com</b>, while WiiMart is hosted at <b>oss-auth.thecheese.io</b>.</p>
+    <p>To go on the official one you'd need a special certificate and user agent. WiiMart's server does not need those, making it very easy to access!</p>
+      <ul>
+        <li><a href="https://oss-auth.thecheese.io/oss/serv/index.jsp">Index page</a></li>
+        <li><a href="https://oss-auth.thecheese.io/oss/serv/W_01.jsp">W_01</a> (Recommend titles)</li>
+        <li><a href="https://oss-auth.thecheese.io/oss/serv/W_02.jsp">W_02</a> (Imporant Info)</li>
+        <li><a href="https://oss-auth.thecheese.io/oss/serv/W_03.jsp">W_03</a> (Main menu)</li>
+        <li><a href="https://oss-auth.thecheese.io/oss/serv/W_04.jsp">W_04</a> (Gift notice page)</li>
+        <li><a href="https://oss-auth.thecheese.io/oss/serv/B_01.jsp">B_01</a> (Virtual Console sort options)</li>
+        <li><a href="https://oss-auth.thecheese.io/oss/serv/B_02.jsp">B_02</a> (WiiWare info page, shows Internet Channel)</li>
+        <li><a href="https://oss-auth.thecheese.io/oss/serv/B_05.jsp">B_05</a> (Blank title page)</li>
+        <li><a href="https://oss-auth.thecheese.io/oss/serv/B_08.jsp">B_08</a> (Blank Controller Confirmation page)</li>
+        <li><a href="https://oss-auth.thecheese.io/oss/serv/B_09.jsp">B_09</a> (Blank Download Confirmation page)</li>
+        <li><a href="https://oss-auth.thecheese.io/oss/serv/B_19.jsp">B_19</a> (Blank gift message send)</li>
+        <li><a href="https://oss-auth.thecheese.io/oss/serv/S_10.jsp">S_10</a> (Remove account)</li>
+        <li><a href="https://oss-auth.thecheese.io/oss/serv/S_30.jsp">S_30</a> (One Free Title page)</li>
+        <li><a href="https://oss-auth.thecheese.io/oss/serv/S_14.jsp">S_14</a> (Wii Download Ticket page)</li>
+      </ul>
+  </div>
 </div>
-
-<div>
-  <h2>Wii Points Generator</h2>
-  <p id="code">XXXX-XXXX-XXXX-XXXX</p>
-  <button onclick="generateCode()">Generate</button>
-  <p>Click on the button below to generate a random Wii Points Card number. It will not work when used on WiiMart.</p>
-
-  <script>function generateCode() {const charset = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; let code = ""; for (let i = 0; i < 4; i++) {let segment = ""; for (let j = 0; j < 4; j++) {segment += charset.charAt(Math.floor(Math.random() * charset.length));} code += segment + (i < 3 ? "-" : "");} document.getElementById("code").textContent = code;}</script>
-
-</div>
-
-<div>
-  <h2>PC Client</h2>
-  <p>Browse the entire catalog of WiiMart from your computer's browser!</p>
-  <p><span class="active">Coming soon!</span></p>
-</div>
-
-<div>
-  <h2>List of Shop URLs</h2>
-  <p>If you weren't already aware, the Wii Shop Channel is a web app. The original Wii Shop Channel was hosted at
-     <b>oss-auth.shop.wii.com</b>, while WiiMart is hosted at <b>oss-auth.thecheese.io</b>.</p>
-  <p>To go on the official one you'd need a special certificate and user agent. WiiMart's server does not need those, making it very easy to access!</p>
-    <ul>
-      <li><a href="https://oss-auth.thecheese.io/oss/serv/index.jsp">Index page</a></li>
-      <li><a href="https://oss-auth.thecheese.io/oss/serv/W_01.jsp">W_01</a> (Recommend titles)</li>
-      <li><a href="https://oss-auth.thecheese.io/oss/serv/W_02.jsp">W_02</a> (Imporant Info)</li>
-      <li><a href="https://oss-auth.thecheese.io/oss/serv/W_03.jsp">W_03</a> (Main menu)</li>
-      <li><a href="https://oss-auth.thecheese.io/oss/serv/W_04.jsp">W_04</a> (Gift notice page)</li>
-      <li><a href="https://oss-auth.thecheese.io/oss/serv/B_01.jsp">B_01</a> (Virtual Console sort options)</li>
-      <li><a href="https://oss-auth.thecheese.io/oss/serv/B_02.jsp">B_02</a> (WiiWare info page, shows Internet Channel)</li>
-      <li><a href="https://oss-auth.thecheese.io/oss/serv/B_05.jsp">B_05</a> (Blank title page)</li>
-      <li><a href="https://oss-auth.thecheese.io/oss/serv/B_08.jsp">B_08</a> (Blank Controller Confirmation page)</li>
-      <li><a href="https://oss-auth.thecheese.io/oss/serv/B_09.jsp">B_09</a> (Blank Download Confirmation page)</li>
-      <li><a href="https://oss-auth.thecheese.io/oss/serv/B_19.jsp">B_19</a> (Blank gift message send)</li>
-      <li><a href="https://oss-auth.thecheese.io/oss/serv/S_10.jsp">S_10</a> (Remove account)</li>
-      <li><a href="https://oss-auth.thecheese.io/oss/serv/S_30.jsp">S_30</a> (One Free Title page)</li>
-      <li><a href="https://oss-auth.thecheese.io/oss/serv/S_14.jsp">S_14</a> (Wii Download Ticket page)</li>
-    </ul>
-</div>
-
-
 
 <footer><p>The WiiMart Team is not affiliated with Nintendo or any related parties. To contact, please send an email to <a href="mailto:support@wiimart.org"><b>support@wiimart.org</b></a>.</p></footer>
 

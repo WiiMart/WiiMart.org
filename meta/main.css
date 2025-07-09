@@ -2,8 +2,9 @@
 
 /*Main things*/
 body {scroll-behavior:smooth;text-align: center;font-family: sans-serif;font-family:'Shop',sans-serif; overflow-x:hidden;transition:.1s ease-in-out;}
-div {line-height:23.3px; background-color: white;border-radius: 5px;border-color: #34BEED;box-shadow: 0 0 10px #2525255d; box-sizing: border-box;border-width: 2px;border-style: solid; width: 35%; text-align: center;margin: 0 auto;padding: 5px;margin-top: 8px; overflow: auto;}
-div.clear {border:none;background: none;box-shadow: none;}
+
+div.row {width:50%;margin:auto}
+div.box {line-height:23.3px;background-color:white;border:solid 2px #34BEED;border-radius:5px;box-shadow: 0 0 10px #2525255d;box-sizing:border-box;text-align:center;margin: 0 auto;padding:5px;margin-top: 8px; overflow: auto;}
 
 h1 {margin-bottom: 10px;}
 nav {margin-bottom: 20px;line-height: 35px;}
@@ -15,10 +16,12 @@ a.btn:hover {background-color: #C7FDFF;}
 a.btn:active {filter: none;}
 span.active {background-color: #c7c7c7;border-radius: 10px;padding: 4px;font-weight: 100;display:inline;cursor:auto;user-select:none}
 span.date {float: right;}
+span.hide {color:black}
 button {margin-bottom: 6px;font-family:'Shop',sans-serif;padding: 5px;outline: 1px solid #34BEED;border-radius: 3px;filter: drop-shadow(1px 1px 3.4px #bbbbbb);border:none}
 button:hover {box-shadow: inset 0 0 0 3px #34BEED;cursor:pointer}
 
-details {text-align: left;padding-left: 5px;padding-right: 5px;li {font-size: smaller;};}
+details {text-align: left;padding-left: 5px;padding-right: 5px;}
+details li {font-size: smaller}
 summary {padding-left: 5px;padding-right: 5px;cursor: pointer;user-select: none}
 
 /* Text stuff */
@@ -33,7 +36,7 @@ a {color:#34BEED; font-weight: bold;}
 table {border: 1px solid white; border-collapse: collapse;}
 th, td {border: 1px solid;}
 button.ico {width:20px; height:20px;}
-img.ico {vertical-align: middle; width:25px; height:25px;}
+img.ico {vertical-align:middle;width:20px;height:20px;}
 img.wb {outline: solid 1px black}
 .blue {color:#1164E9;}
 
@@ -41,8 +44,8 @@ mark {color:white;background:#34BEED;font-weight:bold;}
 mark.new {background-color: gold;color:orangered;border-radius: 10px; padding-right:5px; padding-left:5px;font-weight:bold;}
 
 /* Gallery */
-div.gallery {position: relative; overflow: hidden;width:100%;}
-img.slide {width:100%; min-height:200px; min-width:100%;}
+div.gallery {position:relative;width:100%;box-sizing:border-box;}
+img.slide {width:100%; min-height:200px; min-width:100%;border-radius:5px;}
 img.arrow {min-height:68px; position: absolute; top: 50%; transform: translateY(-50%); cursor: pointer; width: 60px; height: auto;}
 img.left {left: 10px; animation: hoverAnimation 0.5s infinite alternate;}
 img.right {right: 10px; animation: rightHoverAnimation 0.5s infinite alternate;}
@@ -70,16 +73,18 @@ div#bgmplayer p {line-height:20px;color:#9A9A9A;margin-top:-10px;font-style:ital
 }
 
 /* Auto-resizer, do not change pls*/
-@media (max-width: 768px) {div {width: 95%} }
+@media (max-width: 768px) {div.row {width: 95%}}
+@media (min-width: 1500px) {div.row {width: 40%}}
 
 /* Dark theme via system preference */
 @media (prefers-color-scheme: dark)
 {
   body {background-color: black; color: #e0e0e0;}
-  div {background-color: #1e1e1e; border-color: #34BEED; box-shadow: 0 0 10px #000000CC;}
+  div.box {background-color: #1e1e1e; box-shadow: 0 0 10px #000000CC;}
   a.btn {background-color: #587566;color:white}
   a.btn:hover {background-color: #7da2a3;}
   span.active {background-color: #313131}
+  span.hide {color:white}
   button {background-color: #3b3b3b; color: #e0e0e0;filter: drop-shadow(1px 1px 3.4px #747474)}
   button:active {box-shadow: none;}
   footer, footer a {color: #9A9A9A;}

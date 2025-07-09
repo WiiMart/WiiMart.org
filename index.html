@@ -16,9 +16,12 @@
    <link rel="stylesheet" href="meta/main.css">
    <script src="meta/gallery.js" defer></script>
    <link rel="icon" type="image/x-icon" href="favicon.ico">
+   <style>.em {opacity:1; transition: opacity 0.5s ease-in-out;} .em.fade {opacity: 0;}</style>
 </head>
-<body>
-<div id="bgmplayer">
+<body onload="loadafterwednesdaycheck();">
+
+<div>
+<div class="box" id="bgmplayer">
    <h2>BGM player</h2>
    <a href="javascript:playBGM();" id="shopbgmselector"><button id="shopbgm">Play</button></a>
    <p><br>Enable audio autoplay in your browser for it to continue playing throughout the website.</p>
@@ -29,105 +32,100 @@
 <nav><a href="install" class="btn">Install</a> <a href="support" class="btn">Support</a> <a href="errors" class="btn">Errors</a> <a href="branding" class="btn">Branding</a> <a href="specials" class="btn">Specials</a> <a href="credits" class="btn">Credits</a></nav>
 
 <script>function WiiMartWednesday() {const today = new Date(); const dayOfWeek = today.getDay();if (dayOfWeek === 3) {const wednesdayDiv = document.getElementById('wednesdaytitles'); if (wednesdayDiv) {wednesdayDiv.style.display = 'block';} }}; function whatiswmw()  {const wswbox = document.getElementById("whatiswsw"); wswbox.style.display="block"; } function whatiswmwclose()  { const wswbox = document.getElementById("whatiswsw"); wswbox.style.display="none";} window.onload = WiiMartWednesday(); preloadArrows(); loadafterwednesdaycheck(); function whatiswmw() {const wswbox = document.getElementById("whatiswsw");wswbox.style.display="block";} function whatiswmwclose()  { const wswbox = document.getElementById("whatiswsw"); wswbox.style.display="none";}</script>
-<div id="wednesdaytitles" style="display:none"><img loading="lazy" src="meta/NEW_en.gif" alt="NEW" style="margin-right:5px;">It's WiiMart Wednesday, The catalog has been updated with new games! <br><a href="javascript:whatiswmw();" style="font-size:11px; font-style:italic; cursor:help;" id="helpwed">What is WiiMart Wednesday?</a></div><div id="whatiswsw" style="display:none;"><h3>What is Wii Shop/WiiMart Wednesday?</h3><hr><p>"Update Day" also known as "Wii Shop Wednesday is a song that Nirvana The Band The Show made. <br> it was a song about the latest games added to the shop channel on that wednesday as they sang to the titles on the catalog pages.  We decided to bring it back and now every wednesday, new games are added to the WiiMart catalog.  <a href="https://www.youtube.com/watch?v=XQ0lnz1iv3k&t=0s" target="_blank">Visit this link to watch the Update day video</a></p><br><button onclick="whatiswmwclose();">Close</button></div>
+<div class="box" id="wednesdaytitles" style="display:none"><img loading="lazy" src="meta/NEW_en.gif" alt="NEW" style="margin-right:5px;">It's WiiMart Wednesday, The catalog has been updated with new games! <br><a href="javascript:whatiswmw();" style="font-size:11px; font-style:italic; cursor:help;" id="helpwed">What is WiiMart Wednesday?</a></div><div class="box" id="whatiswsw" style="display:none;"><h3>What is Wii Shop/WiiMart Wednesday?</h3><hr><p>"Update Day" also known as "Wii Shop Wednesday is a song that Nirvana The Band The Show made. <br> it was a song about the latest games added to the shop channel on that wednesday as they sang to the titles on the catalog pages.  We decided to bring it back and now every wednesday, new games are added to the WiiMart catalog.  <a href="https://www.youtube.com/watch?v=XQ0lnz1iv3k&t=0s" target="_blank">Visit this link to watch the Update day video</a></p><br><button onclick="whatiswmwclose();">Close</button></div>
 
-<div style="padding: 0;">
-   <header style="background-color:#34BEED;color:white;font-weight:bold;margin-bottom:10px">Important Info:</header>
-   <details>
-      <summary>WiiMart Wednesday #13 <span class="date">07-02</span></summary>
-      <p>These titles were added this Wednesday.</p>
-      <ul>
-         <li><i>The Legend of Zelda: The Missing Link</i> (Nintendo 64, dustinbriggs1991/Ryoku)</li>
-         <li><i>The Legend of Zelda: Ocarina of Time Spaceworld '97 Beta Experience</i> (Nintendo 64, Subnetic)</li>
-         <li><i>Simpson Kart 64</i> (Nintendo 64, Onion Mastori)</li>
-         <li><i>Mario is Missing: Done Right</i> (SNES/Super Famicom, dustinbriggs1991/Ryoku)</li>
-         <li><i>The Legend of Zelda: Meadow of Shadows</i> (SNES/Super Famicom, Subnetic)</li>
-         <li><i>Super Mario World: Return to Dinosaur Land</i> (SNES/Super Famicom, Subnetic)</li>
-         <li><i>Wario Land: Super Mario Land 3</i> (SNES/Super Famicom, Subnetic)</li>
-         <li><i>Bubsy II</i> (SNES/Super Famicom, Onion Mastori)</li>
-         <li><i>Nekotako / Taco: Princess from the Moon</i> (SNES/Super Famicom, Onion Mastori)</li>
-         <li><i>Super Nazo Puyo: Rulue no Roux</i> (SNES/Super Famicom, Onion Mastori)</li>
-         <li><i>Magical ☆ Tarurūto-kun: Magic Adventure</i> (SEGA Genesis/Mega Drive, Onion Mastori)</li>
-         <li><i>Luigi's Revenge Interactive</i> (WiiWare Flash, Onion Mastori)</li>
-      </ul>
-   </details>
-   <details>
-      <summary>Update your WiiMart! <span class="date">05-02</span></summary>
-      <p>Since May 2nd, WiiMart has been relocated to a new domain. For this update, you'll need to download new WADs. Go to the <a href="install">Install</a> page.</p>
-   </details>
-   <a href="info-log" style="float:right;font-size:small;padding-right:5px">View older</a>
-</div>
+<div class="row">
+   <div class="box" style="padding: 0;">
+      <header style="background-color:#34BEED;color:white;font-weight:bold;margin-bottom:10px">Important Info:</header>
+      <details>
+         <summary>WiiMart Wednesday #14 <span class="date">07-09</span></summary>
+         <p>These titles were added this Wednesday.</p>
+         <ul>
+            <li><i>Pokémon Kart 64</i> (Subnetic, Nintendo 64)</li>
+            <li><i>Super Pika Land Ultra: Chocolate Version</i> (Subnetic, SNES/Super Famicom)</li>
+            <li><i>Super Koopa RPG: Here Comes The Koopa Bros!</i> (Subnetic, SNES/Super Famicom)</li>
+            <li><i>Super Mario Bros. 3Mix</i> (dustinbriggs1991 / Ryoku, NES/Famicom)</li>
+            <li><i>Angry Birds</i> (Subnetic, SEGA Genesis/Mega Drive)</li>
+            <li><i>Plants vs. Zombies</i> (dustinbriggs1991 / Ryoku, SEGA Genesis/Mega Drive)</li>
+            <li><i>東方 Bad Apple!! PV 影絵</i> (Subnetic, WiiWare / Flash)</li>
+         </ul>
+      </details>
+      <details>
+         <summary>Update your WiiMart! <span class="date">05-02</span></summary>
+         <p>Since May 2nd, WiiMart has been relocated to a new domain. For this update, you'll need to download new WADs. Go to the <a href="install">Install</a> page.</p>
+      </details>
+      <a href="info-log" style="float:right;font-size:small;padding-right:5px">View older</a>
+   </div>
 
-<div id="about">
-   <p><b>WiiMart</b> is an open-source revival for the defunct Wii Shop Channel service. It was closed on January 30, 2019,
-      making an entire library of digital-exclusive games get left behind. WiiMart brings back the experience of
-      downloading and playing these titles with a revival of the Wii Shop Channel.</p>
-</div>
+   <div class="box" id="about">
+      <p><b>WiiMart</b> is an open-source revival for the defunct Wii Shop Channel service. It was closed on January 30, 2019,
+         making an entire library of digital-exclusive games get left behind. WiiMart brings back the experience of
+         downloading and playing these titles with a revival of the Wii Shop Channel.</p>
+   </div>
 
-<div style="padding-bottom:0">
-   <img loading="lazy" src="media/martyna-looking.png" style="height:100%; width:25%; float: left; min-width:25%; min-height:100%;">
-   <p class="blue">If WiiMart sounds like what you are looking for, try it out for yourself! WiiMart can be used on Wii, Wii U, and partially Dolphin.</p>
-   <p><a href="install" class="btn" style="font-size: larger;">Get Started</a></p>
-</div>
+   <div class="box" style="padding-bottom:0">
+      <img loading="lazy" src="media/martyna-looking.png" style="height:100%; width:25%; float: left; min-width:25%; min-height:100%;">
+      <p class="blue">If WiiMart sounds like what you are looking for, try it out for yourself! WiiMart can be used on Wii, Wii U, and partially Dolphin.</p>
+      <p><a href="install" class="btn" style="font-size: larger;">Get Started</a></p>
+      <div class="gallery" style="margin-bottom:10px">
+         <img src="media/screenshot-start-menu.png" class="slide">
+         <img src="media/screenshot-main-menu.png" class="slide">
+         <img src="media/screenshot-catalog.png" class="slide">
+         <img src="media/screenshot-game.png" class="slide">
+         <img src="media/screenshot-news.png" class="slide">
+      </div>
+   </div>
 
-<div>
-   <h2>Screenshots</h2>
-<div class="gallery">
-   <img src="media/screenshot-start-menu.png" class="slide">
-   <img src="media/screenshot-main-menu.png" class="slide">
-   <img src="media/screenshot-catalog.png" class="slide">
-   <img src="media/screenshot-game.png" class="slide">
-   <img src="media/screenshot-news.png" class="slide">
-</div>
-</div>
+   <h1>What's on it?</h1>
 
-<h1>What's on it?</h1>
+   <div class="box">      
+      <h2>Contents</h2>
+      <p>WiiMart includes a variety of WiiWare content that was available on the original Wii Shop Channel, such
+         as <b>Dr. Mario Online Rx</b>, <b>My Pokemon Ranch</b>, <b>Super Mario 64</b>,
+         <b>Sonic the Hedgehog 4: Episode I</b>, and <a href="fishiemart" style="color:#835C13;cursor:default;text-decoration:none;"><b><span class="hide">Fishie Fishie</span></b></a>.</p>
+       <p>Virtual Console is also included with titles like <b>Super Mario Bros.</b>, <b>Sonic the Hedgehog</b>, <b>Super Mario 64</b>,
+         <b>Pac-Man</b>, and <b>Galaga</b>.</p>
+         <img id="emCycle" class="em" src="meta/em-wiiware.svg" style="height:50px;">
+   </div>
+   <script>document.addEventListener('DOMContentLoaded', function(){const emCycle = document.getElementById('emCycle');const imageSources = ["meta/em-wiiware.svg","meta/em-virtual-console.svg","meta/em-channels.svg"];let currentImageIndex = 0;const fadeDuration = 300;const displayDuration = 1200;function cycleImage(){emCycle.classList.add('fade');setTimeout(()=>{currentImageIndex = (currentImageIndex + 1) % imageSources.length;emCycle.src = imageSources[currentImageIndex];emCycle.classList.remove('fade');setTimeout(cycleImage, displayDuration + fadeDuration);}, fadeDuration);}if(emCycle){setTimeout(cycleImage, displayDuration);}});</script>
 
-<div>
-   <h2>The originals!</h2>
-   <p>WiiMart includes a variety of WiiWare content that was available on the original Wii Shop Channel, such
-      as <b>Dr. Mario Online Rx</b>, <b>My Pokemon Ranch</b>, <b>Super Mario 64</b>,
-      <b>Sonic the Hedgehog 4: Episode I</b>, and <a href="fishiemart" style="color:#835C13;cursor:default;text-decoration:none;"><b>Fishie Fishie</b></a>.</p>
-   <p>Virtual Console is also included with titles like <b>Super Mario Bros.</b>, <b>Sonic the Hedgehog</b>, <b>Super Mario 64</b>,
-      <b>Pac-Man</b>, and <b>Galaga</b>.</p>
-</div>
+   <div class="box">
+      <h2>Something <mark class="new"><span style="color:#ff491b">NEW!</span></mark></h2>
+      <p>In case the originals aren't enough, we have also added tons of custom Virtual Console injects! Just some of the
+         latest titles we've added are <b>The New Tetris</b>, <b>EarthBound</b>, <b>Super Mario All-Stars + Super Mario World</b>,
+         and <b>Mortal Kombat</b>.</p>
+      <p>New titles are added every <b>WiiMart Wednesday</b>. If you want to check out what new titles have been added,
+         or just see what we have, check out the (in-progress) WiiMart Title sheet!</p>
+      <p><a href="title-sheet" class="btn" style="font-size:larger">View Titles</a></p>
+   </div>
 
-<div>
-   <h2>Something <mark class="new"><span style="color:#ff491b">NEW!</span></mark></h2>
-   <p>In case the originals aren't enough, we have also added tons of custom Virtual Console injects! Just some of the
-      latest titles we've added are <b>The New Tetris</b>, <b>EarthBound</b>, <b>Super Mario All-Stars + Super Mario World</b>,
-      and <b>Mortal Kombat</b>.</p>
-   <p>New titles are added every <b>WiiMart Wednesday</b>. If you want to check out what new titles have been added,
-      or just see what we have, check out the (in-progress) WiiMart Title sheet!</p>
-   <p><a href="title-sheet" class="btn" style="font-size:larger">View Titles</a></p>
- </div>
+   <h1>How do I get support?</h1>
 
-<h1>How do I get support?</h1>
+   <p>Please consult the FAQ first.</p>
 
-<p>Please consult the FAQ first.</p>
-
-<div>
-    <h2>Frequently Asked Questions</h2>
-    <h3>How do I troubleshoot <i>this error code</i>?</h3>
-   <p>Check it with <a href="errors">this tool</a>, otherwise ask for help in the <b>#support</b> channel on <a href="https://discord.gg/wbbDmbYm7U">Discord</a>.</p>
-    <h3>Is real money needed to buy Wii Points?</h3>
-    <p>The WiiMart service is entirely free of charge! Wii Points are "bought" only to keep the service as close the original as possible.</p>
-    <h3>Can WiiMart run on Dolphin?</h3>
-    <p>It can however you'll need a real console NAND to bypass the Wii Shop message, <span style="color:#FF3C3C">also downloads do not work</span>.</p>
-    <h3>I want to ask how the shop is doing.</h3>
-    <p>So far, the developers have been utilizing most of the channel's features. Downloading, dynamic banners, catalogs,
-      are all being utilized.</p>
-    <h3>When is <i>this feature</i> going to be added?</h3>
-    <p>The owner and developers are updating on their own time. In the meantime you can check the progress above
-      for what features do and don't work. <b>Important: Gifting is no longer available at the moment.</b></p>
-    <h3>Why is gifting gone?</h3>
-    <p>Gifting was available using a WiiConnect24 revival. Unfortunately we were asked to stop sending out gifts via their service.</p>
-    <h3>What information is stored when using WiiMart?</h3>
-    <p>The web server stores IP addresses of those that connect to it, common with web servers. Wii console serial
-      numbers are stored, in the SOAP database with encryption.</p>
-    <h3>My title says 'This channel can't be used.' or just has a black screen!</h3>
-    <p>Install <a href="https://wii.hacks.guide/priiloader">Priiloader</a> and enable the
-      <b>Region Free EVERYTHING</b> option in System Menu Hacks, then launch it again.</p>
+   <div class="box">
+      <h2>Frequently Asked Questions</h2>
+      <h3>How do I troubleshoot <i>this error code</i>?</h3>
+      <p>Check it with <a href="errors">this tool</a>, otherwise ask for help in the <b>#support</b> channel on <a href="https://discord.gg/wbbDmbYm7U">Discord</a>.</p>
+      <h3>Is real money needed to buy Wii Points?</h3>
+      <p>The WiiMart service is entirely free of charge! Wii Points are "bought" only to keep the service as close the original as possible.</p>
+      <h3>Can WiiMart run on Dolphin?</h3>
+      <p>It can however you'll need a real console NAND to bypass the Wii Shop message, <span style="color:#FF3C3C">also downloads do not work</span>.</p>
+      <h3>I want to ask how the shop is doing.</h3>
+      <p>So far, the developers have been utilizing most of the channel's features. Downloading, dynamic banners, catalogs,
+         are all being utilized.</p>
+      <h3>When is <i>this feature</i> going to be added?</h3>
+      <p>The owner and developers are updating on their own time. In the meantime you can check the progress above
+         for what features do and don't work. <b>Important: Gifting is no longer available at the moment.</b></p>
+      <h3>Why is gifting gone?</h3>
+      <p>Gifting was available using a WiiConnect24 revival. Unfortunately we were asked to stop sending out gifts via their service.</p>
+      <h3>What information is stored when using WiiMart?</h3>
+      <p>The web server stores IP addresses of those that connect to it, common with web servers. Wii console serial
+         numbers are stored, in the SOAP database with encryption.</p>
+      <h3>My title says 'This channel can't be used.' or just has a black screen!</h3>
+      <p>Install <a href="https://wii.hacks.guide/priiloader">Priiloader</a> and enable the
+         <b>Region Free EVERYTHING</b> option in System Menu Hacks, then launch it again.</p>
+   </div>
 </div>
 
 <p style="margin-bottom: 0px"><img src="media/branding-button.png" class="wb"> <a href="https://dsimart.org/"><img src="media/branding-button-dsimart.png" class="wb"></a></p>

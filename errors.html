@@ -16,7 +16,7 @@
    <script src="meta/error.js" defer></script> 
    <script src="meta/music.js"></script>
    <link rel="icon" type="image/x-icon" href="favicon.ico">
-   <style>input {border: 2px solid #CCCCCC;border-bottom-color: #EAEAEA;margin-bottom: 15px;} #results {display:none;} div.err {border-color:red;text-align:left; h2 {color: #FF0000;} p {color: #FF0000;}}</style>
+   <style>input {border: 2px solid #CCCCCC;border-bottom-color: #EAEAEA;margin-bottom: 15px;} #results {display:none;border-color:red;text-align:left} #results h2 {color:#FF0000;} #results p {color:#FF0000}</style>
 </head>
 <body  onload="loadafterwednesdaycheck();">
 <div id="bgmplayer">
@@ -29,17 +29,19 @@
 
 <nav><a href="install" class="btn">Install</a> <a href="support" class="btn">Support</a> <span class="active">Errors</span> <a href="branding" class="btn">Branding</a> <a href="specials" class="btn">Specials</a> <a href="credits" class="btn">Credits</a></nav>
 
-<div id="input">
-    <h2>Error Code Checker <b style="color:red">BETA</b></h2>
-    <input type="text" id="errorCode"  maxlength="6"><br>
-    <button id="submitBtn" style="margin-bottom: 10px;">Submit</button>
-</div>
+<div class="row">
+    <div class="box" id="input">
+        <h2>Error Code Checker <b style="color:red">BETA</b></h2>
+        <input type="text" id="errorCode"  maxlength="6"><br>
+        <button id="submitBtn" style="margin-bottom: 10px;">Submit</button>
+    </div>
 
 
-<div class="err" id="results" style="transition:.3s easein-out; text-align:center;">
-    <h2 id="code"></h2>
-    <p id="issue"></p>
-    <p><a href="javascript:reseterrorcodeform();" style="color: #FF4242;cursor:pointer;text-align:center; text-decoration:underline;"><b>Check another error</b></a></p>    
+    <div class="box" id="results" style="transition:.3s easein-out; text-align:center;">
+        <h2 id="code"></h2>
+        <p id="issue"></p>
+        <p><a href="javascript:reseterrorcodeform();" style="color: #FF4242;cursor:pointer;text-align:center; text-decoration:underline;"><b>Check another error</b></a></p>    
+    </div>
 </div>
 
 <p>Want to contribute to this? Go see the <a href="https://wiilab.wiimart.org/wiimart/WiiMart-github-io/-/blob/main/meta/error.js">error.js</a> file over at GitLab.</p>
