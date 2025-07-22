@@ -36,6 +36,7 @@ const errorCodes = {
     "202014": "Invalid size",
     "202015": "Invalid address",
     "202016": "Unaligned data",
+    "204000": "EC_ERROR_OK: No error",
     "204001": "EC_ERROR_FAIL: Generic error",
     "204002": "EC_ERROR_NOT_SUPPORTED: Feature not implemented",
     "204003": "EC_ERROR_INSUFFICIENT_RESOURCE",
