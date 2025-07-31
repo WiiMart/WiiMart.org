@@ -21,8 +21,12 @@ button {margin-bottom: 6px;font-family:'Shop',sans-serif;padding: 5px;outline: 1
 button:hover {box-shadow: inset 0 0 0 3px #34BEED;cursor:pointer}
 
 details {text-align: left;padding-left: 5px;padding-right: 5px;}
-details li {font-size: smaller}
+details ul {padding-left: 0;}
+details li {font-size:smaller;list-style:none;vertical-align:middle;}
 summary {padding-left: 5px;padding-right: 5px;cursor: pointer;user-select: none}
+li img {width:25px;height:25px;vertical-align:middle;margin:1px;outline:solid 1px #9900FF;border-radius:2px}
+li a img:hover {outline: solid 2px #9900FF}
+li img.pf {outline:none}
 
 /* Text stuff */
 h1, h2 {color:#34BEED;}
@@ -33,12 +37,11 @@ hr {border-color:grey}
 a {color:#34BEED; font-weight: bold;}
 ::selection{color: #323232;background: #34BEED;}
 ::-moz-selection{color: #323232;background:#34BEED;}
-table {border: 1px solid white; border-collapse: collapse;}
-th, td {border: 1px solid;}
 button.ico {width:20px; height:20px;}
 img.ico {vertical-align:middle;width:20px;height:20px;}
 img.wb {outline: solid 1px black}
 .blue {color:#1164E9;}
+
 
 mark {color:white;background:#34BEED;font-weight:bold;}
 mark.new {background-color: gold;color:orangered;border-radius: 10px; padding-right:5px; padding-left:5px;font-weight:bold;}
