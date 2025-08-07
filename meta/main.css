@@ -24,9 +24,9 @@ details {text-align: left;padding-left: 5px;padding-right: 5px;}
 details ul {padding-left: 0;}
 details li {font-size:smaller;list-style:none;vertical-align:middle;}
 summary {padding-left: 5px;padding-right: 5px;cursor: pointer;user-select: none}
-li img {width:25px;height:25px;vertical-align:middle;margin:1px;outline:solid 1px #9900FF;border-radius:2px}
-li a img:hover {outline: solid 2px #9900FF}
-li img.pf {outline:none}
+details li img {width:25px;height:25px;vertical-align:middle;margin:1px;outline:solid 1px #9900FF;border-radius:2px}
+details li a img:hover {outline: solid 2px #9900FF}
+details li img.pf {outline:none}
 
 /* Text stuff */
 h1, h2 {color:#34BEED;}
