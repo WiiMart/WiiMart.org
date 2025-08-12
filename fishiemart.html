@@ -17,6 +17,7 @@
     <link rel="icon" type="image/x-icon" href="meta/favicon-fishie.ico">
     <style>
         div.box {border-color: #fab62a; box-shadow: 0 0 10px #a153005d}
+        button {outline: 1px solid #fab62a;}  button:hover {box-shadow: inset 0 0 0 3px #fab62a; }
         h1, h2, h3 {color:#fab62a;}
         a {color:#fab62a}
         .btn{cursor:pointer;}
@@ -30,17 +31,21 @@
         div#bgmplayer {border: 2px solid #fab62a;}#bgmplayer #bgmplrtitle {color:#db7012 !important;}#bgmplayer button {outline: 1px solid #fab62a;}#bgmplayer button:hover {box-shadow: inset 0 0 0 3px #fab62a;}
     </style>
 </head>
-<body  onload="preloadArrows();">
-<div class="box" id="bgmplayer" onclick="activatebgmplayer();"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" id="shopbgmselector" title="Enable aqua fishplay in your browser for it to continue playing throughout the ocean."><button id="shopbgm">Play</button></a><a href="javascript:deactivatebgmplayer();"><button>Close</button></a></div>
+<body onload="FishieMartWednesday();">
+<div id="backgroundd" style="display:none;"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" id="shopbgmselector" title="Enable aqua fishplay in your browser for it to continue playing throughout the ocean."><button id="shopbgm">Play</button></a><a href="javascript:deactivatebgmplayer();"><button>Close</button></a></div>
 
 <a id="fishietitle" href="javascript:easter1();" title="Click to return to the frontpage.">FishieMart</a>
 <script>var fishtitle = document.getElementById("fishietitle"); var fishscr1 = new Audio("/media/sound-fishie-scream1.wav"); var fishscr2 = new Audio("/media/sound-fishie-scream2.wav"); var fishscr3 = new Audio("/media/sound-fishie-scream3.wav");      function easter1(){fishscr1.play(); fishtitle.href="javascript:easter2();"; fishtitle.style.color="#ff9d1e";} function easter2(){fishscr2.play(); fishtitle.href="javascript:easter3();"; fishtitle.style.color="#e66f00";}  function easter3(){fishscr3.play(); fishtitle.style.color="#db7012"; document.body.style.transition=".5s ease-in-out"; document.body.style.filter="blur(3px)"; setTimeout(function(){location.href= "../";},480); } </script> 
+
+<script>function FishieMartWednesday() {const today = new Date(); const dayOfWeek = today.getDay();if (dayOfWeek === 3) {const wednesdayDiv = document.getElementById('fishietitles'); if (wednesdayDiv) {wednesdayDiv.style.display = 'block';} }}; function whatiswmw()  {const wswbox = document.getElementById("whatiswsw"); const bg = document.getElementById("backgroundd"); wswbox.style.display="block"; bg.style.display="block";  bg.style.backgroundImage=('url("/meta/fadebg-wmw.png")');} function whatiswmwclose()  { const wswbox = document.getElementById("whatiswsw"); const bg = document.getElementById("backgroundd"); wswbox.style.display="none"; bg.style.display="none";}</script>
+<div class="box" id="fishietitles" style="display:none;"><mark class="new" style="margin-right:5px;"><span id="NEWtext">FISHY</span></mark>It's FishieMart Wednesday, The catalog has been updated with new fish games! <br><a href="javascript:whatiswmw();" style="font-size:11px; font-style:italic; cursor:help;" id="helpwed">What is FishieMart Wednesday?</a></div><div class="box" id="whatiswsw" style="display:none; padding:0;"><header id="impthdr" style="background-color:#fab62a; color:white;font-weight:bold;margin-bottom:10px">What is FishieMart Wednesday?</header><p>"Update Day" also known as "Wii Shop Wednesday is a song that Nirvana The Band The Show made. <br> it was a song about the latest games added to the shop channel on that wednesday as they sang to the titles on the catalog pages.  Fishie decided to bring it back and now every wednesday, new games are added to the FishieMart catalog. <br> <a href="https://www.youtube.com/watch?v=XQ0lnz1iv3k&t=0s" target="_blank">Visit this link to watch the Update day video</a></p><button onclick="whatiswmwclose();">Close</button>
+</div>
 
 <div class="row">
 <div class="box" style="padding: 0;">
       <header id="impthdr" style="background-color:#fab62a; color:white;font-weight:bold;margin-bottom:10px">Important Info:</header>
         <details>
-            <summary>FishieMart Fishday #0 <span class="date">04-05-10</span></summary>
+            <summary>FishieMart Fishday #0 <span class="date" title="Fishie Fishies release date (April 5th, 2010)">04-05-10</span></summary>
             <p>These titles were added this Fishday.</p>
             <ul>
                 <li><img src="meta/em-wiiware.svg" class="pf"> <i>Fishie Fishie</i> <a ><img src="media/pfp-fishie.png"></a></li>
@@ -65,11 +70,11 @@
         <p class="blue" style="color:#f78521;">If FishieMart sounds like what you are looking for, try it out for yourself! FishieMart can be used on Fishii, Fishii U, and partially the <a target="_blank" href="https://spongebob.fandom.com/wiki/Magic_Conch_shell">magic conch shell</a>.</p>
         <p><a class="btn" style="font-size: larger;">Get Started</a></p>
         <div class="gallery" style="margin-bottom:10px">
-            <img loading="lazy" src="https://images.nintendolife.com/screenshots/24186/large.jpg" class="slide" alt="Gameplay 1" style="display: block; min-height: 344px;">
-            <img loading="lazy" src="https://images.nintendolife.com/screenshots/24185/large.jpg" class="slide" alt="Gameplay 2" style="display: none; min-height: 344px;">
-            <img loading="lazy" src="https://images.nintendolife.com/screenshots/24179/large.jpg" class="slide" alt="Gameplay 3" style="display: none; min-height: 344px;">
-            <img loading="lazy" src="https://images.nintendolife.com/screenshots/24187/large.jpg" class="slide" alt="Gameplay 4" style="display: none; min-height: 344px;">
-            <img loading="lazy" src="https://images.nintendolife.com/screenshots/24183/large.jpg" class="slide" alt="Gameplay 5" style="display: none; min-height: 344px;">
+            <img loading="lazy" src="https://images.nintendolife.com/screenshots/24186/large.jpg" class="slide" loading="lazy" alt="Gameplay 1" style="min-height: 344px;">
+            <img loading="lazy" src="https://images.nintendolife.com/screenshots/24185/large.jpg" class="slide" loading="lazy" alt="Gameplay 2" style="min-height: 344px;">
+            <img loading="lazy" src="https://images.nintendolife.com/screenshots/24179/large.jpg" class="slide" loading="lazy" alt="Gameplay 3" style="min-height: 344px;">
+            <img loading="lazy" src="https://images.nintendolife.com/screenshots/24187/large.jpg" class="slide" loading="lazy" alt="Gameplay 4" style="min-height: 344px;">
+            <img loading="lazy" src="https://images.nintendolife.com/screenshots/24183/large.jpg" class="slide" loading="lazy" alt="Gameplay 5" style="min-height: 344px;">
        </div>
 </div>
 
@@ -85,7 +90,7 @@
     </div>
 
     <div class="box">
-        <h2>Something <mark class="new"><span style="color:#ff491b">FISHY!</span></mark></h2>
+        <h2>Something <mark class="new"><span id="NEWtext">FISHY!</span></mark></h2>
         <p>In case the originals aren't enough, we have also added tons of custom Virtual Tank injects! Just some of the
             latest titles we've added are <b>The New Fishie</b>, <b>WaterBound</b>, <b>Super Fishie All-Catch + Super Fishie World</b>,
             and <b>Fishie Kombat</b>.</p>
@@ -176,6 +181,7 @@ function pauseBGM() {
   document.getElementById("shopbgmselector").href = "javascript:playBGM();";
 }
 </script>
+
 
 </body>
 </html>

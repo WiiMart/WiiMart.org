@@ -18,16 +18,16 @@
    <link rel="icon" type="image/x-icon" href="favicon.ico">
    <style>.em {opacity:1; transition: opacity 0.5s ease-in-out;} .em.fade {opacity: 0;}</style>
 </head>
-<body onload="loadafterwednesdaycheck();">
+<body onload="WiiMartWednesday();  loadafterwednesdaycheck();">
 
-<div class="box" id="bgmplayer" onclick="activatebgmplayer();"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">Play</button></a><a href="javascript:deactivatebgmplayer();"><button>Close</button></a></div>
+<div id="backgroundd" style="display:none;"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">Play</button></a><a href="javascript:deactivatebgmplayer();"><button>Close</button></a></div>
 
 <h1>WiiMart</h1>
 
 <nav><a href="install" class="btn">Install</a> <a href="support" class="btn">Support</a> <a href="errors" class="btn">Errors</a> <a href="branding" class="btn">Branding</a> <a href="specials" class="btn">Specials</a> <a href="credits" class="btn">Credits</a></nav>
 
-<script>function WiiMartWednesday() {const today = new Date(); const dayOfWeek = today.getDay();if (dayOfWeek === 3) {const wednesdayDiv = document.getElementById('wednesdaytitles'); if (wednesdayDiv) {wednesdayDiv.style.display = 'block';} }}; function whatiswmw()  {const wswbox = document.getElementById("whatiswsw"); wswbox.style.display="block"; } function whatiswmwclose()  { const wswbox = document.getElementById("whatiswsw"); wswbox.style.display="none";} window.onload = WiiMartWednesday(); preloadArrows(); loadafterwednesdaycheck(); function whatiswmw() {const wswbox = document.getElementById("whatiswsw");wswbox.style.display="block";} function whatiswmwclose()  { const wswbox = document.getElementById("whatiswsw"); wswbox.style.display="none";}</script>
-<div class="box" id="wednesdaytitles" style="display:none"><img loading="lazy" src="meta/NEW_en.gif" alt="NEW" style="margin-right:5px;">It's WiiMart Wednesday, The catalog has been updated with new games! <br><a href="javascript:whatiswmw();" style="font-size:11px; font-style:italic; cursor:help;" id="helpwed">What is WiiMart Wednesday?</a></div><div class="box" id="whatiswsw" style="display:none;"><h3>What is Wii Shop/WiiMart Wednesday?</h3><hr><p>"Update Day" also known as "Wii Shop Wednesday is a song that Nirvana The Band The Show made. <br> it was a song about the latest games added to the shop channel on that wednesday as they sang to the titles on the catalog pages.  We decided to bring it back and now every wednesday, new games are added to the WiiMart catalog.  <a href="https://www.youtube.com/watch?v=XQ0lnz1iv3k&t=0s" target="_blank">Visit this link to watch the Update day video</a></p><br><button onclick="whatiswmwclose();">Close</button></div>
+<script>function WiiMartWednesday() {const today = new Date(); const dayOfWeek = today.getDay();if (dayOfWeek === 3) {const wednesdayDiv = document.getElementById('wednesdaytitles'); if (wednesdayDiv) {wednesdayDiv.style.display = 'block';} }}; function whatiswmw()  {const wswbox = document.getElementById("whatiswsw"); const bg = document.getElementById("backgroundd"); wswbox.style.display="block"; bg.style.display="block"; bg.style.backgroundImage=('url("/meta/fadebg-wmw.png")'); } function whatiswmwclose()  { const wswbox = document.getElementById("whatiswsw"); const bg = document.getElementById("backgroundd"); wswbox.style.display="none"; bg.style.display="none";}</script>
+<div class="box" id="wednesdaytitles" style="display:none"><mark class="new" style="margin-right:5px;"><span id="NEWtext">NEW</span></mark>It's WiiMart Wednesday, The catalog has been updated with new games! <br><a href="javascript:whatiswmw();" style="font-size:11px; font-style:italic; cursor:help;" id="helpwed">What is WiiMart Wednesday?</a></div><div class="box" id="whatiswsw" style="display:none; padding:0;"><header style="background-color:#34BEED;color:white;font-weight:bold;margin-bottom:10px">What is WiiMart Wednesday?</header><p>"Update Day" also known as "Wii Shop Wednesday is a song that Nirvana The Band The Show made. <br> it was a song about the latest games added to the shop channel on that wednesday as they sang to the titles on the catalog pages.  We decided to bring it back and now every wednesday, new games are added to the WiiMart catalog.<BR><a href="https://www.youtube.com/watch?v=XQ0lnz1iv3k&t=0s" target="_blank">Visit this link to watch the Update day video</a></p><button onclick="whatiswmwclose();">Close</button></div>
 
 <div class="row">
    <div class="box" style="padding: 0;">
@@ -67,11 +67,11 @@
         <p class="blue">If WiiMart sounds like what you are looking for, try it out for yourself! WiiMart can be used on Wii, Wii U, and partially Dolphin.</p>
         <p><a href="install" class="btn" style="font-size: larger;">Get Started</a></p>
         <div class="gallery" style="margin-bottom:10px">
-            <img src="media/screenshot-start-menu.png" class="slide">
-            <img src="media/screenshot-main-menu.png" class="slide">
-            <img src="media/screenshot-catalog.png" class="slide">
-            <img src="media/screenshot-game.png" class="slide">
-            <img src="media/screenshot-news.png" class="slide">
+            <img src="media/screenshot-start-menu.png" class="slide" loading="lazy" alt="screenshot" >
+            <img src="media/screenshot-main-menu.png" class="slide" loading="lazy" alt="screenshot>
+            <img src="media/screenshot-catalog.png" class="slide" loading="lazy" alt="screenshot">
+            <img src="media/screenshot-game.png" class="slide" loading="lazy" alt="screenshot">
+            <img src="media/screenshot-news.png" class="slide" loading="lazy" alt="screenshot">
         </div>
     </div>
 
@@ -89,7 +89,7 @@
     <script>document.addEventListener('DOMContentLoaded', function(){const emCycle = document.getElementById('emCycle');const imageSources = ["meta/em-wiiware.svg","meta/em-virtual-console.svg","meta/em-channels.svg"];let currentImageIndex = 0;const fadeDuration = 300;const displayDuration = 1200;function cycleImage(){emCycle.classList.add('fade');setTimeout(()=>{currentImageIndex = (currentImageIndex + 1) % imageSources.length;emCycle.src = imageSources[currentImageIndex];emCycle.classList.remove('fade');setTimeout(cycleImage, displayDuration + fadeDuration);}, fadeDuration);}if(emCycle){setTimeout(cycleImage, displayDuration);}});</script>
 
     <div class="box">
-        <h2>Something <mark class="new"><span style="color:#ff491b">NEW!</span></mark></h2>
+        <h2>Something <mark class="new"><span id="NEWtext">NEW</span></mark></h2>
         <p>In case the originals aren't enough, we have also added tons of custom Virtual Console injects! Just some of the
             latest titles we've added are <b>The New Tetris</b>, <b>EarthBound</b>, <b>Super Mario All-Stars + Super Mario World</b>,
             and <b>Mortal Kombat</b>.</p>

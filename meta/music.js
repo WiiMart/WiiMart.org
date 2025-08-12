@@ -1,5 +1,5 @@
 // Wii Shop BGM Player, suggested by @legamer66 (https://discord.com/channels/1346485785284575335/1346485786039681056/1351527080546009259)
-
+var checkbgmplayerstatus = true;
 function hideConsoleControls() {
   const userAgent = navigator.userAgent.toLowerCase();
   const isConsoleBrowser =
@@ -9,14 +9,16 @@ function hideConsoleControls() {
     userAgent.includes('nintendo');
   // they can't play music so rip
   if (isConsoleBrowser) {const bgmPlayerDiv = document.getElementById('bgmplayer');
-  if (bgmPlayerDiv) {bgmPlayerDiv.style.display = 'none';} }
+  if (bgmPlayerDiv) {bgmPlayerDiv.style.display = 'none'; checkbgmplayerstatus = false;} }
 }
 
 
 var shoploop = new Audio("/meta/shop.wav");
 shoploop.loop = true;
-shoploop.volume = 0; // prevent clipping
+var initialvolume = 0 || 0.0;
+shoploop.volume = initialvolume;
 
+/* what idk, only for index.html */
 function loadafterwednesdaycheck() {
   hideConsoleControls();
 
@@ -26,29 +28,59 @@ function loadafterwednesdaycheck() {
     shoploop.currentTime = parseFloat(savedTime);
   }
 
-  if (localStorage.getItem("shopmusic") === "playing") {
-    playBGMonload();
-    activatebgmplayer();
+  if (localStorage.getItem("wmtwebsiteBGM") === "playing") {
+       activatebgmplayer();
+       bgmplayerfocus();
+    document.getElementById("shopbgmselector").href = "javascript:playBGMonload();";
   } else {
     pauseBGM();
     deactivatebgmplayer();
   }
  }
 
+/* what idk, only for index.html */
+
+
+
+/* bgm check for all pages */
+
+
+window.onload = function() {
+
+
+if (checkbgmplayerstatus === true) {
+
+var wmtwebsiteBGMwasplaying = localStorage.getItem("wmtwebsiteBGM");
+
+if (wmtwebsiteBGMwasplaying === 'playing') {
+    activatebgmplayer();
+    bgmplayerfocus();
+    document.getElementById("shopbgmselector").href = "javascript:playBGMonload();";
+}
+
+}
+
+
+};
+
+/* bgm check for all pages */
+
+
 window.onbeforeunload = function() {
   localStorage.setItem("bgmlooppoint", shoploop.currentTime);
 };
 
 function playBGM() {
-  shoploop.volume = 0.8;
-  localStorage.setItem("shopmusic", "playing");
+  initialvolume = 0.8;
+  shoploop.volume = initialvolume;
+  localStorage.setItem("wmtwebsiteBGM", "playing");
   shoploop.play();
   document.getElementById("shopbgm").innerText = "Pause";
   document.getElementById("shopbgmselector").href = "javascript:pauseBGM();";
 }
 
 function pauseBGM() {
-  localStorage.setItem("shopmusic", "paused");
+  localStorage.setItem("wmtwebsiteBGM", "paused");
   shoploop.pause();
   document.getElementById("shopbgm").innerText = "Play";
   document.getElementById("shopbgmselector").href = "javascript:playBGM();";
@@ -56,48 +88,35 @@ function pauseBGM() {
 
 function playBGMonload() {
   // this version has it fade in for smoother experince between pages  (i could of used set interval, but memory issues?)
+  initialvolume = 0;
   fadeinbgm();
-  localStorage.setItem("shopmusic", "playing");
+  localStorage.setItem("wmtwebsiteBGM", "playing");
   shoploop.play();
-  document.getElementById("shopbgm").innerText = "Pause";
-  document.getElementById("shopbgmselector").href = "javascript:pauseBGM();";
+  document.getElementById("shopbgm").innerText = ".....";
+ document.getElementById("shopbgmselector").href = 'javascript:alert("the bgm is still fading, hold on, you can click once its done!");';
+  shoploop.currentTime =  localStorage.getItem("bgmlooppoint");
 }
 
+
+
 function fadeinbgm() {
-  shoploop.volume="0.0";
-  setTimeout(fade2,10);
+var volchangee = setTimeout(fadeinbgm,13);
+document.getElementById("shopbgm").innerText = "Paus?";
+  if (initialvolume < 0.8) {
+    initialvolume += 0.01;
+  }
+  if (initialvolume > 0.8) {
+        clearTimeout(volchangee);
+        initialvolume = 0.8;
+        document.getElementById("shopbgmselector").href = "javascript:pauseBGM();";
+        document.getElementById("shopbgm").innerText = "Pause";
+  }
+  shoploop.volume = initialvolume;
 }
-function fade2() {
-  shoploop.volume="0.1";
-  setTimeout(fade3,10);
-}
-function fade3() {
-  shoploop.volume="0.2";
-  setTimeout(fade4,10);
-}
-function fade4() {
-  shoploop.volume="0.3";
-  setTimeout(fade5,10);
-}
-function fade5() {
-  shoploop.volume="0.4";
-  setTimeout(fade6,10);
-}
-function fade6() {
-  shoploop.volume="0.5";
-  setTimeout(fade7,10);
-}
-function fade7() {
-  shoploop.volume="0.6";
-  setTimeout(fade8,10);
-}
-function fade8() {
-  shoploop.volume="0.7";
-  setTimeout(fade9,10);
-}
-function fade9() {
-  shoploop.volume="0.8";
-}
+
+
+
+
 function activatebgmplayer() {
   document.getElementById('bgmplayer').classList.add('bgmplayerdisplayed');
   document.getElementById("bgmplrtitle").innerText="BGM player"; document.getElementById("bgmplrtitle").style.marginTop="0px";
@@ -105,4 +124,11 @@ function activatebgmplayer() {
 function deactivatebgmplayer() {
   document.getElementById('bgmplayer').classList.remove('bgmplayerdisplayed');
   document.getElementById("bgmplrtitle").innerText="bgm plr..";  document.getElementById("bgmplrtitle").style.marginTop="-5px";
+  document.getElementById("bgmplayer").style.backgroundColor="#0000"; document.getElementById("bgmplayer").style.backgroundColor="#0000"; document.getElementById("bgmplayer").style.border="1px solid #34BEED";
+}
+
+function bgmplayerfocus() {
+/* bring attention to the player that you can play where ya left off */
+  document.getElementById("bgmplayer").style.opacity="100%";document.getElementById("bgmplayer").style.backgroundColor="#1164E9"; document.getElementById("bgmplayer").style.border="4px solid #34ededff"; document.getElementById("backgroundd").style.display="block"; document.getElementById("backgroundd").style.backgroundImage=('url("/meta/fadebg-bgm.png")');
+ setTimeout(function(){ document.getElementById("bgmplayer").style.backgroundImage='url("/meta/fadebg-bgm.png")'; document.getElementById("bgmplayer").style.backgroundColor="#0000"; document.getElementById("bgmplayer").style.border="2px solid #34BEED"; document.getElementById("backgroundd").style.display="none";},500);
 }

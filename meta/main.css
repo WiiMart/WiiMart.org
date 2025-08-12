@@ -5,7 +5,7 @@ body {scroll-behavior:smooth;text-align: center;font-family: sans-serif;font-fam
 
 div.row {width:50%;margin:auto}
 div.box {line-height:23.3px;background-color:white;border:solid 2px #34BEED;border-radius:5px;box-shadow: 0 0 10px #2525255d;box-sizing:border-box;text-align:center;margin: 0 auto;padding:5px;margin-top: 8px; overflow: auto;}
-
+#backgroundd {position:fixed;top:0;left:0;width:100%;height:100%; background-image:url('/meta/fadebg-wmw.png'); background-size:cover; z-index:999; user-select:none; pointer-events:none;}
 h1 {margin-bottom: 10px;}
 nav {margin-bottom: 20px;line-height: 35px;}
 footer {color:grey}
@@ -44,13 +44,37 @@ img.wb {outline: solid 1px black}
 .blue {color:#1164E9;}
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {-webkit-appearance: none; margin: 0;}
 input [type="number"] {-moz-appearance:textfield;}
+input {
+  border-top-width: 2px;
+	border-right-width: 2px;
+	border-bottom-width: 2px;
+	border-left-width: 2px;
+	border-top-style: solid;
+	border-right-style: solid;
+	border-bottom-style: solid;
+	border-left-style: solid;
+	border-top-color: #CCCCCC;
+	border-right-color: #CCCCCC;
+	border-bottom-color: #EAEAEA;
+	border-left-color: #CCCCCC;	
+}
 
 mark {color:white;background:#34BEED;font-weight:bold;}
-mark.new {background-color: gold;color:orangered;border-radius: 10px; padding-right:5px; padding-left:5px;font-weight:bold;}
+mark.new {background-color:#fff090 /* fallback */; background-image:url("/meta/NEW_bg.png"); background-size:cover;border-radius: 5px; padding-right:5px; padding-left:5px;font-weight:bold;}
+mark.new #NEWtext {user-select:none; pointer-events:none; color:#ff6700;transform:translateY(1px);  animation: NEWtext 2.7s ease-in-out infinite; display:inline-block;}
+@keyframes NEWtext 
+{
+  /* ref: https://wiimart.org/meta/NEW_en.gif */
+
+0% {/* new is idle with orangey text */ color:#ff6700;transform: translateY(1px);}
+50% {/* new go down and get darker */color:#ff5e00;transform:  translateY(2px) skewX(4deg); }
+70% {/* new goess up and lighter */color:#ff9e5c;transform: translateY(-1px) rotateZ(2deg); }
+100% {/* new goes back down and repeat */ color:#ff6700;transform: translateY(1px); }
+}
 
 /* Gallery */
 div.gallery {position:relative;width:100%;box-sizing:border-box;}
-img.slide {width:100%; min-height:200px; min-width:100%;border-radius:5px;}
+img.slide {background-color:#e6e6e6 /* fallback */; width:100%; min-height:200px; min-width:100%;border-radius:5px;}
 img.arrow {min-height:68px; position: absolute; top: 50%; transform: translateY(-50%); cursor: pointer; width: 60px; height: auto;}
 img.left {left: 10px; animation: hoverAnimation 0.5s infinite alternate;}
 img.right {right: 10px; animation: rightHoverAnimation 0.5s infinite alternate;}
@@ -58,16 +82,16 @@ img.right {right: 10px; animation: rightHoverAnimation 0.5s infinite alternate;}
 @keyframes rightHoverAnimation {0% {transform: translateY(-50%) translateX(0);} 100% {transform: translateY(-50%) translateX(-5px);}}
 
 /* Music */
-div#bgmplayer { z-index: 1000;transition:.3s ease-in-out; opacity:25%; position:fixed; bottom:3px; border:2px solid #34BEED;  width:60px; height:20px; overflow:hidden;}
-div#bgmplayer:hover {cursor:pointer; opacity: 70%; }
-.bgmplayerdisplayed{cursor:default !important; opacity: 70%; transition:.3s ease-in-out; height:65px !important; width:120px !important; overflow:auto;scrollbar-width: none;}
-.box#bgmplayer #bgmplrtitle{color:#34BEED; font-weight:bold; font-size:18px; font-style:normal; margin-top:-5px; margin-bottom:3px; line-height:18px; }
-div#bgmplayer p {line-height:20px;color:#9A9A9A;margin-top:-10px;font-style:italic;font-size:10px; user-select:none; pointer-events:none;}
+div#bgmplayer {background-color:#0000; background-size:0px;z-index: 1000;transition:.3s ease-in-out; position:fixed; bottom:3px; border:2px solid #34BEED;  width:60px; height:20px; overflow:hidden;}
+div#bgmplayer:hover {cursor:pointer;  }div#bgmplayer #shopbgm {margin-right:4px;}
+.bgmplayerdisplayed{background-image:url("/meta/fadebg-bgm.png"); background-size:100% !important; cursor:default !important;  transition:.3s ease-in-out; height:65px !important; width:120px !important; overflow:auto;scrollbar-width: none;}
+.box#bgmplayer #bgmplrtitle{color:#24a6d1; background-color:#e4e4e42c; border-radius:20px;  font-weight:bold; font-size:18px; font-style:normal; margin-top:-5px; margin-bottom:3px; line-height:18px; }
+div#bgmplayer p {line-height:20px;color:#9A9A9A; margin-top:-10px;font-style:italic;font-size:10px; user-select:none; pointer-events:none;}
 
 /* Matt! Yea? update day! what?? New-New Wii Titles! What? im in the bathroom! Update day for WiiMart! */
 #wednesdaytitles {margin-top:13px; margin-bottom:13px; border:none;position:relative; background-color:#FFF; transition:.3s ease-in-out;}
 
-#whatiswsw {animation:wswpop 0.5s forwards;opacity:0%;position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);text-align:center;z-index:999;transition:.3s ease-in-out;}
+#whatiswsw {z-index:1001; animation:wswpop 0.5s forwards;opacity:0%;position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);text-align:center;z-index:999;transition:.3s ease-in-out;}
 @keyframes wswpop {
   10% {
      opacity:0%;
@@ -86,6 +110,7 @@ div#bgmplayer p {line-height:20px;color:#9A9A9A;margin-top:-10px;font-style:ital
 {
   body {background-color: black; color: #e0e0e0;}
   div.box {background-color: #1e1e1e; box-shadow: 0 0 10px #000000CC;}
+  .box#bgmplayer #bgmplrtitle {background-color:#dddddd2c;}
   a.btn {background-color: #587566;color:white}
   a.btn:hover {background-color: #7da2a3;}
   span.active {background-color: #313131}
@@ -102,4 +127,5 @@ div#bgmplayer p {line-height:20px;color:#9A9A9A;margin-top:-10px;font-style:ital
   input {background-color: black;border: 2px solid grey;color:white;}
   mark {color:white}
   #wednesdaytitles {color:white; background-color:#3b3b3b}
+  img.slide {background-color: #3d3d3d;}
 }
