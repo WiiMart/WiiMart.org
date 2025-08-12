@@ -16,7 +16,7 @@
    <script src="meta/error.js" defer></script> 
    <script src="meta/music.js"></script>
    <link rel="icon" type="image/x-icon" href="favicon.ico">
-   <style>input {border: 2px solid #CCCCCC;border-bottom-color: #EAEAEA;margin-bottom: 15px;} #results {display:none;border-color:red;text-align:left} #results h2 {color:#FF0000;} #results p {color:#FF0000}</style>
+   <style>input {margin-bottom: 15px;} #results {display:none;border-color:red;text-align:left} #results h2 {color:#FF0000;} #results p {color:#FF0000}</style>
 </head>
 <body>
 <div class="box" id="bgmplayer" onclick="activatebgmplayer();"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">Play</button></a><a href="javascript:deactivatebgmplayer();"><button>Close</button></a></div>
@@ -28,8 +28,8 @@
 <div class="row">
     <div class="box" id="input">
         <h2>Error Code Checker <b style="color:red">BETA</b></h2>
-        <input type="text" id="errorCode"  maxlength="6"><br>
-        <button id="submitBtn" style="margin-bottom: 10px;">Submit</button>
+        <input type="number" id="errorCode" maxlength="6"><br>
+        <button id="submitBtn" style="margin-bottom:10px">Submit</button>
     </div>
 
 

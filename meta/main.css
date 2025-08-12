@@ -42,7 +42,8 @@ button.ico {width:20px; height:20px;}
 img.ico {vertical-align:middle;width:20px;height:20px;}
 img.wb {outline: solid 1px black}
 .blue {color:#1164E9;}
-
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {-webkit-appearance: none; margin: 0;}
+input [type="number"] {-moz-appearance:textfield;}
 
 mark {color:white;background:#34BEED;font-weight:bold;}
 mark.new {background-color: gold;color:orangered;border-radius: 10px; padding-right:5px; padding-left:5px;font-weight:bold;}
@@ -98,7 +99,7 @@ div#bgmplayer p {line-height:20px;color:#9A9A9A;margin-top:-10px;font-style:ital
   mark {color:black;background:#34BEED;font-weight:bold;}
   img.wb {outline: solid 1px white}
   .blue {color:#5898ff;}
-  #errorCode {background-color: black;border: 2px solid grey;color:white;}
+  input {background-color: black;border: 2px solid grey;color:white;}
   mark {color:white}
   #wednesdaytitles {color:white; background-color:#3b3b3b}
 }

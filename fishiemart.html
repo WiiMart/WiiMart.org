@@ -36,8 +36,6 @@
 <a id="fishietitle" href="javascript:easter1();" title="Click to return to the frontpage.">FishieMart</a>
 <script>var fishtitle = document.getElementById("fishietitle"); var fishscr1 = new Audio("/media/sound-fishie-scream1.wav"); var fishscr2 = new Audio("/media/sound-fishie-scream2.wav"); var fishscr3 = new Audio("/media/sound-fishie-scream3.wav");      function easter1(){fishscr1.play(); fishtitle.href="javascript:easter2();"; fishtitle.style.color="#ff9d1e";} function easter2(){fishscr2.play(); fishtitle.href="javascript:easter3();"; fishtitle.style.color="#e66f00";}  function easter3(){fishscr3.play(); fishtitle.style.color="#db7012"; document.body.style.transition=".5s ease-in-out"; document.body.style.filter="blur(3px)"; setTimeout(function(){location.href= "../";},480); } </script> 
 
-<nav><a class="btn">Install</a> <a class="btn">Support</a> <a class="btn">Errors</a> <a class="btn">Branding</a> <a class="btn">Specials</a> <a class="btn">Credits</a></nav>
-
 <div class="row">
 <div class="box" style="padding: 0;">
       <header id="impthdr" style="background-color:#fab62a; color:white;font-weight:bold;margin-bottom:10px">Important Info:</header>
@@ -111,7 +109,6 @@
         <p>You may ask Fishie himself for guidance with the FishieMart.</p>
     </div>
 
-<!--
    <h1>Who is involved?</h1>
 
     <div class="box">
@@ -123,22 +120,22 @@
                     <b><i>Fishie</i></b> is the creator of FishieMart! He began working on it after the unsuccess of Rii Slop. As the owner, he maintains the slop entirely.
                 </figcaption>
             </figure>
+            <hr>
+            <figure>
+                <img loading="lazy" src="media/pfp-fishie.png" class="pfp" alt="Fishie">
+                <figcaption>
+                <b><i>FishplayzWii</i></b> is one of the Discord moderators, he was the main coder for the original FishieMart website and was the owner of ReCatch.
+                </figcaption>
+            </figure>
         <p>Want to also eat some fish? Swim with Fishie by downloading Fishie Fishie on the FishieMart</p>
-    </div>    
--->
-
+    </div>
 </div>
 
 <footer><p>FishieMart is not affiliated with the evil DSiMart or any related parties. To contact, please send an email to <b>/dev/null</b>.</p></footer>
 
-
-
-
 <script>
     // modified music.js for fishie fishie music
-
     // Wii Shop BGM Player, suggested by @legamer66 (https://discord.com/channels/1346485785284575335/1346485786039681056/1351527080546009259)
-
 function hideConsoleControls() {
   const userAgent = navigator.userAgent.toLowerCase();
   const isConsoleBrowser =
@@ -165,7 +162,7 @@ function deactivatebgmplayer() {
 }
 
 function playBGM() {
-  shoploop.volume = 0.1; // music is kinda meh.. soooo lowered volume (sorry fishie fishie, plz dont eat me!!! - TheWiiArchivist@NOA)
+  shoploop.volume = 1;
   localStorage.setItem("shopmusic", "playing");
   shoploop.play();
   document.getElementById("shopbgm").innerHTML = "Pause";
@@ -178,8 +175,7 @@ function pauseBGM() {
   document.getElementById("shopbgm").innerHTML = "Play";
   document.getElementById("shopbgmselector").href = "javascript:playBGM();";
 }
-
-
 </script>
+
 </body>
 </html>

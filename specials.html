@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="utf-8">
-   <meta http-equiv="x-ua-compatible" content="ie=edge">
-   <style>@font-face {font-family:'Shop';src:url('meta/shop.ttf') format('truetype');font-weight: normal;font-style: normal;}</style>
-   <script src="meta/music.js"></script>
-   <title>WiiMart Specials</title>
-   <meta content="WiiMart Specials" property="og:title">
-   <meta content="This page contains some special content for WiiMart." property="og:description">
-   <meta content="https://wiimart.org/media/branding-bag.png" property="og:image">
-   <meta content="https://wiimart.org/specials" property="og:url">
-   <meta content="#FF0000" data-react-helmet="true" name="theme-color">
-   <meta name="keywords" content="Wii Shop, homebrew">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="meta/main.css">
-   <script src="meta/gallery.js" defer></script>
-   <link rel="icon" type="image/x-icon" href="favicon.ico">
-   <style>ul {text-align:left} li a {text-decoration:none} </style>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <style>@font-face {font-family:'Shop';src:url('meta/shop.ttf') format('truetype');font-weight: normal;font-style: normal;}</style>
+    <script src="meta/music.js"></script>
+    <title>WiiMart Specials</title>
+    <meta content="WiiMart Specials" property="og:title">
+    <meta content="This page contains some special content for WiiMart." property="og:description">
+    <meta content="https://wiimart.org/media/branding-bag.png" property="og:image">
+    <meta content="https://wiimart.org/specials" property="og:url">
+    <meta content="#FF0000" data-react-helmet="true" name="theme-color">
+    <meta name="keywords" content="Wii Shop, homebrew">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="meta/main.css">
+    <script src="meta/gallery.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>input {margin-bottom: 15px;max-width:50px} ul {text-align:left} li a {text-decoration:none} </style>
 </head>
 <body>
 <div class="box" id="bgmplayer" onclick="activatebgmplayer();"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">Play</button></a><a href="javascript:deactivatebgmplayer();"><button>Close</button></a></div>
@@ -24,65 +24,80 @@
 <h1><a href="/">WiiMart</a></h1>
 
 <nav><a href="install" class="btn">Install</a> <a href="support" class="btn">Support</a> <a href="errors" class="btn">Errors</a> <a href="branding" class="btn">Branding</a> <span class="active">Specials</span> <a href="credits" class="btn">Credits</a></nav>
+<style>
 
+</style>
 <div class="row">
-  <div class="box" id="3DS">
-    <h2>3DS Theme</h2>
-      <img src="media/screenshot-3ds-theme.png" style="width: 100%;border-radius: 5px;" alt="Theme screenshots">
-    <p>This cute theme brings WiiMart to your 3DS alongside the Wii Shop Channel background music.</p>
-    <a href="extras/WiiMart3DS.zip" class="btn" download>Download</a>
-    <p>Put the ZIP file into <b>sd:/Themes</b> and install it with the Anenome themeing tool.</p>
-  </div>
-
-  <div class="box">
-    <h2>Wii U Forwarder</h2>
-      <div class="gallery">
-      <img src="media/screenshot-wii-u-forwarder-icon.png" class="slide" alt="Forwarder icon in the Wii U Menu">
-      <img src="media/screenshot-wii-u-forwarder-banner.png" class="slide" alt="Forwarder's launching banner">
+    <div class="box" id="3DS">
+        <h2>3DS Theme</h2>
+        <img src="media/screenshot-3ds-theme.png" style="width: 100%;border-radius: 5px;" alt="Theme screenshots">
+        <p>This cute theme brings WiiMart to your 3DS alongside the Wii Shop Channel background music.</p>
+        <a href="extras/WiiMart3DS.zip" class="btn" download>Download</a>
+        <p>Put the ZIP file into <b>sd:/Themes</b> and install it with the Anenome themeing tool.</p>
     </div>
-    <p>This handy forwarder takes you from the Wii U Menu straight to WiiMart!<!--ha--> (Launches in TV and GamePad view.)</p>
-    <a href="extras/WiiMartForwarder.wuhb" class="btn" download>Download</a>
-    <p>Put this WUHB file into <b>SD:/wiiu/apps</b>. Aroma required!</p>
-  </div>
 
-  <div class="box">
-    <h2>Wii Points Generator</h2>
-    <p id="code">XXXX-XXXX-XXXX-XXXX</p>
-    <button onclick="generateCode()">Generate</button>
-    <p>Click on the button below to generate a random Wii Points Card number. It will not work when used on WiiMart.</p>
+    <div class="box">
+        <h2>Wii U Forwarder</h2>
+        <div class="gallery">
+        <img src="media/screenshot-wii-u-forwarder-icon.png" class="slide" alt="Forwarder icon in the Wii U Menu">
+        <img src="media/screenshot-wii-u-forwarder-banner.png" class="slide" alt="Forwarder's launching banner">
+        </div>
+        <p>This handy forwarder takes you from the Wii U Menu straight to WiiMart!<!--ha--> (Launches in TV and GamePad view.)</p>
+        <a href="extras/WiiMartForwarder.wuhb" class="btn" download>Download</a>
+        <p>Put this WUHB file into <b>SD:/wiiu/apps</b>. Aroma required!</p>
+    </div>
 
-    <script>function generateCode() {const charset = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; let code = ""; for (let i = 0; i < 4; i++) {let segment = ""; for (let j = 0; j < 4; j++) {segment += charset.charAt(Math.floor(Math.random() * charset.length));} code += segment + (i < 3 ? "-" : "");} document.getElementById("code").textContent = code;}</script>
+    <div class="box">
+        <h2>Blocks Converter</h2>
+        <p>Convert Nintendo's block format into readable bytes!</p>
+        <ul style="list-style:none;padding-left:25px;text-align:left">
+            <li><input type="number" id="blocks" maxlength="6"> Blocks</li>
+            <li><input type="number" id="mega" maxlength="6"> Megabytes</li>
+            <li><input type="number" id="giga" maxlength="6"> Gigabytes</li>
+        </ul>
+        <script>
+            // over
+            function updateBlocks() { const blocksInput = document.getElementById('blocks'); const megaInput = document.getElementById('mega'); const gigaInput = document.getElementById('giga'); if (document.activeElement === blocksInput) {const blocks = parseFloat(blocksInput.value) || 0; const megabytes = blocks * 0.128; const gigabytes = blocks * 0.000125; megaInput.value = megabytes.toFixed(2); gigaInput.value = gigabytes.toFixed(4);} else if (document.activeElement === megaInput) {const megabytes = parseFloat(megaInput.value) || 0; const blocks = megabytes / 0.128; const gigabytes = megabytes / 1024; blocksInput.value = blocks.toFixed(2); gigaInput.value = gigabytes.toFixed(4);} else if (document.activeElement === gigaInput) {const gigabytes = parseFloat(gigaInput.value) || 0; const megabytes = gigabytes * 1024; const blocks = megabytes / 0.128; blocksInput.value = blocks.toFixed(2); megaInput.value = megabytes.toFixed(2);}} document.getElementById('blocks').addEventListener('input',updateBlocks); document.getElementById('mega').addEventListener('input',updateBlocks); document.getElementById('giga').addEventListener('input',updateBlocks);
+        </script>
+    </div>
 
-  </div>
+    <div class="box">
+        <h2>Wii Points Generator</h2>
+        <p id="code">XXXX-XXXX-XXXX-XXXX</p>
+        <button onclick="generateCode()">Generate</button>
+        <p>Click on the button below to generate a random Wii Points Card number. It will not work when used on WiiMart.</p>
 
-  <div class="box">
-    <h2>PC Client</h2>
-    <p>Browse the entire catalog of WiiMart from your computer's browser!</p>
-    <p><span class="active">Coming soon!</span></p>
-  </div>
+        <script>function generateCode() {const charset = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; let code = ""; for (let i = 0; i < 4; i++) {let segment = ""; for (let j = 0; j < 4; j++) {segment += charset.charAt(Math.floor(Math.random() * charset.length));} code += segment + (i < 3 ? "-" : "");} document.getElementById("code").textContent = code;}</script>
+    </div>
 
-  <div class="box">
-    <h2>List of Shop URLs</h2>
-    <p>If you weren't already aware, the Wii Shop Channel is a web app. The original Wii Shop Channel was hosted at
-      <b>oss-auth.shop.wii.com</b>, while WiiMart is hosted at <b>oss-auth.thecheese.io</b>.</p>
-    <p>To go on the official one you'd need a special certificate and user agent. WiiMart's server does not need those, making it very easy to access!</p>
-      <ul>
-        <li><a href="https://oss-auth.thecheese.io/oss/serv/index.jsp">Index page</a></li>
-        <li><a href="https://oss-auth.thecheese.io/oss/serv/W_01.jsp">W_01</a> (Recommend titles)</li>
-        <li><a href="https://oss-auth.thecheese.io/oss/serv/W_02.jsp">W_02</a> (Imporant Info)</li>
-        <li><a href="https://oss-auth.thecheese.io/oss/serv/W_03.jsp">W_03</a> (Main menu)</li>
-        <li><a href="https://oss-auth.thecheese.io/oss/serv/W_04.jsp">W_04</a> (Gift notice page)</li>
-        <li><a href="https://oss-auth.thecheese.io/oss/serv/B_01.jsp">B_01</a> (Virtual Console sort options)</li>
-        <li><a href="https://oss-auth.thecheese.io/oss/serv/B_02.jsp">B_02</a> (WiiWare info page, shows Internet Channel)</li>
-        <li><a href="https://oss-auth.thecheese.io/oss/serv/B_05.jsp">B_05</a> (Blank title page)</li>
-        <li><a href="https://oss-auth.thecheese.io/oss/serv/B_08.jsp">B_08</a> (Blank Controller Confirmation page)</li>
-        <li><a href="https://oss-auth.thecheese.io/oss/serv/B_09.jsp">B_09</a> (Blank Download Confirmation page)</li>
-        <li><a href="https://oss-auth.thecheese.io/oss/serv/B_19.jsp">B_19</a> (Blank gift message send)</li>
-        <li><a href="https://oss-auth.thecheese.io/oss/serv/S_10.jsp">S_10</a> (Remove account)</li>
-        <li><a href="https://oss-auth.thecheese.io/oss/serv/S_30.jsp">S_30</a> (One Free Title page)</li>
-        <li><a href="https://oss-auth.thecheese.io/oss/serv/S_14.jsp">S_14</a> (Wii Download Ticket page)</li>
-      </ul>
-  </div>
+    <div class="box">
+        <h2>PC Client</h2>
+        <p>Browse the entire catalog of WiiMart from your computer's browser!</p>
+        <p><span class="active">Coming soon!</span></p>
+    </div>
+
+    <div class="box">
+        <h2>List of Shop URLs</h2>
+        <p>If you weren't already aware, the Wii Shop Channel is a web app. The original Wii Shop Channel was hosted at
+        <b>oss-auth.shop.wii.com</b>, while WiiMart is hosted at <b>oss-auth.thecheese.io</b>.</p>
+        <p>To go on the official one you'd need a special certificate and user agent. WiiMart's server does not need those, making it very easy to access!</p>
+        <ul>
+            <li><a href="https://oss-auth.thecheese.io/oss/serv/index.jsp">Index page</a></li>
+            <li><a href="https://oss-auth.thecheese.io/oss/serv/W_01.jsp">W_01</a> (Recommend titles)</li>
+            <li><a href="https://oss-auth.thecheese.io/oss/serv/W_02.jsp">W_02</a> (Imporant Info)</li>
+            <li><a href="https://oss-auth.thecheese.io/oss/serv/W_03.jsp">W_03</a> (Main menu)</li>
+            <li><a href="https://oss-auth.thecheese.io/oss/serv/W_04.jsp">W_04</a> (Gift notice page)</li>
+            <li><a href="https://oss-auth.thecheese.io/oss/serv/B_01.jsp">B_01</a> (Virtual Console sort options)</li>
+            <li><a href="https://oss-auth.thecheese.io/oss/serv/B_02.jsp">B_02</a> (WiiWare info page, shows Internet Channel)</li>
+            <li><a href="https://oss-auth.thecheese.io/oss/serv/B_05.jsp">B_05</a> (Blank title page)</li>
+            <li><a href="https://oss-auth.thecheese.io/oss/serv/B_08.jsp">B_08</a> (Blank Controller Confirmation page)</li>
+            <li><a href="https://oss-auth.thecheese.io/oss/serv/B_09.jsp">B_09</a> (Blank Download Confirmation page)</li>
+            <li><a href="https://oss-auth.thecheese.io/oss/serv/B_19.jsp">B_19</a> (Blank gift message send)</li>
+            <li><a href="https://oss-auth.thecheese.io/oss/serv/S_10.jsp">S_10</a> (Remove account)</li>
+            <li><a href="https://oss-auth.thecheese.io/oss/serv/S_30.jsp">S_30</a> (One Free Title page)</li>
+            <li><a href="https://oss-auth.thecheese.io/oss/serv/S_14.jsp">S_14</a> (Wii Download Ticket page)</li>
+        </ul>
+    </div>
 </div>
 
 <footer><p>The WiiMart Team is not affiliated with Nintendo or any related parties. To contact, please send an email to <a href="mailto:support@wiimart.org"><b>support@wiimart.org</b></a>.</p></footer>
