@@ -10,7 +10,8 @@ h1 {margin-bottom: 10px;}
 nav {margin-bottom: 20px;line-height: 35px;}
 footer {color:grey}
 footer a {color:grey}
-
+details[open]   {transition:.3s ease-in-out; max-height: 445px; overflow: hidden auto; margin-bottom:3px;}
+details[open] summary {position:sticky; top:0; left:0; background-image:url("/meta/fadebg-wmw.png"); background-color:#73bad146; background-size:100% !important; }
 a.btn {background-color: #E6FFF2;border-radius: 10px;padding: 4px;margin-bottom: 10px;color:black;text-decoration: none;filter: drop-shadow(1px 1px 1px black);font-weight: 100;display:inline}
 a.btn:hover {background-color: #C7FDFF;}
 a.btn:active {filter: none;}
@@ -21,10 +22,12 @@ button {margin-bottom: 6px;font-family:'Shop',sans-serif;padding: 5px;outline: 1
 button:hover {box-shadow: inset 0 0 0 3px #34BEED;cursor:pointer}
 button:disabled {outline: 1px solid #9A9A9A;box-shadow:none;cursor:default}
 
-details {text-align:left;padding-left: 5px;padding-right: 5px;}
+details {text-align:left;padding-left: 5px;padding-right: 5px; max-height:30px; transition:.3s ease-in-out;}
 details ul {padding-left: 0;}
 details li {font-size:smaller;list-style:none;vertical-align:middle;}
-summary {padding-left: 5px;padding-right: 5px;cursor: pointer;user-select: none}
+summary {padding-left: 5px;padding-right: 5px;cursor: pointer;user-select: none; border-radius:5px; margin-bottom:3px;}
+summary:hover {background-color:#73bad14d;}
+summary:active {background-color:#73bad16b;}
 details li img {width:25px;height:25px;vertical-align:middle;margin:1px;outline:solid 1px #9900FF;border-radius:2px}
 details li a img:hover {outline: solid 2px #9900FF}
 details li img.pf {outline:none}
@@ -128,4 +131,8 @@ div#bgmplayer p {line-height:20px;color:#9A9A9A; margin-top:-10px;font-style:ita
   mark {color:white}
   #wednesdaytitles {color:white; background-color:#3b3b3b}
   img.slide {background-color: #3d3d3d;}
+
+  details[open] summary {position:sticky; top:0; left:0; background-image:url("/meta/fadebg-bgm.png"); background-size:100% !important; }
+  summary:hover {background-color:#73bad14d;}
+  summary:active {background-color:#73bad16b;}
 }
