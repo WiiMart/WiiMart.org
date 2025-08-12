@@ -28,8 +28,10 @@ function loadafterwednesdaycheck() {
 
   if (localStorage.getItem("shopmusic") === "playing") {
     playBGMonload();
+    activatebgmplayer();
   } else {
     pauseBGM();
+    deactivatebgmplayer();
   }
  }
 
@@ -41,14 +43,14 @@ function playBGM() {
   shoploop.volume = 0.8;
   localStorage.setItem("shopmusic", "playing");
   shoploop.play();
-  document.getElementById("shopbgm").innerHTML = "Pause";
+  document.getElementById("shopbgm").innerText = "Pause";
   document.getElementById("shopbgmselector").href = "javascript:pauseBGM();";
 }
 
 function pauseBGM() {
   localStorage.setItem("shopmusic", "paused");
   shoploop.pause();
-  document.getElementById("shopbgm").innerHTML = "Play";
+  document.getElementById("shopbgm").innerText = "Play";
   document.getElementById("shopbgmselector").href = "javascript:playBGM();";
 }
 
@@ -57,7 +59,7 @@ function playBGMonload() {
   fadeinbgm();
   localStorage.setItem("shopmusic", "playing");
   shoploop.play();
-  document.getElementById("shopbgm").innerHTML = "Pause";
+  document.getElementById("shopbgm").innerText = "Pause";
   document.getElementById("shopbgmselector").href = "javascript:pauseBGM();";
 }
 
@@ -95,4 +97,12 @@ function fade8() {
 }
 function fade9() {
   shoploop.volume="0.8";
+}
+function activatebgmplayer() {
+  document.getElementById('bgmplayer').classList.add('bgmplayerdisplayed');
+  document.getElementById("bgmplrtitle").innerText="BGM player"; document.getElementById("bgmplrtitle").style.marginTop="0px";
+}
+function deactivatebgmplayer() {
+  document.getElementById('bgmplayer').classList.remove('bgmplayerdisplayed');
+  document.getElementById("bgmplrtitle").innerText="bgm plr..";  document.getElementById("bgmplrtitle").style.marginTop="-5px";
 }

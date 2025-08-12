@@ -20,12 +20,7 @@
 </head>
 <body onload="loadafterwednesdaycheck();">
 
-<div>
-<div class="box" id="bgmplayer">
-   <h2>BGM player</h2>
-   <a href="javascript:playBGM();" id="shopbgmselector"><button id="shopbgm">Play</button></a>
-   <p><br>Enable audio autoplay in your browser for it to continue playing throughout the website.</p>
-</div>
+<div class="box" id="bgmplayer" onclick="activatebgmplayer();"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">Play</button></a><a href="javascript:deactivatebgmplayer();"><button>Close</button></a></div>
 
 <h1>WiiMart</h1>
 

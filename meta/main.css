@@ -57,14 +57,14 @@ img.right {right: 10px; animation: rightHoverAnimation 0.5s infinite alternate;}
 @keyframes rightHoverAnimation {0% {transform: translateY(-50%) translateX(0);} 100% {transform: translateY(-50%) translateX(-5px);}}
 
 /* Music */
-div#bgmplayer {z-index: 1000;transition:.3s ease-in-out; opacity:30%; position:fixed; bottom:3px; border:2px solid #34BEED; left:3px; float:left; width:160px; height:40px; overflow:hidden;}
-div#bgmplayer:hover {opacity: 50%; transition:.3s ease-in-out; height:100px; width:200px; overflow:auto;scrollbar-width: none;}
-div#bgmplayer h2 {height:20px; margin-top:-9px; line-height:40px}
-div#bgmplayer p {line-height:20px;color:#9A9A9A;margin-top:-10px;font-style:italic;font-size:10px;}
-
+div#bgmplayer { z-index: 1000;transition:.3s ease-in-out; opacity:25%; position:fixed; bottom:3px; border:2px solid #34BEED;  width:60px; height:20px; overflow:hidden;}
+div#bgmplayer:hover {cursor:pointer; opacity: 70%; }
+.bgmplayerdisplayed{cursor:default !important; opacity: 70%; transition:.3s ease-in-out; height:65px !important; width:120px !important; overflow:auto;scrollbar-width: none;}
+.box#bgmplayer #bgmplrtitle{color:#34BEED; font-weight:bold; font-size:18px; font-style:normal; margin-top:-5px; margin-bottom:3px; line-height:18px; }
+div#bgmplayer p {line-height:20px;color:#9A9A9A;margin-top:-10px;font-style:italic;font-size:10px; user-select:none; pointer-events:none;}
 
 /* Matt! Yea? update day! what?? New-New Wii Titles! What? im in the bathroom! Update day for WiiMart! */
-#wednesdaytitles {margin-top:13px; margin-bottom:13px; border:none;position:relative; float:center; background-color:#FFF; transition:.3s ease-in-out;}
+#wednesdaytitles {margin-top:13px; margin-bottom:13px; border:none;position:relative; background-color:#FFF; transition:.3s ease-in-out;}
 
 #whatiswsw {animation:wswpop 0.5s forwards;opacity:0%;position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);text-align:center;z-index:999;transition:.3s ease-in-out;}
 @keyframes wswpop {
@@ -76,9 +76,9 @@ div#bgmplayer p {line-height:20px;color:#9A9A9A;margin-top:-10px;font-style:ital
   }
 }
 
-/* Auto-resizer, do not change pls*/
-@media (max-width: 768px) {div.row {width: 95%}}
-@media (min-width: 1500px) {div.row {width: 40%}}
+/* Auto-resizer, do not change pls*/    /* i added plrfix, i changed it, dont kill me gemdation pls (dont change what i added either plz plz) */
+@media (max-width: 768px) {div.row {width: 95%}   div#bgmplayer{ top:0px; position:fixed; } }
+@media (min-width: 1500px) {div.row {width: 40%};    div#bgmplayer{ position:fixed; left:3px !important; float:left;}}
 
 /* Dark theme via system preference */
 @media (prefers-color-scheme: dark)
