@@ -5,6 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <style>@font-face {font-family: 'Shop'; src: url('meta/shop.ttf') format('truetype'); font-weight: normal; font-style: normal;}</style>
     <script src="meta/music.js"></script>
+    <script src="meta/loader.js"></script>
     <title>Install WiiMart</title>
     <meta content="Download WiiMart" property="og:title">
     <meta content="Here are the installation instructions for WiiMart and the patched IOS WADs!." property="og:description">
@@ -29,12 +30,8 @@
         span.descrip {color:rgb(172, 172, 172);font-size: smaller}
     </style>
 </head>
-<body onload="loadafterwednesdaycheck();">
-<div class="box" id="bgmplayer">
-   <h2>BGM player</h2>
-   <a href="javascript:playBGM();" id="shopbgmselector"><button id="shopbgm">Play</button></a>
-   <p><br>Enable audio autoplay in your browser for it to continue playing throughout the website.</p>
-</div>
+<body>
+    <div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div>
 
 <h1><a href="/">WiiMart</a></h1>
 

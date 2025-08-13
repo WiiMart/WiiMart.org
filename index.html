@@ -5,6 +5,7 @@
    <meta http-equiv="x-ua-compatible" content="ie=edge">
    <style>@font-face {font-family: 'Shop'; src: url('meta/shop.ttf') format('truetype'); font-weight: normal; font-style: normal;}</style>
    <script src="meta/music.js"></script>
+   <script src="meta/loader.js"></script>
    <title>WiiMart: an active Wii Shop revival!</title>
    <meta content="WiiMart: an active Wii Shop revival!" property="og:title">
    <meta content="WiiMart is an open-source revival of the defunct Wii Shop Channel. This website contains information about it and the project team behind it!" property="og:description">
@@ -16,14 +17,14 @@
    <link rel="stylesheet" href="meta/main.css">
    <script src="meta/gallery.js" defer></script>
    <link rel="icon" type="image/x-icon" href="favicon.ico">
-   <style>.em {opacity:1; transition: opacity 0.5s ease-in-out;} .em.fade {opacity: 0;} #disclaimer {text-align:left;color: #ff3d3d; font-weight:Bold; font-size:10px;padding:0;height:23px; max-height:23px; width:100%; max-width:100%; display:block; margin-bottom:2px;margin-top:-8px; white-space: nowrap; overflow:hidden; text-overflow:ellipsis;}</style>
+   <style>.em {opacity:1; transition: opacity 0.5s ease-in-out;} .em.fade {opacity: 0;} #disclaimer {text-align:left;color: #929a9a; font-weight:Bold; font-size:10px;padding:0;height:23px; max-height:23px; width:100%; max-width:100%; display:block; margin-bottom:2px;margin-top:-8px; white-space: nowrap; overflow:auto hidden; scrollbar-width: none; -ms-overflow-style: none;} #disclaimer::-webkit-scrollbar {display:none;}</style>
 </head>
 <body onload="WiiMartWednesday();  loadafterwednesdaycheck();">
 
-<div id="backgroundd" style="display:none;"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">Play</button></a><a href="javascript:deactivatebgmplayer();"><button>Close</button></a></div>
+<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="allowedtoload = false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">....</button></a><a href="javascript:deactivatebgmplayer();" onclick="allowedtoload = false;"><button>Close</button></a></div>   </div>
 
 <h1>WiiMart</h1>
-
+<a href="#ok">test</a>
 <nav><a href="install" class="btn">Install</a> <a href="support" class="btn">Support</a> <a href="errors" class="btn">Errors</a> <a href="branding" class="btn">Branding</a> <a href="specials" class="btn">Specials</a> <a href="credits" class="btn">Credits</a></nav>
 
 <script>function WiiMartWednesday() {const today = new Date(); const dayOfWeek = today.getDay();if (dayOfWeek === 3) {const wednesdayDiv = document.getElementById('wednesdaytitles'); if (wednesdayDiv) {wednesdayDiv.style.display = 'block';} }}; function whatiswmw()  {const wswbox = document.getElementById("whatiswsw"); const bg = document.getElementById("backgroundd"); wswbox.style.display="block"; bg.style.display="block"; bg.style.backgroundImage=('url("/meta/fadebg-wmw.png")'); } function whatiswmwclose()  { const wswbox = document.getElementById("whatiswsw"); const bg = document.getElementById("backgroundd"); wswbox.style.display="none"; bg.style.display="none";}</script>
@@ -51,7 +52,7 @@
         </details>
         <details>
             <summary>Update your WiiMart! <span class="date"><img src="meta/em-pinned.svg" style="width:20px;height:20px;vertical-align:middle"> 05-02</span></summary>
-            <p>Since May 2nd, WiiMart has been relocated to a new domain. For this update, you'll need to download new WADs. Go to the <a href="install">Install</a> page.</p>
+            <p id="detailsinfo">Since May 2nd, WiiMart has been relocated to a new domain. For this update, you'll need to download new WADs. Go to the <a href="install">Install</a> page.</p>
         </details>
         <a href="info-log" style="float:right;font-size:small;padding-right:5px">View older</a>
    </div>
@@ -67,13 +68,13 @@
         <p class="blue">If WiiMart sounds like what you are looking for, try it out for yourself! WiiMart can be used on Wii, Wii U, and partially Dolphin.</p>
         <p><a href="install" class="btn" style="font-size: larger;">Get Started</a></p>
         <div class="gallery" style="margin-bottom:10px">
-            <img src="media/screenshot-start-menu.png" class="slide" loading="lazy" alt="screenshot" title="the recommended titles present in the image aren't the newest, check the Important Info: box on the top of the page for the latest." >
+            <img src="media/screenshot-start-menu.png" class="slide" loading="lazy" alt="screenshot" title="the recommended titles present in the image aren't the lastest added titles, check the Important Info: box on the top of the page for the latest." >
             <img src="media/screenshot-main-menu.png" class="slide" loading="lazy" alt="screenshot>
             <img src="media/screenshot-catalog.png" class="slide" loading="lazy" alt="screenshot">
             <img src="media/screenshot-game.png" class="slide" loading="lazy" alt="screenshot">
-            <img src="media/screenshot-news.png" class="slide" loading="lazy" alt="screenshot">
+            <img src="media/screenshot-news.png" class="slide" loading="lazy" alt="screenshot" title="the info present in the image isnt about the lastest added titles, check the Important Info: box on the top of the page for the latest.">
         </div>
-         <div id="disclaimer">*images are just to show what the shop is like, titles may be out of date.</div>
+       <div id="disclaimer" title="this text is scrollable, highlight right or use arrow keys to scroll.">*Images for preview purposes, Recommended Titles and relevant information may be outdated, or subject to change.</div>
     </div>
 
     <h1>What's on it?</h1>

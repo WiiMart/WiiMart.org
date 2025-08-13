@@ -5,6 +5,7 @@
    <meta http-equiv="x-ua-compatible" content="ie=edge">
    <style>@font-face {font-family: 'Shop'; src: url('meta/shop.ttf') format('truetype'); font-weight: normal; font-style: normal;}</style>
    <script src="meta/music.js"></script>
+   <script src="meta/loader.js"></script>
    <title>WiiMart Credits</title>
    <meta content="WiiMart Credits" property="og:title">
    <meta content="View the credits for WiiMart here." property="og:description">
@@ -26,7 +27,7 @@
    </style>
 </head>
 <body>
-<div id="backgroundd" style="display:none;"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">Play</button></a><a href="javascript:deactivatebgmplayer();"><button>Close</button></a></div>
+<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="allowedtoload = false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">....</button></a><a href="javascript:deactivatebgmplayer();" onclick="allowedtoload = false;"><button>Close</button></a></div>   </div>
 
 <h1><a href="/">WiiMart</a></h1>
 
@@ -44,8 +45,8 @@
             <figcaption>
                 <b><i>Ocarina</i></b> is the creator of WiiMart! He began working on it after the unsuccess of Rii Shop. As the owner, he maintains the shop entirely.
                 <br><br>
-                <a href="https://wiilab.wiimart.org/Ocarina"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitLab"></button></a>
-                <a href="https://www.youtube.com/@Epicboss16"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                <a target="_blank" href="https://wiilab.wiimart.org/Ocarina"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitLab"></button></a>
+                <a target="_blank" href="https://www.youtube.com/@Epicboss16"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
             </figcaption>
             <audio src="media/sound-zelda.mp3"></audio>
         </figure>
@@ -57,7 +58,7 @@
             <figcaption>
                 <b>Selim</b> is a Discord administrator and server hoster for WiiMart. They manage various services for WiiMart.
                 <br><br>
-                <a href="https://wiilab.wiimart.org/selimgozel1"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitLab"></button></a>
+                <a target="_blank" href="https://wiilab.wiimart.org/selimgozel1"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitLab"></button></a>
             </figcaption>
         </figure>
 
@@ -68,8 +69,8 @@
             <figcaption>
                 <b>Thom</b> is a Discord administrator and is the developer of the WiiMarty bot and the WiiMart Installer.
                 <br><br>
-                <a href="https://wiilab.wiimart.org/thom2305"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitLab"></button></a>
-                <a href="https://thom2305.github.io/"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
+                <a target="_blank" href="https://wiilab.wiimart.org/thom2305"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitLab"></button></a>
+                <a target="_blank" href="https://thom2305.github.io/"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
             </figcaption>
         </figure>
 
@@ -80,9 +81,9 @@
             <figcaption>
                 <b>idkwhereisthisname</b> is a Discord administrator, they work on pages in the shop 
                 <br><br>
-                <a href="https://wiilab.wiimart.org/idkwhereisthisname"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitLab"></button></a>
-                <a href="https://www.youtube.com/@idkwhereisthisname"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
-                <a href="https://idkwhereisthis.name/"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
+                <a target="_blank" href="https://wiilab.wiimart.org/idkwhereisthisname"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitLab"></button></a>
+                <a target="_blank" href="https://www.youtube.com/@idkwhereisthisname"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                <a target="_blank" href="https://idkwhereisthis.name/"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
             </figcaption>
         </figure>
 
@@ -93,7 +94,7 @@
             <figcaption>
                 <b>Wabagg123</b> is one of the developers for WiiMart that contributes to the WiiConnect24 and Wii SOAP part of the shop.
                 <br><br>
-                <a href="https://www.youtube.com/@wabagg123/"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                <a target="_blank" href="https://www.youtube.com/@wabagg123/"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
             </figcaption>
         </figure>     
 
@@ -108,9 +109,9 @@
             <figcaption>
                 <b><i>Gemdation</i></b> is the main website coder and designer of the WiiMart branding.
                 <br><br>
-                <a href="https://wiilab.wiimart.org/gem"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitLab"></button></a>
-                <a href="https://www.youtube.com/@gemdation"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
-                <a href="https://gemdation.com/"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
+                <a target="_blank" href="https://wiilab.wiimart.org/gem"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitLab"></button></a>
+                <a target="_blank" href="https://www.youtube.com/@gemdation"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                <a target="_blank" href="https://gemdation.com/"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
             </figcaption>
             <audio src="media/sound-bej3.mp3"></audio>
         </figure>
@@ -122,9 +123,9 @@
             <figcaption>
                 <b><i>ChrisplayzWii</i></b> is one of the Discord moderators, he was the main coder for the original WiiMart website and was the owner of Reviive.
                 <br><br>
-                <a href="https://wiilab.wiimart.org/Chrisplayzwii"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitLab"></button></a>
-                <a href="https://www.youtube.com/@ChrisplayzWii"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
-                <a href="https://chrisplayzwii.github.io/"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
+                <a target="_blank" href="https://wiilab.wiimart.org/Chrisplayzwii"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitLab"></button></a>
+                <a target="_blank" href="https://www.youtube.com/@ChrisplayzWii"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                <a target="_blank" href="https://chrisplayzwii.github.io/"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
             </figcaption>
             <audio src="media/sound-roblox-coil.mp3"></audio>
         </figure>
@@ -140,8 +141,8 @@
             <figcaption>
                 <b><i>YourTooSlow</i></b> is a Discord administrator, he is learning HTML and JavaScript.
                 <br><br>
-                <a href="https://wiilab.wiimart.org/Your2Slow"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitLab"></button></a>
-                <a href="https://yourtooslow.com/"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
+                <a target="_blank" href="https://wiilab.wiimart.org/Your2Slow"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitLab"></button></a>
+                <a target="_blank" href="https://yourtooslow.com/"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
             </figcaption>
             <audio src="media/sound-sonic.exe.mp3"></audio>
         </figure>
@@ -153,8 +154,8 @@
             <figcaption>
                 <b>Andry6702</b> is a Discord moderator, he contributed on other projects such as New Shop Channel and Reviive.
                 <br><br>
-                <a href="https://www.youtube.com/@andry6702"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
-                <a href="https://andry6702.net"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
+                <a target="_blank" href="https://www.youtube.com/@andry6702"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                <a target="_blank" href="https://andry6702.net"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
             </figcaption>
         </figure>
 
@@ -164,8 +165,8 @@
             <img src="media/pfp-rm05.png" class="pfp">
             <figcaption><b>RM05</b> is a Discord administrator and WiiMart translation contributor.
                 <br><br>
-                <a href="https://wiilab.wiimart.org/MrRM05"><button><img src="meta/ico-git.png" class="ico" alt="GitLab"></button></a>
-                <a href="https://www.youtube.com/@Mr_RM05"><button><img src="meta/ico-yt.png" class="ico"></button></a>
+                <a target="_blank" href="https://wiilab.wiimart.org/MrRM05"><button><img src="meta/ico-git.png" class="ico" alt="GitLab"></button></a>
+                <a target="_blank" href="https://www.youtube.com/@Mr_RM05"><button><img src="meta/ico-yt.png" class="ico"></button></a>
             </figcaption>
         </figure>
 
@@ -175,9 +176,9 @@
             <img src="media/pfp-emol.png" class="pfp">
             <figcaption><b>Emolgun</b> is one of the Discord moderators.
                 <br><br>
-                <a href="https://bsky.app/profile/emolgun.bsky.social"><button><img src="meta/ico-bsky.png" class="ico" alt="GitLab"></button></a>
-                <a href="https://twitch.tv/emolgun"><button><img src="meta/ico-twitch.png" class="ico">
-                <a href="https://www.youtube.com/@Emolgun"><button><img src="meta/ico-yt.png" class="ico"></button></a>
+                <a target="_blank" href="https://bsky.app/profile/emolgun.bsky.social"><button><img src="meta/ico-bsky.png" class="ico" alt="GitLab"></button></a>
+                <a target="_blank" href="https://twitch.tv/emolgun"><button><img src="meta/ico-twitch.png" class="ico">
+                <a target="_blank" href="https://www.youtube.com/@Emolgun"><button><img src="meta/ico-yt.png" class="ico"></button></a>
             </figcaption>
         </figure>
 
@@ -187,9 +188,9 @@
             <img loading="lazy" src="media/pfp-def.png" class="pfp">
             <figcaption><b>DefeatOf13</b> is a Discord moderator and WiiMart mascot designer.
                 <br><br>
-                <a href="https://wiilab.wiimart.org/DefeatOf13"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitLab"></button></a>
-                <a href="https://www.youtube.com/@defeatof13"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
-                <a href="https://defitmods.xyz"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
+                <a target="_blank" href="https://wiilab.wiimart.org/DefeatOf13"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitLab"></button></a>
+                <a target="_blank" href="https://www.youtube.com/@defeatof13"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                <a target="_blank" href="https://defitmods.xyz"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
             </figcaption>
         </figure>
 
@@ -200,8 +201,8 @@
             <figcaption>
                 <b>Subnetic</b> is one of the Discord administrators, they frequently create Virtual Console injects that are added.
                 <br><br>
-                <a href="https://youtube.com/@subnetic96"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
-                <a href="https://gbatemp.net/members/subnetic.740778/"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
+                <a target="_blank" href="https://youtube.com/@subnetic96"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                <a target="_blank" href="https://gbatemp.net/members/subnetic.740778/"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
             </figcaption>
         </figure>
 
@@ -212,9 +213,9 @@
             <figcaption>
                 <b><i>ThatOneYoshi</i></b> is one of the Discord moderators.
                 <br><br>
-                <a href="https://thatoneyoshi.link/"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
-                <a href="https://bsky.app/profile/thatoneyoshi.link"><button><img loading="lazy" src="meta/ico-bsky.png" class="ico"></button></a>
-                <a href="https://www.youtube.com/@thatoneyoshifan-balls"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                <a target="_blank" href="https://thatoneyoshi.link/"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
+                <a target="_blank" href="https://bsky.app/profile/thatoneyoshi.link"><button><img loading="lazy" src="meta/ico-bsky.png" class="ico"></button></a>
+                <a target="_blank" href="https://www.youtube.com/@thatoneyoshifan-balls"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
             </figcaption>
             <audio src="media/sound-yoshi.mp3"></audio>
         </figure>   
@@ -226,7 +227,7 @@
             <figcaption>
                 <b><i>cosmobona56</i></b> is one of the Discord moderators.
                 <br><br>
-                <a href="https://www.youtube.com/@cosmo.tv_de"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                <a target="_blank" href="https://www.youtube.com/@cosmo.tv_de"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
             </figcaption>
             <audio src="media/sound-undertale-save.mp3"></audio>
         </figure>
@@ -246,10 +247,10 @@
             <figure>
                 <img loading="lazy" src="media/pfp-comp.gif" class="pfp" style="cursor:help">
                 <figcaption>
-                    <b><i>Nathan Boehm</i></b>'s project, <a href="https://wiishopchannel.net">WiiShopChannel.net</a>, often helped out WiiMart for reference purposes.
+                    <b><i>Nathan Boehm</i></b>'s project, <a target="_blank" href="https://wiishopchannel.net">WiiShopChannel.net</a>, often helped out WiiMart for reference purposes.
                     <br><br>
-                    <a href="https://nathanboehm.com"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
-                    <a href="https://www.youtube.com/@NathanBoehm"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                    <a target="_blank" href="https://nathanboehm.com"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
+                    <a target="_blank" href="https://www.youtube.com/@NathanBoehm"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
                 </figcaption>
                 <audio src="media/sound-points.mp3"></audio>
             </figure>
@@ -260,9 +261,9 @@
                 <img loading="lazy" src="media/pfp-saul.png" class="pfp" style="cursor:help">
                 <figcaption><b><i>saulfabreg</i></b> is one of the Virtual Console inject creators.
                     <br><br>
-                    <a href="http://saulfabreg-wiivc.blogspot.com"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
-                    <a href="http://twitter.com/saulfabregwiivc"><button><img loading="lazy" src="meta/ico-twt.png" class="ico"></button></a>
-                    <a href="https://www.youtube.com/@saulfabregwiivc"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                    <a target="_blank" href="http://saulfabreg-wiivc.blogspot.com"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
+                    <a target="_blank" href="http://twitter.com/saulfabregwiivc"><button><img loading="lazy" src="meta/ico-twt.png" class="ico"></button></a>
+                    <a target="_blank" href="https://www.youtube.com/@saulfabregwiivc"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
                 </figcaption>
                 <audio src="media/sound-points.mp3"></audio>
             </figure>
@@ -273,9 +274,9 @@
                 <img loading="lazy" src="media/pfp-dustin.gif" class="pfp">
                 <figcaption><b>dustinbriggs1991</b> is one of the Virtual Console inject creators.
                     <br><br>
-                    <a href="https://x.com/dustinbriggs91"><button><img loading="lazy" src="meta/ico-twt.png" class="ico"></button></a>
-                    <a href="https://bsky.app/profile/dustinbriggs1991.bsky.social"><button><img loading="lazy" src="meta/ico-bsky.png" class="ico"></button></a>
-                    <a href="https://www.youtube.com/@dustinbriggs1991"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                    <a target="_blank" href="https://x.com/dustinbriggs91"><button><img loading="lazy" src="meta/ico-twt.png" class="ico"></button></a>
+                    <a target="_blank" href="https://bsky.app/profile/dustinbriggs1991.bsky.social"><button><img loading="lazy" src="meta/ico-bsky.png" class="ico"></button></a>
+                    <a target="_blank" href="https://www.youtube.com/@dustinbriggs1991"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
                 </figcaption>
             </figure>
 
@@ -285,8 +286,8 @@
                 <img loading="lazy" src="media/pfp-onion.png" class="pfp">
                 <figcaption><b>Onion Mastori</b> is one of the Virtual Console inject creators.
                     <br><br>
-                    <a href="https://www.youtube.com/@onionmastori" title="Onion Mastori"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
-                    <a href="https://www.youtube.com/@xboxnostalgic101" title="Xbox Nostalgic 101"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                    <a target="_blank" href="https://www.youtube.com/@onionmastori" title="Onion Mastori"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                    <a target="_blank" href="https://www.youtube.com/@xboxnostalgic101" title="Xbox Nostalgic 101"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
                 </figcaption>
             </figure>
 
@@ -295,9 +296,9 @@
             <figure id="TheErrorExe">
                 <img loading="lazy" src="media/pfp-errorexe.png" class="pfp">
                 <figcaption>
-                    <b>TheErrorExe</b> has contributed with his <a href="https://revivemii.xyz/">ReviveMii</a>-powered YouTube service.
+                    <b>TheErrorExe</b> has contributed with his <a target="_blank" href="https://revivemii.xyz/">ReviveMii</a>-powered YouTube service.
                     <br><br>
-                    <a href="https://theerrorexe.dev/"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
+                    <a target="_blank" href="https://theerrorexe.dev/"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
                 </figcaption>
             </figure>
 
@@ -308,7 +309,7 @@
                 <figcaption>
                     <b>A for Animation</b> has contributed with some Virtual Console injects.
                     <br><br>
-                    <a href="https://www.youtube.com/@AforAnimation888"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                    <a target="_blank" href="https://www.youtube.com/@AforAnimation888"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
                 </figcaption>
             </figure>
         </div>
@@ -318,9 +319,9 @@
     <div class="box" id="Contribute">
         <p>Want to also contribute to this project? See what you can do below!</p>
         <ul style="list-style:none;line-height:40px;padding:0">
-            <li><a href="https://wiilab.wiimart.org/wiimart/"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitLab"> Tinker with the source</button></a></li>
-            <li><a href="https://appeal.gg/wiimart-1346485785284575335"><button><img loading="lazy" src="meta/ico-discord.png" class="ico" alt="Discord"> Interact with the community</button></a></li>
-            <li><a href="https://docs.google.com/document/d/1J7OlDChuB5bJdBQf8WAVP7mwajSYNgszR1FNpMzc_zA/"><button><img loading="lazy" src="meta/ico-doc.png" class="ico" alt="Documents"> Get <i>your very own inject</i> on WiiMart!</button></a></li>
+            <li><a target="_blank" href="https://wiilab.wiimart.org/wiimart/"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitLab"> Tinker with the source</button></a></li>
+            <li><a target="_blank" href="https://appeal.gg/wiimart-1346485785284575335"><button><img loading="lazy" src="meta/ico-discord.png" class="ico" alt="Discord"> Interact with the community</button></a></li>
+            <li><a target="_blank" href="https://docs.google.com/document/d/1J7OlDChuB5bJdBQf8WAVP7mwajSYNgszR1FNpMzc_zA/"><button><img loading="lazy" src="meta/ico-doc.png" class="ico" alt="Documents"> Get <i>your very own inject</i> on WiiMart!</button></a></li>
         </ul>
     </div>
 </div>

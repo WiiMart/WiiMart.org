@@ -10,6 +10,7 @@
     <meta property="og:description" content="FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE FISHIE.">
     <meta property="og:image" content="https://wiimart.org/media/pfp-fishie.png">
     <meta property="og:url" content="https://wiimart.org/fishiemart">
+    <script src="meta/loader.js"></script>
     <meta name="theme-color" content="#FFA500">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="meta/main.css">
@@ -32,15 +33,13 @@
     </style>
 </head>
 <body onload="FishieMartWednesday();">
-<div id="backgroundd" style="display:none;"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" id="shopbgmselector" title="Enable aqua fishplay in your browser for it to continue playing throughout the ocean."><button id="shopbgm">Play</button></a><a href="javascript:deactivatebgmplayer();"><button>Close</button></a></div>
-
+<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="allowedtoload = false;" id="shopbgmselector" title="Enable aqua fishplay in your browser for it to continue playing throughout the ocean."><button id="shopbgm">Play</button></a><a href="javascript:deactivatebgmplayer();" onclick="allowedtoload = false;"><button>Close</button></a></div>
 <a id="fishietitle" href="javascript:easter1();" title="Click to return to the frontpage.">FishieMart</a>
 <script>var fishtitle = document.getElementById("fishietitle"); var fishscr1 = new Audio("/media/sound-fishie-scream1.wav"); var fishscr2 = new Audio("/media/sound-fishie-scream2.wav"); var fishscr3 = new Audio("/media/sound-fishie-scream3.wav");      function easter1(){fishscr1.play(); fishtitle.href="javascript:easter2();"; fishtitle.style.color="#ff9d1e";} function easter2(){fishscr2.play(); fishtitle.href="javascript:easter3();"; fishtitle.style.color="#e66f00";}  function easter3(){fishscr3.play(); fishtitle.style.color="#db7012"; document.body.style.transition=".5s ease-in-out"; document.body.style.filter="blur(3px)"; setTimeout(function(){location.href= "../";},480); } </script> 
 
 <script>function FishieMartWednesday() {const today = new Date(); const dayOfWeek = today.getDay();if (dayOfWeek === 3) {const wednesdayDiv = document.getElementById('fishietitles'); if (wednesdayDiv) {wednesdayDiv.style.display = 'block';} }}; function whatiswmw()  {const wswbox = document.getElementById("whatiswsw"); const bg = document.getElementById("backgroundd"); wswbox.style.display="block"; bg.style.display="block";  bg.style.backgroundImage=('url("/meta/fadebg-wmw.png")');} function whatiswmwclose()  { const wswbox = document.getElementById("whatiswsw"); const bg = document.getElementById("backgroundd"); wswbox.style.display="none"; bg.style.display="none";}</script>
 <div class="box" id="fishietitles" style="display:none;"><mark class="new" style="margin-right:5px;"><span id="NEWtext">FISHY</span></mark>It's FishieMart Wednesday, The catalog has been updated with new fish games! <br><a href="javascript:whatiswmw();" style="font-size:11px; font-style:italic; cursor:help;" id="helpwed">What is FishieMart Wednesday?</a></div><div class="box" id="whatiswsw" style="display:none; padding:0;"><header id="impthdr" style="background-color:#fab62a; color:white;font-weight:bold;margin-bottom:10px">What is FishieMart Wednesday?</header><p>"Update Day" also known as "Wii Shop Wednesday is a song that Nirvana The Band The Show made. <br> it was a song about the latest games added to the shop channel on that wednesday as they sang to the titles on the catalog pages.  Fishie decided to bring it back and now every wednesday, new games are added to the FishieMart catalog. <br> <a href="https://www.youtube.com/watch?v=XQ0lnz1iv3k&t=0s" target="_blank">Visit this link to watch the Update day video</a></p><button onclick="whatiswmwclose();">Close</button>
 </div>
-
 <div class="row">
 <div class="box" style="padding: 0;">
       <header id="impthdr" style="background-color:#fab62a; color:white;font-weight:bold;margin-bottom:10px">Important Info:</header>
@@ -67,7 +66,7 @@
 
 <div class="box" style="padding-bottom:0">
         <img loading="lazy" src="media/Fishie_education_right.png" style="height:50%; width: 18%; float: left; min-width:15%; min-height:50%;">
-        <p class="blue" style="color:#f78521;">If FishieMart sounds like what you are looking for, try it out for yourself! FishieMart can be used on Fishii, Fishii U, and partially the <a target="_blank" href="https://spongebob.fandom.com/wiki/Magic_Conch_shell">magic conch shell</a>.</p>
+        <p class="blue" style="color:#f78521;">If FishieMart sounds like what you are looking for, try it out for yourself! FishieMart can be used on Fishii, Fishii U, and partially the <a href="https://spongebob.fandom.com/wiki/Magic_Conch_shell" target="_blank">magic conch shell</a>.</p>
         <p><a class="btn" style="font-size: larger;">Get Started</a></p>
         <div class="gallery" style="margin-bottom:10px">
             <img loading="lazy" src="https://images.nintendolife.com/screenshots/24186/large.jpg" class="slide" loading="lazy" alt="Gameplay 1" style="min-height: 344px;">
@@ -140,7 +139,7 @@
 
 <script>
     // modified music.js for fishie fishie music
-    // Wii Shop BGM Player, suggested by @legamer66 (https://discord.com/channels/1346485785284575335/1346485786039681056/1351527080546009259)
+    // FishieMart BGM Player, suggested by @legamer66 (https://discord.com/channels/1346485785284575335/1346485786039681056/1351527080546009259)
 function hideConsoleControls() {
   const userAgent = navigator.userAgent.toLowerCase();
   const isConsoleBrowser =

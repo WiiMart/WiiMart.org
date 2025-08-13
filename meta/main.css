@@ -1,7 +1,7 @@
 @font-face {font-family: 'Shop'; src: url('shop.ttf') format('truetype'); font-weight: normal; font-style: normal;}
 
 /*Main things*/
-body {scroll-behavior:smooth;text-align: center;font-family: sans-serif;font-family:'Shop',sans-serif; overflow-x:hidden;transition:.1s ease-in-out;}
+body {scroll-behavior:smooth;text-align: center;font-family: sans-serif;font-family:'Shop',sans-serif; overflow-x:hidden;transition:.1s ease-in-out; }
 
 div.row {width:50%;margin:auto}
 div.box {line-height:23.3px;background-color:white;border:solid 2px #34BEED;border-radius:5px;box-shadow: 0 0 10px #2525255d;box-sizing:border-box;text-align:center;margin: 0 auto;padding:5px;margin-top: 8px; overflow: auto;}
@@ -12,17 +12,21 @@ footer {color:grey}
 footer a {color:grey}
 details[open]   {transition:.3s ease-in-out; max-height: 445px; overflow: hidden auto; margin-bottom:3px;}
 details[open] summary {position:sticky; top:0; left:0; background-image:url("/meta/fadebg-wmw.png"); background-color:#73bad146; background-size:100% !important; }
-a.btn {background-color: #E6FFF2;border-radius: 10px;padding: 4px;margin-bottom: 10px;color:black;text-decoration: none;filter: drop-shadow(1px 1px 1px black);font-weight: 100;display:inline}
-a.btn:hover {background-color: #C7FDFF;}
-a.btn:active {filter: none;}
+a.btn { background-color: #E6FFF2;border-radius: 10px;padding: 4px;margin-bottom: 10px;color:black;text-decoration: none;filter: drop-shadow(1px 1px 1px black);font-weight: 100;display:inline; transition:.2s ease-in-out;}
+a.btn:hover { background-color: #C7FDFF;   padding:5px; font-size:16px; transition:.2s ease-in-out;}
+a.btn:active {filter: none;}  
+#wscspinnerbg {position:fixed; z-index:1005; top:0px; left:0px; width:100%; height:100%;}
+#wscspinner {z-index:1004;position:absolute;top:0px;left:0px; width:95px; height:95px; animation: spinner 1s linear infinite;}
+#wscspinnershadow {z-index:1004;position:absolute;top:7px;left:9px; width:95px; height:95px; opacity:30%; animation: spinner 1s linear infinite;}
+@keyframes spinner {from {transform: rotate(0deg)}to {transform: rotate(343deg)};}
 span.active {background-color: #c7c7c7;border-radius: 10px;padding: 4px;font-weight: 100;display:inline;cursor:auto;user-select:none}
 span.date {float:right;}
 span.hide {color:black}
-button {margin-bottom: 6px;font-family:'Shop',sans-serif;padding: 5px;outline: 1px solid #34BEED;border-radius: 3px;filter: drop-shadow(1px 1px 3.4px #bbbbbb);border:none}
-button:hover {box-shadow: inset 0 0 0 3px #34BEED;cursor:pointer}
+button {transform:scale(1);margin-bottom: 6px;font-family:'Shop',sans-serif;padding: 5px;outline: 1px solid #34BEED;border-radius: 3px;filter: drop-shadow(1px 1px 3.4px #bbbbbb);border:none; transition: transform 0.4s ease-in-out;}
+button:hover { transform:scale(1.03);transition: transform 0.2s ease-in-out; box-shadow: inset 0 0 0 3px #34BEED;cursor:pointer}
 button:disabled {outline: 1px solid #9A9A9A;box-shadow:none;cursor:default}
 
-details {text-align:left;padding-left: 5px;padding-right: 5px; max-height:30px; transition:.3s ease-in-out;}
+details {text-align:left;padding-left: 5px;padding-right: 5px; max-height:50px; transition:.3s ease-in-out;}
 details ul {padding-left: 0;}
 details li {font-size:smaller;list-style:none;vertical-align:middle;}
 summary {padding-left: 5px;padding-right: 5px;cursor: pointer;user-select: none; border-radius:5px; margin-bottom:3px;}
@@ -38,7 +42,7 @@ h1 {font-size: 30px;}
 h1 a {text-decoration:none}
 hr {border-color:grey}
 
-a {color:#34BEED; font-weight: bold;}
+a {color:#34BEED; font-weight: bold; }
 ::selection{color: #323232;background: #34BEED;}
 ::-moz-selection{color: #323232;background:#34BEED;}
 button.ico {width:20px; height:20px;}
@@ -47,20 +51,7 @@ img.wb {outline: solid 1px black}
 .blue {color:#1164E9;}
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {-webkit-appearance: none; margin: 0;}
 input [type="number"] {-moz-appearance:textfield;}
-input {
-  border-top-width: 2px;
-	border-right-width: 2px;
-	border-bottom-width: 2px;
-	border-left-width: 2px;
-	border-top-style: solid;
-	border-right-style: solid;
-	border-bottom-style: solid;
-	border-left-style: solid;
-	border-top-color: #CCCCCC;
-	border-right-color: #CCCCCC;
-	border-bottom-color: #EAEAEA;
-	border-left-color: #CCCCCC;	
-}
+input {border-top-width: 2px;border-right-width: 2px;border-bottom-width: 2px;border-left-width: 2px;border-top-style: solid;border-right-style: solid;border-bottom-style: solid;border-left-style: solid;border-top-color: #CCCCCC;border-right-color: #CCCCCC;border-bottom-color: #EAEAEA;border-left-color: #CCCCCC;	}
 
 mark {color:white;background:#34BEED;font-weight:bold;}
 mark.new {background-color:#fff090 /* fallback */; background-image:url("/meta/NEW_bg.png"); background-size:cover;border-radius: 5px; padding-right:5px; padding-left:5px;font-weight:bold;}
@@ -85,9 +76,10 @@ img.right {right: 10px; animation: rightHoverAnimation 0.5s infinite alternate;}
 @keyframes rightHoverAnimation {0% {transform: translateY(-50%) translateX(0);} 100% {transform: translateY(-50%) translateX(-5px);}}
 
 /* Music */
-div#bgmplayer {background-color:#0000; background-size:0px;z-index: 1000;transition:.3s ease-in-out; position:fixed; bottom:3px; border:2px solid #34BEED;  width:60px; height:20px; overflow:hidden;}
-div#bgmplayer:hover {cursor:pointer;  }div#bgmplayer #shopbgm {margin-right:4px;}
-.bgmplayerdisplayed{background-image:url("/meta/fadebg-bgm.png"); background-size:100% !important; cursor:default !important;  transition:.3s ease-in-out; height:65px !important; width:120px !important; overflow:auto;scrollbar-width: none;}
+div#bgmplayer {backdrop-filter: blur(1.8px); background-color:#0000; background-size:0px;z-index: 1000;transition:.3s ease-in-out; position:fixed; bottom:3px; border:2px solid #34BEED;  width:60px; height:20px; overflow:hidden;}
+div#bgmplayer:hover {cursor:pointer;  }div#bgmplayer .shopbgm {margin-right:4px;} div#bgmplayer button {opacity:90%; background-color: #ebebebb6; color:#323232;} 
+.bgmplayerdisplayed{background-image:url("/meta/fadebg-bgm.png"); background-size:100% !important; cursor:default !important;  transition:.3s ease-in-out; height:65px !important; width:120px !important; overflow:auto;scrollbar-width: none;}.bgmplayeropenanim{width:165px !important; height:100px !important;}
+#mainplayer {z-index: 1001;}#bgmplayerBG {display:block; position:absolute; user-select:none; pointer-events:none; top:0; left:0; width:100%; height:100%;}
 .box#bgmplayer #bgmplrtitle{color:#24a6d1; background-color:#e4e4e42c; border-radius:20px;  font-weight:bold; font-size:18px; font-style:normal; margin-top:-5px; margin-bottom:3px; line-height:18px; }
 div#bgmplayer p {line-height:20px;color:#9A9A9A; margin-top:-10px;font-style:italic;font-size:10px; user-select:none; pointer-events:none;}
 
@@ -95,13 +87,7 @@ div#bgmplayer p {line-height:20px;color:#9A9A9A; margin-top:-10px;font-style:ita
 #wednesdaytitles {margin-top:13px; margin-bottom:13px; border:none;position:relative; background-color:#FFF; transition:.3s ease-in-out;}
 
 #whatiswsw {z-index:1001; animation:wswpop 0.5s forwards;opacity:0%;position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);text-align:center;z-index:999;transition:.3s ease-in-out;}
-@keyframes wswpop {
-  10% {
-     opacity:0%;
-  }
-  100% {
-     opacity:100%;
-  }
+@keyframes wswpop {10% {opacity:0%;} 100% {opacity:100%;}
 }
 
 /* Auto-resizer, do not change pls*/    /* i added plrfix, i changed it, dont kill me gemdation pls (dont change what i added either plz plz) */
@@ -113,13 +99,15 @@ div#bgmplayer p {line-height:20px;color:#9A9A9A; margin-top:-10px;font-style:ita
 {
   body {background-color: black; color: #e0e0e0;}
   div.box {background-color: #1e1e1e; box-shadow: 0 0 10px #000000CC;}
-  .box#bgmplayer #bgmplrtitle {background-color:#dddddd2c;}
-  a.btn {background-color: #587566;color:white}
-  a.btn:hover {background-color: #7da2a3;}
+  .box#bgmplayer #bgmplrtitle {background-color:#dddddd2c; white-space: nowrap;}
+  a.btn {background-color: #587566;color:white;}
+  a.btn:hover {background-color: #7da2a3; }
   span.active {background-color: #313131}
+  #wscspinnershadow {z-index:1004;position:absolute;top:7px;left:9px; width:95px; height:95px; opacity:10%; animation: spinner 1s linear infinite;}
   span.hide {color:white}
   button {background-color: #3b3b3b; color: #e0e0e0;filter: drop-shadow(1px 1px 3.4px #747474)}
   button:active {box-shadow: none;}
+  div#bgmplayer button { background-color: #3b3b3bb6; color:#FFF;} 
   footer, footer a {color: #9A9A9A;}
   h1, h2, a {color: #34BEED;}
   ::selection {color: #e0e0e0; background: #34BEED;}
