@@ -1,5 +1,5 @@
 // Wii Shop BGM Player, suggested by @legamer66 (https://discord.com/channels/1346485785284575335/1346485786039681056/1351527080546009259)
-var bgmplayercompatable = false;
+var bgmplayercompatable = false; var savedTime = localStorage.getItem("bgmlooppoint");
 function hideConsoleControls() {
   const userAgent = navigator.userAgent.toLowerCase();
   const isConsoleBrowser =
@@ -8,22 +8,25 @@ function hideConsoleControls() {
     userAgent.includes('nintendo 3ds') ||
     userAgent.includes('nintendo');
   // they can't play music so rip
-  if (isConsoleBrowser) {bgmplayercompatable = false; const bgmPlayerDiv = document.getElementById('bgmplayer'); if (bgmPlayerDiv) {bgmPlayerDiv.style.display = 'none';} else {bgmplayercompatable = true;} }
+  if (isConsoleBrowser) {bgmplayercompatable = false; const bgmPlayerDiv = document.getElementById('bgmplayer'); if (bgmPlayerDiv) {document.body.removeChild(bgmPlayerDiv);} else {bgmplayercompatable = true;} }
 }
 
-
-var shoploop = new Audio("");
-shoploop.loop = true;
+var shoploop = null; // yes, it will cry about "Invalid URL."
 var initialvolume = 0 || 0.0;
-shoploop.volume = initialvolume;
+
+function bgmaudioloader() { if (!shoploop) {shoploop = new Audio("/meta/shop.wav"); shoploop.loop = true; shoploop.volume = initialvolume;} return shoploop;}
+
 
 /* what idk, only for index.html */
+
 function loadafterwednesdaycheck() {
+setTimeout(wednesdayyeeeee,100);
+}
+function wednesdayyeeeee() {
   hideConsoleControls();
 
-  var savedTime = localStorage.getItem("bgmlooppoint");
-
   if (savedTime) {
+    shoploop = bgmaudioloader();
     shoploop.currentTime = parseFloat(savedTime);
   }
 
@@ -34,18 +37,18 @@ function loadafterwednesdaycheck() {
   } else {
   pauseBGM();
     deactivatebgmplayer();
+    shoploop = bgmaudioloader();
     shoploop.currentTime = 0;
     bgmlooppoint = 0;
   var wmtwebsiteBGMwasplaying = localStorage.getItem("wmtwebsiteBGM");
 if (wmtwebsiteBGMwasplaying === 'paused') {
-  var savedTime = localStorage.getItem("bgmlooppoint");
-  if (savedTime) {shoploop.currentTime = parseFloat(savedTime);}
+  if (savedTime) {shoploop = bgmaudioloader(); shoploop.currentTime = parseFloat(savedTime);}
 
 }
   }
 
  
- }
+}
 
 /* what idk, only for index.html */
 
@@ -55,35 +58,36 @@ if (wmtwebsiteBGMwasplaying === 'paused') {
 
 
 window.onload = function() {
+setTimeout(allpagesonload,100); // reduce browser load on initial load
+};
+window.onbeforeunload = function() {
+shoploop = bgmaudioloader();  localStorage.setItem("bgmlooppoint", shoploop.currentTime);
+};
 
-
-if (bgmplayercompatable === true) {
+function allpagesonload() {
+  if (bgmplayercompatable === true) {
 
 var wmtwebsiteBGMwasplaying = localStorage.getItem("wmtwebsiteBGM");
 
 if (wmtwebsiteBGMwasplaying === 'playing') {
-  shoploop = new Audio("/meta/shop.wav");
     activatebgmplayerfocus();
     document.getElementById("shopbgmselector").href = "javascript:playBGMonload();";
 } else {
-    shoploop.currentTime = 0;
+    shoploop = bgmaudioloader(); shoploop.currentTime = 0;
     bgmlooppoint = 0;
 }
 
 if (wmtwebsiteBGMwasplaying === 'paused') {
   var savedTime = localStorage.getItem("bgmlooppoint");
-  if (savedTime) {shoploop.currentTime = parseFloat(savedTime);}
+  if (savedTime) {shoploop = bgmaudioloader(); shoploop.currentTime = parseFloat(savedTime);}
 
 }
 }
-
-
-};
+}
 
 /* bgm check for all pages */
 
 function activatebgmplayerfocus() {
-  shoploop = new Audio("/meta/shop.wav");
   bgmplayerfocus();
   document.getElementById('bgmplayer').classList.add('bgmplayeropenanim');
   document.getElementById("bgmplrtitle").innerText="BGM player"; document.getElementById("bgmplrtitle").style.marginTop="0px";
@@ -96,23 +100,19 @@ function bgmplayerfocus() {
  setTimeout(function(){  document.getElementById('bgmplayer').classList.remove('bgmplayeropenanim'); document.getElementById('bgmplayer').classList.add('bgmplayerdisplayed'); document.getElementById("bgmplayer").style.backgroundImage='url("/meta/fadebg-bgm.png")'; document.getElementById("bgmplayer").style.backgroundColor="#0000"; document.getElementById("bgmplayer").style.border="2px solid #34BEED"; document.getElementById("backgroundd").style.display="none";},500);
 }
 
-window.onbeforeunload = function() {
-  shoploop = new Audio("/meta/shop.wav");
-  localStorage.setItem("bgmlooppoint", shoploop.currentTime);
-};
 
 function playBGM() {
   initialvolume = 0.8;
-  shoploop.volume = initialvolume;
+  shoploop = bgmaudioloader(); shoploop.volume = initialvolume;
   localStorage.setItem("wmtwebsiteBGM", "playing");
-  shoploop.play();
+  shoploop = bgmaudioloader(); shoploop.play();
   document.getElementById("shopbgm").innerText = "Pause";
   document.getElementById("shopbgmselector").href = "javascript:pauseBGM();";
 }
 
 function pauseBGM() {
   localStorage.setItem("wmtwebsiteBGM", "paused");
-  shoploop.pause();
+  shoploop = bgmaudioloader(); shoploop.pause();
   document.getElementById("shopbgm").innerText = "Play";
   document.getElementById("shopbgmselector").href = "javascript:playBGM();";
 }
@@ -122,7 +122,8 @@ function playBGMonload() {
   initialvolume = 0;
   fadeinbgm();
   localStorage.setItem("wmtwebsiteBGM", "playing");
-  shoploop.play();
+  shoploop = bgmaudioloader();
+   shoploop.play();
 /*
   document.getElementById("shopbgm").innerText = ".....";
  document.getElementById("shopbgmselector").href = 'javascript:alert("the bgm is still fading, hold on, you can click once its done!");';
@@ -151,21 +152,19 @@ var volchangee = setTimeout(fadeinbgm,13);
         document.getElementById("shopbgm").removeAttribute("disabled");
         document.getElementById("shopbgm").style.opacity="90%";
   }
-  shoploop.volume = initialvolume;
+  shoploop = bgmaudioloader(); shoploop.volume = initialvolume;
 }
 
 
 
 
 function activatebgmplayer() {
-  shoploop = new Audio("/meta/shop.wav");
   document.getElementById('bgmplayer').classList.add('bgmplayerdisplayed');
   document.getElementById("shopbgm").innerText = "Play";
   document.getElementById("bgmplrtitle").innerText="BGM player"; document.getElementById("bgmplrtitle").style.marginTop="0px";
     document.getElementById("bgmplayer").style.backdropFilter="blur(1.8px)";
 }
 function deactivatebgmplayer() {
-  shoploop = new Audio("/meta/shop.wav");
   document.getElementById('bgmplayer').classList.remove('bgmplayerdisplayed');
   document.getElementById("bgmplrtitle").innerText="bgm plr..";  document.getElementById("bgmplrtitle").style.marginTop="-5px";
   document.getElementById("bgmplayer").style.backgroundColor="#0000"; document.getElementById("bgmplayer").style.backgroundColor="#0000"; document.getElementById("bgmplayer").style.border="1px solid #34BEED";
