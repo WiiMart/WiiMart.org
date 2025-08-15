@@ -153,16 +153,18 @@ function hideConsoleControls() {
   if (bgmPlayerDiv) {bgmPlayerDiv.style.display = 'none';} }
 }
 
-var shoploop = new Audio("/meta/FishieFishie.ogg");
+var shoploop = new Audio("");
 shoploop.loop = true;
 shoploop.volume = 0.1; // prevent clipping
 
 function activatebgmplayer() {
+    shoploop = new Audio("/meta/FishieFishie.ogg");
     document.getElementById("shopbgm").innerHTML = "Play";
   document.getElementById('bgmplayer').classList.add('bgmplayerdisplayed');
   document.getElementById("bgmplrtitle").innerText="BGM player"; document.getElementById("bgmplrtitle").style.marginTop="0px";
 }
 function deactivatebgmplayer() {
+    shoploop = new Audio("/meta/FishieFishie.ogg");
   document.getElementById('bgmplayer').classList.remove('bgmplayerdisplayed');
   document.getElementById("bgmplrtitle").innerText="bgm plr..";  document.getElementById("bgmplrtitle").style.marginTop="-5px";
 }

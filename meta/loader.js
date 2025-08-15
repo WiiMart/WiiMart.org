@@ -1,9 +1,14 @@
-var loading = null; var loadvolume; var browserageworkswithloader = false; var spinner = true;
+var loading = new Audio(""); var loadvolume; var browserageworkswithloader = false; var spinner = true; var shouldaloadedalr = null; var playsound = null;
 function showspinner() {
 if (spinner === true) {
   loading = new Audio("/media/load.wav");
   document.getElementById("wscspinnerbg").style.display="block";
-  setTimeout(stopspinner,3100);
+
+  if (shouldaloadedalr) {clearTimeout(shouldaloadedalr);}
+
+  shouldaloadedalr = setTimeout(stopspinner,3100);
+
+  if (playsound) {clearTimeout(playsound);}
 
 /* moved down for compatability */
   loading.loop = true;
@@ -14,7 +19,6 @@ if (spinner === true) {
 }
 
 function stopspinner() {
-
 document.getElementById("wscspinnerbg").style.display="none";
 loading.pause();
 }
@@ -22,19 +26,16 @@ loading.pause();
 
 
 function loadup() {
-var timee = setTimeout(loadup,100);
-/* i hate javascript sometime :))))))) */
     if (loadvolume > 0) {
         loadvolume += 0.01;
     }
     if (loadvolume >= 0.4) {
         loadvolume = 0;
-        clearTimeout(timee);
     }
 
-loading.volume = loadvolume;
+    loading.volume = loadvolume;
+    playsound = setTimeout(loadup, 100); 
 }
-
 
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -48,16 +49,13 @@ if (isConsoleBrowser) {browserageworkswithloader = false;}
 else 
 {
  browserageworkswithloader = true;
- stopspinner();
+ document.getElementById("wscspinnerbg").style.display="none";
  document.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", showspinner);
  });
 }
 
-function stopspinner() {
-document.getElementById("wscspinnerbg").style.display="none";
-loading.pause();
-}
+
 });
 
 

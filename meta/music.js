@@ -1,5 +1,5 @@
 // Wii Shop BGM Player, suggested by @legamer66 (https://discord.com/channels/1346485785284575335/1346485786039681056/1351527080546009259)
-var checkbgmplayerstatus = null;
+var bgmplayercompatable = false;
 function hideConsoleControls() {
   const userAgent = navigator.userAgent.toLowerCase();
   const isConsoleBrowser =
@@ -8,12 +8,11 @@ function hideConsoleControls() {
     userAgent.includes('nintendo 3ds') ||
     userAgent.includes('nintendo');
   // they can't play music so rip
-  if (isConsoleBrowser) {checkbgmplayerstatus = false; const bgmPlayerDiv = document.getElementById('bgmplayer');
-  if (bgmPlayerDiv) {bgmPlayerDiv.style.display = 'none';} else {checkbgmplayerstatus = false;} }
+  if (isConsoleBrowser) {bgmplayercompatable = false; const bgmPlayerDiv = document.getElementById('bgmplayer'); if (bgmPlayerDiv) {bgmPlayerDiv.style.display = 'none';} else {bgmplayercompatable = true;} }
 }
 
 
-var shoploop = new Audio("/meta/shop.wav");
+var shoploop = new Audio("");
 shoploop.loop = true;
 var initialvolume = 0 || 0.0;
 shoploop.volume = initialvolume;
@@ -58,11 +57,12 @@ if (wmtwebsiteBGMwasplaying === 'paused') {
 window.onload = function() {
 
 
-if (checkbgmplayerstatus === true) {
+if (bgmplayercompatable === true) {
 
 var wmtwebsiteBGMwasplaying = localStorage.getItem("wmtwebsiteBGM");
 
 if (wmtwebsiteBGMwasplaying === 'playing') {
+  shoploop = new Audio("/meta/shop.wav");
     activatebgmplayerfocus();
     document.getElementById("shopbgmselector").href = "javascript:playBGMonload();";
 } else {
@@ -83,6 +83,7 @@ if (wmtwebsiteBGMwasplaying === 'paused') {
 /* bgm check for all pages */
 
 function activatebgmplayerfocus() {
+  shoploop = new Audio("/meta/shop.wav");
   bgmplayerfocus();
   document.getElementById('bgmplayer').classList.add('bgmplayeropenanim');
   document.getElementById("bgmplrtitle").innerText="BGM player"; document.getElementById("bgmplrtitle").style.marginTop="0px";
@@ -96,6 +97,7 @@ function bgmplayerfocus() {
 }
 
 window.onbeforeunload = function() {
+  shoploop = new Audio("/meta/shop.wav");
   localStorage.setItem("bgmlooppoint", shoploop.currentTime);
 };
 
@@ -156,12 +158,14 @@ var volchangee = setTimeout(fadeinbgm,13);
 
 
 function activatebgmplayer() {
+  shoploop = new Audio("/meta/shop.wav");
   document.getElementById('bgmplayer').classList.add('bgmplayerdisplayed');
   document.getElementById("shopbgm").innerText = "Play";
   document.getElementById("bgmplrtitle").innerText="BGM player"; document.getElementById("bgmplrtitle").style.marginTop="0px";
     document.getElementById("bgmplayer").style.backdropFilter="blur(1.8px)";
 }
 function deactivatebgmplayer() {
+  shoploop = new Audio("/meta/shop.wav");
   document.getElementById('bgmplayer').classList.remove('bgmplayerdisplayed');
   document.getElementById("bgmplrtitle").innerText="bgm plr..";  document.getElementById("bgmplrtitle").style.marginTop="-5px";
   document.getElementById("bgmplayer").style.backgroundColor="#0000"; document.getElementById("bgmplayer").style.backgroundColor="#0000"; document.getElementById("bgmplayer").style.border="1px solid #34BEED";
