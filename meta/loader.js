@@ -1,7 +1,7 @@
 var loading = null; var loadvolume; var browserageworkswithloader = false; var spinner = true;
 function showspinner() {
 if (spinner === true) {
-  var loading = new Audio("/media/load.wav");
+  loading = new Audio("/media/load.wav");
   document.getElementById("wscspinnerbg").style.display="block";
   setTimeout(stopspinner,3100);
 
@@ -14,6 +14,7 @@ if (spinner === true) {
 }
 
 function stopspinner() {
+
 document.getElementById("wscspinnerbg").style.display="none";
 loading.pause();
 }
