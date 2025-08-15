@@ -16,7 +16,6 @@ var initialvolume = 0 || 0.0;
 
 function bgmaudioloader() { if (!shoploop) {shoploop = new Audio("/meta/shop.wav"); shoploop.loop = true; shoploop.volume = initialvolume;} return shoploop;}
 
-
 /* what idk, only for index.html */
 
 function loadafterwednesdaycheck() {
@@ -24,7 +23,7 @@ setTimeout(wednesdayyeeeee,100);
 }
 function wednesdayyeeeee() {
   hideConsoleControls();
-
+ document.getElementById('bgmplayer').style.display="block";
   if (savedTime) {
     shoploop = bgmaudioloader();
     shoploop.currentTime = parseFloat(savedTime);
@@ -66,7 +65,7 @@ shoploop = bgmaudioloader();  localStorage.setItem("bgmlooppoint", shoploop.curr
 
 function allpagesonload() {
   if (bgmplayercompatable === true) {
-
+document.getElementById('bgmplayer').style.display="block"; 
 var wmtwebsiteBGMwasplaying = localStorage.getItem("wmtwebsiteBGM");
 
 if (wmtwebsiteBGMwasplaying === 'playing') {
@@ -86,7 +85,6 @@ if (wmtwebsiteBGMwasplaying === 'paused') {
 }
 
 /* bgm check for all pages */
-
 function activatebgmplayerfocus() {
   bgmplayerfocus();
   document.getElementById('bgmplayer').classList.add('bgmplayeropenanim');

@@ -84,8 +84,8 @@ img.right {right: 10px; animation: rightHoverAnimation 0.5s infinite alternate;}
 
 /* loading spinner */ 
 /* add onclick="spinner = false;" if you would like to skip the loader on a <a> element. (good for downloads) */
-#wscspinnerbg {position:fixed; z-index:1005; top:0px; left:0px; width:100%; height:100%;}
-#wscspinner {z-index:1004;position:absolute;top:0px;left:0px; width:95px; height:95px; animation: spinner 1s linear infinite;}
+#wscspinnerbg {position:fixed; z-index:1005; top:0px; left:0px; width:100%; height:100%;   }
+#wscspinner {z-index:1004;position:absolute;top:0px;left:0px; width:95px; height:95px; animation: spinner 1s linear infinite; /* fallback if loaderimg takes a minute to load */ filter:drop-shadow(1px 1px 3px #b9b9b950); outline:2px dotted #c9c9c9ec; border-radius:90px;}
 #wscspinnershadow {z-index:1004;position:absolute;top:7px;left:9px; width:95px; height:95px; opacity:30%; animation: spinner 1s linear infinite;}
 @keyframes spinner {from {transform: rotate(0deg)}to {transform: rotate(343deg)};}
 

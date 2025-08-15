@@ -1,7 +1,6 @@
 var loading = new Audio(""); var loadvolume; var browserageworkswithloader = false; var spinner = true; var shouldaloadedalr = null; var playsound = null;
 function showspinner() {
 if (spinner === true) {
-  loading = new Audio("/media/load.wav");
   document.getElementById("wscspinnerbg").style.display="block";
 
   if (shouldaloadedalr) {clearTimeout(shouldaloadedalr);}
@@ -11,6 +10,7 @@ if (spinner === true) {
   if (playsound) {clearTimeout(playsound);}
 
 /* moved down for compatability */
+loading = new Audio("/media/load.wav");
   loading.loop = true;
   loading.play(); loading.currentTime=0; loadvolume = 0.01; loading.volume = loadvolume;
    loadup();
@@ -24,6 +24,7 @@ loading.pause();
 }
 }
 
+function loadrimg() {document.getElementById("wscspinner").style.outline="none"; document.getElementById("wscspinner").alt="spinr";}
 
 function loadup() {
     if (loadvolume > 0) {
