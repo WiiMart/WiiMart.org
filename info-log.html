@@ -18,7 +18,7 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
   </head>
 <body>
-<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="allowedtoload = false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">....</button></a><a href="javascript:deactivatebgmplayer();" onclick="allowedtoload = false;"><button>Close</button></a></div>   </div>
+<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="spinner = false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">....</button></a><a href="javascript:deactivatebgmplayer();" onclick="spinner = false;"><button>Close</button></a></div>   </div>
 
 <nav style="margin-bottom:0"><a href="/" class="btn">Back to WiiMart.org</a></nav>
 
@@ -26,7 +26,7 @@
    <!-- Each summary can't be too long or else it'll start a new line with the date on smaller windows -->
    <div class="box" style="padding:0;padding-bottom:10px">
         <header style="background-color:#34BEED;color:white;font-weight:bold;margin-bottom:10px">Important Info:</header>
-        <details>
+        <details  class="details-impt-info">
             <summary>WiiMart Wednesday #18 <span class="date">08-06</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
@@ -43,7 +43,7 @@
             </ul>
             <p>Two additional missing channels, <i>Amazon/LOVEFiLM</i> and <i>Crunchyroll</i>, have been added.</p>
         </details>
-        <details>
+        <details  class="details-impt-info">
             <summary>WiiMart Wednesday #17 <span class="date">07-30</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
@@ -59,7 +59,7 @@
                 <li><img src="meta/em-flash.png" class="pf"> <i>Penguin Diner</i> <a href="credits#Idkwh"><img src="media/em-idkwh.png"></a></li>
             </ul>
         </details>
-        <details>
+        <details  class="details-impt-info">
             <summary>WiiMart Wednesday #16 <span class="date">07-23</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
@@ -75,7 +75,7 @@
             <li><img src="meta/em-flash.png" class="pf"> <i>Asgore Runs Over Dess</i> <a href="credits#Yoshi"><img src="media/em-yoshi.png"></a></li>
             </ul>
         </details>
-        <details>
+        <details  class="details-impt-info">
             <summary>WiiMart Wednesday #15 <span class="date">07-16</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
@@ -91,7 +91,7 @@
             <li><img src="meta/em-flash.png" class="pf"> <i>Feature Presentation</i> <a href="credits#Idkwh"><img src="media/em-idkwh.png"></a></li>
             </ul>
         </details>
-        <details>
+         <details class="details-impt-info">
             <summary>WiiMart Wednesday #14 <span class="date">07-09</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
@@ -104,7 +104,7 @@
             <li><img src="meta/em-flash.png" class="pf"> <i>東方 Bad Apple!! PV 影絵</i> <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
             </ul>
         </details>
-        <details>
+         <details class="details-impt-info">
             <summary>WiiMart Wednesday #13 <span class="date">07-02</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
@@ -122,7 +122,7 @@
             <li><img src="meta/em-flash.png" class="pf"> <i>Luigi's Revenge Interactive</i> <a href="credits#Onion"><img src="media/em-onion.png"></a></li>
             </ul>
         </details>
-        <details>
+         <details class="details-impt-info">
             <summary>WiiMart Wednesday #12 <span class="date">06-25</span></summary>
             <p>These titles were added this Wednesday. To celebrate the 34th birthday of Sonic on June 23rd some additional Sonic titles have been included!</p>
             <ul>
@@ -143,7 +143,7 @@
             <li><img src="meta/em-vc-genesis.png" class="pf"> <i>Silver Sonic: The Revenge</i> <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
             </ul>
         </details>
-        <details>
+         <details class="details-impt-info">
             <summary>WiiMart Wednesday #11 <span class="date">06-18</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
@@ -160,7 +160,7 @@
             </ul>
             <p>An update was also made to the WiiWare title <i>Pokémon Rumble: Weekend Edition</i>.</p>
         </details>
-        <details>
+         <details class="details-impt-info">
             <summary>WiiMart Wednesday #10 <span class="date">06-11</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
@@ -176,15 +176,15 @@
             <li><img src="meta/em-vc-genesis.png" class="pf"> <i>The Jungle Book</i> <a href="credits#Dustin"><img src="media/em-dustin.png"></a></li>
             </ul>
         </details>
-        <details>
+         <details class="details-impt-info">
             <summary>Important Info section created <span class="date">06-09</span></summary>
             <p>The <b>Important Info</b> section was added on June 10th. This section is not corresponding to the one seen on the Wii Shop Channel.</p>
         </details>
-        <details>
+         <details class="details-impt-info">
             <summary>WiiMart is down for maintenance. <span class="date">06-07</span></summary>
             <p>The WiiMart service is currently offline as we are handling DSiMart testing.</p>
         </details>
-        <details>
+         <details class="details-impt-info">
             <summary>WiiMart Wednesday #9 <span class="date">06-04</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
@@ -199,7 +199,7 @@
             <li><img src="meta/em-vc-snes.png" class="pf"> <i>Pocky & Rocky</i> <a href="credits#Onion"><img src="media/em-onion.png"></a></li>
             </ul>
         </details>
-        <details>
+         <details class="details-impt-info">
             <summary>WiiMart Wednesday #8 <span class="date">05-28</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
@@ -215,11 +215,11 @@
             <li><img src="meta/em-vc-snes.png" class="pf"> <i>Super Puyo Puyo 2</i> <a href="credits#Onion"><img src="media/em-onion.png"></a></li>
             </ul>
         </details>
-        <details>
+         <details class="details-impt-info">
             <summary>Specials for 3DS and Wii U <span class="date">05-21</span></summary>
             <p>Check out the <a href="specials">Specials</a> page to see the new specials.</p>
         </details>
-        <details>
+         <details class="details-impt-info">
             <summary>WiiMart Wednesday #7 <span class="date">05-21</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
@@ -234,7 +234,7 @@
             <li><img src="meta/em-vc-snes.png" class="pf"> <i>Super Robot Wars 3</i> <a href="credits#Onion"><img src="media/em-onion.png"></a></li>
             </ul>
         </details>
-        <details>
+         <details class="details-impt-info">
             <summary>WiiMart Wednesday #6 <span class="date">05-14</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
@@ -249,7 +249,7 @@
             <li><img src="meta/em-flash.png" class="pf"> <i>Tails' Nightmare 2</i> <small>US/EU only</small> <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
             </ul>
         </details>
-        <details>
+         <details class="details-impt-info">
             <summary>WiiMart Wednesday #5 <span class="date">05-07</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
@@ -270,16 +270,16 @@
             </ul>
             <p>This was the first WiiMart Wednesday with server hoster Selim.</p>
         </details>
-        <details>
+         <details class="details-impt-info">
             <summary>Update your WiiMart! <span class="date">05-02</span></summary>
             <p>Since May 2nd WiiMart has been relocated to a new domain. For this update you'll need to download new WADs. Go to the <a href="install">Install</a> page.</p>
         </details>
-        <details>
+         <details class="details-impt-info">
             <summary>Title spreadsheet <span class="date">04-23</span></summary>
             <p>If you want to find a specific game or just want to see what is in WiiMart you can use my newly made spreadsheet. It has information of all the titles on WiiMart USA only at the moment.</p>
             <p><a href="title-sheet" class="btn">Spreadsheet</a></p>
         </details>
-        <details>
+         <details class="details-impt-info">
             <summary>WiiMart Wednesday #4 Bonus <span class="date">04-22</span></summary>
             <ul>
             <li>Line Attack Heroes</li>
@@ -289,7 +289,7 @@
             <li>Yoshi’s Cookie</li>
             </ul>
         </details>
-        <details>
+         <details class="details-impt-info">
             <summary>WiiMart Wednesday #4 <span class="date">04-22</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
@@ -362,7 +362,7 @@
             </ul>
             <p>This was the last WiiMart Wednesday with server hoster Larsenv.</p>
         </details>
-        <details>
+         <details class="details-impt-info">
             <summary>WiiMart Wednesday #3 <span class="date">04-15</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
@@ -403,7 +403,7 @@
             <li><img src="meta/em-flash.png" class="pf"> <i>Wubbzy's Amazing Adventure</i> <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
             </ul>
         </details>
-        <details>
+         <details class="details-impt-info">
             <summary>WiiMart Wednesday #2 <span class="date">04-08</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
@@ -416,12 +416,12 @@
             <li><img src="meta/em-flash.png" class="pf"> <i>X-Tract Paperclip</i> <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
             </ul>
         </details>
-        <details>
+         <details class="details-impt-info">
             <summary>Error Code Checker <span class="date">04-05</span></summary>
             <p>WiiMart's website now has an error code checker! If you see an error code in the shop you can look it up here and troubleshoot accordingly.</p>
             <p><a href="errors" class="btn">Checker</a></p>
         </details>
-        <details>
+         <details class="details-impt-info">
             <summary>WiiMart Wednesday #1 <span class="date">04-02</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
@@ -439,11 +439,11 @@
             </ul>
             <p>This was the first WiiMart Wednesday with server hoster Larsenv.</p>
         </details>
-        <details>
+         <details class="details-impt-info">
             <summary>Public launch <span class="date">03-12</span></summary>
             <p>This day was the date that WiiMart became known publicly. It (and the day after) is considered the public release of WiiMart in beta.</p>
         </details>
-        <details>
+         <details class="details-impt-info">
             <summary>Server creation <span class="date">03-09</span></summary>
             <p>The Discord server was released on March 9th. A few members were in the server while it was private.</p>
         </details>

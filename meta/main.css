@@ -10,13 +10,17 @@ h1 {margin-bottom: 10px;}
 nav {margin-bottom: 20px;line-height: 35px;}
 footer {color:grey}
 footer a {color:grey}
+
+details {text-align:left;padding-left: 5px;padding-right: 5px;}
+details ul {padding-left: 0;}
+details li {font-size:smaller;list-style:none;vertical-align:middle;}
+summary {padding-left: 5px;padding-right: 5px;cursor: pointer;user-select: none}
+
+.details-impt-info[open]   {transition:.3s ease-in-out; max-height: 445px; overflow: hidden auto; margin-bottom:3px;}
+.details-impt-info[open] summary {position:sticky; top:0; left:0; background-image:url("/meta/fadebg-wmw.png"); background-color:#73bad146; background-size:100% !important; }
 a.btn { background-color: #E6FFF2;border-radius: 10px;padding: 4px;margin-bottom: 10px;color:black;text-decoration: none;filter: drop-shadow(1px 1px 1px black);font-weight: 100;display:inline; transition:.2s ease-in-out;}
 a.btn:hover { background-color: #C7FDFF;   padding:5px; font-size:16px; transition:.2s ease-in-out;}
 a.btn:active {filter: none;}  
-#wscspinnerbg {position:fixed; z-index:1005; top:0px; left:0px; width:100%; height:100%;}
-#wscspinner {z-index:1004;position:absolute;top:0px;left:0px; width:95px; height:95px; animation: spinner 1s linear infinite;}
-#wscspinnershadow {z-index:1004;position:absolute;top:7px;left:9px; width:95px; height:95px; opacity:30%; animation: spinner 1s linear infinite;}
-@keyframes spinner {from {transform: rotate(0deg)}to {transform: rotate(343deg)};}
 span.active {background-color: #c7c7c7;border-radius: 10px;padding: 4px;font-weight: 100;display:inline;cursor:auto;user-select:none}
 span.date {float:right;}
 span.hide {color:black}
@@ -24,17 +28,20 @@ button {transform:scale(1);margin-bottom: 6px;font-family:'Shop',sans-serif;padd
 button:hover { transform:scale(1.03);transition: transform 0.2s ease-in-out; box-shadow: inset 0 0 0 3px #34BEED;cursor:pointer}
 button:disabled {outline: 1px solid #9A9A9A;box-shadow:none;cursor:default}
 
-details {text-align:left;padding-left: 5px;padding-right: 5px; max-height:50px;transition:.3s ease-in-out;scrollbar-width:none;}
-details[open] {transition:.3s ease-in-out; max-height: 445px; overflow: hidden auto; margin-bottom:3px;}
-details[open] summary {position:sticky; top:0; left:0; background-image:url("/meta/fadebg-wmw.png"); background-color:#73bad146; background-size:100% !important; }
-details ul {padding-left:0;}
+details {text-align:left;padding-left: 5px;padding-right: 5px;}
+details ul {padding-left: 0;}
 details li {font-size:smaller;list-style:none;vertical-align:middle;}
-summary {padding-left:5px;padding-right:5px;backdrop-filter:blur(1.8px);cursor:pointer;user-select:none;border-radius:5px;margin-bottom:3px;}
-summary:hover {background-color:#73bad14d;}
-summary:active {background-color:#73bad16b;}
+summary {padding-left: 5px;padding-right: 5px;cursor: pointer;user-select: none}
 details li img {width:25px;height:25px;vertical-align:middle;margin:1px;outline:solid 1px #9900FF;border-radius:2px}
-details li a img:hover {outline:solid 2px #9900FF}
+details li a img:hover {outline: solid 2px #9900FF}
 details li img.pf {outline:none}
+
+/* add to the <details> element class="details-impt-info" if the <details> contains Important Info, obvously. */
+.details-impt-info {max-height:50px; transition:.3s ease-in-out;}
+.details-impt-info summary {padding-left: 5px;padding-right: 5px;cursor: pointer;user-select: none; border-radius:5px; margin-bottom:3px;}
+.details-impt-info summary:hover {background-color:#73bad14d;}
+.details-impt-info summary:active {background-color:#73bad16b;}
+
 
 /* Text stuff */
 h1, h2 {color:#34BEED;}
@@ -75,8 +82,15 @@ img.right {right: 10px; animation: rightHoverAnimation 0.5s infinite alternate;}
 @keyframes hoverAnimation {0% {transform: translateY(-50%) translateX(0);} 100% {transform: translateY(-50%) translateX(5px);}}
 @keyframes rightHoverAnimation {0% {transform: translateY(-50%) translateX(0);} 100% {transform: translateY(-50%) translateX(-5px);}}
 
+/* loading spinner */ 
+/* add onclick="spinner = false;" if you would like to skip the loader on a <a> element. (good for downloads) */
+#wscspinnerbg {position:fixed; z-index:1005; top:0px; left:0px; width:100%; height:100%;}
+#wscspinner {z-index:1004;position:absolute;top:0px;left:0px; width:95px; height:95px; animation: spinner 1s linear infinite;}
+#wscspinnershadow {z-index:1004;position:absolute;top:7px;left:9px; width:95px; height:95px; opacity:30%; animation: spinner 1s linear infinite;}
+@keyframes spinner {from {transform: rotate(0deg)}to {transform: rotate(343deg)};}
+
 /* Music */
-div#bgmplayer {backdrop-filter:blur(1.8px);background-color:#0000; background-size:0px;z-index: 1000;transition:.3s ease-in-out; position:fixed; bottom:3px; border:2px solid #34BEED;  width:60px; height:20px; overflow:hidden;}
+div#bgmplayer {backdrop-filter: blur(1.8px); background-color:#0000; background-size:0px;z-index: 1000;transition:.3s ease-in-out; position:fixed; bottom:3px; border:2px solid #34BEED;  width:60px; height:20px; overflow:hidden;}
 div#bgmplayer:hover {cursor:pointer;  }div#bgmplayer .shopbgm {margin-right:4px;} div#bgmplayer button {opacity:90%; background-color: #ebebebb6; color:#323232;} 
 .bgmplayerdisplayed{background-image:url("/meta/fadebg-bgm.png"); background-size:100% !important; cursor:default !important;  transition:.3s ease-in-out; height:65px !important; width:120px !important; overflow:auto;scrollbar-width: none;}.bgmplayeropenanim{width:165px !important; height:100px !important;}
 #mainplayer {z-index: 1001;}#bgmplayerBG {display:block; position:absolute; user-select:none; pointer-events:none; top:0; left:0; width:100%; height:100%;}
@@ -120,7 +134,8 @@ div#bgmplayer p {line-height:20px;color:#9A9A9A; margin-top:-10px;font-style:ita
   #wednesdaytitles {color:white; background-color:#3b3b3b}
   img.slide {background-color: #3d3d3d;}
 
-  details[open] summary {position:sticky; top:0; left:0; background-image:url("/meta/fadebg-bgm.png"); background-size:100% !important; }
-  summary:hover {background-color:#73bad14d;}
-  summary:active {background-color:#73bad16b;}
+  /* if the <details> contains Important Info */
+  .details-impt-info[open] summary {position:sticky; top:0; left:0; background-image:url("/meta/fadebg-bgm.png"); background-size:100% !important; }
+  .details-impt-info summary:hover {background-color:#73bad14d;}
+  .details-impt-info summary:active {background-color:#73bad16b;}
 }

@@ -1,32 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <style>@font-face {font-family:'Shop';src:url('meta/shop.ttf') format('truetype');font-weight: normal;font-style: normal;}</style>
-    <script src="meta/music.js"></script>
-    <script src="meta/loader.js"></script>
-    <title>Support for WiiMart</title>
-    <meta content="Support for WiiMart" property="og:title">
-    <meta content="This page contains troublehsooting tips for WiiMart." property="og:description">
-    <meta content="https://wiimart.org/media/branding-bag.png" property="og:image">
-    <meta content="https://wiimart.org/support" property="og:url">
-    <meta content="#FF0000" data-react-helmet="true" name="theme-color">
-    <meta name="keywords" content="Errors, support, Wii Shop, homebrew">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="meta/main.css">
-    <script src="meta/gallery.js" defer></script>
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <style>
-        img, img.slide {width:100%} input {border: 2px solid #CCCCCC;border-bottom-color: #EAEAEA;margin-bottom: 15px;} #results {display:none;}
-        summary {color:red;list-style:none;font-weight:bold;padding-top:5px;}
-        details {padding-top:5px;color:red;outline:solid 1px red;padding-bottom: 5px;margin-bottom: 10px;text-align: center;h2 {color:red};}
-        button#scrollUp {position:fixed;bottom: 10px; right: 10px; display: none; transform: translateY(20px); transition: opacity 0.3s ease, transform 0.3s ease;padding-bottom:0;z-index:1000;}
-        button#scrollUp.show {display:block;opacity:1;transform: translateY(0);}
-    </style>
+   <meta charset="utf-8">
+   <meta http-equiv="x-ua-compatible" content="ie=edge">
+   <style>@font-face {font-family:'Shop';src:url('meta/shop.ttf') format('truetype');font-weight: normal;font-style: normal;}</style>
+   <script src="meta/music.js"></script>
+   <script src="meta/loader.js"></script>
+   <title>Support for WiiMart</title>
+   <meta content="Support for WiiMart" property="og:title">
+   <meta content="This page contains troublehsooting tips for WiiMart." property="og:description">
+   <meta content="https://wiimart.org/media/branding-bag.png" property="og:image">
+   <meta content="https://wiimart.org/support" property="og:url">
+   <meta content="#FF0000" data-react-helmet="true" name="theme-color">
+   <meta name="keywords" content="Errors, support, Wii Shop, homebrew">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="meta/main.css">
+   <script src="meta/gallery.js" defer></script>
+   <link rel="icon" type="image/x-icon" href="favicon.ico">
+   <style>
+  img, img.slide {width:100%} input {border: 2px solid #CCCCCC;border-bottom-color: #EAEAEA;margin-bottom: 15px;} #results {display:none;}
+  summary {color:red;text-decoration: underline;list-style: none;font-weight: bold;user-select: none;cursor: pointer;}
+  details {color:red;outline: solid 1px red;padding-bottom: 5px;margin-bottom: 10px;text-align: center;h2 {color:red};}
+  button#scrollUp {position:fixed;bottom: 10px; right: 10px; display: none; transform: translateY(20px); transition: opacity 0.3s ease, transform 0.3s ease;padding-bottom:0;z-index:1000;}
+  button#scrollUp.show {display:block;opacity:1;transform: translateY(0);}
+   </style>
 </head>
 <body >
-<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="allowedtoload = false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">....</button></a><a href="javascript:deactivatebgmplayer();" onclick="allowedtoload = false;"><button>Close</button></a></div>   </div>
+<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="spinner = false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">....</button></a><a href="javascript:deactivatebgmplayer();" onclick="spinner = false;"><button>Close</button></a></div>   </div>
 
 <h1><a href="/">WiiMart</a></h1>
 
@@ -37,146 +37,144 @@
 <h2>Shop-related</h2>
 
 <div class="row">
-    <div class="box">
-        <h3>Is real money needed to buy Wii Points?</h3>
-        <p>The WiiMart service is entirely free of charge! Wii Points are "bought" only to keep the service as close the original as possible.</p>
-        <h3>How do I troubleshoot <i>this error code</i>?</h3>
-        <p>Check it with <a href="errors">this tool</a>, otherwise ask for help in the <b>#support</b> channel on <a href="https://discord.gg/wbbDmbYm7U">Discord</a>.</p>
-        <h3>Why did the gift button disappear?</h3>
-        <p>Gifting was available using a WiiConnect24 revival. Unfortunately we were asked to stop sending out gifts via their service.</p>
-        <h3 id="IOS80">Why can't I install titles to the SD Card?</h3>
-        <p>A patched IOS80 WAD is needed. To get it, go through the <a href="install">Install</a> page.</p>
-        <h3>How do I change the region?</h3>
-        <div class="gallery" style="width:100%">
-        <img src="media/screenshot-region-help-1.png" class="slide" alt="Shop main menu">
-        <img src="media/screenshot-region-help-2.png" class="slide" alt="Shop settings, scrolled to regions">
-        <img src="media/screenshot-region-help-3.png" class="slide" alt="Shop region options">
-        </div>
-        <p>Go to Wii Shop settings and look for the <b>Change Region</b> button.</p>
+  <div class="box">
+    <h3>Is real money needed to buy Wii Points?</h3>
+    <p>The WiiMart service is entirely free of charge! Wii Points are "bought" only to keep the service as close the original as possible.</p>
+    <h3>How do I troubleshoot <i>this error code</i>?</h3>
+    <p>Check it with <a href="errors">this tool</a>, otherwise ask for help in the <b>#support</b> channel on <a href="https://discord.gg/wbbDmbYm7U">Discord</a>.</p>
+    <h3>Why did the gift button disappear?</h3>
+    <p>Gifting was available using a WiiConnect24 revival. Unfortunately we were asked to stop sending out gifts via their service.</p>
+    <h3 id="IOS80">Why can't I install titles to the SD Card?</h3>
+    <p>A patched IOS80 WAD is needed. To get it, go through the <a href="install">Install</a> page.</p>
+    <h3>How do I change the region?</h3>
+    <div class="gallery" style="width:100%">
+    <img src="media/screenshot-region-help-1.png" class="slide" alt="Shop main menu">
+    <img src="media/screenshot-region-help-2.png" class="slide" alt="Shop settings, scrolled to regions">
+    <img src="media/screenshot-region-help-3.png" class="slide" alt="Shop region options">
     </div>
+    <p>Go to Wii Shop settings and look for the <b>Change Region</b> button.</p>
+  </div>
 
-    <!--
-    <h2 id="Backup">Save Data Backup</h2>
-    <div class="box">
-        <p></p>
-        <h3></h3>
+  <!--
+  <h2 id="Backup">Save Data Backup</h2>
+  <div class="box">
+    <p></p>
+    <h3></h3>
+  </div>
+  -->
+
+  <h2>Title-related</h2>
+
+  <div class="box">
+    <h3>My title says 'This channel can't be used.' or just has a black screen!</h3>
+    <div class="gallery" style="width:100%">
+      <img src="media/screenshot-priiloader-help-1.png" class="slide" alt="Priiloader main menu">
+      <img src="media/screenshot-priiloader-help-3.png" class="slide" alt="Priiloader settings">
+      <img src="media/screenshot-priiloader-help-5.png" class="slide" alt="Priiloader saved settings">
     </div>
-    -->
+    <p>Install <a href="https://wii.hacks.guide/priiloader" target="_blank" onclick="spinner = false;">Priiloader</a> and enable the
+      <b>Region Free EVERYTHING</b> option in System Menu Hacks, then launch it again.</p>
 
-    <h2>Title-related</h2>
-
-    <div class="box">
-        <h3>My title says 'This channel can't be used.' or just has a black screen!</h3>
-        <div class="gallery" style="width:100%">
-        <img src="media/screenshot-priiloader-help-1.png" class="slide" alt="Priiloader main menu">
-        <img src="media/screenshot-priiloader-help-3.png" class="slide" alt="Priiloader settings">
-        <img src="media/screenshot-priiloader-help-5.png" class="slide" alt="Priiloader saved settings">
-        </div>
-        <p>Install <a href="https://wii.hacks.guide/priiloader">Priiloader</a> and enable the
-        <b>Region Free EVERYTHING</b> option in System Menu Hacks, then launch it again.</p>
-
-        <h3 id="OldBanner">What is the old banner WiiMart?</h3>
-        <div class="gallery">
-        <img src="media/screenshot-ob-1.png" class="slide" alt="Cursor hovering over the old banner">
-        <img src="media/screenshot-ob-2.png" class="slide" alt="">
-        <img src="media/screenshot-ob-3.png" class="slide" alt="Old banner showing on Wii Menu">
-        <img src="media/screenshot-ob-4.png" class="slide" alt="">
-        <img src="media/screenshot-ob-5.png" class="slide" alt="">
-        </div>
-        <p>It is a version of WiiMart using the old 2006-2007 banner on the Wii Menu, note that the dynamic banner is not supported with this version.</p>
-
-        <h3 id="uninstall">How can I uninstall WiiMart?</h3>
-        <p>Install the following WADs, they will overwrite WiiMart and the patched IOS associated.</p>
-        <h4>Wii</h4>
-        <p><a href="wad/IOS56(WiiOriginal).wad" class="btn">Download IOS56 for Wii</a></p>
-        <p><a href="wad/IOS80(WiiOriginal).wad" class="btn">Download IOS80 for Wii</a></p>
-        <p><a href="wad/WiiShop(WiiOriginal).wad" class="btn">Download Wii Shop for Wii</a></p>
-        <h4>vWii</h4>
-        <p><a href="wad/IOS56(vWiiOriginal).wad" class="btn">Download IOS56 for vWii</a></p>
-        <p><a href="wad/IOS80(vWiiOriginal).wad" class="btn">Download IOS80 for vWii</a></p>
-        <p><a href="wad/WiiShop(vWiiOriginal).wad" class="btn">Download Wii Shop for vWii</a></p> 
+    <h3 id="OldBanner">What is the old banner WiiMart?</h3>
+    <div class="gallery">
+      <img src="media/screenshot-ob-1.png" class="slide" alt="Cursor hovering over the old banner">
+      <img src="media/screenshot-ob-2.png" class="slide" alt="">
+      <img src="media/screenshot-ob-3.png" class="slide" alt="Old banner showing on Wii Menu">
+      <img src="media/screenshot-ob-4.png" class="slide" alt="">
+      <img src="media/screenshot-ob-5.png" class="slide" alt="">
     </div>
+    <p>It is a version of WiiMart using the old 2006-2007 banner on the Wii Menu, note that the dynamic banner is not supported with this version.</p>
 
-    <h2>Project-related</h2>
+    <h3 id="uninstall">How can I uninstall WiiMart?</h3>
+    <p>Install the following WADs, they will overwrite WiiMart and the patched IOS associated.</p>
+    <h4>Wii</h4>
+    <p><a href="wad/IOS56(WiiOriginal).wad" class="btn" onclick="spinner = false;">Download IOS56 for Wii</a></p>
+    <p><a href="wad/IOS80(WiiOriginal).wad" class="btn" onclick="spinner = false;">Download IOS80 for Wii</a></p>
+    <p><a href="wad/WiiShop(WiiOriginal).wad" class="btn" onclick="spinner = false;">Download Wii Shop for Wii</a></p>
+    <h4>vWii</h4>
+    <p><a href="wad/IOS56(vWiiOriginal).wad" class="btn" onclick="spinner = false;">Download IOS56 for vWii</a></p>
+    <p><a href="wad/IOS80(vWiiOriginal).wad" class="btn" onclick="spinner = false;">Download IOS80 for vWii</a></p>
+    <p><a href="wad/WiiShop(vWiiOriginal).wad" class="btn" onclick="spinner = false;">Download Wii Shop for vWii</a></p> 
+  </div>
 
-    <div class="box">
-        <h3>How is the shop doing?</h3>
-        <p>So far, the developers have been utilizing most of the channel's features. Downloading, dynamic banners, catalogs,
-        are all being utilized.</p>
-        <h3>When is <i>this feature</i> going to be added?</h3>
-        <p>The owner and developers are updating on their own time. In the meantime you can check the progress above
-        for what features do and don't work. <b>Important: Gifting is no longer available at the moment.</b></p>
-        <h3>Will there be an option to switch out the 'WiiMart' name back to 'Wii Shop Channel'?</h3>
-        <p>Of course! It will be in settings.</p>
-        <h3>What information is stored when using WiiMart?</h3>
-        <p>The web server stores IP addresses of those that connect to it, common with web servers. Wii console serial
-        numbers are stored, in the SOAP database with encryption.</p>
-    </div>
+  <h2>Project-related</h2>
 
-    <h2 id="EULA">User Agreements</h2>
+  <div class="box">
+    <h3>How is the shop doing?</h3>
+    <p>So far, the developers have been utilizing most of the channel's features. Downloading, dynamic banners, catalogs,
+      are all being utilized.</p>
+    <h3>When is <i>this feature</i> going to be added?</h3>
+    <p>The owner and developers are updating on their own time. In the meantime you can check the progress above
+      for what features do and don't work. <b>Important: Gifting is no longer available at the moment.</b></p>
+    <h3>Will there be an option to switch out the 'WiiMart' name back to 'Wii Shop Channel'?</h3>
+    <p>Of course! It will be in settings.</p>
+    <h3>What information is stored when using WiiMart?</h3>
+    <p>The web server stores IP addresses of those that connect to it, common with web servers. Wii console serial
+      numbers are stored, in the SOAP database with encryption.</p>
+  </div>
 
-    <div class="box">
-        <img src="media/screenshot-eula-help-0.png" alt="Shop user agreements message">
+  <h2 id="EULA">User Agreements</h2>
 
-        <p>If you've come across this screen then the following will help. Click on that <b>User Agreements</b> button, if it takes you to the Wii Menu then you can go to it manually.</p>
-        <p><b style="color:red">Precaution:</b> Please make sure you do not have a DNS set that interferes with the EULA. (e.g. str2hax)</p>
-        <h3>Accepting the User Agreements</h3>
-        <img src="media/screenshot-system-menu-wii.png" alt="Wii Menu">
-        <p>Click on the bottom right Wii icon to go to <b>Wii Options</b>, then click on <b>Wii System Settings</b>.</p>
-        
-        <details>
-            <summary>If you are on vWii and don't see the Wii System Settings, click here!</summary>
-            <h2>Re-enabling Wii System Settings</h2>
-            <p>Install <a href="https://wii.hacks.guide/priiloader">Priiloader</a> and load in to it.</p>
-            <img src="media/screenshot-priiloader-help-2.png" alt="Priilaoder main menu">
-            <p>Go to <b>System Menu Hacks</b></p>
-            <img src="media/screenshot-priiloader-help-4.png" alt="Priiloader settings">
-            <p>Select <b>Wii System Settings via Options Button</b> and <b>Permanent vWii System Settings</b> to enable them.</p>
-            <img src="media/screenshot-priiloader-help-5.png" alt="Priiloader saved settings">
-            <p>Save the settings and then proceed with the guide.</p>
-        </details>
+  <div class="box">
+    <img src="media/screenshot-eula-help-0.png" alt="Shop user agreements message">
 
-        <img src="media/screenshot-eula-help-1.png" alt="Wii Settings, Internet hovering">
-        <p>Go to page 2 and click on <b>Internet</b>, then click on <b>User Agreements</b>.</p>
+    <p>If you've come across this screen then the following will help. Click on that <b>User Agreements</b> button, if it takes you to the Wii Menu then you can go to it manually.</p>
+    <p><b style="color:red">Precaution:</b> Please make sure you do not have a DNS set that interferes with the EULA. (e.g. str2hax)</p>
+    <h3>Accepting the User Agreements</h3>
+    <img src="media/screenshot-system-menu-wii.png" alt="Wii Menu">
+    <p>Click on the bottom right Wii icon to go to <b>Wii Options</b>, then click on <b>Wii System Settings</b>.</p>
+    
+    <details>
+      <summary>If you are on vWii and don't see the Wii System Settings, click here!</summary>
+      <h2>Re-enabling Wii System Settings</h2>
+      <p>Install <a href="https://wii.hacks.guide/priiloader" onclick="spinner = false;" target="_blank">Priiloader</a> and load in to it.</p>
+      <img src="media/screenshot-priiloader-help-2.png" alt="Priilaoder main menu">
+      <p>Go to <b>System Menu Hacks</b></p>
+      <img src="media/screenshot-priiloader-help-4.png" alt="Priiloader settings">
+      <p>Select <b>Wii System Settings via Options Button</b> and <b>Permanent vWii System Settings</b> to enable them.</p>
+      <img src="media/screenshot-priiloader-help-5.png" alt="Priiloader saved settings">
+      <p>Save the settings and then proceed with the guide.</p>
+    </details>
 
-        <details>
-            <summary>If you are on vWii and it wants you to update, click here!</summary>
-            <h2>Manually Downloading the EULA</h2>
-            <p><img src="media/screenshot-eula-help-2-issue.png" alt="vWii update dialog"></p>
-            <p>Before you go to the User Agreements you will need to install the vWii EULA applet.</p>
-            <p>Download the <a href="https://oscwii.org/library/app/system-channel-restorer">System Channel Restorer</a> app and launch it from The Homebrew Channel, select EULA (and some other channels you might like as well).</p>
-            <img src="media/screenshot-scr-1.png" alt="Restorer main menu">
-            <p>The homebrew app will look like this.</p>
-            <img src="media/screenshot-scr-2.png" alt="Restorer, EULA hovered">
-            <p>Press A to select the EULA, you can also get other channels while here.</p>
-            <img src="media/screenshot-scr-3.png" alt="Restorer, EULA downloaded">
-            <p>Press the <b>+ START</b> button to begin downloading. Once it is done, proceed with this guide.</p>
-        </details>
+    <img src="media/screenshot-eula-help-1.png" alt="Wii Settings, Internet hovering">
+    <p>Go to page 2 and click on <b>Internet</b>, then click on <b>User Agreements</b>.</p>
 
-        <img src="media/screenshot-eula-help-2.png" alt="EULA pre-launch">
+    <details>
+    <summary><img src="media/screenshot-eula-help-2-issue.png" alt="vWii update dialog">If you are on vWii and you see this message, click here!</summary>
+      <h2>Manually Downloading the EULA</h2>
+      <p>Before you go to the User Agreements you will need to install the vWii EULA applet.</p>
+      <p>Download the <a href="https://oscwii.org/library/app/system-channel-restorer" onclick="spinner = false;" target="_blank">System Channel Restorer</a> app and launch it from The Homebrew Channel, select EULA (and some other channels you might like as well).</p>
+      <img src="media/screenshot-scr-1.png" alt="Restorer main menu">
+      <p>The homebrew app will look like this.</p>
+      <img src="media/screenshot-scr-2.png" alt="Restorer, EULA hovered">
+      <p>Press A to select the EULA, you can also get other channels while here.</p>
+      <img src="media/screenshot-scr-3.png" alt="Restorer, EULA downloaded">
+      <p>Press the <b>+ START</b> button to begin downloading. Once it is done, proceed with this guide.</p>
+    </details>
 
-        <p>Click on <b>Yes</b>.</p>
+    <img src="media/screenshot-eula-help-2.png" alt="EULA pre-launch">
 
-        <details>
-            <summary>If you see the 'not offered' message, click here!</summary>
-            <h2>How to bypass WiiConnect24 'not offered' message</h2>
-            <p><img src="media/screenshot-eula-help-3-issue.png" alt="EULA 'not offered' message"></p>
-            <p>This screen appears because the console is set to a country that was not supported by the original Wii Network Services.</p>
-            <img src="media/screenshot-country-help-1.png" alt="Wii Settings, hovering Country">
-            <p>Try switching to a country that you think is supported (e.g. United States for North America, United Kingdom for Europe, etc.)</p>
-            <img src="media/screenshot-country-help-2.png" alt="Wii Settings, selecting United States">
-            <p>Now go back to the EULA.</p>
-        </details>
+    <p>Click on <b>Yes</b>.</p>
 
-        <img src="media/screenshot-eula-help-3.png" alt="EULA launch">
-        <p>Click on <b>Next</b>.</p>
+    <details>
+    <summary><img src="media/screenshot-eula-help-3-issue.png" alt="EULA 'not offered' message"> If you see this screen, click here!</summary>
+      <h2>How to bypass WiiConnect24 'not offered' message</h2>
+      <p>This screen appears because the console is set to a country that was not supported by the original Wii Network Services.</p>
+      <img src="media/screenshot-country-help-1.png" alt="Wii Settings, hovering Country">
+      <p>Try switching to a country that you think is supported (e.g. United States for North America, United Kingdom for Europe, etc.)</p>
+      <img src="media/screenshot-country-help-2.png" alt="Wii Settings, selecting United States">
+      <p>Now go back to the EULA.</p>
+    </details>
 
-        <img src="media/screenshot-eula-help-4.png" alt="EULA contents">
-        <p>Click on the <b>I ACCEPT</b> button, you'll now return to the Wii Menu.</p>
+    <img src="media/screenshot-eula-help-3.png" alt="EULA launch">
+    <p>Click on <b>Next</b>.</p>
 
-        <p>You will now be able to load into WiiMart.</p>
-    </div>
-    </div>
+    <img src="media/screenshot-eula-help-4.png" alt="EULA contents">
+    <p>Click on the <b>I ACCEPT</b> button, you'll now return to the Wii Menu.</p>
+
+    <p>You will now be able to load into WiiMart.</p>
+  </div>
+</div>
 
 <footer><p>The WiiMart Team is not affiliated with Nintendo or any related parties. To contact, please send an email to <a href="mailto:support@wiimart.org"><b>support@wiimart.org</b></a>.</p></footer>
 

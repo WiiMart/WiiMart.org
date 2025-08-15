@@ -20,7 +20,7 @@
    <style>input {margin-bottom: 15px;} #results {display:none;border-color:red;text-align:left} #results h2 {color:#FF0000;} #results p {color:#FF0000}</style>
 </head>
 <body>
-<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="allowedtoload = false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">....</button></a><a href="javascript:deactivatebgmplayer();" onclick="allowedtoload = false;"><button>Close</button></a></div>   </div>
+<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="spinner = false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">....</button></a><a href="javascript:deactivatebgmplayer();" onclick="spinner = false;"><button>Close</button></a></div>   </div>
 
 <h1><a href="/">WiiMart</a></h1>
 
@@ -37,7 +37,7 @@
     <div class="box" id="results" style="transition:.3s easein-out; text-align:center;">
         <h2 id="code"></h2>
         <p id="issue"></p>
-        <p><a href="javascript:reseterrorcodeform();" onclick="allowedtoload = false;" style="color: #FF4242;cursor:pointer;text-align:center; text-decoration:underline;"><b>Check another error</b></a></p>    
+        <p><a href="javascript:reseterrorcodeform();" onclick="spinner = false;" style="color: #FF4242;cursor:pointer;text-align:center; text-decoration:underline;"><b>Check another error</b></a></p>    
     </div>
 </div>
 

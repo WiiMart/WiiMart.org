@@ -1,8 +1,7 @@
-var loading = new Audio("/media/load.wav");
-var loadvolume;
-var allowedtoload = true;
+var loading = null; var loadvolume; var browserageworkswithloader = false; var spinner = true;
 function showspinner() {
-if (allowedtoload === true) {
+if (spinner === true) {
+  var loading = new Audio("/media/load.wav");
   document.getElementById("wscspinnerbg").style.display="block";
   setTimeout(stopspinner,3100);
 
@@ -36,7 +35,6 @@ loading.volume = loadvolume;
 }
 
 
-var checkbgmplayerstatus = null;
 document.addEventListener("DOMContentLoaded", () => {
 
   const userAgent = navigator.userAgent.toLowerCase();
@@ -45,10 +43,10 @@ document.addEventListener("DOMContentLoaded", () => {
     userAgent.includes('nintendo ds') ||
     userAgent.includes('nintendo 3ds') ||
     userAgent.includes('nintendo');
-if (isConsoleBrowser) {checkbgmplayerstatus = false;} 
+if (isConsoleBrowser) {browserageworkswithloader = false;} 
 else 
 {
- checkbgmplayerstatus = true;
+ browserageworkswithloader = true;
  stopspinner();
  document.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", showspinner);
