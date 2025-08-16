@@ -40,7 +40,7 @@ function loadwscmusic() {
 /* wscmusic = loadwscmusic(); */
 
 function playBGMonload() {
-
+   localStorage.setItem("wmtsiteBGMplaying","playing");
     if (currenttiime > 0) {
         wscmusic.currentTime=currenttiime;
         wscmusic.volume = initialvolume;
@@ -49,12 +49,13 @@ function playBGMonload() {
 }
 
 function playBGM() {
+       localStorage.setItem("wmtsiteBGMplaying","playing");
         wscmusic.play();
         document.getElementById("shopbgm").innerText = "Pause";
         document.getElementById("shopbgmselector").href = "javascript:pauseBGM();";
 }
 
-function pauseBGM() {wscmusic.pause(); document.getElementById("shopbgm").innerText = "Play"; document.getElementById("shopbgmselector").href = "javascript:playBGM();";}
+function pauseBGM() {localStorage.setItem("wmtsiteBGMplaying","paused");wscmusic.pause(); document.getElementById("shopbgm").innerText = "Play"; document.getElementById("shopbgmselector").href = "javascript:playBGM();";}
 
 function fadeinbgm() {
 wscmusic.play();
@@ -85,6 +86,7 @@ function firebgmbox() {
 var currenttiime = localStorage.getItem("bgmcurrenttime") || 0;
 
     if (currenttiime > 0) {
+      localStorage.setItem("wmtsiteBGMplaying","paused");
         activatebgmplayerfocus();
         document.getElementById("shopbgmselector").href = "javascript:playBGMonload();";
     } 
@@ -106,7 +108,6 @@ function bgmplayerfocus() {
 
 function activatebgmplayer() {
   document.getElementById('bgmplayer').classList.add('bgmplayerdisplayed');
-  document.getElementById("shopbgm").innerText = "Play";
   document.getElementById("bgmplrtitle").innerText="BGM player"; document.getElementById("bgmplrtitle").style.marginTop="0px";
     document.getElementById("bgmplayer").style.backdropFilter="blur(1.8px)";
 }
