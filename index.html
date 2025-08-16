@@ -19,20 +19,20 @@
    <link rel="icon" type="image/x-icon" href="favicon.ico">
    <style>.em {opacity:1; transition: opacity 0.5s ease-in-out;} .em.fade {opacity: 0;} #disclaimer {text-align:left;color: #929a9a; font-weight:Bold; font-size:10px;padding:0;height:23px; max-height:23px; width:100%; max-width:100%; display:block; margin-bottom:2px;margin-top:-8px; white-space: nowrap; overflow:auto hidden; scrollbar-width: none; -ms-overflow-style: none;} #disclaimer::-webkit-scrollbar {display:none;}</style>
 </head>
-<body onload="WiiMartWednesday();  loadafterwednesdaycheck();">
+<body onload="setTimeout(function(){WiiMartWednesday();},50);">
 
-<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" src="/meta/grey-loader.png" alt="loadin" loading="lazy" onload="loadrimg();"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s" loading="lazy"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();" style="display:none;"><div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="spinner = false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">....</button></a><a href="javascript:deactivatebgmplayer();" onclick="spinner = false;"><button>Close</button></a></div>  </div>
+<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();" style="display:none;">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="allowedtoload = false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">....</button></a><a href="javascript:deactivatebgmplayer();" onclick="allowedtoload = false;"><button>Close</button></a></div>   </div>
 
 <h1>WiiMart</h1>
 <nav><a href="install" class="btn">Install</a> <a href="support" class="btn">Support</a> <a href="errors" class="btn">Errors</a> <a href="branding" class="btn">Branding</a> <a href="specials" class="btn">Specials</a> <a href="credits" class="btn">Credits</a></nav>
 
 <script>function WiiMartWednesday() {const today = new Date(); const dayOfWeek = today.getDay();if (dayOfWeek === 3) {const wednesdayDiv = document.getElementById('wednesdaytitles'); if (wednesdayDiv) {wednesdayDiv.style.display = 'block';} }}; function whatiswmw()  {const wswbox = document.getElementById("whatiswsw"); const bg = document.getElementById("backgroundd"); wswbox.style.display="block"; bg.style.display="block"; bg.style.backgroundImage=('url("/meta/fadebg-wmw.png")'); } function whatiswmwclose()  { const wswbox = document.getElementById("whatiswsw"); const bg = document.getElementById("backgroundd"); wswbox.style.display="none"; bg.style.display="none";}</script>
-<div class="box" id="wednesdaytitles" style="display:none"><mark class="new" style="margin-right:5px;"><span id="NEWtext">NEW</span></mark>It's WiiMart Wednesday, The catalog has been updated with new games! <br><a href="javascript:whatiswmw();" onclick="spinner = false;" style="font-size:11px; font-style:italic; cursor:help;" id="helpwed">What is WiiMart Wednesday?</a></div><div class="box" id="whatiswsw" style="display:none; padding:0;"><header style="background-color:#34BEED;color:white;font-weight:bold;margin-bottom:10px">What is WiiMart Wednesday?</header><p>"Update Day" also known as "Wii Shop Wednesday is a song that Nirvana The Band The Show made. <br> it was a song about the latest games added to the shop channel on that wednesday as they sang to the titles on the catalog pages.  We decided to bring it back and now every wednesday, new games are added to the WiiMart catalog.<BR><a href="https://www.youtube.com/watch?v=XQ0lnz1iv3k&t=0s" target="_blank">Visit this link to watch the Update day video</a></p><button onclick="whatiswmwclose();">Close</button></div>
+<div class="box" id="wednesdaytitles" style="display:none"><mark class="new" style="margin-right:5px;"><span id="NEWtext">NEW</span></mark>It's WiiMart Wednesday, The catalog has been updated with new games! <br><a href="javascript:whatiswmw();" onclick="allowedtoload = false;" style="font-size:11px; font-style:italic; cursor:help;" id="helpwed">What is WiiMart Wednesday?</a></div><div class="box" id="whatiswsw" style="display:none; padding:0;"><header style="background-color:#34BEED;color:white;font-weight:bold;margin-bottom:10px">What is WiiMart Wednesday?</header><p>"Update Day" also known as "Wii Shop Wednesday is a song that Nirvana The Band The Show made. <br> it was a song about the latest games added to the shop channel on that wednesday as they sang to the titles on the catalog pages.  We decided to bring it back and now every wednesday, new games are added to the WiiMart catalog.<BR><a href="https://www.youtube.com/watch?v=XQ0lnz1iv3k&t=0s" target="_blank">Visit this link to watch the Update day video</a></p><button onclick="whatiswmwclose();">Close</button></div>
 
 <div class="row">
    <div class="box" style="padding: 0;">
       <header style="background-color:#34BEED;color:white;font-weight:bold;margin-bottom:10px">Important Info:</header>
-        <details class="details-impt-info">
+        <details>
             <summary>WiiMart Wednesday #18 <span class="date">08-06</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
@@ -49,7 +49,7 @@
             </ul>
             <p>Two additional missing channels, <i>Amazon/LOVEFiLM</i> and <i>Crunchyroll</i>, have been added.</p>
         </details>
-        <details  class="details-impt-info">
+        <details>
             <summary>Update your WiiMart! <span class="date"><img src="meta/em-pinned.svg" style="width:20px;height:20px;vertical-align:middle"> 05-02</span></summary>
             <p id="detailsinfo">Since May 2nd, WiiMart has been relocated to a new domain. For this update, you'll need to download new WADs. Go to the <a href="install">Install</a> page.</p>
         </details>
@@ -68,7 +68,7 @@
         <p><a href="install" class="btn" style="font-size: larger;">Get Started</a></p>
         <div class="gallery" style="margin-bottom:10px">
             <img src="media/screenshot-start-menu.png" class="slide" loading="lazy" alt="screenshot" title="the recommended titles present in the image aren't the lastest added titles, check the Important Info: box on the top of the page for the latest." >
-            <img src="media/screenshot-main-menu.png" class="slide" loading="lazy" alt="screenshot>
+            <img src="media/screenshot-main-menu.png" class="slide" loading="lazy" alt="screenshot">
             <img src="media/screenshot-catalog.png" class="slide" loading="lazy" alt="screenshot">
             <img src="media/screenshot-game.png" class="slide" loading="lazy" alt="screenshot">
             <img src="media/screenshot-news.png" class="slide" loading="lazy" alt="screenshot" title="the info present in the image isnt about the lastest added titles, check the Important Info: box on the top of the page for the latest.">
