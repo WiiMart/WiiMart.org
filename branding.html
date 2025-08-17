@@ -19,7 +19,7 @@
    <style>mark {color:white} img.wm {width: 100%;vertical-align: middle;} div.wm {padding:20px;border-radius:5px;margin-top:10px;}</style>
 </head>
 <body >
-<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();" style="display:none;">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="allowedtoload = false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">....</button></a><a href="javascript:deactivatebgmplayer();" onclick="allowedtoload = false;"><button>Close</button></a></div>   </div>
+<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" onload="loadrimg();" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();" style="display:none;" title="BGM player">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="spinnerallowed=false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">Ply?</button></a><a href="javascript:deactivatebgmplayer();" onclick="spinnerallowed=false;"><button>Close</button></a></div>   </div>
 
 <h1><a href="/">WiiMart</a></h1>
 
@@ -32,7 +32,7 @@
         <div style="background-color: white;border-color: white;" class="wm"><img loading="lazy" src="media/branding-wordmark-blue.png" class="wm"></div>
         <div style="background-color: white;border-color: white;" class="wm"><img loading="lazy" src="media/branding-wordmark-black.png" class="wm"></div>
         <p>The wordmarks should be visible on the background they are in, like shown.</p>
-        <p><a href="media/branding-wordmark.svg" class="btn" download>Download SVG</a></p>
+        <p><a href="media/branding-wordmark.svg" class="btn" download onclick="spinnerallowed=false;">Download SVG</a></p>
     </div>
 
     <div class="box">
@@ -49,7 +49,7 @@
         <img loading="lazy" src="media/branding-bag-no-bg.png" height="200px">
         <img loading="lazy" src="media/branding-wfc-joke.png" width="200px" height="200px" style="min-width:200px; min-height:200px;">
         <p>Here are two shop icons with one WFC joke.</p>
-        <p><a href="media/branding-bag.svg" class="btn" download>Download SVG</a></p>
+        <p><a href="media/branding-bag.svg" class="btn" download onclick="spinnerallowed=false;">Download SVG</a></p>
     </div>
 
 
@@ -63,7 +63,7 @@
     <div class="box">
         <h2>Extra Information</h2>
         <p>The icons and banners are recolors of Wii Shop Channel textures, WiiMart itself is primarily a parody of
-        the <a href="https://www.cufonfonts.com/font/wal-mart-logos-1980s-1990s">90s Walmart branding</a>.</p>
+        the <a href="https://www.cufonfonts.com/font/wal-mart-logos-1980s-1990s" target="_blank" onclick="spinnerallowed=true; /*doesntworkwithoutthis??*/">90s Walmart branding</a>.</p>
     </div>
 </div>
 

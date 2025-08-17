@@ -21,18 +21,18 @@
 </head>
 <body onload="setTimeout(function(){WiiMartWednesday();},50);">
 
-<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();" style="display:none;">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="allowedtoload = false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">....</button></a><a href="javascript:deactivatebgmplayer();" onclick="allowedtoload = false;"><button>Close</button></a></div>   </div>
+<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" onload="loadrimg();" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();" style="display:none;" title="BGM player">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="spinnerallowed=false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">Ply?</button></a><a href="javascript:deactivatebgmplayer();" onclick="spinnerallowed=false;"><button>Close</button></a></div>   </div>
 
 <h1>WiiMart</h1>
 <nav><a href="install" class="btn">Install</a> <a href="support" class="btn">Support</a> <a href="errors" class="btn">Errors</a> <a href="branding" class="btn">Branding</a> <a href="specials" class="btn">Specials</a> <a href="credits" class="btn">Credits</a></nav>
 
 <script>function WiiMartWednesday() {const today = new Date(); const dayOfWeek = today.getDay();if (dayOfWeek === 3) {const wednesdayDiv = document.getElementById('wednesdaytitles'); if (wednesdayDiv) {wednesdayDiv.style.display = 'block';} }}; function whatiswmw()  {const wswbox = document.getElementById("whatiswsw"); const bg = document.getElementById("backgroundd"); wswbox.style.display="block"; bg.style.display="block"; bg.style.backgroundImage=('url("/meta/fadebg-wmw.png")'); } function whatiswmwclose()  { const wswbox = document.getElementById("whatiswsw"); const bg = document.getElementById("backgroundd"); wswbox.style.display="none"; bg.style.display="none";}</script>
-<div class="box" id="wednesdaytitles" style="display:none"><mark class="new" style="margin-right:5px;"><span id="NEWtext">NEW</span></mark>It's WiiMart Wednesday, The catalog has been updated with new games! <br><a href="javascript:whatiswmw();" onclick="allowedtoload = false;" style="font-size:11px; font-style:italic; cursor:help;" id="helpwed">What is WiiMart Wednesday?</a></div><div class="box" id="whatiswsw" style="display:none; padding:0;"><header style="background-color:#34BEED;color:white;font-weight:bold;margin-bottom:10px">What is WiiMart Wednesday?</header><p>"Update Day" also known as "Wii Shop Wednesday is a song that Nirvana The Band The Show made. <br> it was a song about the latest games added to the shop channel on that wednesday as they sang to the titles on the catalog pages.  We decided to bring it back and now every wednesday, new games are added to the WiiMart catalog.<BR><a href="https://www.youtube.com/watch?v=XQ0lnz1iv3k&t=0s" target="_blank">Visit this link to watch the Update day video</a></p><button onclick="whatiswmwclose();">Close</button></div>
+<div class="box" id="wednesdaytitles" style="display:none"><mark class="new" style="margin-right:5px;"><span id="NEWtext">NEW</span></mark>It's WiiMart Wednesday, The catalog has been updated with new games! <br><a href="javascript:whatiswmw();" onclick="spinnerallowed=false;" style="font-size:11px; font-style:italic; cursor:help;" id="helpwed">What is WiiMart Wednesday?</a></div><div class="box" id="whatiswsw" style="display:none; padding:0;"><header style="background-color:#34BEED;color:white;font-weight:bold;margin-bottom:10px">What is WiiMart Wednesday?</header><p>"Update Day" also known as "Wii Shop Wednesday is a song that Nirvana The Band The Show made. <br> it was a song about the latest games added to the shop channel on that wednesday as they sang to the titles on the catalog pages.  We decided to bring it back and now every wednesday, new games are added to the WiiMart catalog.<BR><a href="https://www.youtube.com/watch?v=XQ0lnz1iv3k&t=0s" target="_blank">Visit this link to watch the Update day video</a></p><button onclick="whatiswmwclose();">Close</button></div>
 
 <div class="row">
    <div class="box" style="padding: 0;">
       <header style="background-color:#34BEED;color:white;font-weight:bold;margin-bottom:10px">Important Info:</header>
-        <details>
+        <details class="details-impt-info">
             <summary>WiiMart Wednesday #18 <span class="date">08-06</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
@@ -49,7 +49,7 @@
             </ul>
             <p>Two additional missing channels, <i>Amazon/LOVEFiLM</i> and <i>Crunchyroll</i>, have been added.</p>
         </details>
-        <details>
+        <details class="details-impt-info">
             <summary>Update your WiiMart! <span class="date"><img src="meta/em-pinned.svg" style="width:20px;height:20px;vertical-align:middle"> 05-02</span></summary>
             <p id="detailsinfo">Since May 2nd, WiiMart has been relocated to a new domain. For this update, you'll need to download new WADs. Go to the <a href="install">Install</a> page.</p>
         </details>
@@ -67,7 +67,7 @@
         <p class="blue">If WiiMart sounds like what you are looking for, try it out for yourself! WiiMart can be used on Wii, Wii U, and partially Dolphin.</p>
         <p><a href="install" class="btn" style="font-size: larger;">Get Started</a></p>
         <div class="gallery" style="margin-bottom:10px">
-            <img src="media/screenshot-start-menu.png" class="slide" loading="lazy" alt="screenshot" title="the recommended titles present in the image aren't the lastest added titles, check the Important Info: box on the top of the page for the latest." >
+            <img src="media/screenshot-start-menu.png" class="slide" loading="lazy" alt="screenshot"  title="the recommended titles present in the image aren't the lastest added titles, check the Important Info: box on the top of the page for the latest." >
             <img src="media/screenshot-main-menu.png" class="slide" loading="lazy" alt="screenshot">
             <img src="media/screenshot-catalog.png" class="slide" loading="lazy" alt="screenshot">
             <img src="media/screenshot-game.png" class="slide" loading="lazy" alt="screenshot">
@@ -96,7 +96,7 @@
             and <b>Mortal Kombat</b>.</p>
         <p>New titles are added every <b>WiiMart Wednesday</b>. If you want to check out what new titles have been added,
             or just see what we have, check out the (in-progress) WiiMart Title sheet!</p>
-        <p><a href="title-sheet" class="btn" style="font-size:larger">View Titles</a></p>
+        <p><a href="title-sheet" onclick="spinnerallowed=false;" class="btn" style="font-size:larger">View Titles</a></p>
     </div>
 
     <h1>How do I get support?</h1>
@@ -106,7 +106,7 @@
     <div class="box">
         <h2>Frequently Asked Questions</h2>
         <h3>How do I troubleshoot <i>this error code</i>?</h3>
-        <p>Check it with <a href="errors">this tool</a>, otherwise ask for help on <a href="https://discord.gg/wbbDmbYm7U">Discord</a> or <a href="https://www.reddit.com/r/wiimart">Reddit</a>.</p>
+        <p>Check it with <a href="errors">this tool</a>, otherwise ask for help on <a href="https://discord.gg/wbbDmbYm7U" target="_blank" onclick="spinnerallowed=false;">Discord</a> or <a href="https://www.reddit.com/r/wiimart" target="_blank" onclick="spinnerallowed=false;">Reddit</a>.</p>
         <h3>Is real money needed to buy Wii Points?</h3>
         <p>The WiiMart service is entirely free of charge! Wii Points are "bought" only to keep the service as close the original as possible.</p>
         <h3>Can WiiMart run on Dolphin?</h3>
@@ -123,7 +123,7 @@
         <p>The web server stores IP addresses of those that connect to it, common with web servers. Wii console serial
             numbers are stored, in the SOAP database with encryption.</p>
         <h3>My title says 'This channel can't be used.' or just has a black screen!</h3>
-        <p>Install <a href="https://wii.hacks.guide/priiloader">Priiloader</a> and enable the
+        <p>Install <a href="https://wii.hacks.guide/priiloader" target="_blank" onclick="spinnerallowed=false;">Priiloader</a> and enable the
             <b>Region Free EVERYTHING</b> option in System Menu Hacks, then launch it again.</p>
     </div>
 </div>

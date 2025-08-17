@@ -20,7 +20,7 @@
    <style>input {margin-bottom: 15px;} #results {display:none;border-color:red;text-align:left} #results h2 {color:#FF0000;} #results p {color:#FF0000}</style>
 </head>
 <body>
-<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();" style="display:none;">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="allowedtoload = false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">....</button></a><a href="javascript:deactivatebgmplayer();" onclick="allowedtoload = false;"><button>Close</button></a></div>   </div>
+<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" onload="loadrimg();" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();" style="display:none;" title="BGM player">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="spinnerallowed=false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">Ply?</button></a><a href="javascript:deactivatebgmplayer();" onclick="spinnerallowed=false;"><button>Close</button></a></div>   </div>
 
 <h1><a href="/">WiiMart</a></h1>
 
@@ -37,13 +37,57 @@
     <div class="box" id="results" style="transition:.3s easein-out; text-align:center;">
         <h2 id="code"></h2>
         <p id="issue"></p>
-        <p><a href="javascript:reseterrorcodeform();" onclick="allowedtoload = false;" style="color: #FF4242;cursor:pointer;text-align:center; text-decoration:underline;"><b>Check another error</b></a></p>    
+        <p><a href="javascript:reseterrorcodeform();" onclick="spinnerallowed=false;" style="color: #FF4242;cursor:pointer;text-align:center; text-decoration:underline;"><b>Check another error</b></a></p>    
     </div>
 </div>
 
-<p>Want to contribute to this? Go see the <a href="https://wiilab.wiimart.org/wiimart/WiiMart-github-io/-/blob/main/meta/error.js">error.js</a> file over at GitLab.</p>
+<p>Want to contribute to this? Go see the <a href="https://wiilab.wiimart.org/wiimart/WiiMart-github-io/-/blob/main/meta/error.js" target="_blank">error.js</a> file over at GitLab.</p>
 
 <footer><p>The WiiMart Team is not affiliated with Nintendo or any related parties. To contact, please send an email to <a href="mailto:support@wiimart.org"><b>support@wiimart.org</b></a>.</p></footer>
 
 </body>
 </html>
+
+
+<!--
+<hr style="margin-bottom:20px;">
+<div class="row">
+    <div class="box" id="checkstat">
+        <h2>WiiMart Shop Status checker</h2>
+        <a href="javascript:checktheshop();" onclick="spinnerallowed=false;" id="shopchecker"><button>Check oss-auth (wiimart)</button></a>
+        <script>
+            function checktheshop() {
+                document.getElementById("checkresultt").innerText="Checking..";
+                // yes im using a image, this is for older browser compatability & safer :3
+                 var shopchecktemp = new Image();
+                 shopchecktemp.src="https://oss-auth.thecheese.io/oss/oss/common/images//spacer.gif";
+                 shopchecktemp.id="stat";
+                 document.getElementById("checkstat").appendChild(shopchecktemp);
+                 shopchecktemp.onload= shopisup;
+                 shopchecktemp.onerror= shopisdown;
+            }
+            function shopisup() {
+           document.getElementById("checkresultt").style.color="#34BEED";
+           document.getElementById("checkresultt").innerText="Shop is up! (on console)";
+            }
+            function shopisdown() {
+           document.getElementById("checkresultt").style.color="#FF4242";
+           document.getElementById("checkresultt").innerText="Shop is down... (on console)";
+            }
+        </script>
+        <style>
+            #checkresultt{line-height:10px; max-height:10px; display:block; margin-top:20px;}
+            #stat {width:1px; height:1px; position:absolute;bottom:3px;right:3px; background-color:red;}
+        </style>
+        <p id="checkresultt" style="color:#34BEED; height:10px;">...</p> 
+        <p style="opacity:50%; font-size:15px; margin-top:0px;">*results may not be accurate, if you check the shop and its down even if this says its up, go to <a href="/support" >our support page</a>. <br> its likely something is wrong with the shop (like a page is broken), but it is still technically "up".</p>
+    </div>
+
+
+    <div class="box" id="results" style="transition:.3s easein-out; text-align:center;">
+        <h2 id="code"></h2>
+        <p id="issue"></p>
+        <p><a href="javascript:reseterrorcodeform();" onclick="spinnerallowed=false;" style="color: #FF4242;cursor:pointer;text-align:center; text-decoration:underline;"><b>Check another error</b></a></p>    
+    </div>
+</div>
+-->

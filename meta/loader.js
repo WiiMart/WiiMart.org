@@ -1,17 +1,21 @@
-var loading = new Audio("/media/load.wav");
-var loadvolume;
-var allowedtoload = true;
+var loading = new Audio(""); var loadvolume; var spinnerallowed = true; var shouldaloadedalr = null; var playsound = null;
 function showspinner() {
-if (allowedtoload === true) {
+if (spinnerallowed === true) {
   document.getElementById("wscspinnerbg").style.display="block";
-  setTimeout(stopspinner,3100);
+
+  if (shouldaloadedalr) {clearTimeout(shouldaloadedalr);}
+
+  shouldaloadedalr = setTimeout(stopspinner,3100);
+
+  if (playsound) {clearTimeout(playsound);}
 
 /* moved down for compatability */
+loading = new Audio("/media/load.wav");
   loading.loop = true;
   loading.play(); loading.currentTime=0; loadvolume = 0.01; loading.volume = loadvolume;
    loadup();
 } else {
-    document.getElementById("wscspinnerbg").style.display="none";
+    
 }
 
 function stopspinner() {
@@ -20,23 +24,20 @@ loading.pause();
 }
 }
 
+function loadrimg() {document.getElementById("wscspinner").style.outline="none";}
 
 function loadup() {
-var timee = setTimeout(loadup,100);
-/* i hate javascript sometime :))))))) */
     if (loadvolume > 0) {
         loadvolume += 0.01;
     }
     if (loadvolume >= 0.4) {
         loadvolume = 0;
-        clearTimeout(timee);
     }
 
-loading.volume = loadvolume;
+    loading.volume = loadvolume;
+    playsound = setTimeout(loadup, 100); 
 }
 
-
-var checkbgmplayerstatus = null;
 document.addEventListener("DOMContentLoaded", () => {
 
   const userAgent = navigator.userAgent.toLowerCase();
@@ -45,20 +46,16 @@ document.addEventListener("DOMContentLoaded", () => {
     userAgent.includes('nintendo ds') ||
     userAgent.includes('nintendo 3ds') ||
     userAgent.includes('nintendo');
-if (isConsoleBrowser) {checkbgmplayerstatus = false;} 
+if (isConsoleBrowser) {spinnerallowed = false;} 
 else 
 {
- checkbgmplayerstatus = true;
- stopspinner();
+ document.getElementById("wscspinnerbg").style.display="none";
  document.querySelectorAll("a").forEach(link => {
   link.addEventListener("click", showspinner);
  });
 }
 
-function stopspinner() {
-document.getElementById("wscspinnerbg").style.display="none";
-loading.pause();
-}
+
 });
 
 

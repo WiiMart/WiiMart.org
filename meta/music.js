@@ -31,7 +31,7 @@ browserchecksdone = 1;
 function loadwscmusic() {
     var wscmusicloaded = 0;
     wscmusic = new Audio("/meta/shop.wav");
-    wscmusic.load(); wscmusicloaded = 1; wscmusic.loop = true; document.getElementById("bgmplayer").style.display="block";
+    wscmusic.load(); wscmusicloaded = 1; wscmusic.loop = true; document.getElementById("bgmplayer").style.display="block"; document.getElementById("shopbgm").innerText = "Play";
      return wscmusic;
 }
 

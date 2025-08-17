@@ -16,7 +16,7 @@ details ul {padding-left: 0;}
 details li {font-size:smaller;list-style:none;vertical-align:middle;}
 summary {padding-left: 5px;padding-right: 5px;cursor: pointer;user-select: none}
 
-.details-impt-info[open]   {transition:.3s ease-in-out; max-height: 445px; overflow: hidden auto; margin-bottom:3px;}
+.details-impt-info[open]   {transition:.3s ease-in-out; margin-bottom:3px;}
 .details-impt-info[open] summary {position:sticky; top:0; left:0; background-image:url("/meta/fadebg-wmw.png"); background-color:#73bad146; background-size:100% !important; }
 a.btn { background-color: #E6FFF2;border-radius: 10px;padding: 4px;margin-bottom: 10px;color:black;text-decoration: none;filter: drop-shadow(1px 1px 1px black);font-weight: 100;display:inline; transition:.2s ease-in-out;}
 a.btn:hover { background-color: #C7FDFF;   padding:5px; font-size:16px; transition:.2s ease-in-out;}
@@ -37,8 +37,8 @@ details li a img:hover {outline: solid 2px #9900FF}
 details li img.pf {outline:none}
 
 /* add to the <details> element class="details-impt-info" if the <details> contains Important Info, obvously. */
-.details-impt-info {max-height:50px; transition:.3s ease-in-out;}
-.details-impt-info summary {padding-left: 5px;padding-right: 5px;cursor: pointer;user-select: none; border-radius:5px; margin-bottom:3px;}
+.details-impt-info *:not(summary,.date){opacity:0%; transition:.5s ease-in-out;} .details-impt-info[open] *:not(summary,.date) {opacity:100%; transition:.5s ease-in-out;}
+.details-impt-info summary { padding-left: 5px;padding-right: 5px;cursor: pointer;user-select: none; border-radius:5px; margin-bottom:3px;}
 .details-impt-info summary:hover {background-color:#73bad14d;}
 .details-impt-info summary:active {background-color:#73bad16b;}
 
@@ -47,7 +47,7 @@ details li img.pf {outline:none}
 h1, h2 {color:#34BEED;}
 h1 {font-size: 30px;}
 h1 a {text-decoration:none}
-hr {border-color:grey}
+hr {border-color:grey; border-style:dotted; border-bottom:none; border-width:5px; overflow:hidden; margin-top:3px; margin-bottom:3px;}
 
 a {color:#34BEED; font-weight: bold; }
 ::selection{color: #323232;background: #34BEED;}
