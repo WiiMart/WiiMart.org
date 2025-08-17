@@ -47,7 +47,9 @@ details li img.pf {outline:none}
 h1, h2 {color:#34BEED;}
 h1 {font-size: 30px;}
 h1 a {text-decoration:none}
-hr {border-color:grey; border-style:dotted; border-bottom:none; border-width:5px; overflow:hidden; margin-top:3px; margin-bottom:3px;}
+hr {border-color:grey;}
+.dothr {border-color:grey; border-style:dotted; border-bottom:none; border-width:5px; overflow:hidden; margin-top:3px; margin-bottom:3px;}
+
 
 a {color:#34BEED; font-weight: bold; }
 ::selection{color: #323232;background: #34BEED;}
