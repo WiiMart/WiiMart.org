@@ -1,4 +1,4 @@
-// Wii Shop BGM Player, suggested by @legamer66 (https://discord.com/channels/1346485785284575335/1346485786039681056/1351527080546009259)
+// Wii Shop BGM Player, suggested by @legamer66 (https://discord.com/channels/1346485785284575335/1346485786039681056/1351527080546009259 - image of msg: https://i.ibb.co/BHqMSSQp/LEEe.png (WiiMart BGM played originally added on March 18th, 2025, Completely recoded/fixed on Aug 18th, 2025)
 
 var wscmusic = null; var browsercanplayaudio = false; var browserchecksdone = 0; var initialvolume = 0.01; var currenttiime = localStorage.getItem("bgmcurrenttime") || 0;
 
