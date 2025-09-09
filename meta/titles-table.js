@@ -27,8 +27,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         "B_08_GcCtrl.gif": "Nintendo GameCube Controller",
         "B_08_ZapperCtrl.gif": "Wii Zapper",
         "B_08_SpeakCtrl.gif": "Wii Speak",
-        "B_08_KeyboardCtrl.gif": "USB Keyboard",
-        "Balance Board": "Wii Balance Board"
+        "B_08_KeyboardCtrl.gif": "Standard USB Keyboard",
+        "B_08_BalanceCtrl.gif": "Wii Balance Board",
+        "B_08_DSCtrl.gif": "Nintendo DS",
+        "B_08_MicrophoneCtrl.gif": "Microphone",
+        "B_08_MotionCtrl.gif": "Motion Plus remote",
+        "B_08_TWLCtrl.gif": "Nintendo DSi",
     };
 
     function getControllerStringFromHTML(htmlString) {
@@ -183,3 +187,4 @@ document.addEventListener('DOMContentLoaded', async () => {
 });
 
 // fun fact, the gem in Gemdation stands for Gemini
+// ok bro
