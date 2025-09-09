@@ -1,14 +1,60 @@
 <!DOCTYPE html><html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-compatible" content="IE=edge">
-<meta property="og:title" content="WiiMart Title Spreadsheet">
-<meta property="og:description" content="View all the titles WiiMart is hosting.">
-<meta property="og:url" content="https://docs.google.com/spreadsheets/d/1rG8Qtwe8_qXcdXv8dTvU_2ibIsRtgLUS7NW70DMTF2Q/edit">
-<meta property="og:image" content="https://wiimart.org/media/branding-bag.png">
-<title>Redirecting...</title>
-<meta http-equiv="refresh" content="0; URL=https://docs.google.com/spreadsheets/d/1rG8Qtwe8_qXcdXv8dTvU_2ibIsRtgLUS7NW70DMTF2Q/edit">
+    <meta charset="utf-8">
+    <title>Title Sheet</title>
+    <script src="meta/music.js"></script>
+    <script src="meta/loader.js"></script>
+    <script src="meta/titles-table.js"></script>
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta property="og:title" content="WiiMart Title Sheet">
+    <meta property="og:description" content="View all the titles WiiMart is hosting.">
+    <meta property="og:url" content="https://wiimart.org/title-sheet">
+    <meta property="og:image" content="https://wiimart.org/media/branding-bag.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="meta/main.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        .table-container {overflow-x: auto; max-width: 100%; display:none;}
+        #titles {width: 100%;  border-collapse: collapse;}
+        #titles th, #titles td {border: 1px solid #ddd; padding: 2px; text-align: left; white-space: nowrap;}
+        #titles th {background-color: #34BEED; color: white;}
+    </style>
 </head>
 <body>
+<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" onload="loadrimg();" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();" style="display:none;" title="BGM player">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="spinnerallowed=false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">Ply?</button></a><a href="javascript:deactivatebgmplayer();" onclick="spinnerallowed=false;"><button>Close</button></a></div>   </div>
+
+<h1><a href="/">WiiMart</a></h1>
+
+<nav><a href="/" class="btn">Back to WiiMart.org</a></nav>
+
+<div class="box" style="padding:0;">
+    <div class="table-notice">
+        <header style="background-color:#34BEED;color:white;font-weight:bold;width:100%;">Title Sheet</header>
+        <h2>Ready to view?</h2>
+        <p>This spreadsheet is large and may not work on certain hardware.</p>
+        <p>To begin viewing, press a region code.</p>
+    
+        <div id="btns">
+            <button>US</button>
+            <button>CA</button>
+            <button>MX</button>
+            <button>ES</button>
+            <button>GB</button>
+            <button>DE</button>
+            <button>IT</button>
+            <button>FR</button>
+            <button>JP</button>
+            <button>NL</button>
+        </div>
+        <p style="color:grey">This file is taken from <a href="https://oss-auth.thecheese.io/oss/oss/common/js/games.json" style="color:grey">games.json</a></p>
+    </div>
+
+    <div class="table-container">            
+        <h2><button style="float:left;margin-left:20px;">Return</button> <b>Region</b>: <span id="region" style="color:white"></span> </h2>
+        <table id="titles">
+        </table>
+    </div>
+</div>
+
 </body>
 </html>

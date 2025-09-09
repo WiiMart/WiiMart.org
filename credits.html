@@ -15,16 +15,16 @@
     <meta name="keywords" content="WiiMart, Wii Shop, homebrew">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="meta/main.css">
-    <script src="meta/gallery.js" defer></script>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         figure {display:flex;align-items:flex-start}
-        figure img.pfp {margin-left: -30px;width:150px;height:100%;object-fit: cover;border-radius:5px;}
+        figure img.pfp {margin-left:-30px;width:150px;height:100%;object-fit: cover;border-radius:5px;}
         figcaption {padding-left:10px;text-align:left}
         hr {border-style:dashed}
         div#Contribute button {min-width:300px;}
         div#Contribute button img {float:left;}
     </style>
+    <script src="meta/gallery.js" defer></script>
 </head>
 <body>
 <div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" onload="loadrimg();" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();" style="display:none;" title="BGM player">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="spinnerallowed=false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">Ply?</button></a><a href="javascript:deactivatebgmplayer();" onclick="spinnerallowed=false;"><button>Close</button></a></div>   </div>
@@ -136,48 +136,12 @@
 
         <hr>
 
-        <figure>
-            <img loading="lazy" src="media/pfp-andry.png" class="pfp">
-            <figcaption>
-                <b>Andry6702</b> is a Discord moderator, he contributed on other projects such as New Shop Channel and Reviive.
-                <br><br>
-                <a target="_blank" href="https://www.youtube.com/@andry6702"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
-                <a target="_blank" href="https://andry6702.net"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
-            </figcaption>
-        </figure>
-
-        <hr>
-
         <figure id="RM05">
             <img src="media/pfp-rm05.png" class="pfp">
-            <figcaption><b>RM05</b> is a Discord administrator and WiiMart translation contributor.
+            <figcaption><b>RM05</b> is a Discord moderator and WiiMart translation contributor.
                 <br><br>
                 <a target="_blank" href="https://wiilab.wiimart.org/MrRM05"><button><img src="meta/ico-git.png" class="ico" alt="GitLab"></button></a>
                 <a target="_blank" href="https://www.youtube.com/@Mr_RM05"><button><img src="meta/ico-yt.png" class="ico"></button></a>
-            </figcaption>
-        </figure>
-
-        <hr>
-
-        <figure>
-            <img src="media/pfp-emol.png" class="pfp">
-            <figcaption><b>Emolgun</b> is one of the Discord moderators.
-                <br><br>
-                <a target="_blank" href="https://bsky.app/profile/emolgun.bsky.social"><button><img src="meta/ico-bsky.png" class="ico" alt="GitLab"></button></a>
-                <a target="_blank" href="https://twitch.tv/emolgun"><button><img src="meta/ico-twitch.png" class="ico">
-                <a target="_blank" href="https://www.youtube.com/@Emolgun"><button><img src="meta/ico-yt.png" class="ico"></button></a>
-            </figcaption>
-        </figure>
-
-        <hr>
-
-        <figure>
-            <img loading="lazy" src="media/pfp-def.png" class="pfp">
-            <figcaption><b>DefeatOf13</b> is a Discord moderator and WiiMart mascot designer.
-                <br><br>
-                <a target="_blank" href="https://wiilab.wiimart.org/DefeatOf13"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitLab"></button></a>
-                <a target="_blank" href="https://www.youtube.com/@defeatof13"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
-                <a target="_blank" href="https://defitmods.xyz"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
             </figcaption>
         </figure>
 
@@ -199,7 +163,7 @@
         <figure id="Yoshi">
             <img loading="lazy" src="media/pfp-yoshi.png" class="pfp" style="cursor:help">
             <figcaption>
-                <b><i>ThatOneYoshi</i></b> is one of the Discord moderators.
+                <b><i>ThatOneYoshi</i></b> is one of the Discord moderators and have contributed with Flash injects.
                 <br><br>
                 <a target="_blank" href="https://thatoneyoshi.link/"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
                 <a target="_blank" href="https://bsky.app/profile/thatoneyoshi.link"><button><img loading="lazy" src="meta/ico-bsky.png" class="ico"></button></a>
@@ -223,8 +187,20 @@
         </div>
 
         <div class="box" style="border-color:#9900FF;">
-            <h2 style="text-shadow: 0 2px 4px #9900FF;color:#9900FF;">Contributors</h2>
+            <h2 style="text-shadow:0 2px 4px #9900FF;color:#9900FF;">Contributors</h2>
+
+            <figure>
+                <img loading="lazy" src="media/pfp-def.png" class="pfp">
+                <figcaption><b>DefeatOf13</b> created the mascot Miis for WiiMart and the upcoming DSiMart.
+                    <br><br>
+                    <a target="_blank" href="https://wiilab.wiimart.org/DefeatOf13"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitLab"></button></a>
+                    <a target="_blank" href="https://www.youtube.com/@defeatof13"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                    <a target="_blank" href="https://defitmods.xyz"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
+                </figcaption>
+            </figure>
+
             <hr>
+
             <figure>
                 <img loading="lazy" src="media/pfp-rou.png" class="pfp" style="cursor:help">
                 <figcaption><b><i>Roulettz</i></b> created the first 2006 banner WiiMart WAD.</figcaption>
