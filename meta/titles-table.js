@@ -31,9 +31,22 @@ document.addEventListener('DOMContentLoaded', async () => {
         "B_08_BalanceCtrl.gif": "Wii Balance Board",
         "B_08_DSCtrl.gif": "Nintendo DS",
         "B_08_MicrophoneCtrl.gif": "Microphone",
-        "B_08_MotionCtrl.gif": "Motion Plus remote",
+        "B_08_MotionCtrl.gif": "Wii Remote Plus",
         "B_08_TWLCtrl.gif": "Nintendo DSi",
     };
+
+    const purplePublishers = [
+        "Subnetic",
+        "A for Animation",
+        "dustinbriggs1991",
+        "saulfabreg",
+        "ThatOneYoshi",
+        "RM05",
+        "idkwhereisthisname",
+        "ForgottenArchive",
+        "RedYoshiKart",
+        "RollPlayStation"
+    ];
 
     function getControllerStringFromHTML(htmlString) {
         if (!htmlString || htmlString.trim() === '') {
@@ -116,7 +129,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         allKeys.delete('title2');
         allKeys.add('title');
 
-        const sortedKeys = ['id', 'console', 'title', 'publisher', 'points', 'genre', 'players', 'controllers', 'language', 'thumbnail', 'size', 'rating', 'ratingdetails'];
+        const sortedKeys = ['id', 'console', 'title', 'publisher', 'date', 'points', 'genre', 'players', 'controllers', 'language', 'thumbnail', 'size', 'rating', 'ratingdetails'];
         
         table.innerHTML = '';
 
@@ -130,6 +143,11 @@ document.addEventListener('DOMContentLoaded', async () => {
 
         games.forEach(game => {
             const row = document.createElement('tr');
+            
+            if (purplePublishers.includes(game.publisher)) {
+                row.style.color = "#d940ffff";
+            }
+            
             sortedKeys.forEach(key => {
                 const cell = document.createElement('td');
                 const cellValue = game[key];
@@ -188,3 +206,4 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // fun fact, the gem in Gemdation stands for Gemini
 // ok bro
+// orb ko

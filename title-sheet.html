@@ -1,10 +1,10 @@
 <!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Title Sheet</title>
     <script src="meta/music.js"></script>
     <script src="meta/loader.js"></script>
     <script src="meta/titles-table.js"></script>
+    <meta charset="utf-8">
+    <title>Title Sheet</title>
     <meta http-equiv="X-UA-compatible" content="IE=edge">
     <meta property="og:title" content="WiiMart Title Sheet">
     <meta property="og:description" content="View all the titles WiiMart is hosting.">
@@ -16,8 +16,11 @@
     <style>
         .table-container {overflow-x: auto; max-width: 100%; display:none;}
         #titles {width: 100%;  border-collapse: collapse;}
-        #titles th, #titles td {border: 1px solid #ddd; padding: 2px; text-align: left; white-space: nowrap;}
-        #titles th {background-color: #34BEED; color: white;}
+        #titles th, #titles td {border: 1px solid black; padding: 2px; text-align: left; white-space: nowrap;}
+        #titles th {color:white;background-color:#9A9A9A;}
+        table a {text-decoration:none;}
+        span#region {color:black}
+        @media (prefers-color-scheme: dark) {#titles th, #titles td {border: 1px solid white;} span#region {color:white}}
     </style>
 </head>
 <body>
@@ -32,7 +35,7 @@
         <p>This spreadsheet is large and may not work on certain hardware.</p>
         <p>To begin viewing, press a region code.</p>
     
-        <div id="btns">
+        <div style="padding-bottom:10px" id="btns">
             <button>US</button>
             <button>CA</button>
             <button>MX</button>
@@ -44,11 +47,10 @@
             <button>JP</button>
             <button>NL</button>
         </div>
-        <p style="color:grey">This file is taken from <a href="https://oss-auth.thecheese.io/oss/oss/common/js/games.json" style="color:grey">games.json</a></p>
     </div>
 
     <div class="table-container">            
-        <h2><button style="float:left;margin-left:20px;">Return</button> <b>Region</b>: <span id="region" style="color:white"></span> </h2>
+        <h2><button style="float:left;margin-left:20px;">Return</button> <b>Region</b>: <span id="region"></span> </h2>
         <table id="titles">
         </table>
     </div>
