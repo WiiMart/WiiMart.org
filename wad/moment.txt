@@ -1,5 +1,6 @@
 When adding WAD files to this directory,
 please make sure you follow the naming scheme.
-and also please make sure to add a sha256sum if its for the installer. -Thom
 
-If you can, add the files to the index.html file.
+ -Gem
+
+and also please make sure to add a sha256sum if its for the installer. -Thom
