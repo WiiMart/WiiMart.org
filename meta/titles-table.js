@@ -38,13 +38,17 @@ document.addEventListener('DOMContentLoaded', async () => {
     const purplePublishers = [
         "Subnetic",
         "A for Animation",
+        "A For Animation",
         "dustinbriggs1991",
+        "dustinbriggs91",
         "saulfabreg",
         "ThatOneYoshi",
         "RM05",
         "idkwhereisthisname",
         "ForgottenArchive",
+        "Onion Mastori",
         "RedYoshiKart",
+        "UselessMan",
         "RollPlayStation"
     ];
 
