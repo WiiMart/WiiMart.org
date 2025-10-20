@@ -19,7 +19,7 @@ const errorCodes = {
     "202000": "Permission denied (returned when accessing an object for which the caller has no permission)",
     // Title downloading errors end
 
-    // SD Card errors start
+    // SD Card/Storage errors start
     "201009": "Read failure (short read)",
     "201010": "Write failure (short write)",
     "209631": "Invalid SD Card",
@@ -54,7 +54,10 @@ const errorCodes = {
     "209663": "errInodes",
     "209664": "SD Backup timeout in B-10",
     "209665": "JournalFlag error in B-10",
-    // SD Card errors end
+
+    "209666": "Available space error in B-09 on checking remain size",
+    "209667": "Available space is not sufficient (NAND)",
+    // SD Card/Storage errors end
 
     // Channel errors start
     "206674": "Unexpected ECLib error",
@@ -219,7 +222,7 @@ const errorCodes = {
     "204907": "NHTTP_ERROR_HTTPPARSE: HTTP header parsing failed.",
     "204908": "NHTTP_ERROR_CANCELED: The request was cancelled.",
     "204909": "NHTTP_ERROR_REVOLUTIONSDK: NHTTP_Thread generation failed.",
-    "204910": "NHTTP_ERROR_REVOLUTIONWIFI: Generated when there is a problem with sending, receiving, or socket termination. Also returned when communication is blocked during sending, receiving, or termination.",
+    "204910": "NHTTP_ERROR_REVOLUTIONWIFI: Returned when there is a problem with sending, receiving, or socket termination. Also returned when communication is blocked during sending, receiving, or termination.",
     "204911": "NHTTP_ERROR_UNKNOWN: An abnormal/unknown value has been set to a method by NHTTP_CreateConnection.",
     "204912": "NHTTP_ERROR_DNS_PROXY: DNS resolution failed for the proxy server.",
     "204913": "NHTTP_ERROR_CONNECT_PROXY: Connection with the proxy server failed.",
@@ -362,10 +365,6 @@ const errorCodes = {
     "206662": "Credit card number invalid",
     // Credit card errors end
 
-    "209666": "Available space error in B-09 on checking remain size",
-    "209667": "Available space is not sufficient (NAND)",
-    "250943": "Problems with your Club Nintendo account. It can't get connected with your shop account",
-
     // Unknown errors start
     "205928": "Unknown error",
     "205958": "Unknown error",
@@ -382,6 +381,7 @@ const errorCodes = {
     "206401": "Invalid characters in nick or password",
     "206499": "Maintenance. Login not possible",
     "205942": "Maintenance. Login not possible",
+    "250943": "Problems with your Club Nintendo account. It can't get connected with your shop account",
     // Misc. errors end
 };
 
