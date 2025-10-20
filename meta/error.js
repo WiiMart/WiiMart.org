@@ -85,6 +85,11 @@ const errorCodes = {
     "220000": "Connection Failed",
     "220002": "Out of memory",
     "220001": "Unknown protocol",
+    "202012": "Internal failure",
+    "202013": "Memory allocation failure. Known to be returned when the keyring is full (contains 0x20 keys)",
+    "202014": "Invalid size",
+    "202015": "Invalid address",
+    "202016": "Unaligned data",
     // Channel errors end
 
     // IOSC Errors start
@@ -99,12 +104,6 @@ const errorCodes = {
     "202010": "IOSC_INVALID_SIGNER",
     "202011": "IOSC_FAIL_CHECKVALUE",
     // IOSC Errors end
-
-    "202012": "Internal failure",
-    "202013": "Memory allocation failure. Known to be returned when the keyring is full (contains 0x20 keys)",
-    "202014": "Invalid size",
-    "202015": "Invalid address",
-    "202016": "Unaligned data",
 
     // EC Errors start
     "204000": "EC_ERROR_OK: No error",
@@ -257,7 +256,7 @@ const errorCodes = {
     "206600": "Generic OSS error.",
     "206652": "Wrong PIN three times (parental controls)",
     "206650": "Wrong PIN (parental controls)",
-    "209620": "Some JS files couldn't be loaded (shopErrCheck)",
+    "209620": "Some JavaScript files couldn't be loaded (caused by shopErrCheck)",
     "209552": "Timeout occurred between client and server",
     "209553": "Timeout occurred between client and server",
     "209554": "Timeout occurred between client and server",
@@ -270,6 +269,11 @@ const errorCodes = {
     "205829": "Server under heavy load",
     "205969": "Server under heavy load",
     "206601": "Authentication error, missing required parameters",
+    "206651": "Mistake while entering the console's serial number",
+    "206663": "An operation is in progress",
+    "250943": "Problems with your Club Nintendo account. It can't get connected with your shop account", // is this correct actually?
+    "206653": "Nickname or password wrong",
+    "206660": "No progress was made in the last operation",
     // Shop errors end
 
     // SSL Errors start
@@ -290,6 +294,9 @@ const errorCodes = {
     // Console errors start
     "205007": "Invalid NAND Dump (Dolphin only)",
     "205540": "This software doesn't work in the vWii",
+    "206670": "Invalid friend code",
+    "205968": "Invalid friend code",
+    "205901": "Wii number invalid!",
     // Console errors end
 
     // Account errors start
@@ -301,18 +308,14 @@ const errorCodes = {
     "205644": "Credit cards can't be used on this console.",
     "205810": "You don't have enough Wii Points / Error while redeeming your download ticket",
     "205818": "This card number can only be used for a specific title, it is not a Wii Points Card.",
-    "205901": "Wii number invalid!",
     "205906": "Problem with your online account",
-    "205968": "Invalid friend code",
     "206668": "Happens when current points count + new points would exceed the wii points limit",
-    "206670": "Invalid friend code",
     "206673": "Invalid registration status",
     // Account errors end
 
     // Wii Points/Download ticket redeem errors start (these should never occur)
     "206602": "Error while entering Wii Points Card code. Try again later.",
     "206669": "Wii Points card invalid",
-    "206603": "Unable to confirm credit card information",
     "206607": "Error while retrieving the served content",
     "206608": "Error redeeming Wii Download Ticket",
     "205800": "Wii Points Card error",
@@ -323,14 +326,9 @@ const errorCodes = {
     "206611": "Wii download ticket invalid",
     "206612": "This Wii download ticket can't be used in your country",
     "206613": "No software available for this download ticket. May be caused by parental controls.",
-    "206651": "Mistake while entering the console's serial number",
-    "206653": "Nickname or password wrong",
-    "206660": "No progress was made in the last operation",
     "205811": "Wii Points card expired",
     "205815": "Wii Points Card was already used",
     "205816": "Some error with the Wii Points Card",
-    "206663": "An operation is in progress",
-    "206664": "No security code was provided",
     "206667": "Wii download ticket invalid",
     "205830": "Wii Points Card code is invalid",
     "205819": "Wii Points Card code is invalid",
@@ -340,6 +338,7 @@ const errorCodes = {
     "208000": "You have entered the wrong state",
     "208001": "Unable to process for credit cards (some kind of blacklist?)",
     "208002": "Billing address invalid",
+    "206603": "Unable to confirm credit card information",
     "208003": "Credit card number doesn't match card type",
     "208004": "three-digit security code invalid",
     "208005": "Mistake in credit card data.",
@@ -347,6 +346,7 @@ const errorCodes = {
     "208007": "Expiration date invalid",
     "208008": "Postal code invalid",
     "208009": "Technical difficulties.",
+    "206664": "No security code was provided",
     "208010": "Credit card could not get validated. Try again later.",
     "208011": "Credit card declined",
     "208012": "Credit card declined - no funds available",
@@ -381,7 +381,7 @@ const errorCodes = {
     "206401": "Invalid characters in nick or password",
     "206499": "Maintenance. Login not possible",
     "205942": "Maintenance. Login not possible",
-    "250943": "Problems with your Club Nintendo account. It can't get connected with your shop account",
+    "20110": "Nintendo Wi-Fi Connection for the title has been discontinued. (The title/game was not patched with <a href=\"https://wiimmfi.de\">Wiimmfi</a>)"
     // Misc. errors end
 };
 
@@ -392,7 +392,7 @@ document.getElementById("submitBtn").addEventListener("click", function() {
 
     if (errorCodes[codeInput]) {
         document.getElementById("code").innerText = codeInput;
-        document.getElementById("issue").innerText = errorCodes[codeInput];
+        document.getElementById("issue").innerHTML = errorCodes[codeInput];
         inputDiv.style.display = "none";
         resultsDiv.style.display = "block";
     } else {
