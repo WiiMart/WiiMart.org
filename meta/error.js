@@ -185,7 +185,7 @@ const errorCodes = {
     "204702": "HTTP 402 Payment Required",
     "204703": "HTTP 403 Forbidden",
     "204704": "HTTP 404 Not Found",
-    "209531": "HTTP 404 Not Found",
+    "209531": "HTTP 404 Not Found", // not a client error response, but still means HTTP 404
     "204705": "HTTP 405 Method Not Allowed",
     "204706": "HTTP 406 Not Acceptable",
     "204707": "HTTP 407 Proxy Authentication Required",
@@ -274,6 +274,19 @@ const errorCodes = {
     "250943": "Problems with your Club Nintendo account. It can't get connected with your shop account", // is this correct actually?
     "206653": "Nickname or password wrong",
     "206660": "No progress was made in the last operation",
+    "241000": "Not enough RAM",
+    "241001": "Not enough RAM (to load Flash element)",
+    "240021": "This function is not available in this Opera version.",
+    "240008": "HTTP Auth in URL (GET parameters, URL)",
+    "240003": "Invalid URL",
+    "240004": "Address unreachable from this client.",
+    "240007": "Access denied.",
+    "240016": "Unsupported protocol.",
+    "240017": "Internal communication error.",
+    "240019": "Unknown or unsupported address type.",
+    "240020": "Unsupported file format",
+    "244002": "SSL handshake failed.",
+    "244003": "Invalid Root CA",
     // Shop errors end
 
     // SSL Errors start
@@ -312,6 +325,11 @@ const errorCodes = {
     "206668": "Happens when current points count + new points would exceed the wii points limit",
     "206673": "Invalid registration status",
     // Account errors end
+
+    // NWC24 errors start
+    "222001": "There is a NWC24 error, but it could not be obtained.",
+    "107006": "NWC24_ERR_FULL: The file NWC24 tried to download is too large.",
+    // NWC24 errors end
 
     // Wii Points/Download ticket redeem errors start (these should never occur)
     "206602": "Error while entering Wii Points Card code. Try again later.",
@@ -381,8 +399,12 @@ const errorCodes = {
     "206401": "Invalid characters in nick or password",
     "206499": "Maintenance. Login not possible",
     "205942": "Maintenance. Login not possible",
-    "20110": "Nintendo Wi-Fi Connection for the title has been discontinued. (The title/game was not patched with <a href=\"https://wiimmfi.de\">Wiimmfi</a>)"
+    "20110": "Nintendo Wi-Fi Connection for the title has been discontinued. (The title/game was not patched with <a href=\"https://wiimmfi.de\">Wiimmfi</a>)",
     // Misc. errors end
+
+    // Channel specific errors start
+    "371410": "Unable to contact YouTube (applies if <a href=\"https://revivemii.xyz/\">RiiviveTube</a> is installed)."
+    // Channel specific errors end
 };
 
 document.getElementById("submitBtn").addEventListener("click", function() {
