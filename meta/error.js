@@ -199,7 +199,7 @@ const errorCodes = {
     "204715": "HTTP 415 Unsupported Media Type",
     "204716": "HTTP 416 Range Not Satisfiable",
     "204717": "HTTP 417 Expectation Failed",
-    "209527": "HTTP 418 I'm a Teapot (https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/418)",
+    "209527": "HTTP 418 <a href=\"https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status/418\">I'm a Teapot</a>",
     "204800": "HTTP 500 Internal Server Error",
     "204801": "HTTP 501 Not Implemented",
     "204802": "HTTP 502 Bad Gateway",
