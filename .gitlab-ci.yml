@@ -10,5 +10,5 @@ deploy:
     - echo "$SSH_PRIVATE_KEY" | base64 -d > ~/.ssh/id_ed25519
     - chmod 600 ~/.ssh/id_ed25519
   script:
-    - ssh $deploy "cd /var/www/wiimart.org && git pull && sudo systemctl reload httpd"
+    - ssh -o StrictHostKeyChecking=accept-new $deploy "cd /var/www/wiimart.org && git pull && sudo systemctl reload httpd"
     - rm -rf ~/.ssh/id_ed25519
