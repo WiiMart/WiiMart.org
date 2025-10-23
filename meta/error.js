@@ -496,7 +496,10 @@ document.getElementById("submitBtn").addEventListener("click", function() {
         inputDiv.style.display = "none";
         resultsDiv.style.display = "block";
     } else {
-        alert("Invalid error code. Please enter a valid 6-digit error code. (The error might not be filed, you may ask about it in the Discord.)");
+        document.getElementById("code").innerText = "Error!";
+        document.getElementById("issue").innerHTML = "Invalid error code. Please enter a valid 6-digit error code.<br />(The error might not be filed yet, if you have any issue, please join the Discord server for support.)";
+        inputDiv.style.display = "none";
+        resultsDiv.style.display = "block";
     }
 });
 
