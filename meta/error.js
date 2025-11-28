@@ -480,7 +480,7 @@ const errorCodes = {
     "372508": "Flash channel returned HTTP 508 Loop Detected",
     "372510": "Flash channel returned HTTP 510 Not Extended",
     "372511": "Flash channel returned HTTP 511 Network Authentication Required",
-    "362523": "Flash channel returned HTTP 523 Origin Is Unreachable"
+    "372523": "Flash channel returned HTTP 523 Origin Is Unreachable"
     // Flash HTTP errors end
     // Channel specific errors end
 };
