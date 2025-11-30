@@ -27,6 +27,8 @@
         a {text-decoration:none}
         a button, button:disabled {width:100%}
         span.descrip {color:rgb(172, 172, 172);font-size: smaller}
+        summary {color:red;text-decoration: underline;list-style: none;font-weight: bold;user-select: none;cursor: pointer;padding-top:5px;}
+        details {color:red;outline: solid 1px red;padding-bottom: 5px;margin-bottom: 10px;text-align: center;h2 {color:red};}
     </style>
 </head>
 <body>
@@ -61,13 +63,7 @@
 
 
     <div id="platform" class="box">
-        <!--
-        <h2 id="Auto">Automatic Installation</h2>
-        <button onclick="showDiv('inst')" style="background-image: url(media/screenshot-hbc-blank.png);background-size: cover;"><img src="media/button-inst.png" alt=""><b>WiiMart Installer</b> for<br>The Homebrew Channel</button><br>
-        <p><mark class="new">NEW!</mark> This in-aprogress installer tool can install WiiMart and IOS WADs with just one app!</p>
-        <hr>
-        -->
-        <h2 id="Manual">Manual Installation</h2>
+        <h2>Installation</h2>
 
         <h3>What platform are you on?</h3>
         <button onclick="showDiv('Wii')"><img src="media/button-wii.png" alt="">Wii</button><br>
@@ -77,27 +73,6 @@
         <p><b>Important:</b> No matter which option you pick, you will need to have a homebrewed console. If you don't have it homebrewed, see <a href="https://wii.hacks.guide"><b>wii.hacks.guide</b></a> before looking at this guide.</p>
         <button onclick="showDiv('warning')" style="width:auto" class="r">Back</button><br>
     </div>
-   <!--
-
-   <div id="inst" class="box" style="display:none">
-      <h2>WiiMart Installer</h2>
-      <span style="color:red;font-weight:bold">Do not use on Korean Wii consoles.</span>
-      <h3>Download and Placing</h3>
-      <p><a href="inst/WiiMartInstaller.V1.4.zip" onclick="spinnerallowed=false;">Download WiiMart Installer</a></p>
-      <p>Put the <b>wiimartinstaller</b> folder in the <b>apps</b> folder of your SD Card or USB Drive. Like 
-         in the example shown.</p>
-      <img src="media/screenshot-files-1.png">
-      <p><b>wiimartinstaller</b> will go with the rest of your apps.</p>
-      <img src="media/screenshot-files-2-issue.png" style="outline: solid 2px red">
-      <p style="color:red">Do not nest it under an extra folder. It has to be drive://apps/wiimartinstaller</p>
-      <h3>Launching</h3>
-      <img src="media/screenshot-hbc-wm-inst-2.png">
-      <p>Simply press <b>Load</b> and you will be taken to the installer.</p>
-      <p>If anything goes wrong involving tickets (e.g. TView), it is recommended that you head over to the <a href="#Manual" onclick="showDiv('start')">Manual Installation</a>.</p>
-
-      <button onclick="showDiv('start')" class="r">Back</button>
-   </div>
-   -->
 
     <div id="dolphin" class="box">
         <h2>Dolphin</h2>
@@ -151,8 +126,16 @@
         <p>Use <a href="https://oscwii.org/library/app/yawmME" target="_blank" onclick="spinnerallowed=false;">YAWWME</a> as it is <i>the</i> recommended WAD manager for it's brick protection.</p>
         <img src="media/screenshot-yawmme-vwii.png" alt="WAD manager screenshot">
         <p>Install the patched IOS and the WiiMart WAD you chose, remember that you can overwrite the WADs most of the time. Press <b>+</b> on both WADs to select them, and then A to show the options, then A again to install.</p>
-        <h4 style="color:red">Error -1022 or -1029?</h4>
-        <p>Press <b>-</b> to mark the WAD for uninstallation, press A two times to uninstall. Now try to install it again.</p>
+        
+        <details>
+            <summary>If you received error -1022 or error -1029, click here!</summary>
+            <h2>Resolving ticket issues</h2>
+            <p>Press <b>-</b> to mark the WAD for uninstallation, press A two times to uninstall. Now try to install it again.</p>
+            <p>If that does not work, please try the <a href="https://oscwii.org/library/app/WiiUnShoplifter">WiiUnShoplifter</a> tool to resolve the tickets.</p>
+
+            <p>Proceed with the installation again.</p>
+        </details>
+
         <h4>Finished!</h4>
         <img src="media/screenshot-system-menu-vwii.png" alt="Wii Menu with the cursor hovering over Wii Shop">
         <p>You can now go to the Wii Menu and launch the Wii Shop Channel.</p>
@@ -172,8 +155,16 @@
         <p>Use <a href="https://oscwii.org/library/app/yawmME" target="_blank" onclick="spinnerallowed=false;">YAWWME</a> as it is <i>the</i> recommended WAD manager for it's brick protection.</p>
         <img src="media/screenshot-yawmme-wii.png" alt="WAD manager screenshot">
         <p>Install the patched IOS and the WiiMart WAD you chose, remember that you can overwrite the WADs most of the time. Press <b>+</b> on both WADs to select them, and then A to show the options, then A again to install.</p>
-        <h4 style="color:red">Error -1022 or -1029?</h4>
-        <p>Press <b>-</b> to mark the WAD for uninstallation, press A two times to uninstall. Now try to install it again.</p>
+        
+        <details>
+            <summary>If you received error -1022 or error -1029, click here!</summary>
+            <h2>Resolving ticket issues</h2>
+            <p>Press <b>-</b> to mark the WAD for uninstallation, press A two times to uninstall. Now try to install it again.</p>
+            <p>If that does not work, please try the <a href="https://oscwii.org/library/app/WiiUnShoplifter">WiiUnShoplifter</a> tool to resolve the tickets.</p>
+
+            <p>Proceed with the installation again.</p>
+        </details>
+        
         <h3>Finished!</h3>
         <img src="media/screenshot-system-menu-wii.png" alt="Wii Menu with the cursor hovering over Wii Shop">
         <p>You can now go to the Wii Menu and launch the Wii Shop Channel.</p>
