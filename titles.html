@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="meta/music.js"></script>
+    <script src="meta/loader.js"></script>
+    <script src="meta/titles-table.js"></script>
+    <meta charset="utf-8">
+    <title>Title Sheet</title>
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta property="og:title" content="WiiMart Title Sheet">
+    <meta property="og:description" content="View all the titles WiiMart is hosting.">
+    <meta property="og:image" content="https://wiimart.org/media/branding-bag.png">
+    <meta property="og:url" content="https://wiimart.org/titles">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="WiiMart, Wii Shop, homebrew">
+    <meta name="theme-color" content="#FF0000">
+    <link rel="stylesheet" href="meta/main.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        div.table-container {overflow-x:auto;display:none;}     
+        div.table-controls {padding: 10px;margin-bottom: 10px;flex-wrap: wrap;gap:15px;align-items: center;}
+        div.control-group {display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 10px;}
+        div.table-controls label {font-weight:bold;margin-right:5px;}
+        div.table-controls select {border-radius:5px;padding:5px;font-family:'Shop',sans-serif;padding: 5px;outline: 1px solid #34BEED;border-radius: 3px;filter: drop-shadow(1px 1px 3.4px #bbbbbb);border:none; transition: transform 0.4s ease-in-out;}
+        div.table-controls select:hover {box-shadow:inset 0 0 0 3px #34BEED;cursor:pointer}
+        table a {text-decoration:none;}
+        #titles {width:100%;border-collapse: collapse;}
+        #titles th, #titles td {border:1px solid black;padding:2px;text-align:left;white-space:nowrap;}
+        #titles th {color:white;background-color:#9A9A9A;}
+        span#region {color:black}
+
+        @media (prefers-color-scheme: dark) {#titles th, #titles td {border:1px solid white;} span#region {color:white} .table-controls {background-color: #00000000; border:none; color: white;} .table-controls select {background-color:#3b3b3b; color: white;filter: drop-shadow(1px 1px 3.4px #747474)}}
+    </style>
+</head>
+<body>
+<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" onload="loadrimg();" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();" style="display:none;" title="BGM player">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="spinnerallowed=false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">Ply?</button></a><a href="javascript:deactivatebgmplayer();" onclick="spinnerallowed=false;"><button>Close</button></a></div>   </div>
+
+<h1><a href="/">WiiMart</a></h1>
+<nav><a href="install" class="btn">Install</a> <a href="support" class="btn">Support</a> <span class="active">Titles</span> <a href="specials" class="btn">Specials</a> <a href="credits" class="btn">Credits</a></nav>
+
+<div class="box" style="padding:0;">
+    <div class="table-notice">
+        <header style="background-color:#34BEED;color:white;font-weight:bold;width:100%;">Title Sheet</header>
+        <h2>Ready to view?</h2>
+        <p>This spreadsheet is large and may not work on certain hardware.</p>
+        <p>To begin viewing, press a region code.</p>
+     
+        <div style="padding-bottom:10px" id="btns">
+            <button>US</button>
+            <button>CA</button>
+            <button>MX</button>
+            <button>ES</button>
+            <button>GB</button>
+            <button>DE</button>
+            <button>IT</button>
+            <button>FR</button>
+            <button>JP</button>
+            <button>NL</button>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <div class="nevigation">
+            <header style="background-color:#34BEED;color:white;font-weight:bold;width:100%">Title Sheet</header>
+            
+            <div class="table-controls" style="margin-bottom:0">
+                <div class="control-group">
+                    <div>
+                        <label for="region">Region</label>
+                        <button style="padding:7px;margin-bottom:0"><span id="region"></span></button>
+                    </div>
+                </div>        
+                <div class="control-group">
+                    <div>
+                        <label for="sortBy">Sort</label>
+                        <select id="sortBy">
+                            <option value="alpha">Alphabetical</option>
+                            <option value="dateNew">Newest</option>
+                            <option value="dateOld">Oldest</option>
+                            <option value="pointsHigh">Highest Points</option>
+                            <option value="pointsLow">Lowest Points</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <div>
+                        <label for="filterInclusion">Include</label>
+                        <select id="filterInclusion">
+                            <option value="all">All Titles</option>
+                            <option value="original">Only Original</option>
+                            <option value="custom">Only Custom</option>
+                        </select>
+                    </div>
+                </div>    
+                <div class="control-group">
+                    <div>
+                        <label for="filterConsoleFilter">Filter</label>
+                        <select id="filterConsoleFilter">
+                            <option value="all">All Consoles</option>
+                        </select>
+                    </div>                
+                    <div>
+                        <select id="filterController">
+                            <option value="all">All Controllers</option>
+                            <option value="none">"Missing"</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box" style="padding:0;margin:0 auto;border:none;border-radius:0;scrollbar-width:none;">
+            <table id="titles">
+            </table>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

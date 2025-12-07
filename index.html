@@ -7,13 +7,13 @@
     <script src="meta/music.js"></script>
     <script src="meta/loader.js"></script>
     <title>WiiMart: an active Wii Shop revival!</title>
-    <meta content="WiiMart: an active Wii Shop revival!" property="og:title">
-    <meta content="WiiMart is an open-source revival of the defunct Wii Shop Channel. This website contains information about it and the project team behind it!" property="og:description">
-    <meta content="https://wiimart.org/media/branding-bag.png" property="og:image">
-    <meta content="https://wiimart.org" property="og:url">
-    <meta content="#1164E9" data-react-helmet="true" name="theme-color">
-    <meta name="keywords" content="WiiMart, Wii Shop, homebrew">
+    <meta property="og:title" content="WiiMart: an active Wii Shop revival!">
+    <meta property="og:description" content="WiiMart is an open-source revival of the defunct Wii Shop Channel. This website contains information about it and the project team behind it!">
+    <meta property="og:image" content="https://wiimart.org/media/branding-bag.png">
+    <meta property="og:url" content="https://wiimart.org">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="WiiMart, Wii Shop, homebrew">
+    <meta name="theme-color" content="#1164E9">
     <link rel="stylesheet" href="meta/main.css">
     <script src="meta/gallery.js" defer></script>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
@@ -24,7 +24,7 @@
 <div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" onload="loadrimg();" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();" style="display:none;" title="BGM player">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="spinnerallowed=false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">Ply?</button></a><a href="javascript:deactivatebgmplayer();" onclick="spinnerallowed=false;"><button>Close</button></a></div>   </div>
 
 <h1>WiiMart</h1>
-<nav><a href="install" class="btn">Install</a> <a href="support" class="btn">Support</a> <a href="errors" class="btn">Errors</a> <a href="branding" class="btn">Branding</a> <a href="specials" class="btn">Specials</a> <a href="credits" class="btn">Credits</a></nav>
+<nav><a href="install" class="btn">Install</a> <a href="support" class="btn">Support</a> <a href="titles" class="btn">Titles</a> <a href="specials" class="btn">Specials</a> <a href="credits" class="btn">Credits</a></nav>
 
 <script>function WiiMartWednesday() {const today = new Date(); const dayOfWeek = today.getDay();if (dayOfWeek === 3) {const wednesdayDiv = document.getElementById('wednesdaytitles'); if (wednesdayDiv) {wednesdayDiv.style.display = 'block';} }}; function whatiswmw()  {const wswbox = document.getElementById("whatiswsw"); const bg = document.getElementById("backgroundd"); wswbox.style.display="block"; bg.style.display="block"; bg.style.backgroundImage=('url("/meta/fadebg-wmw.png")'); } function whatiswmwclose()  { const wswbox = document.getElementById("whatiswsw"); const bg = document.getElementById("backgroundd"); wswbox.style.display="none"; bg.style.display="none";}</script>
 
@@ -33,25 +33,18 @@
     <div class="box" style="padding:0">
         <header style="background-color:#34BEED;color:white;font-weight:bold;margin-bottom:10px">Important Info:</header>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #29 <span class="date">11-26</span></summary>
+            <summary>WiiMart Wednesday #30 <span class="date">12-03</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul class="wmw">
-                <li><img src="meta/em-vc-64.png" class="pf"> Showfloor: Super Mario 64 SpaceWorld '95 Revival Project <a href="credits#RM05"><img src="media/em-rm05.png"></a></li>
-                <li><img src="meta/em-vc-64.png" class="pf"> The Legend of Zelda: Ocarina of Time REDUX <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-snes.png" class="pf"> BS The Legend of Zelda: Ancient Stone Tablets (Chapter 1) <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-snes.png" class="pf"> The Legend of Zelda: Triforce of the Gods (Relocalization) <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-snes.png" class="pf"> Conker's High Rule Tail <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-nes.png" class="pf"> The Legend of Zelda: Mirror of Worlds <a href="credits#Dustin"><img src="media/em-dustin.png"></a></li>
-                <li><img src="meta/em-vc-nes.png" class="pf"> The Legend of Mario Save Mushroom Kingdom <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-nes.png" class="pf"> Zelda Kong <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-genesis.png" class="pf"> Frogger <img src="media/em-waluigi.png"></li>
-                <li><img src="meta/em-channels.svg" class="pf"> Nintendo Channel <img src="media/em-dakotath.png"></li>
-                <li><img src="meta/em-channels.svg" class="pf"> Everybody Votes Channel <img src="media/em-dakotath.png"></li>
+                <li><img src="meta/em-vc-64.png" class="pf"> Dragon Ball Kart 64 <img src="media/em-useless.png"></li>
+                <li><img src="meta/em-vc-snes.png" class="pf"> Mario Forever: SMW Edition <img src="media/em-waluigi.png"></li>
+                <li><img src="meta/em-vc-snes.png" class="pf"> The Lost Vikings: Ragnarok Edition <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
+                <li><img src="meta/em-vc-snes.png" class="pf"> Pretty Soldier Sailor Moon (Unofficial EN Translation) <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
+                <li><img src="meta/em-vc-nes.png" class="pf"> Somari 2: The New Quest <a href="credits#AFA"><img src="media/em-afa.png"></a></li>
+                <li><img src="meta/em-vc-genesis.png" class="pf"> Babe Knuckle II: Requiem of the Deadly Battle <img src="media/em-waluigi.png"></li>
+                <li><img src="meta/em-vc-genesis.png" class="pf"> WWF Wrestlemania: The Arcade Game <img src="media/em-waluigi.png"></li>
+                <li><img src="meta/em-vc-genesis.png" class="pf"> Sonic 1 Tag Team Adventure <a href="credits#AFA"><img src="media/em-afa.png"></a></li>
            </ul>
-           <h3>Additional Info</h2>
-           <p>The <b><i>Nintendo Channel</i></b> and <b><i>Everybody Votes Channel</i></b> have been patched and restored thanks to <i>Dakotath</i>. For nostalgia or curiosity sake, go check them out!</p>
-           <p>To make things clear, these channels are <b>not</b> meant to be replacements for WiiLink's patched channels, just a way to obtain functional WC24 channels from WiiMart. We highly encourage you to support WiiLink and their work on restoring all WiiConnect24 channels.</p>
-           <p>The BS-X Satellaview title <b><i>Ancient Stone Tablets</i></b> will be released in Chapters monthly, similarly to how they were originally released weekly. There are 4 chapters in total, and progression is saved across each chapter! So be sure to check this amazing game out and prepare for the next chapter!</p>
         </details>
         <details class="details-impt-info">
             <summary>Update your WiiMart! <span class="date"><img src="meta/em-pinned.svg" style="width:20px;height:20px;vertical-align:middle"> 05-02</span></summary>
@@ -99,8 +92,7 @@
             latest titles we've added are <b>The New Tetris</b>, <b>EarthBound</b>, <b>Super Mario All-Stars + Super Mario World</b>,
             and <b>Mortal Kombat</b>.</p>
         <p>New titles are added every <b>WiiMart Wednesday</b>. If you want to check out what new titles have been added,
-            or just see what we have, check out the (in-progress) WiiMart Title sheet!</p>
-        <p><a href="title-sheet" onclick="spinnerallowed=false;" class="btn" style="font-size:larger">View Titles</a></p>
+            or just see what we have, check out the title sheet in the navigation bar.</p>
     </div>
 
     <h1>How do I get support?</h1>

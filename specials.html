@@ -7,24 +7,30 @@
     <script src="meta/music.js"></script>
     <script src="meta/loader.js"></script>
     <title>WiiMart Specials</title>
-    <meta content="WiiMart Specials" property="og:title">
-    <meta content="This page contains some special content for WiiMart." property="og:description">
-    <meta content="https://wiimart.org/media/branding-bag.png" property="og:image">
-    <meta content="https://wiimart.org/specials" property="og:url">
-    <meta content="#FF0000" data-react-helmet="true" name="theme-color">
-    <meta name="keywords" content="Wii Shop, homebrew">
+    <meta property="og:title" content="WiiMart Specials">
+    <meta property="og:description" content="This page contains some special content for WiiMart.">
+    <meta property="og:image" content="https://wiimart.org/media/branding-bag.png">
+    <meta property="og:url" content="https://wiimart.org/specials">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Wii Shop, homebrew">
+    <meta name="theme-color" content="#FF0000">
     <link rel="stylesheet" href="meta/main.css">
     <script src="meta/gallery.js" defer></script>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <style>input {margin-bottom: 15px;max-width:50px} ul {text-align:left} li a {text-decoration:none} </style>
+    <style>
+        input {margin-bottom: 15px;max-width:50px}
+        ul {text-align:left}
+        li a {text-decoration:none}
+        mark {color:white}
+        img.wm {width: 100%;vertical-align: middle;}
+        div.wm {padding:20px;border-radius:5px;margin-top:10px;}
+    </style>
 </head>
 <body>
 <div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" onload="loadrimg();" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();" style="display:none;" title="BGM player">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="spinnerallowed=false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">Ply?</button></a><a href="javascript:deactivatebgmplayer();" onclick="spinnerallowed=false;"><button>Close</button></a></div>   </div>
 
 <h1><a href="/">WiiMart</a></h1>
-
-<nav><a href="install" class="btn">Install</a> <a href="support" class="btn">Support</a> <a href="errors" class="btn">Errors</a> <a href="branding" class="btn">Branding</a> <span class="active">Specials</span> <a href="credits" class="btn">Credits</a></nav>
+<nav><a href="install" class="btn">Install</a> <a href="support" class="btn">Support</a> <a href="titles" class="btn">Titles</a> <span class="active">Specials</span> <a href="credits" class="btn">Credits</a></nav>
 
 <div class="row">
     <div class="box" id="3DS">
@@ -69,12 +75,39 @@
         <script>function generateCode() {const charset = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; let code = ""; for (let i = 0; i < 4; i++) {let segment = ""; for (let j = 0; j < 4; j++) {segment += charset.charAt(Math.floor(Math.random() * charset.length));} code += segment + (i < 3 ? "-" : "");} document.getElementById("code").textContent = code;}</script>
     </div>
 
-    <div class="box">
-        <h2>PC Client</h2>
-        <p>Browse the entire catalog of WiiMart from your computer's browser!</p>
-        <p><span class="active">Coming soon!</span></p>
-    </div>
+    <div class="box" id="Branding">
+        <h2>Branding</h2>
+        <h3>Wordmarks</h3>
+        <div style="border-color:#1164E9;background-color: #1164E9" class="wm"><img loading="lazy" src="media/branding-wordmark-white.png" class="wm"></div>
+        <div style="background-color: white;border-color: white;" class="wm"><img loading="lazy" src="media/branding-wordmark-blue.png" class="wm"></div>
+        <div style="background-color: white;border-color: white;" class="wm"><img loading="lazy" src="media/branding-wordmark-black.png" class="wm"></div>
+        <p>The wordmarks should be visible on the background they are in, like shown.</p>
+        <p><a href="media/branding-wordmark.svg" class="btn" download onclick="spinnerallowed=false;">Download SVG</a></p>
 
+        <h3>Colors</h3>
+        <mark style="background-color: #1164E9;">WiiMart Blue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#1164E9</mark>
+        <br><mark style="background-color:#00378F">WiiMart Dark Blue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#00378F</mark>
+        <br><mark style="background-color:#001F50">WiiMart Darker Blue&nbsp;&nbsp;&nbsp;#001F50</mark>
+
+        <h3>Icons</h3>
+        <img loading="lazy" src="media/branding-bag.png" width="200px" height="200px" style="min-width:200px; min-height:200px;">
+        <img loading="lazy" src="media/branding-bag-no-bg.png" height="200px">
+        <img loading="lazy" src="media/branding-wfc-joke.png" width="200px" height="200px" style="min-width:200px; min-height:200px;">
+        <p>Here are two shop icons with one WFC joke.</p>
+        <p><a href="media/branding-bag.svg" class="btn" download onclick="spinnerallowed=false;">Download SVG</a></p>
+
+
+        <h3>Banners</h3>
+        <img loading="lazy" src="media/branding-banner.png" width="100%" height="100%" style="min-width:100%; min-height:100%;">
+        <img loading="lazy" src="media/branding-super-center.png" width="100%" height="100%" style="min-width:100%; min-height:100%;">
+        <img loading="lazy" src="media/branding-wiimart-wednesday.png" width="100%" height="100%" style="min-width:100%; min-height:100%;">
+
+        <h3>Extra Information</h3>
+        <p>The icons and banners are recolors of Wii Shop Channel textures, WiiMart itself is primarily a parody of
+        the <a href="https://www.cufonfonts.com/font/wal-mart-logos-1980s-1990s" target="_blank" onclick="spinnerallowed=true; /*doesntworkwithoutthis??*/">90s Walmart branding</a>.</p>
+
+    </div>
+    
     <div class="box">
         <h2>List of Shop URLs</h2>
         <p>If you weren't already aware, the Wii Shop Channel is a web app. The original Wii Shop Channel was hosted at

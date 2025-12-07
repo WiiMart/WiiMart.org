@@ -131,7 +131,7 @@ div#bgmplayer p {line-height:20px;color:#9A9A9A; margin-top:-10px;font-style:ita
   mark {color:black;background:#34BEED;font-weight:bold;}
   img.wb {outline: solid 1px white}
   .blue {color:#5898ff;}
-  input {background-color: black;border: 2px solid grey;color:white;}
+  div.row input {background-color: black;border: 2px solid grey;color:white;}
   mark {color:white}
   #wednesdaytitles {color:white; background-color:#3b3b3b}
   img.slide {background-color: #3d3d3d;}

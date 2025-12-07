@@ -1,53 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-   <meta charset="utf-8">
-   <meta http-equiv="x-ua-compatible" content="ie=edge">
-   <style>@font-face {font-family:'Shop';src:url('meta/shop.ttf') format('truetype');font-weight: normal;font-style: normal;}</style>
-   <title>Error Code Checker</title>
-   <meta content="Error Code Checker" property="og:title">
-   <meta content="Use this tool to troubleshoot errors on the Wii Shop Channel." property="og:description">
-   <meta content="https://wiimart.org/media/branding-bag.png" property="og:image">
-   <meta content="https://wiimart.org/errors" property="og:url">
-   <meta content="#FF0000" data-react-helmet="true" name="theme-color">
-   <meta name="keywords" content="Errors, support, Wii Shop, homebrew">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="meta/main.css">
-   <script src="meta/error.js" defer></script> 
-   <script src="meta/music.js"></script>
-   <script src="meta/loader.js"></script>
-   <link rel="icon" type="image/x-icon" href="favicon.ico">
-   <style>input {margin-bottom: 15px;} #results {display:none;border-color:red;text-align:left} #results h2 {color:#FF0000;} #results p {color:#FF0000}</style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-compatible" content="IE=edge">
+    <meta http-equiv="refresh" content="0; URL=/support">
+    <title>Error Code Checker</title>
+    <meta property="og:title" content="Error Code Checker">
+    <meta property="og:description" content="Use this tool to troubleshoot errors on the Wii Shop Channel.">
+    <meta property="og:image" content="https://wiimart.org/media/branding-bag.png">
 </head>
-<body>
-<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" onload="loadrimg();" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();" style="display:none;" title="BGM player">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="spinnerallowed=false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">Ply?</button></a><a href="javascript:deactivatebgmplayer();" onclick="spinnerallowed=false;"><button>Close</button></a></div>   </div>
 
-<h1><a href="/">WiiMart</a></h1>
+<body></body>
 
-<nav><a href="install" class="btn">Install</a> <a href="support" class="btn">Support</a> <span class="active">Errors</span> <a href="branding" class="btn">Branding</a> <a href="specials" class="btn">Specials</a> <a href="credits" class="btn">Credits</a></nav>
-
-<div class="row">
-    <div class="box" id="input">
-        <h2>Error Code Checker <b style="color:red">BETA</b></h2>
-        <input type="number" id="errorCode" maxlength="6"><br>
-        <button id="submitBtn" style="margin-bottom:10px">Submit</button>
-    </div>
-
-
-    <div class="box" id="results" style="transition:.3s easein-out; text-align:center;">
-        <h2 id="code"></h2>
-        <p id="issue"></p>
-        <p><a href="javascript:reseterrorcodeform();" onclick="spinnerallowed=false;" style="color: #FF4242;cursor:pointer;text-align:center; text-decoration:underline;"><b>Check another error</b></a></p>    
-    </div>
-</div>
-
-<p>Want to contribute to this? Go see the <a href="https://wiilab.wiimart.org/wiimart/WiiMart-github-io/-/blob/main/meta/error.js" target="_blank">error.js</a> file over at GitLab.</p>
-
-<footer><p>The WiiMart Team is not affiliated with Nintendo or any related parties. To contact, please send an email to <a href="mailto:support@wiimart.org"><b>support@wiimart.org</b></a>.</p></footer>
-
-</body>
 </html>
 
+<!--the following is kept just in case its wanted again-->
 
 <!--
 <hr style="margin-bottom:20px;" class="dothr">
