@@ -1,143 +1,143 @@
-@font-face {font-family:'Shop'; src: url('shop.ttf') format('truetype'); font-weight: normal; font-style: normal;}
+@font-face {font-family:'Shop';src:url('shop.ttf') format('truetype');font-display:swap;font-weight:normal;font-style:normal;}
 
 /*Main things*/
-body {scroll-behavior:smooth;text-align: center;font-family: sans-serif;font-family:'Shop',sans-serif; overflow-x:hidden;transition:.1s ease-in-out; }
+body {scroll-behavior:smooth;text-align:center;font-family:sans-serif;font-family:'Shop',sans-serif;overflow-x:hidden;transition:.1s ease-in-out;}
 
 div.row {width:50%;margin:auto}
-div.box {line-height:23.3px;background-color:white;border:solid 2px #34BEED;border-radius:5px;box-shadow: 0 0 10px #2525255d;box-sizing:border-box;text-align:center;margin: 0 auto;padding:5px;margin-top: 8px; overflow: auto;}
-#backgroundd {position:fixed;top:0;left:0;width:100%;height:100%; background-image:url('/meta/fadebg-wmw.png'); background-size:cover; z-index:999; user-select:none; pointer-events:none;}
-h1 {margin-bottom: 10px;}
-nav {margin-bottom: 20px;line-height: 35px;}
+div.box {line-height:23.3px;background-color:white;border:solid 2px #34BEED;border-radius:5px;box-shadow:0 0 10px #2525255d;box-sizing:border-box;text-align:center;margin:0 auto;padding:5px;margin-top:8px;overflow:auto;}
+#backgroundd {position:fixed;top:0;left:0;width:100%;height:100%;background-image:url('/meta/fadebg-wmw.png');background-size:cover;z-index:999;user-select:none;pointer-events:none;}
+h1 {margin-bottom:10px;}
+nav {margin-bottom:20px;line-height:35px;}
 footer {color:grey}
 footer a {color:grey}
 
-details {text-align:left;padding-left: 5px;padding-right: 5px;}
-details ul {padding-left: 0;}
+details {text-align:left;padding-left:5px;padding-right:5px;}
+details ul {padding-left:0;}
 details li {font-size:smaller;list-style:none;vertical-align:middle;}
-summary {padding-left: 5px;padding-right: 5px;cursor: pointer;user-select: none}
+summary {padding-left:5px;padding-right:5px;cursor:pointer;user-select:none}
 
-.details-impt-info[open]  {transition:.3s ease-in-out; margin-bottom:3px;}
-.details-impt-info[open] summary {position:sticky; top:0; left:0; background-image:url("/meta/fadebg-wmw.png"); background-color:#73bad146; background-size:100% !important; }
-a.btn {background-color: #E6FFF2;border-radius: 10px;padding: 4px;margin-bottom: 10px;color:black;text-decoration: none;filter: drop-shadow(1px 1px 1px black);font-weight: 100;display:inline; transition:.2s ease-in-out;}
-a.btn:hover {background-color: #C7FDFF; padding:5px; font-size:16px;}
-a.btn:active {filter: none;}  
-span.active {background-color: #c7c7c7;border-radius: 10px;padding: 4px;font-weight: 100;display:inline;cursor:auto;user-select:none}
+.details-impt-info[open]  {transition:.3s ease-in-out;margin-bottom:3px;}
+.details-impt-info[open] summary {position:sticky;top:0;left:0;background-image:url("/meta/fadebg-wmw.png");background-color:#73bad146;background-size:100% !important;}
+a.btn {background-color:#E6FFF2;border-radius:10px;padding:4px;margin-bottom:10px;color:black;text-decoration:none;filter:drop-shadow(1px 1px 1px black);font-weight:100;display:inline;transition:.2s ease-in-out;}
+a.btn:hover {background-color:#C7FDFF;padding:5px;font-size:16px;}
+a.btn:active {filter:none;}  
+span.active {background-color:#c7c7c7;border-radius:10px;padding:4px;font-weight:100;display:inline;cursor:auto;user-select:none}
 span.date {float:right;}
 span.hide {color:black}
-button {margin-bottom: 6px;font-family:'Shop',sans-serif;padding: 5px;outline: 1px solid #34BEED;border-radius: 3px;filter: drop-shadow(1px 1px 3.4px #bbbbbb);border:none; transition: transform 0.4s ease-in-out;}
-button:hover {box-shadow: inset 0 0 0 3px #34BEED;cursor:pointer}
-button:disabled {outline: 1px solid #9A9A9A;box-shadow:none;cursor:default}
+button {margin-bottom:6px;font-family:'Shop',sans-serif;padding:5px;outline:1px solid #34BEED;border-radius:3px;filter:drop-shadow(1px 1px 3.4px #bbbbbb);border:none;transition:transform 0.4s ease-in-out;}
+button:hover {box-shadow:inset 0 0 0 3px #34BEED;cursor:pointer}
+button:disabled {outline:1px solid #9A9A9A;box-shadow:none;cursor:default}
 
-details {text-align:left;padding-left: 5px;padding-right: 5px;}
-details ul {padding-left: 0;}
+details {text-align:left;padding-left:5px;padding-right:5px;}
+details ul {padding-left:0;}
 details li {font-size:smaller;list-style:none;vertical-align:middle;}
-summary {padding-left: 5px;padding-right: 5px;cursor: pointer;user-select: none}
+summary {padding-left:5px;padding-right:5px;cursor:pointer;user-select:none}
 details li img {width:25px;height:25px;vertical-align:middle;margin:1px;outline:solid 1px #9900FF;border-radius:2px}
 details li a img:hover {outline:solid 2px #9900FF}
 details li img.pf {outline:none}
 
 /* add to the <details> element class="details-impt-info" if the <details> contains Important Info, obvously. */
-.details-impt-info *:not(summary,.date){opacity:0%; transition:.5s ease-in-out;} .details-impt-info[open] *:not(summary,.date) {opacity:100%; transition:.5s ease-in-out;}
-.details-impt-info summary { padding-left: 5px;padding-right: 5px;cursor: pointer;user-select: none; border-radius:5px; margin-bottom:3px;}
+.details-impt-info *:not(summary,.date){opacity:0%;transition:.5s ease-in-out;} .details-impt-info[open] *:not(summary,.date) {opacity:100%;transition:.5s ease-in-out;}
+.details-impt-info summary { padding-left:5px;padding-right:5px;cursor:pointer;user-select:none;border-radius:5px;margin-bottom:3px;}
 .details-impt-info summary:hover {background-color:#73bad14d;}
 .details-impt-info summary:active {background-color:#73bad16b;}
 
 
 /* Text stuff */
 h1, h2 {color:#34BEED;}
-h1 {font-size: 30px;}
+h1 {font-size:30px;}
 h1 a {text-decoration:none}
 hr {border-color:grey;}
-.dothr {border-color:grey; border-style:dotted; border-bottom:none; border-width:3px; overflow:hidden; margin-top:3px; margin-bottom:3px;}
+.dothr {border-color:grey;border-style:dotted;border-bottom:none;border-width:3px;overflow:hidden;margin-top:3px;margin-bottom:3px;}
 
 
-a {color:#34BEED; font-weight: bold; }
-::selection{color: #323232;background: #34BEED;}
-::-moz-selection{color: #323232;background:#34BEED;}
-button.ico {width:20px; height:20px;}
+a {color:#34BEED;font-weight:bold;}
+::selection{color:#323232;background:#34BEED;}
+::-moz-selection{color:#323232;background:#34BEED;}
+button.ico {width:20px;height:20px;}
 img.ico {vertical-align:middle;width:20px;height:20px;}
-img.wb {outline: solid 1px black}
+img.wb {outline:solid 1px black}
 .blue {color:#1164E9;}
-input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {-webkit-appearance: none; margin: 0;}
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {-webkit-appearance:none;margin:0;}
 input [type="number"] {-moz-appearance:textfield;}
-input {border-top-width: 2px;border-right-width: 2px;border-bottom-width: 2px;border-left-width: 2px;border-top-style: solid;border-right-style: solid;border-bottom-style: solid;border-left-style: solid;border-top-color: #CCCCCC;border-right-color: #CCCCCC;border-bottom-color: #EAEAEA;border-left-color: #CCCCCC;	}
+input {border-top-width:2px;border-right-width:2px;border-bottom-width:2px;border-left-width:2px;border-top-style:solid;border-right-style:solid;border-bottom-style:solid;border-left-style:solid;border-top-color:#CCCCCC;border-right-color:#CCCCCC;border-bottom-color:#EAEAEA;border-left-color:#CCCCCC;	}
 
 mark {color:white;background:#34BEED;font-weight:bold;}
-mark.new {background-color:#fff090 /* fallback */; background-image:url("/meta/NEW_bg.png"); background-size:cover;border-radius: 5px; padding-right:5px; padding-left:5px;font-weight:bold;}
-mark.new #NEWtext {user-select:none; pointer-events:none; color:#ff6700;transform:translateY(1px);  animation: NEWtext 2.7s ease-in-out infinite; display:inline-block;}
+mark.new {background-color:#fff090 /* fallback */;background-image:url("/meta/NEW_bg.png");background-size:cover;border-radius:5px;padding-right:5px;padding-left:5px;font-weight:bold;}
+mark.new #NEWtext {user-select:none;pointer-events:none;color:#ff6700;transform:translateY(1px); animation:NEWtext 2.7s ease-in-out infinite;display:inline-block;}
 @keyframes NEWtext 
 {
-  /* ref: https://wiimart.org/meta/NEW_en.gif */
+  /* ref:https://wiimart.org/meta/NEW_en.gif */
 
-0% {/* new is idle with orangey text */ color:#ff6700;transform: translateY(1px);}
-50% {/* new go down and get darker */color:#ff5e00;transform:  translateY(2px) skewX(4deg); }
-70% {/* new goess up and lighter */color:#ff9e5c;transform: translateY(-1px) rotateZ(2deg); }
-100% {/* new goes back down and repeat */ color:#ff6700;transform: translateY(1px); }
+0% {/* new is idle with orangey text */ color:#ff6700;transform:translateY(1px);}
+50% {/* new go down and get darker */color:#ff5e00;transform: translateY(2px) skewX(4deg);}
+70% {/* new goess up and lighter */color:#ff9e5c;transform:translateY(-1px) rotateZ(2deg);}
+100% {/* new goes back down and repeat */ color:#ff6700;transform:translateY(1px);}
 }
 
 /* Gallery */
 div.gallery {position:relative;width:100%;box-sizing:border-box;}
-img.slide {background-color:#e6e6e6 /* fallback */; width:100%; min-height:200px; min-width:100%;border-radius:5px;}
-img.arrow {min-height:68px; position: absolute; top: 50%; transform: translateY(-50%); cursor: pointer; width: 60px; height: auto;}
-img.left {left: 10px; animation: hoverAnimation 0.5s infinite alternate;}
-img.right {right: 10px; animation: rightHoverAnimation 0.5s infinite alternate;}
-@keyframes hoverAnimation {0% {transform: translateY(-50%) translateX(0);} 100% {transform: translateY(-50%) translateX(5px);}}
-@keyframes rightHoverAnimation {0% {transform: translateY(-50%) translateX(0);} 100% {transform: translateY(-50%) translateX(-5px);}}
+img.slide {background-color:#e6e6e6 /* fallback */;width:100%;min-height:200px;min-width:100%;border-radius:5px;}
+img.arrow {min-height:68px;position:absolute;top:50%;transform:translateY(-50%);cursor:pointer;width:60px;height:auto;}
+img.left {left:10px;animation:hoverAnimation 0.5s infinite alternate;}
+img.right {right:10px;animation:rightHoverAnimation 0.5s infinite alternate;}
+@keyframes hoverAnimation {0% {transform:translateY(-50%) translateX(0);} 100% {transform:translateY(-50%) translateX(5px);}}
+@keyframes rightHoverAnimation {0% {transform:translateY(-50%) translateX(0);} 100% {transform:translateY(-50%) translateX(-5px);}}
 
 /* loading spinner */ 
 /* add onclick="spinner = false;" if you would like to skip the loader on a <a> element. (good for downloads) */
-#wscspinnerbg {position:fixed; z-index:1005; top:0px; left:0px; width:100%; height:100%;   }
-#wscspinner {z-index:1004;position:absolute;top:0px;left:0px; width:95px; height:95px; animation: spinner 1s linear infinite; /* fallback if loaderimg takes a minute to load */ filter:drop-shadow(1px 1px 3px #b9b9b950); outline:2px dotted #c9c9c9ec; border-radius:90px;}
-#wscspinnershadow {z-index:1004;position:absolute;top:7px;left:9px; width:95px; height:95px; opacity:30%; animation: spinner 1s linear infinite;}
-@keyframes spinner {from {transform: rotate(0deg)}to {transform: rotate(343deg)};}
+#wscspinnerbg {position:fixed;z-index:1005;top:0px;left:0px;width:100%;height:100%;  }
+#wscspinner {z-index:1004;position:absolute;top:0px;left:0px;width:95px;height:95px;animation:spinner 1s linear infinite;/* fallback if loaderimg takes a minute to load */ filter:drop-shadow(1px 1px 3px #b9b9b950);outline:2px dotted #c9c9c9ec;border-radius:90px;}
+#wscspinnershadow {z-index:1004;position:absolute;top:7px;left:9px;width:95px;height:95px;opacity:30%;animation:spinner 1s linear infinite;}
+@keyframes spinner {from {transform:rotate(0deg)}to {transform:rotate(343deg)};}
 
 /* Music */
-div#bgmplayer {backdrop-filter: blur(1.8px); background-color:#0000; background-size:0px;z-index: 1000;transition:.3s ease-in-out; position:fixed; bottom:3px; border:2px solid #34BEED;  width:60px; height:20px; overflow:hidden;}
-div#bgmplayer:hover {cursor:pointer;  }div#bgmplayer .shopbgm {margin-right:4px;} div#bgmplayer button {opacity:90%; background-color: #ebebebb6; color:#323232;} 
-.bgmplayerdisplayed{background-image:url("/meta/fadebg-bgm.png"); background-size:100% !important; cursor:default !important;  transition:.3s ease-in-out; height:65px !important; width:120px !important; overflow:auto;scrollbar-width: none;}.bgmplayeropenanim{width:165px !important; height:100px !important;}
-#mainplayer {z-index: 1001;}#bgmplayerBG {display:block; position:absolute; user-select:none; pointer-events:none; top:0; left:0; width:100%; height:100%;}
-.box#bgmplayer #bgmplrtitle{color:#24a6d1; background-color:#e4e4e42c; border-radius:20px;  font-weight:bold; font-size:18px; font-style:normal; margin-top:-5px; margin-bottom:3px; line-height:18px; }
-div#bgmplayer p {line-height:20px;color:#9A9A9A; margin-top:-10px;font-style:italic;font-size:10px; user-select:none; pointer-events:none;}
+div#bgmplayer {backdrop-filter:blur(1.8px);background-color:#0000;background-size:0px;z-index:1000;transition:.3s ease-in-out;position:fixed;bottom:3px;border:2px solid #34BEED; width:60px;height:20px;overflow:hidden;}
+div#bgmplayer:hover {cursor:pointer; }div#bgmplayer .shopbgm {margin-right:4px;} div#bgmplayer button {opacity:90%;background-color:#ebebebb6;color:#323232;} 
+.bgmplayerdisplayed{background-image:url("/meta/fadebg-bgm.png");background-size:100% !important;cursor:default !important; transition:.3s ease-in-out;height:65px !important;width:120px !important;overflow:auto;scrollbar-width:none;}.bgmplayeropenanim{width:165px !important;height:100px !important;}
+#mainplayer {z-index:1001;}#bgmplayerBG {display:block;position:absolute;user-select:none;pointer-events:none;top:0;left:0;width:100%;height:100%;}
+.box#bgmplayer #bgmplrtitle{color:#24a6d1;background-color:#e4e4e42c;border-radius:20px; font-weight:bold;font-size:18px;font-style:normal;margin-top:-5px;margin-bottom:3px;line-height:18px;}
+div#bgmplayer p {line-height:20px;color:#9A9A9A;margin-top:-10px;font-style:italic;font-size:10px;user-select:none;pointer-events:none;}
 
 /* Matt! Yea? update day! what?? New-New Wii Titles! What? im in the bathroom! Update day for WiiMart! */
-#wednesdaytitles {margin-top:13px; margin-bottom:13px; border:none;position:relative; background-color:#FFF; transition:.3s ease-in-out;}
+#wednesdaytitles {margin-top:13px;margin-bottom:13px;border:none;position:relative;background-color:#FFF;transition:.3s ease-in-out;}
 
-#whatiswsw {z-index:1001; animation:wswpop 0.5s forwards;opacity:0%;position: fixed;top: 50%;left: 50%;transform: translate(-50%, -50%);text-align:center;z-index:999;transition:.3s ease-in-out;}
+#whatiswsw {z-index:1001;animation:wswpop 0.5s forwards;opacity:0%;position:fixed;top:50%;left:50%;transform:translate(-50%, -50%);text-align:center;z-index:999;transition:.3s ease-in-out;}
 @keyframes wswpop {10% {opacity:0%;} 100% {opacity:100%;}
 }
 
 /* Auto-resizer, do not change pls*/    /* i added plrfix, i changed it, dont kill me gemdation pls (dont change what i added either plz plz) */
-@media (max-width: 768px) {div.row {width: 95%}   div#bgmplayer{ top:0px; position:fixed; } }
-@media (min-width: 1500px) {div.row {width: 40%};    div#bgmplayer{ position:fixed; left:3px !important; float:left;}}
+@media (max-width:768px) {div.row {width:95%}   div#bgmplayer{ top:0px;position:fixed;} }
+@media (min-width:1500px) {div.row {width:40%};   div#bgmplayer{ position:fixed;left:3px !important;float:left;}}
 
 /* Dark theme via system preference */
-@media (prefers-color-scheme: dark)
+@media (prefers-color-scheme:dark)
 {
-  body {background-color: black; color: #e0e0e0;}
-  div.box {background-color: #1e1e1e; box-shadow: 0 0 10px #000000CC;}
-  .box#bgmplayer #bgmplrtitle {background-color:#dddddd2c; white-space: nowrap;}
-  a.btn {background-color: #587566;color:white;}
-  a.btn:hover {background-color: #7da2a3; }
-  span.active {background-color: #313131}
-  #wscspinnershadow {z-index:1004;position:absolute;top:7px;left:9px; width:95px; height:95px; opacity:10%; animation: spinner 1s linear infinite;}
+  body {background-color:black;color:#e0e0e0;}
+  div.box {background-color:#1e1e1e;box-shadow:0 0 10px #000000CC;}
+  .box#bgmplayer #bgmplrtitle {background-color:#dddddd2c;white-space:nowrap;}
+  a.btn {background-color:#587566;color:white;}
+  a.btn:hover {background-color:#7da2a3;}
+  span.active {background-color:#313131}
+  #wscspinnershadow {z-index:1004;position:absolute;top:7px;left:9px;width:95px;height:95px;opacity:10%;animation:spinner 1s linear infinite;}
   span.hide {color:white}
-  button {background-color: #3b3b3b; color: #e0e0e0;filter: drop-shadow(1px 1px 3.4px #747474)}
-  button:active {box-shadow: none;}
-  div#bgmplayer button { background-color: #3b3b3bb6; color:#FFF;} 
-  footer, footer a {color: #9A9A9A;}
-  h1, h2, a {color: #34BEED;}
-  ::selection {color: #e0e0e0; background: #34BEED;}
-  ::-moz-selection {color: #e0e0e0; background: #34BEED;}
+  button {background-color:#3b3b3b;color:#e0e0e0;filter:drop-shadow(1px 1px 3.4px #747474)}
+  button:active {box-shadow:none;}
+  div#bgmplayer button { background-color:#3b3b3bb6;color:#FFF;} 
+  footer, footer a {color:#9A9A9A;}
+  h1, h2, a {color:#34BEED;}
+  ::selection {color:#e0e0e0;background:#34BEED;}
+  ::-moz-selection {color:#e0e0e0;background:#34BEED;}
   mark {color:black;background:#34BEED;font-weight:bold;}
-  img.wb {outline: solid 1px white}
+  img.wb {outline:solid 1px white}
   .blue {color:#5898ff;}
-  div.row input {background-color: black;border: 2px solid grey;color:white;}
+  div.row input {background-color:black;border:2px solid grey;color:white;}
   mark {color:white}
-  #wednesdaytitles {color:white; background-color:#3b3b3b}
-  img.slide {background-color: #3d3d3d;}
+  #wednesdaytitles {color:white;background-color:#3b3b3b}
+  img.slide {background-color:#3d3d3d;}
 
   /* if the <details> contains Important Info */
-  .details-impt-info[open] summary {position:sticky; top:0; left:0; background-image:url("/meta/fadebg-bgm.png"); background-size:100% !important; }
+  .details-impt-info[open] summary {position:sticky;top:0;left:0;background-image:url("/meta/fadebg-bgm.png");background-size:100% !important;}
   .details-impt-info summary:hover {background-color:#73bad14d;}
   .details-impt-info summary:active {background-color:#73bad16b;}
 }

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <script src="meta/loader.js"></script>
+    <title>Install WiiMart</title>
+    <meta property="og:title" content="Download WiiMart">
+    <meta property="og:description" content="Here are the installation instructions for WiiMart and the patched IOS WADs!">
+    <meta property="og:image" content="https://wiimart.org/media/branding-bag.png">
+    <meta property="og:url" content="https://wiimart.org/install">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="WiiMart, Wii Shop, homebrew">
+    <meta name="theme-color" content="#1164E9">
+    <link rel="stylesheet" href="meta/main.css">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        div#platform button {min-width:250px;max-width:300px;font-size:larger;}
+        div#platform button img {width:50px;height:50px;float:left;padding-right:10px;}
+        img {width:100%}
+        sup {color:darkgrey}
+        button.r {outline: 1px solid #9A9A9A}
+        button.r:hover {box-shadow: inset 0 0 0 3px #9A9A9A}
+        div.box#start {display:block}
+        div.box button.platform {width:100%;font-size:medium;}
+        div.box button.platform img {width:100px}
+        div.box {display:none}
+        a {text-decoration:none}
+        a button {width:100%}
+        span.descrip {color:rgb(172, 172, 172);font-size:smaller}
+        code {outline:solid 2px #9A9A9A;border-radius:5px;padding:3px;cursor:copy}
+        summary {color:red;text-decoration: underline;list-style: none;font-weight: bold;user-select: none;cursor: pointer;padding-top:5px;}
+        details {outline: solid 1px red;padding-bottom: 5px;margin-bottom: 10px;text-align: center;h2 {color:red};}
+    </style>
+</head>
+<body>
+    <div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" onload="loadrimg();" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div>
+
+<h1><a href="/">WiiMart</a></h1>
+
+<nav><a href="install" class="btn">Install</a> <span class="active">DLC</span> <a href="support" class="btn">Support</a> <a href="titles" class="btn">Titles</a> <a href="specials" class="btn">Specials</a> <a href="credits" class="btn">Credits</a></nav>
+
+<script>function showDiv(divId) {const divs = document.querySelectorAll('.box');divs.forEach(div => {div.style.display = 'none'; });document.getElementById(divId).style.display = 'block';}</script>
+
+<div class="row">
+    <div id="start" class="box">
+        <h2>WiiMart DLC <b style="color:red">BETA</b></h2>
+        <h3>Disc games</h3>
+        <p>For games like Just Dance 2015 and Rock Band 3. You will need a computer for this and access to a terminal emulator.</p>
+
+        <div id="platform">
+            <ul style="list-style:none;line-height:40px;padding:0">
+                <li><button onclick="showDiv('win-1')"><img loading="lazy" src="meta/em-windows.png" class="ico" alt="Windows">Windows</button></li>
+                <li><button onclick="showDiv('tux-1')"><img loading="lazy" src="meta/em-linux.png" class="ico" alt="Linux">Linux</button></li>
+                <li><button disabled><img loading="lazy" src="meta/em-mac-grey.png" class="ico" alt="macOS">macOS<br><small style="font-size:small;color:#9A9A9A;">Not supported.</small></button></li>
+            </ul>
+        </div>
+        <hr>
+        <h3>WiiWare games</h3>
+        <p>Support for DLC has been added to some titles like Phoenix Wright: Ace Attorney and Mega Man 9.</p>
+    </div>
+
+    <!--Windows-->
+    <div id="win-1" class="box">
+        <h2>Patching with Windows</h2>
+        <h3>Get your software</h3>
+        <p><a href="patcher/execs/windows/x64/WiiMartPatcher_x64.exe" onclick="spinnerallowed=false;"><button>Download WiiMart Patcher<br><span class="descrip">This is a <em style="color:#ff6680">required</em> file to patch with WiiMart.</span></button></a></p>
+        <p><a href="https://wit.wiimm.de/download/wit-v3.05a-r8638-cygwin.zip" onclick="spinnerallowed=false;"><button>Download WIT<br><span class="descrip">This is a <em style="color:#ff6680">required</em> file to modify WBFS files.</span></button></a></p>
+        <p><button disabled style="width:100%">Wii disc games in WBFS format<br><span class="descrip">Not provided.</span></button></a></p>
+        <details>
+            <summary>If your computer has a 32 bit CPU, click here.</summary>
+            <p>The buttons are designed for x64. Please use these buttons instead.</p>
+            <p><a href="patcher/execs/windows/x86/WiiMartPatcher_x86.exe" onclick="spinnerallowed=false;"><button>Download WiiMart Patcher<br><span class="descrip">This is a <em style="color:#ff6680">required</em> file to patch with WiiMart.</span></button></a></p>
+            <p><a href="https://wit.wiimm.de/download/wit-v3.05a-r8638-cygwin.zip" onclick="spinnerallowed=false;"><button>Download WIT<br><span class="descrip">This is a <em style="color:#ff6680">required</em> file to modify WBFS files.</span></button></a></p>
+        </details>
+        <p>It is recommended that you place it in <b>Desktop</b> or a folder <em>on</em> Desktop for easy access.</p>
+
+        <button onclick="showDiv('start')" class="r">Back</button> <button onclick="showDiv('win-2')">Next</button>
+    </div>
+
+    <div id="win-2" class="box">
+        <h2>Patching with Windows</h2>
+        <h3>Initialize the patcher</h3>
+        <img src="media/patcher-1-init.gif">
+        <p>Start by initalizing the patcher, this will create the folders needed. </p>
+        <p>Enter <code>WiiMartPatcher_x64.exe --init</code> (or <code>WiiMartPatcher_x86.exe --init</code> ) to initialize.</p>
+        
+        <button onclick="showDiv('win-1')" class="r">Back</button> <button onclick="showDiv('win-3')">Next</button>
+    </div>
+        
+    <div id="win-3" class="box">
+        <h2>Patching with Windows</h2>
+        <h3>Setting up WiiMart Patcher</h3>
+        <img src="media/patcher-2-placement.gif">
+        <p>Place your game(s) in <b>wbfs</b>.</p>
+        <p>Inside of the WIT ZIP, copy the <b>bin</b> folder and take it to <b>wit</b>.</p>
+
+        <button onclick="showDiv('win-2')" class="r">Back</button> <button onclick="showDiv('win-4')">Next</button>
+    </div>
+        
+    <div id="win-4" class="box">
+        <h2>Patching with Windows</h2>
+        <h3>Start patching</h3>
+        <img src="media/patcher-3-patching.gif">
+        <p>Run the patcher by entering <code>WiiMartPatcher_x64.exe</code> (or <code>WiiMartPatcher_x86.exe</code> ). It will take some time.</p>
+
+        <button onclick="showDiv('win-3')" class="r">Back</button></button> <button onclick="showDiv('win-5')">Next</button>
+    </div>
+
+    <div id="win-5" class="box">
+        <h2>Patching with Windows</h2>
+        <h3>Finished</h3>
+        <img src="media/patcher-4-output.png">
+        <p>You will find your final WBFS files in the final folder. Take them to an external drive and use them in <a>USB Loader GX</a>, <a>WiiFlow</a>, etc.</p>
+        <p>See <a href="https://wii.hacks.guide/wii-loaders#game-directory-structure">this guide</a> on information on how to structure your files.</p>
+
+        <button onclick="showDiv('win-4')" class="r">Back</button>
+    </div>
+    <!--Linux-->
+    <div id="tux-1" class="box">
+        <h2>Patching with Linux</h2>
+        <h3>Get your software</h3>
+        <p><a href="patcher/execs/linux/x64/WiiMartPatcher-static_x64" onclick="spinnerallowed=false;"><button>Download WiiMart Patcher<br><span class="descrip">This is a <em style="color:#ff6680">required</em> file to patch with WiiMart.</span></button></a></p>
+        <p><a href="https://wit.wiimm.de/download/wit-v3.05a-r8638-x86_64.tar.gz" onclick="spinnerallowed=false;"><button>Download WIT<br><span class="descrip">This is a <em style="color:#ff6680">required</em> file to modify WBFS files.</span></button></a></p>
+        <p><button disabled style="width:100%">Wii disc games in WBFS format<br><span class="descrip">Not provided.</span></button></a></p>
+        <details>
+            <summary>If your computer has a 32 bit CPU, click here.</summary>
+            <p>The buttons are designed for x64. Please use these buttons instead.</p>
+            <p><a href="patcher/execs/linux/x86/WiiMartPatcher-static_x86" onclick="spinnerallowed=false;"><button>Download WiiMart Patcher<br><span class="descrip">This is a <em style="color:#ff6680">required</em> file to patch with WiiMart.</span></button></a></p>
+            <p><a href="https://wit.wiimm.de/download/wit-v3.05a-r8638-i386.tar.gz" onclick="spinnerallowed=false;"><button>Download WIT<br><span class="descrip">This is a <em style="color:#ff6680">required</em> file to modify WBFS files.</span></button></a></p>
+        </details>
+        <p>It is recommended that you place it in <b>Desktop</b> or a folder <em>on</em> Desktop for easy access.</p>
+
+        <button onclick="showDiv('start')" class="r">Back</button> <button onclick="showDiv('tux-2')">Next</button>
+    </div>
+
+    <div id="tux-2" class="box">
+        <h2>Patching with Linux</h2>
+        <h3>Initialize the patcher</h3>
+        <img src="media/patcher-1-init-linux.gif">
+        <p>Start by initalizing the patcher, this will create the folders needed.</p>
+        <p>Enter <code>chmod +x WiiMartPatcher-static_x64</code> (or <code>chmod +x WiiMartPatcher-static_x86</code> ) to make the patcher executable.</p>
+        <p>Enter <code>./WiiMartPatcher_x64.exe --init</code> (or <code>./WiiMartPatcher_x86.exe --init</code> ) to initialize.</p>
+        
+        <button onclick="showDiv('tux-1')" class="r">Back</button> <button onclick="showDiv('tux-3')">Next</button>
+    </div>
+        
+    <div id="tux-3" class="box">
+        <h2>Patching with Linux</h2>
+        <h3>Setting up WiiMart Patcher</h3>
+        <img src="media/patcher-2-placement-linux.gif">
+        <p>Inside of the WIT ZIP, copy the <b>bin</b> folder and take it to <b>wit</b>.</p>
+        <p>Place your game(s) in <b>wbfs</b>.</p>
+
+        <button onclick="showDiv('tux-2')" class="r">Back</button> <button onclick="showDiv('tux-4')">Next</button>
+    </div>
+        
+    <div id="tux-4" class="box">
+        <h2>Patching with Linux</h2>
+        <h3>Start patching</h3>
+        <img src="media/patcher-3-patching-linux.gif">
+        <p>Run the patcher by entering <code>./WiiMartPatcher-static_x64</code> (or <code>./WiiMartPatcher-static_x86</code> ). It will take some time.</p>
+
+        <button onclick="showDiv('tux-3')" class="r">Back</button></button> <button onclick="showDiv('tux-5')">Next</button>
+    </div>
+
+    <div id="tux-5" class="box">
+        <h2>Patching with Linux</h2>
+        <h3>Finished</h3>
+        <img src="media/patcher-4-output-linux.png">
+        <p>You will find your final WBFS files in the final folder. Take them to an external drive and use them in <a>USB Loader GX</a>, <a>WiiFlow</a>, etc.</p>
+        <p>See <a href="https://wii.hacks.guide/wii-loaders#game-directory-structure">this guide</a> on information on how to structure your files.</p>
+
+        <button onclick="showDiv('tux-4')" class="r">Back</button>
+    </div>
+</div>
+
+<footer><p>The WiiMart Team is not affiliated with Nintendo or any related parties. To contact, please send an email to <a href="mailto:support@wiimart.org"><b>support@wiimart.org</b></a>.</p></footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+const codeBlocks = document.querySelectorAll('code');
+
+    codeBlocks.forEach(codeBlock => {
+        codeBlock.addEventListener('click', async (event) => {
+            
+            const codeToCopy = codeBlock.textContent.trim();
+            
+            try {
+                await navigator.clipboard.writeText(codeToCopy);               
+                
+                codeBlock.classList.add('copied-flash');                
+                setTimeout(() => {
+                    codeBlock.classList.remove('copied-flash');
+                }, 500);
+                console.log('Code successfully copied:', codeToCopy);
+
+            } catch (err) {
+                console.error('Failed to copy code: ', err);
+                
+                alert('Could not automatically copy the code. Please select and copy it manually.');
+            }
+        });
+    });
+});
+</script>
+
+
+</body>
+</html>
