@@ -6,6 +6,7 @@ This is the source code of WiiMart's website. It contains WADs, branding, and pr
 
 ## Content pages
 * `credits.html` Credits for WiiMart
+* `dlc.html` DLC guide
 * `fishiemart.html` ;D
 * `index.html` Main page
 * `info-log.html` 'Important Info' log
