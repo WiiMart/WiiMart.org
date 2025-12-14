@@ -2,5 +2,3 @@ When adding WAD files to this directory,
 please make sure you follow the naming scheme.
 
  -Gem
-
-and also please make sure to add a sha256sum if its for the installer. -Thom
