@@ -258,6 +258,7 @@ const errorCodes = {
     "205621": "Unknown error (possibly ECS gift error?)",
     // CAS
     "205627": "Can't buy DLC for a title you don't own.",
+    "206710": "No content is being distributed for purchase/re-download. (DLC Shop exclusive)",
 
     // Misc (ETS, PAS, OSS)
     "205800": "Generic PAS (PaymentAuthorizationSOAP) error.",
