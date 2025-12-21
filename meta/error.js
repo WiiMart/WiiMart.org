@@ -259,11 +259,13 @@ const errorCodes = {
     // CAS
     "205627": "Can't buy DLC for a title you don't own.",
     "206710": "No content is being distributed for purchase/re-download. (DLC Shop exclusive)",
+    "205507": "DLC is not implemented yet for the title you've tried to use.",
 
     // Misc (ETS, PAS, OSS)
     "205800": "Generic PAS (PaymentAuthorizationSOAP) error.",
     "205825": "Generic PAS (PaymentAuthorizationSOAP) error. (PAS_ERROR_CODE)",
     "205700": "Generic ETS (ETicketSOAP) error.",
+    // WS errors end
 
     // Shop errors start
     "206600": "Generic OSS error.",
