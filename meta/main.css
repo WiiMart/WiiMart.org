@@ -7,7 +7,8 @@ div.row {width:50%;margin:auto}
 div.box {line-height:23.3px;background-color:white;border:solid 2px #34BEED;border-radius:5px;box-shadow:0 0 10px #2525255d;box-sizing:border-box;text-align:center;margin:0 auto;padding:5px;margin-top:8px;overflow:auto;}
 #backgroundd {position:fixed;top:0;left:0;width:100%;height:100%;background-image:url('/meta/fadebg-wmw.png');background-size:cover;z-index:999;user-select:none;pointer-events:none;}
 h1 {margin-bottom:10px;}
-nav {margin-bottom:20px;line-height:35px;}
+nav {margin-bottom:20px;line-height:35px;white-space:nowrap;overflow:hidden;overflow-x:auto;scrollbar-width:none;}
+nav a img.platform {height:20px;vertical-align:middle;padding-bottom:1px;}
 footer {color:grey}
 footer a {color:grey}
 
@@ -38,7 +39,7 @@ details li img.pf {outline:none}
 
 /* add to the <details> element class="details-impt-info" if the <details> contains Important Info, obvously. */
 .details-impt-info *:not(summary,.date){opacity:0%;transition:.5s ease-in-out;} .details-impt-info[open] *:not(summary,.date) {opacity:100%;transition:.5s ease-in-out;}
-.details-impt-info summary { padding-left:5px;padding-right:5px;cursor:pointer;user-select:none;border-radius:5px;margin-bottom:3px;}
+.details-impt-info summary {padding-left:5px;padding-right:5px;cursor:pointer;user-select:none;border-radius:5px;margin-bottom:3px;}
 .details-impt-info summary:hover {background-color:#73bad14d;}
 .details-impt-info summary:active {background-color:#73bad16b;}
 
