@@ -3,6 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <script src="meta/details.js"></script>
     <script src="meta/music.js"></script>
     <script src="meta/loader.js"></script>
     <title>WiiMart: Important Info logs</title>
@@ -15,7 +16,7 @@
     <meta content="#1164E9" name="theme-color">
     <link rel="stylesheet" href="meta/main.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <style>ul.wmw li {font-style:italic;white-space:nowrap;overflow:hidden;overflow-x:auto;max-width:100%;scrollbar-width:none;}</style>
+    <style> ul.wmw li {font-style:italic;white-space:nowrap;overflow:hidden;overflow-x:auto;max-width:100%;scrollbar-width:none;}</style>
   </head>
 <body>
 <div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" onload="loadrimg();" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();" style="display:none;" title="BGM player">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="spinnerallowed=false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">Ply?</button></a><a href="javascript:deactivatebgmplayer();" onclick="spinnerallowed=false;"><button>Close</button></a></div>   </div>
@@ -27,7 +28,15 @@
    <div class="box" style="padding:0;padding-bottom:10px">
         <header style="background-color:#34BEED;color:white;font-weight:bold;margin-bottom:10px">Important Info:</header>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #33 <span class="date">12-31</span></summary>
+            <summary>ATTENTION! Server raided! <img src="meta/em-pinned.svg" style="width:20px;height:20px;vertical-align:middle"> <span class="date"> 2026-01-08</span></summary>
+            <p id="detailsinfo">The Discord server is currently unavailable as a raid with a <a href="https://www.urbandictionary.com/define.php?term=nuke%20bot">nuke bot</a> happened at 11:07 AM CT.
+               This was due to a person impersonating as a staff member of each server and then adding a webhook to raid them.</p>
+            <p>The server should be back when channels and roles are fully restored.</p>
+            <h3>Community response</h3>
+            <p>Members of <a href="https://www.reddit.com/r/wiimart/">r/WiiMart</a> and <a href="https://www.reddit.com/r/homebrew/">r/homebrew</a> quickly posted about the situation as it was happening. /r/Homebrew was talking about it as well since their server was also <a href="https://www.reddit.com/r/homebrew/comments/1q7gaft/rhomebrew_discord/">raided by the same person</a>.</p>
+        </details>
+        <details class="details-impt-info">
+            <summary>WiiMart Wednesday #33 <span class="date">2025-12-31</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul class="wmw">
                 <li><img src="meta/em-vc-snes.png" class="pf"> Super Boss Collection <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
@@ -41,7 +50,7 @@
             </ul>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #32 <span class="date">12-19</span></summary>
+            <summary>WiiMart Wednesday #32 <span class="date">2025-12-19</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul class="wmw">
                 <li><img src="meta/em-vc-snes.png" class="pf"> Super Mario Kart: Winter Version <a href="credits#Archive"><img src="media/em-forgorarchive.png"></a></li>
@@ -74,7 +83,7 @@
             <p>- Ocarina</p>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #31 <span class="date">12-10</span></summary>
+            <summary>WiiMart Wednesday #31 <span class="date">2025-12-10</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul class="wmw">
                 <li><img src="meta/em-vc-snes.png" class="pf"> Metal Ice: Uninstall <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
@@ -91,7 +100,7 @@
             <img src="media/wmw-bnr-12-10-25.gif" style="width:100%;" alt="WMW Banner 12/10/25">
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #30 <span class="date">12-03</span></summary>
+            <summary>WiiMart Wednesday #30 <span class="date">2025-12-03</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul class="wmw">
                 <li><img src="meta/em-vc-64.png" class="pf"> Dragon Ball Kart 64 <img src="media/em-useless.png"></li>
@@ -106,7 +115,7 @@
             <img src="media/wmw-bnr-12-03-25.gif" style="width:100%;" alt="WMW Banner 12/03/25">
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #29 <span class="date">11-26</span></summary>
+            <summary>WiiMart Wednesday #29 <span class="date">2025-11-26</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul class="wmw">
                 <li><img src="meta/em-vc-64.png" class="pf"> Showfloor: Super Mario 64 SpaceWorld '95 Revival Project <a href="credits#RM05"><img src="media/em-rm05.png"></a></li>
@@ -128,7 +137,7 @@
            <p>The BS-X Satellaview title <b><i>Ancient Stone Tablets</i></b> will be released in Chapters monthly, similarly to how they were originally released weekly. There are 4 chapters in total, and progression is saved across each chapter! So be sure to check this amazing game out and prepare for the next chapter!</p>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #28 <span class="date">11-21</span></summary>
+            <summary>WiiMart Wednesday #28 <span class="date">2025-11-21</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul class="wmw">
                 <li><img src="meta/em-vc-64.png" class="pf"> ClayFighter: Sculptor's Cut <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a> <a href="credits#Dustin"><img src="media/em-dustin.png"></a></li>
@@ -147,7 +156,7 @@
             </ul>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #27 <span class="date">11-13</span></summary>
+            <summary>WiiMart Wednesday #27 <span class="date">2025-11-13</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul class="wmw">
                 <li><img src="meta/em-vc-64.png" class="pf"> ClayFighter 63⅓ <a href="credits#Dustin"><img src="media/em-dustin.png"></a> <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
@@ -164,7 +173,7 @@
             <img src="media/wmw-bnr-11-12-25.gif" style="width:100%;" alt="WMW Banner 11/12/25">
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart DLC Support <span class="date">10-29</span></summary>
+            <summary>WiiMart DLC Support <span class="date">2025-10-29</span></summary>
             <p>Hello WiiMart, we've got some DLC support!</p>
             <p>What does this mean? Well for you we have managed to get DLC working on games that do have DLC support as per the following
                list. These are the following disc games currently have WiiMart DLC support.</p>
@@ -192,7 +201,7 @@
             </ul>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #26 <span class="date">10-29</span></summary>
+            <summary>WiiMart Wednesday #26 <span class="date">2025-10-29</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul class="wmw">
                 <li><img src="meta/em-vc-64.png" class="pf"> Wega's Challenge <a href="credits#AFA"><img src="media/em-afa.png"></a></li>
@@ -244,7 +253,7 @@
             <img src="media/wmw-26-10-29.png" style="width:100%;" alt="WMW Banner 10/29/25">
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #25 <span class="date">10-22</span></summary>
+            <summary>WiiMart Wednesday #25 <span class="date">2025-10-22</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul class="wmw">
                 <li><img src="meta/em-vc-nes.png" class="pf"> A Nightmare on Elm Street <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
@@ -273,7 +282,7 @@
             <p>With Halloween nearing, next week will be the last WiiMart Wednesday of October. And we will end it with plenty of spooky 'treats'!</p>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #24 <span class="date">10-15</span></summary>
+            <summary>WiiMart Wednesday #24 <span class="date">2025-10-15</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul class="wmw">
                 <li><img src="meta/em-vc-nes.png" class="pf"> Friday the 13th <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
@@ -295,7 +304,7 @@
             <p>Additionally, DLC was restored for <i>Phoenix Wright: Ace Attorney</i> and <i>Mega Man 9</i>.</p>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #23 <span class="date">10-08</span></summary>
+            <summary>WiiMart Wednesday #23 <span class="date">2025-10-08</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul class="wmw">
                 <li><img src="meta/em-vc-64.png" class="pf"> Sin and Punishment (English) <a href="credits#Onion"><img src="media/em-onion.png"></a></li>
@@ -312,7 +321,7 @@
             <p>This Wednesday, we had an event on our Discord server that revealed the games list early. If you'd like to be apart of these events, <a href="https://discord.gg/wiimart-1346485785284575335">join us!</a></p>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #22 <span class="date">09-24</span></summary>
+            <summary>WiiMart Wednesday #22 <span class="date">2025-09-24</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
                 <li><img src="meta/em-vc-64.png" class="pf"> The Legend of Zelda: Master of Time <a href="credits#Dustin"><img src="media/em-dustin.png"></a></li>
@@ -330,7 +339,7 @@
             </ul>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #21 <span class="date">09-17</span></summary>
+            <summary>WiiMart Wednesday #21 <span class="date">2025-09-17</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
                 <li><img src="meta/em-vc-snes.png" class="pf"> Super Mario Land 3: Tatanga's Return <a href="credits#AFA"><img src="media/em-afa.png"></a></li>
@@ -343,7 +352,7 @@
             </ul>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #20 <span class="date">09-05</span></summary>
+            <summary>WiiMart Wednesday #20 <span class="date">2025-09-05</span></summary>
             <p>These titles were added this <s>Wednesday</s> Friday.</p>
             <ul>
                 <li><img src="meta/em-vc-snes.png" class="pf"> Sicari 2: The Brink of Time <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
@@ -354,7 +363,7 @@
             </ul>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #19 <span class="date">08-26</span></summary>
+            <summary>WiiMart Wednesday #19 <span class="date">2025-08-26</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
                 <li><img src="meta/em-vc-64.png" class="pf"> Super Mario Kart: Project R <a href="credits#RM05"><img src="media/em-rm05.png"></a></li>
@@ -370,7 +379,7 @@
             <p>This WiiMart Wednesday came after a two week skip.</p>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #18 <span class="date">08-06</span></summary>
+            <summary>WiiMart Wednesday #18 <span class="date">2025-08-06</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
                 <li><img src="meta/em-vc-genesis.png" class="pf"> Beavis and Butt-Head <a href="credits#Dustin"><img src="media/em-dustin.png"></a></li>
@@ -387,7 +396,7 @@
             <p>Two additional missing channels, Amazon/LOVEFiLM and Crunchyroll</i>, have been added.</p>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #17 <span class="date">07-30</span></summary>
+            <summary>WiiMart Wednesday #17 <span class="date">2025-07-30</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
                 <li><img src="meta/em-channels.svg" class="pf"> YouTube</i>, powered by <a href="https://revivemii.xyz/riivivetube">ReviveMii</a> <img src="media/em-errorexe.png"> <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
@@ -403,7 +412,7 @@
             </ul>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #16 <span class="date">07-23</span></summary>
+            <summary>WiiMart Wednesday #16 <span class="date">2025-07-23</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
             <li><img src="meta/em-vc-64.png" class="pf"> Super Mario 64: Shindou Edition <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
@@ -419,7 +428,7 @@
             </ul>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #15 <span class="date">07-16</span></summary>
+            <summary>WiiMart Wednesday #15 <span class="date">2025-07-16</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
             <li><img src="meta/em-vc-nes.png" class="pf"> Rugrats Adventures in Gameland <a href="credits#Dustin"><img src="media/em-dustin.png"></a></li>
@@ -435,7 +444,7 @@
             </ul>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #14 <span class="date">07-09</span></summary>
+            <summary>WiiMart Wednesday #14 <span class="date">2025-07-09</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
             <li><img src="meta/em-vc-64.png" class="pf"> Pokémon Kart 64 <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
@@ -448,7 +457,7 @@
             </ul>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #13 <span class="date">07-02</span></summary>
+            <summary>WiiMart Wednesday #13 <span class="date">2025-07-02</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
             <li><img src="meta/em-vc-64.png" class="pf"> The Legend of Zelda: The Missing Link <a href="credits#Dustin"><img src="media/em-dustin.png"></a></li>
@@ -466,7 +475,7 @@
             </ul>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #12 <span class="date">06-25</span></summary>
+            <summary>WiiMart Wednesday #12 <span class="date">2025-06-25</span></summary>
             <p>These titles were added this Wednesday. To celebrate the 34th birthday of Sonic on June 23rd some additional Sonic titles have been included!</p>
             <ul>
             <li><img src="meta/em-vc-64.png" class="pf"> Super Sonic 2 Bros. <a href="credits#Dustin"><img src="media/em-dustin.png"></a> <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
@@ -487,7 +496,7 @@
             </ul>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #11 <span class="date">06-18</span></summary>
+            <summary>WiiMart Wednesday #11 <span class="date">2025-06-18</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
             <li><img src="meta/em-vc-nes.png" class="pf"> All Night Nippon Super Mario Bros. <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
@@ -504,7 +513,7 @@
             <p>An update was also made to the WiiWare title Pokémon Rumble: Weekend Edition</i>.</p>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #10 <span class="date">06-11</span></summary>
+            <summary>WiiMart Wednesday #10 <span class="date">2025-06-11</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
             <li><img src="meta/em-vc-snes.png" class="pf"> Super Bomberman 3 <a href="credits#Onion"><img src="media/em-onion.png"></a></li>
@@ -520,15 +529,15 @@
             </ul>
         </details>
         <details class="details-impt-info">
-            <summary>Important Info section created <span class="date">06-09</span></summary>
+            <summary>Important Info section created <span class="date">2025-06-09</span></summary>
             <p>The <b>Important Info</b> section was added on June 10th. This section is not corresponding to the one seen on the Wii Shop Channel.</p>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart is down for maintenance. <span class="date">06-07</span></summary>
+            <summary>WiiMart is down for maintenance. <span class="date">2025-06-07</span></summary>
             <p>The WiiMart service is currently offline as we are handling DSiMart testing.</p>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #9 <span class="date">06-04</span></summary>
+            <summary>WiiMart Wednesday #9 <span class="date">2025-06-04</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
             <li><img src="meta/em-vc-64.png" class="pf"> Super Mario Star Road <a href="credits#Dustin"><img src="media/em-dustin.png"></a></li>
@@ -543,7 +552,7 @@
             </ul>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #8 <span class="date">05-28</span></summary>
+            <summary>WiiMart Wednesday #8 <span class="date">2025-05-28</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
             <li><img src="meta/em-vc-nes.png" class="pf"> Virus (PC-10 Prototype) <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
@@ -559,11 +568,11 @@
             </ul>
         </details>
         <details class="details-impt-info">
-            <summary>Specials for 3DS and Wii U <span class="date">05-21</span></summary>
+            <summary>Specials for 3DS and Wii U <span class="date">2025-05-21</span></summary>
             <p>Check out the <a href="specials">Specials</a> page to see the new specials.</p>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #7 <span class="date">05-21</span></summary>
+            <summary>WiiMart Wednesday #7 <span class="date">2025-05-21</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
             <li><img src="meta/em-vc-genesis.png" class="pf"> Contra: Hard Corps <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
@@ -578,7 +587,7 @@
             </ul>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #6 <span class="date">05-14</span></summary>
+            <summary>WiiMart Wednesday #6 <span class="date">2025-05-14</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
             <li><img src="meta/em-vc-master.png" class="pf"> Sonic Blast <a href="credits#Dustin"><img src="media/em-dustin.png"></a></li>
@@ -593,7 +602,7 @@
             </ul>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #5 <span class="date">05-07</span></summary>
+            <summary>WiiMart Wednesday #5 <span class="date">2025-05-07</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
             <li><img src="meta/em-vc-snes.png" class="pf"> Super Junkoid <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
@@ -614,16 +623,16 @@
             <p>This was the first WiiMart Wednesday with server hoster Selim.</p>
         </details>
         <details class="details-impt-info">
-            <summary>Update your WiiMart! <span class="date">05-02</span></summary>
+            <summary>Update your WiiMart! <span class="date">2025-05-02</span></summary>
             <p>Since May 2nd WiiMart has been relocated to a new domain. For this update you'll need to download new WADs. Go to the <a href="install">Install</a> page.</p>
         </details>
         <details class="details-impt-info">
-            <summary>Title spreadsheet <span class="date">04-23</span></summary>
+            <summary>Title spreadsheet <span class="date">2025-04-23</span></summary>
             <p>If you want to find a specific game or just want to see what is in WiiMart you can use my newly made spreadsheet. It has information of all the titles on WiiMart USA only at the moment.</p>
             <p><a href="title-sheet" class="btn">Spreadsheet</a></p>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #4 Bonus <span class="date">04-22</span></summary>
+            <summary>WiiMart Wednesday #4 Bonus <span class="date">2025-04-22</span></summary>
             <ul>
             <li>Line Attack Heroes</li>
             <li>Pokémon Mystery Dungeon: Radiant Adventure Squad</li>
@@ -633,7 +642,7 @@
             </ul>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #4 <span class="date">04-22</span></summary>
+            <summary>WiiMart Wednesday #4 <span class="date">2025-04-22</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
             <li><img src="meta/em-vc-turbo.png" class="pf"> 1941 Counter Attack <img src="media/em-rollps.png"></li>
@@ -706,7 +715,7 @@
             <p>This was the last WiiMart Wednesday with server hoster Larsenv.</p>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #3 <span class="date">04-15</span></summary>
+            <summary>WiiMart Wednesday #3 <span class="date">2025-04-15</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
             <li><img src="meta/em-flash.png" class="pf"> A Koopa's Revenge <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
@@ -747,7 +756,7 @@
             </ul>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #2 <span class="date">04-08</span></summary>
+            <summary>WiiMart Wednesday #2 <span class="date">2025-04-08</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
             <li><img src="meta/em-flash.png" class="pf"> Duck Hunt - Flash Edition <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
@@ -760,12 +769,12 @@
             </ul>
         </details>
         <details class="details-impt-info">
-            <summary>Error Code Checker <span class="date">04-05</span></summary>
+            <summary>Error Code Checker <span class="date">2025-04-05</span></summary>
             <p>WiiMart's website now has an error code checker! If you see an error code in the shop you can look it up here and troubleshoot accordingly.</p>
             <p><a href="errors" class="btn">Checker</a></p>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #1 <span class="date">04-02</span></summary>
+            <summary>WiiMart Wednesday #1 <span class="date">2025-04-02</span></summary>
             <p>These titles were added this Wednesday.</p>
             <ul>
             <li><img src="meta/em-vc-nes.png" class="pf"> 25th Super Mario Bros <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
@@ -783,11 +792,11 @@
             <p>This was the first WiiMart Wednesday with server hoster Larsenv.</p>
         </details>
         <details class="details-impt-info">
-            <summary>Public launch <span class="date">03-12</span></summary>
+            <summary>Public launch <span class="date">2025-03-12</span></summary>
             <p>This day was the date that WiiMart became known publicly. It (and the day after) is considered the public release of WiiMart in beta.</p>
         </details>
         <details class="details-impt-info">
-            <summary>Server creation <span class="date">03-09</span></summary>
+            <summary>Server creation <span class="date">2025-03-09</span></summary>
             <p>The Discord server was released on March 9th. A few members were in the server while it was private.</p>
         </details>
    </div>
