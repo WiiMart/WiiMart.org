@@ -320,6 +320,7 @@ const errorCodes = {
     // SSL errors end
 
     // Console errors start
+    "205100": "Most likely an error when gifting a title from Dolphin, it is unsupported.",
     "205007": "Invalid NAND Dump (Dolphin only)",
     "205540": "This software doesn't work in the vWii",
     "206670": "Invalid friend code",
