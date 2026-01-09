@@ -346,8 +346,9 @@ const errorCodes = {
     "107006": "NWC24_ERR_FULL: The file NWC24 tried to download is too large.",
     // NWC24 errors end
 
-    // Wii Points/Download ticket redeem errors start (these should never occur)
+    // Wii Points/Download ticket redeem errors start
     "206602": "Error while entering Wii Points Card code. Try again later.",
+    "206699": "The Wii Points card number you entered is incorrect (it must be 16 digits, numbers only)",
     "206669": "Wii Points card invalid",
     "206607": "Error while retrieving the served content",
     "206608": "Error redeeming Wii Download Ticket",
@@ -408,7 +409,6 @@ const errorCodes = {
 
     // Misc. errors start
     "205645": "Issue with your DSi shop account?",
-    "206699": "Try again later",
     "051330": "Internet connection error. The Wii needs a 2.4gHz signal with 802.11b/g/n enabled, and the security set to WPA2-PSK (AES). The channel must also either be set to auto or be less than 12.",
     "206112": "The free title promotion has ended (ICR_END)",
     "206401": "Invalid characters in nick or password",
