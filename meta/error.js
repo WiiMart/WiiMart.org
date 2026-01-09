@@ -337,7 +337,7 @@ const errorCodes = {
     "205810": "You don't have enough Wii Points / Error while redeeming your download ticket",
     "205818": "This card number can only be used for a specific title, it is not a Wii Points Card.",
     "205906": "Problem with your online account",
-    "206668": "Happens when current points count + new points would exceed the wii points limit",
+    "206668": "Your Wii Points balance cannot exceed the limit (usually 10.000 (Nintendo EU,AU) or 20.000 (Nintendo US,JP,KR) Wii Points)",
     "206673": "Invalid registration status",
     // Account errors end
 
