@@ -259,7 +259,23 @@ const errorCodes = {
     // CAS
     "205627": "Can't buy DLC for a title you don't own.",
     "206710": "No content is being distributed for purchase/re-download. (DLC Shop exclusive)",
+    "205002": "(CAS) Error retrieving title",
+    "205009": "(CAS) Unable to obtain DLC title from database",
+    "205005": "(CAS) Either AttributeFilters key did not exist, invalid TitleKind was passed by SOAP or mandatory key is not present",
+    "205501": "(CAS) Missing mandatory key (either ApplicationId, Name, or Value)",
+    "205502": "(CAS) Missing mandatory key (ListResultOffset)",
+    "205503": "(CAS) Either couldn't convert ListResultOffset to integer, unable to marshal offer types JSON or unable to parse XML file",
+    "205504": "(CAS) Either unable to convert ListResultTotalSize to integer or couldn't get content metadata",
+    "205505": "(CAS) ListResultOffset cannot be bigger than ListResultTotalSize",
+    "205506": "(CAS) Either unable to marshal offer types JSON or couldn't get content index",
     "205507": "DLC is not implemented yet for the title you've tried to use.",
+    "205508": "(CAS) Missing mandatory key (ListResultOffset)",
+    "205509": "(CAS) Couldn't convert ListResultOffset to integer",
+    "205510": "(CAS) Unable to get offer types for the title you've tried to use",
+    "205511": "(CAS) Unable to get offer types for the title you've tried to use",
+    "205512": "(CAS) Unable to open XML file",
+    "205555": "(CAS) Request error (empty values)",
+    "205624": "(CAS) Couldn't Title ID(s)",
 
     // Misc (ETS, PAS, OSS)
     "205800": "Generic PAS (PaymentAuthorizationSOAP) error.",
@@ -285,7 +301,7 @@ const errorCodes = {
     "205969": "Server under heavy load",
     "206601": "Authentication error, missing required parameters",
     "206651": "Mistake while entering the console's serial number",
-    "206663": "An operation is in progress",
+    "206663": "An operation is in progress (???OSS_ERROR_IN_PROCESS???)",
     "250943": "Problems with your Club Nintendo account. It can't get connected with your shop account", // is this correct actually?
     "206653": "Nickname or password wrong",
     "206660": "No progress was made in the last operation",
