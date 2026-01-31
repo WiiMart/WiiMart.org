@@ -1,6 +1,6 @@
 # [WiiMart.org](https://wiimart.org)
 
-<img src="media/branding-bag-no-bg.png" width="100" height="100" align="right">
+<img src="media/branding-bag-no-bg.png" width="100" align="right">
 
 This is the source code of WiiMart's website. It contains WADs, branding, and project information.
 
@@ -20,7 +20,7 @@ This is the source code of WiiMart's website. It contains WADs, branding, and pr
 * `/meta` Files used for the website (CSS, JS, images, music)
 * `/patcher` Files used for the DLC patcher
 * `/wad` WAD files (patched IOS and shop)
-* `.gitlab-ci.yml` Build script for the website
+* `CNAME` Website domain for GitHub Pages
 * `favicon.ico` Favicon
 * `404.html` 404 page
 
