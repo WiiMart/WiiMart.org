@@ -1,4 +1,0 @@
-When adding WAD files to this directory,
-please make sure you follow the naming scheme.
-
- -Gem
