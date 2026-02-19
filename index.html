@@ -3,118 +3,75 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <style>@font-face {font-family: 'Shop'; src: url('meta/shop.ttf') format('truetype'); font-weight: normal; font-style: normal;}</style>
+    <script src="meta/details.js"></script>
     <script src="meta/music.js"></script>
     <script src="meta/loader.js"></script>
     <title>WiiMart: an active Wii Shop revival!</title>
-    <meta content="WiiMart: an active Wii Shop revival!" property="og:title">
-    <meta content="WiiMart is an open-source revival of the defunct Wii Shop Channel. This website contains information about it and the project team behind it!" property="og:description">
-    <meta content="https://wiimart.org/media/branding-bag.png" property="og:image">
-    <meta content="https://wiimart.org" property="og:url">
-    <meta content="#1164E9" data-react-helmet="true" name="theme-color">
-    <meta name="keywords" content="WiiMart, Wii Shop, homebrew">
+    <meta property="og:title" content="WiiMart: an active Wii Shop revival!">
+    <meta property="og:description" content="WiiMart is an open-source revival of the defunct Wii Shop Channel. This website contains information about it and the project team behind it!">
+    <meta property="og:image" content="https://wiimart.org/media/branding-bag.png">
+    <meta property="og:url" content="https://wiimart.org">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="WiiMart, Wii Shop, homebrew">
+    <meta name="theme-color" content="#1164E9">
     <link rel="stylesheet" href="meta/main.css">
     <script src="meta/gallery.js" defer></script>
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <style>ul.wmw li {font-style:italic;white-space:nowrap;overflow:hidden;overflow-x:auto;max-width:100%;scrollbar-width:none;} .em {opacity:1; transition: opacity 0.5s ease-in-out;} .em.fade {opacity: 0;} #disclaimer {text-align:left;color: #929a9a; font-weight:Bold; font-size:10px;padding:0;height:23px; max-height:23px; width:100%; max-width:100%; display:block; margin-bottom:2px;margin-top:-8px; white-space: nowrap; overflow:auto hidden; scrollbar-width: none; -ms-overflow-style: none;} #disclaimer::-webkit-scrollbar {display:none;}</style>
+    <style>
+        ul.wmw li {font-style:italic;white-space:nowrap;overflow:hidden;overflow-x:auto;max-width:100%;scrollbar-width:none;}
+        .em {opacity:1; transition: opacity 0.5s ease-in-out;}
+        .em.fade {opacity: 0;}
+        #disclaimer {text-align:left;color: #929a9a; font-weight:Bold; font-size:10px;padding:0;height:23px; max-height:23px; width:100%; max-width:100%; display:block; margin-bottom:2px;margin-top:-8px; white-space: nowrap; overflow:auto hidden; scrollbar-width: none; -ms-overflow-style: none;}
+        #disclaimer::-webkit-scrollbar {display:none;}
+        progress[value] {--color: #34beed; --background: lightgrey;}
+        progress.meh[value] {--color: #2783a1; --background: lightgrey;}
+        progress.bad[value] {--color: #154858; --background: lightgrey;}
+        progress[value] {margin: 0 10px; border-radius: 10px; background: var(--background);}
+        progress[value]::-webkit-progress-bar {border-radius: 5px; background: var(--background);}
+        progress[value]::-webkit-progress-value {border-radius: 4px;background: var(--color);}
+        progress[value]::-moz-progress-bar {border-radius: 5px;background: var(--color);}
+    </style>
 </head>
 <body onload="setTimeout(function(){WiiMartWednesday();},50);">
 
 <div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" onload="loadrimg();" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();" style="display:none;" title="BGM player">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="spinnerallowed=false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">Ply?</button></a><a href="javascript:deactivatebgmplayer();" onclick="spinnerallowed=false;"><button>Close</button></a></div>   </div>
 
 <h1>WiiMart</h1>
-<nav><a href="install" class="btn">Install</a> <a href="support" class="btn">Support</a> <a href="errors" class="btn">Errors</a> <a href="branding" class="btn">Branding</a> <a href="specials" class="btn">Specials</a> <a href="credits" class="btn">Credits</a></nav>
+<nav><a href="install" class="btn">Install</a> <a href="dlc" class="btn">DLC</a> <a href="support" class="btn">Support</a> <a href="titles" class="btn">Titles</a> <a href="specials" class="btn">Specials</a> <a href="credits" class="btn">Credits</a> <a href="https://discord.gg/wiimart-1346485785284575335" class="btn"><img src="meta/em-discord.svg" class="platform"></a> <a href="https://github.com/WiiMart" class="btn"><img src="meta/em-github.svg" class="platform"></a></nav>
 
 <script>function WiiMartWednesday() {const today = new Date(); const dayOfWeek = today.getDay();if (dayOfWeek === 3) {const wednesdayDiv = document.getElementById('wednesdaytitles'); if (wednesdayDiv) {wednesdayDiv.style.display = 'block';} }}; function whatiswmw()  {const wswbox = document.getElementById("whatiswsw"); const bg = document.getElementById("backgroundd"); wswbox.style.display="block"; bg.style.display="block"; bg.style.backgroundImage=('url("/meta/fadebg-wmw.png")'); } function whatiswmwclose()  { const wswbox = document.getElementById("whatiswsw"); const bg = document.getElementById("backgroundd"); wswbox.style.display="none"; bg.style.display="none";}</script>
 
 <div class="row">
-    <div class="box" id="wednesdaytitles" style="display:none"><mark class="new" style="margin-right:5px;"><span id="NEWtext">NEW</span></mark>It's WiiMart Wednesday, The catalog has been updated with new games! <br><a href="javascript:whatiswmw();" onclick="spinnerallowed=false;" style="font-size:11px; font-style:italic; cursor:help;" id="helpwed">What is WiiMart Wednesday?</a></div><div class="box" id="whatiswsw" style="display:none; padding:0;"><header style="background-color:#34BEED;color:white;font-weight:bold;margin-bottom:10px">What is WiiMart Wednesday?</header><p>"Update Day" also known as "Wii Shop Wednesday is a song that Nirvana The Band The Show made. <br> it was a song about the latest games added to the shop channel on that wednesday as they sang to the titles on the catalog pages.  We decided to bring it back and now every wednesday, new games are added to the WiiMart catalog.<BR><a href="https://www.youtube.com/watch?v=XQ0lnz1iv3k&t=0s" target="_blank">Visit this link to watch the Update day video</a></p><button onclick="whatiswmwclose();">Close</button></div>
-    <div class="box" style="padding: 0;">
+    <div class="box" id="wednesdaytitles" style="display:none"><mark class="new" style="margin-right:5px;"><span id="NEWtext">NEW</span></mark>It's WiiMart Wednesday, The catalog has been updated with new games! <br><a href="javascript:whatiswmw();" onclick="spinnerallowed=false;" style="font-size:11px; font-style:italic; cursor:help;" id="helpwed">What is WiiMart Wednesday?</a></div><div class="box" id="whatiswsw" style="display:none; padding:0;"><header style="background-color:#34BEED;color:white;font-weight:bold;margin-bottom:10px">What is WiiMart Wednesday?</header><p>"Update Day", also known as "Wii Shop Wednesday", is a song that Nirvana The Band The Show made. <br> It was a song about the latest games added to the shop channel on that Wednesday, as they sang to the titles on the catalog pages. We decided to bring it back, and now, every Wednesday, new games are added to the WiiMart catalog.<BR><a href="https://www.youtube.com/watch?v=XQ0lnz1iv3k&t=0s" target="_blank">Visit this link to watch the Update day video</a></p><button onclick="whatiswmwclose();">Close</button></div>
+    <div class="box" style="padding:0">
         <header style="background-color:#34BEED;color:white;font-weight:bold;margin-bottom:10px">Important Info:</header>
         <details class="details-impt-info">
-            <summary>WiiMart DLC Support <span class="date">10-29</span></summary>
-            <p>Hello WiiMart, we've got some DLC support!</p>
-            <p>What does this mean? Well for you we have managed to get DLC working on games that do have DLC support as per the following
-               list. These are the following disc games currently have WiiMart DLC support.</p>
-            <ul class="wmw">
-                <li>Just Dance 2 (USA)</li>
-                <li>Just Dance 3 (USA)</li>
-                <li>Just Dance 4 (USA and EU*)</li>
-                <li>Just Dance 2014 (USA)</li>
-                <li>Just Dance 2015 (USA)</li>
-                <li>Rock Band 3 (USA)</li>
-            </ul>    
-            <p>The other regions for these games that only support USA DLC shops will eventually be added in the future, alongside the
-               rest of the other disc games that supported DLC. There is also currently no preview video for the Just Dance DLC songs,
-               but those are to be eventually added, we are still working on getting them.</p>
-            <p>There is a <a href="https://wiilab.wiimart.org/wiimart/wiimartpatcher">patcher</a>** that allows you to patch WBFS games (aka disc games but in WBFS format) from the list above.</p>
-            <table>
-                <tr>
-                    <td><img src="media/wm-dlc-1.png" style="width:100%"></td>
-                    <td><img src="media/wm-dlc-2.png" style="width:100%"></td>
-                </tr>
-            </table>
-            <ul>
-                <li>*Just Dance 4 EU might not work as expected</li>
-                <li>**Additional <a href="https://wit.wiimm.de/download.html">downloads</a> are required for it to work</li>
-            </ul>
+            <summary>Update your WiiMart! <img src="meta/em-pinned.svg" style="width:20px;height:20px;vertical-align:middle">  <span class="date"> 2026-02-01</span></summary>
+            <p>If you are a new user, disregard and install normally.<br><b>Notice for existing WiiMart users:</b></p>
+            <p>Since February 1st, WiiMart has been relocated once again. For this update, you'll need to download a new WiiMart WAD.</p>
+            <p>Go to the <a href="install">Install</a> page and get the new WiiMart WAD only. The 2006 version will be uploaded later.</p>
         </details>
         <details class="details-impt-info">
-            <summary>WiiMart Wednesday #26 <span class="date">10-29</span></summary>
-            <p>These titles were added this Wednesday.</p>
+            <summary>WiiMart Wednesday #34 <span class="date">2026-01-15</span></summary>
+            <p>Sorry for the delays, and a big thanks for sticking by us through recent events!</p>
+            <p>We got 2026's FIRST EVER WiiMart Wednesday! Here are the titles added:</p>
             <ul class="wmw">
-                <li><img src="meta/em-vc-64.png" class="pf"> Wega's Challenge <a href="credits#AFA"><img src="media/em-afa.png"></a></li>
-                <li><img src="meta/em-vc-snes.png" class="pf"> The Addams Family <a href="credits#Dustin"><img src="media/em-dustin.png"></a></li>
-                <li><img src="meta/em-vc-snes.png" class="pf"> The Addams Family: Pugsley's Scavenger Hunt <a href="credits#Dustin"><img src="media/em-dustin.png"></a></li>
-                <li><img src="meta/em-vc-snes.png" class="pf"> Demon's Crest <a href="credits#Dustin"><img src="media/em-dustin.png"></a></li>
-                <li><img src="meta/em-vc-snes.png" class="pf"> Hallow's End (Earthbound) <a href="credits#Dustin"><img src="media/em-dustin.png"></a></li>
-                <li><img src="meta/em-vc-snes.png" class="pf"> Mario vs. Sonic.EXE (SMW) <a href="credits#Dustin"><img src="media/em-dustin.png"></a></li>
-                <li><img src="meta/em-vc-snes.png" class="pf"> Killer Instinct <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-snes.png" class="pf"> Super Castlevania IV: Uncensored (Restoration & Improvements) <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-snes.png" class="pf"> The Legend of Zelda: Allhallows Eve <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-snes.png" class="pf"> Transylvania Fable: Legacy of Archaic Arcanum (SMW) <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-snes.png" class="pf"> The Halloween Island (SMW) <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-snes.png" class="pf"> The Quest for Candies (SMW) <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-snes.png" class="pf"> Mario Wakes Up... (SMW) <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-snes.png" class="pf"> Super Metroid: Hallow Eve <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-snes.png" class="pf"> Addams Family Values: Boss Rush (Afterlife Edition) <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-snes.png" class="pf"> A Halloween Walk! (SMW) <a href="credits#AFA"><img src="media/em-afa.png"></a></li>
-                <li><img src="meta/em-vc-snes.png" class="pf"> Super Hauntroid <a href="credits#AFA"><img src="media/em-afa.png"></a></li>
-                <li><img src="meta/em-vc-snes.png" class="pf"> Earthbound Halloween Hack <a href="credits#AFA"><img src="media/em-afa.png"></a></li>
-                <li><img src="meta/em-vc-nes.png" class="pf"> Shadowgate <a href="credits#Dustin"><img src="media/em-dustin.png"></a></li>
-                <li><img src="meta/em-vc-nes.png" class="pf"> The Addams Family <a href="credits#Dustin"><img src="media/em-dustin.png"></a></li>
-                <li><img src="meta/em-vc-nes.png" class="pf"> Festers Quest <a href="credits#Dustin"><img src="media/em-dustin.png"></a></li>
-                <li><img src="meta/em-vc-nes.png" class="pf"> Uninvited <a href="credits#Dustin"><img src="media/em-dustin.png"></a></li>
-                <li><img src="meta/em-vc-nes.png" class="pf"> All Hell Unleashed <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-nes.png" class="pf"> Halloween (Michael Myers) <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-nes.png" class="pf"> Castlevania: Red Stained <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-nes.png" class="pf"> Metroid: Genocide <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-nes.png" class="pf"> Mega Man: Limbo Edition <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-nes.png" class="pf"> Monster Party <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-nes.png" class="pf"> Parody World (Revisited) <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-nes.png" class="pf"> Pac-Man: Halloween Edition <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-nes.png" class="pf"> Super Mario Bros. Halloween Hack <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-nes.png" class="pf"> Spooky Kong <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-nes.png" class="pf"> Luigi's Ghost House <a href="credits#FA"><img src="media/em-forgorarchive.png"></a></li>
-                <li><img src="meta/em-vc-nes.png" class="pf"> Kamikaze Mario DX+ <a href="credits#FA"><img src="media/em-forgorarchive.png"></a></li>
-                <li><img src="meta/em-vc-nes.png" class="pf"> Super Depressed Bro... <a href="credits#AFA"><img src="media/em-afa.png"></a></li>
-                <li><img src="meta/em-vc-genesis.png" class="pf"> Chakan: The Forever Man <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-genesis.png" class="pf"> Devil Crash MD <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-genesis.png" class="pf"> Sonic 2.EXE <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-genesis.png" class="pf"> The Addams Family <a href="credits#Dustin"><img src="media/em-dustin.png"></a></li>
-                <li><img src="meta/em-vc-genesis.png" class="pf"> Addams Family Values <a href="credits#Dustin"><img src="media/em-dustin.png"></a></li>
-                <li><img src="meta/em-vc-genesis.png" class="pf"> Addams Family Values (Afterlife Edition) <a href="credits#Dustin"><img src="media/em-dustin.png"></a></li>
-                <li><img src="meta/em-vc-master.png" class="pf"> Ghost House <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-vc-turbo.png" class="pf"> Hell Tour / Bonze Adventure <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
-                <li><img src="meta/em-flash.png" class="pf"> Super Mario Flash: Halloween Version <a href="credits#Yoshi"><img src="media/em-yoshi.png"></a></li>
-                <li><img src="meta/em-flash.png" class="pf"> Anti Pac-Man <a href="credits#AFA"><img src="media/em-afa.png"></a></li>
+                <li><img src="meta/em-vc-snes.png" class="pf"> V I T A L I T Y <a href="credits#Waluigi"><img src="media/em-waluigi.png"></a></li>
+                <li><img src="meta/em-vc-nes.png" class="pf"> Castlevania: The Holy Relics <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
+                <li><img src="meta/em-vc-nes.png" class="pf"> The Three Mothers (Castlevania II) <a href="credits#Subnetic"><img src="media/em-subnetic.png"></a></li>
+                <li><img src="meta/em-vc-master.png" class="pf"> Niko the Not Cat <a href="credits#Idkwh"><img src="media/em-idkwh.png"></a></li>
+                <li><img src="meta/em-flash.png" class="pf"> ASDFmovie Collection: 1 - 6 + extras <img src="media/em-zodiak.png"></li>
             </ul>
-            <img src="media/wmw-26-10-29.png" style="width:100%;">
+            <p>And thank you <a href="credits#Subnetic">Subnetic</a> for every WiiMart Wednesday, we really couldn't do it without you!</p>
         </details>
         <details class="details-impt-info">
-            <summary>Update your WiiMart! <span class="date"><img src="meta/em-pinned.svg" style="width:20px;height:20px;vertical-align:middle"> 05-02</span></summary>
-            <p id="detailsinfo">Since May 2nd, WiiMart has been relocated to a new domain. For this update, you'll need to download new WADs. Go to the <a href="install">Install</a> page.</p>
+            <summary>ATTENTION! Server raided! <span class="date"> 2026-01-08</span></summary>
+            <p>The Discord server is currently unavailable as a raid with a <a href="https://www.urbandictionary.com/define.php?term=nuke%20bot">nuke bot</a> happened at 11:07 AM CT.
+               This was due to a person impersonating as a staff member of each server and then adding a webhook to raid them.</p>
+            <p>The server should be back when channels and roles are fully restored.</p>
+            <h3>Community response</h3>
+            <p>Members of <a href="https://www.reddit.com/r/wiimart/">r/WiiMart</a> and <a href="https://www.reddit.com/r/homebrew/">r/homebrew</a> quickly posted about the situation as it was happening. /r/Homebrew was talking about it as well since their server was also <a href="https://www.reddit.com/r/homebrew/comments/1q7gaft/rhomebrew_discord/">raided by the same person</a>.</p>
+            <p><b>Update</b>: It is back. <a href="https://discord.gg/wiimart-1346485785284575335">Invite here</a></p>
         </details>
         <a href="info-log" style="float:right;font-size:small;padding-right:5px">View older</a>
     </div>
@@ -139,49 +96,63 @@
        <div id="disclaimer">Content in screenshots are subject to change.</div>
     </div>
 
-    <h1>What's on it?</h1>
+    <h1>Contents</h1>
 
     <div class="box">      
-        <h2>Contents</h2>
+        <h2>Original Wii Shop Titles</h2>
         <p>WiiMart includes a variety of WiiWare content that was available on the original Wii Shop Channel, such
             as <b>Dr. Mario Online Rx</b>, <b>My Pokemon Ranch</b>, <b>Super Mario 64</b>,
             <b>Sonic the Hedgehog 4: Episode I</b>, and <a href="fishiemart" style="cursor:default;text-decoration:none;"><b><span class="hide">Fishie Fishie</span></b></a>.</p>
         <p>Virtual Console is also included with titles like <b>Super Mario Bros.</b>, <b>Sonic the Hedgehog</b>, <b>Super Mario 64</b>,
-            <b>Pac-Man</b>, and <b>Galaga</b>.</p>
-            <img id="emCycle" class="em" src="meta/em-wiiware.svg" style="height:50px;">
+            <b>Pac-Man</b>, and <b>Galaga</b>. Select Wii Channels are patched, such as <b>Nintendo Channel</b>.</p>
     </div>
-    <script>document.addEventListener('DOMContentLoaded', function(){const emCycle = document.getElementById('emCycle');const imageSources = ["meta/em-wiiware.svg","meta/em-virtual-console.svg","meta/em-channels.svg"];let currentImageIndex = 0;const fadeDuration = 300;const displayDuration = 1200;function cycleImage(){emCycle.classList.add('fade');setTimeout(()=>{currentImageIndex = (currentImageIndex + 1) % imageSources.length;emCycle.src = imageSources[currentImageIndex];emCycle.classList.remove('fade');setTimeout(cycleImage, displayDuration + fadeDuration);}, fadeDuration);}if(emCycle){setTimeout(cycleImage, displayDuration);}});</script>
 
     <div class="box">
-        <h2>Something <mark class="new"><span id="NEWtext">NEW</span></mark></h2>
+        <h2>Some <mark class="new"><span id="NEWtext">NEW</span></mark> Titles</h2>
         <p>In case the originals aren't enough, we have also added tons of custom Virtual Console injects! Just some of the
             latest titles we've added are <b>The New Tetris</b>, <b>EarthBound</b>, <b>Super Mario All-Stars + Super Mario World</b>,
             and <b>Mortal Kombat</b>.</p>
         <p>New titles are added every <b>WiiMart Wednesday</b>. If you want to check out what new titles have been added,
-            or just see what we have, check out the (in-progress) WiiMart Title sheet!</p>
-        <p><a href="title-sheet" onclick="spinnerallowed=false;" class="btn" style="font-size:larger">View Titles</a></p>
+            or just see what we have, check out the title sheet in the navigation bar.</p>
     </div>
 
-    <h1>How do I get support?</h1>
+    <div class="box" id="Progress">
+        <h2>Progress</h2>
+        <table style="margin:0 auto;text-align:left;">
+            <tr><td><b>Catalog System</b></td><td><progress max="100" value="89"></progress></td></tr>
+            <tr><td><b>Title Downloads</b></td><td><progress max="100" value="90"></progress></td></tr>
+            <tr><td><b>Title Descriptions</b></td><td><progress max="100" value="10" class="bad"></progress></td></tr>
+            <tr><td><b>Wii Points</b></td><td><progress max="100" value="80"></progress></td></tr>
+            <tr><td><b>Gifting</b></td><td><progress max="100" value="80"></progress></td></tr>
+            <tr><td><b>Dynamic Banner</b></td><td><progress max="100" value="100"></progress></td></tr>
+            <tr><td><b>Search System</b></td><td><progress max="100" value="65" class="meh"></progress></td></tr>
+            <tr><td><b>Sort System</b></td><td><progress max="100" value="98"></progress></td></tr>
+            <tr><td><b>Online Games¹</b></td><td><progress max="100" value="50" class="meh"></progress></td></tr>
+            <tr><td><b>Online Channels²</b></td><td><progress max="18" value="6" class="bad"></progress></td></tr>
+            <!--everybody votes, nintendo, forecast, news, digicam, watchever, food, wii room, wii speak, youtube, internet, hulu, netflix, metroid preview, amazon instant, crunchyroll, check mii, transfer-->
+            <tr><td><b>Account History³</b></td><td><progress max="100" value="10" class="bad"></progress></td></tr>
+            <tr><td><b>Club Nintendo</b></td><td><progress max="100" value="0"></progress></td></tr>
+            <tr><td><b>Authentication servers (IAS)</b></td><td><progress max="100" value="100"></progress></td></tr>
+            <tr><td><b>Download servers (ECS)</b></td><td><progress max="100" value="100"></progress></td></tr>
+            <tr><td><b>DLC Servers (CAS)</b></td><td><progress max="100" value="25" class="bad"></progress></td></tr>
+            <tr><td><b>Operation Manuals</b></td><td><progress max="100" value="0" class=""></progress></td></tr>
+            <tr><td><b>Wii Shop Electronic Manual</b></td><td><progress max="100" value="90"></progress></td></tr>
+        </table>
+        <footer style="font-size:smaller">¹Uses Wiimmfi. Not every title has been tested fully. Special Non-Nintendo WFC sources can't be revived.<br>²based on if we serve channels that have prepatched servers,.<br>³Includes functions like 'Titles You've Downloaded' and 'Account Activity'. </footer>
+    </div>
 
-    <p>Please consult the FAQ first.</p>
+    <h1>FAQ</h1>
 
     <div class="box">
-        <h2>Frequently Asked Questions</h2>
         <h3>How do I troubleshoot <i>this error code</i>?</h3>
-        <p>Check it with <a href="errors">this tool</a>, otherwise ask for help on <a href="https://discord.gg/wiimart-1346485785284575335" target="_blank" onclick="spinnerallowed=false;">Discord</a> or <a href="https://www.reddit.com/r/wiimart" target="_blank" onclick="spinnerallowed=false;">Reddit</a>.</p>
+        <p>Check it with <a href="support">this tool</a>, otherwise ask for help on <a href="https://discord.gg/wiimart-1346485785284575335" target="_blank" onclick="spinnerallowed=false;">Discord</a> or <a href="https://www.reddit.com/r/wiimart" target="_blank" onclick="spinnerallowed=false;">Reddit</a>.</p>
         <h3>Is real money needed to buy Wii Points?</h3>
         <p>The WiiMart service is entirely free of charge! Wii Points are "bought" only to keep the service as close the original as possible.</p>
         <h3>Can WiiMart run on Dolphin?</h3>
-        <p>It can, however you'll need a real console NAND to bypass the Wii Shop message, <span style="color:#FF3C3C">also downloads do not work</span>.</p>
-        <h3>I want to ask how the shop is doing.</h3>
-        <p>So far, the developers have been utilizing most of the channel's features. Downloading, dynamic banners, catalogs,
-            are all being utilized.</p>
+        <p>It can, however you'll need a real console NAND to bypass the Wii Shop message, <span style="color:#f58f8f">also downloads do not work</span>.</p>
         <h3>When is <i>this feature</i> going to be added?</h3>
         <p>The owner and developers are updating on their own time. In the meantime you can check the progress above
-            for what features do and don't work. <b>Important: Gifting is no longer available at the moment.</b></p>
-        <h3>Why is gifting gone?</h3>
-        <p>Gifting was available using a WiiConnect24 revival. Unfortunately we were asked to stop sending out gifts via their service.</p>
+            for what features do and don't work.</p>
         <h3>What information is stored when using WiiMart?</h3>
         <p>The web server stores IP addresses of those that connect to it, common with web servers. Wii console serial
             numbers are stored, in the SOAP database with encryption.</p>

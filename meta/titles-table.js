@@ -17,31 +17,42 @@ document.addEventListener('DOMContentLoaded', async () => {
     const btnsDiv = document.getElementById('btns');
     const regionSpan = document.getElementById('region');
     const returnButton = document.querySelector('.table-container button');
+    
+    const sortSelect = document.getElementById('sortBy');
+    const filterControllerSelect = document.getElementById('filterController');
+    
+    const filterConsoleFilterSelect = document.getElementById('filterConsoleFilter'); 
+    
+    const filterInclusionSelect = document.getElementById('filterInclusion'); 
+
     let allGamesData = [];
+    let currentRegionGames = [];
 
     const controllerMap = {
         "B_08_RvlCtrl.gif": "Wii Remote",
+        "B_08_MotionCtrl.gif": "Wii Remote Plus",
         "B_08_NunchukCtrl.gif": "Nunchuk",
         "B_08_ClassicCtrl.gif": "Classic Controller",
+        "B_08_BalanceCtrl.gif": "Wii Balance Board",
+        "B_08_SpeakCtrl.gif": "Wii Speak",
+        "B_08_ZapperCtrl.gif": "Wii Zapper",
         "B_08_WheelCtrl.gif": "Wii Wheel",
         "B_08_GcCtrl.gif": "Nintendo GameCube Controller",
-        "B_08_ZapperCtrl.gif": "Wii Zapper",
-        "B_08_SpeakCtrl.gif": "Wii Speak",
         "B_08_KeyboardCtrl.gif": "Standard USB Keyboard",
-        "B_08_BalanceCtrl.gif": "Wii Balance Board",
-        "B_08_DSCtrl.gif": "Nintendo DS",
         "B_08_MicrophoneCtrl.gif": "Microphone",
-        "B_08_MotionCtrl.gif": "Wii Remote Plus",
-        "B_08_TWLCtrl.gif": "Nintendo DSi",
     };
 
     const purplePublishers = [
         "Subnetic",
+        "Subnetic, dustinbriggs1991",
         "A for Animation",
         "A For Animation",
+        "Ryoku/dustinbriggs1991",
         "dustinbriggs1991",
         "dustinbriggs91",
+        "dustinbriggs1991, Subnetic",
         "saulfabreg",
+        "saulfabreg, Subnetic",
         "ThatOneYoshi",
         "RM05",
         "idkwhereisthisname",
@@ -49,8 +60,38 @@ document.addEventListener('DOMContentLoaded', async () => {
         "Onion Mastori",
         "RedYoshiKart",
         "UselessMan",
-        "RollPlayStation"
+        "RollPlayStation",
+        "Waluigi",
+        "Team Twiizers"
     ];
+
+    function initControllerDropdown() {
+        Object.keys(controllerMap).forEach(filename => {
+            const option = document.createElement('option');
+            option.value = filename;
+            option.textContent = controllerMap[filename];
+            filterControllerSelect.appendChild(option);
+        });
+    }
+    initControllerDropdown();
+
+    function populateConsoleDropdown() {
+        filterConsoleFilterSelect.innerHTML = '<option value="all">All Consoles</option>';
+        
+        const uniqueConsoles = new Set();
+        currentRegionGames.forEach(game => {
+            if (game.console) {
+                uniqueConsoles.add(game.console);
+            }
+        });
+
+        Array.from(uniqueConsoles).sort().forEach(consoleName => {
+            const option = document.createElement('option');
+            option.value = consoleName;
+            option.textContent = consoleName;
+            filterConsoleFilterSelect.appendChild(option);
+        });
+    }
 
     function getControllerStringFromHTML(htmlString) {
         if (!htmlString || htmlString.trim() === '') {
@@ -99,9 +140,11 @@ document.addEventListener('DOMContentLoaded', async () => {
             const data = await response.json();
             allGamesData = data.map(game => {
                 const combinedTitle = game.title2 && game.title2 !== '' ? `${game.title1} ${game.title2}` : game.title1;
+                const isCustom = purplePublishers.includes(game.publisher);
                 return {
                     ...game,
-                    title: combinedTitle
+                    title: combinedTitle,
+                    isCustom: isCustom
                 };
             });
             console.log('JSON data successfully loaded and pre-processed!');
@@ -111,19 +154,69 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
 
-    function renderTable(games) {
-        games.sort((a, b) => {
-            const titleA = a.title.toUpperCase();
-            const titleB = b.title.toUpperCase();
-            if (titleA < titleB) {
-                return -1;
+    function parseDate(dateStr) {
+        if (!dateStr) return 0;
+        const d = Date.parse(dateStr);
+        return isNaN(d) ? 0 : d;
+    }
+
+    function parsePoints(pointsStr) {
+        if (!pointsStr) return 0;
+        const p = parseInt(pointsStr);
+        return isNaN(p) ? 0 : p;
+    }
+
+    function updateTable() {
+        let processedGames = currentRegionGames.filter(game => {
+            
+            const inclusionFilter = filterInclusionSelect.value;
+            if (inclusionFilter === 'custom') {
+                if (!game.isCustom) return false;
+            } else if (inclusionFilter === 'original') {
+                if (game.isCustom) return false;
             }
-            if (titleA > titleB) {
-                return 1;
+
+            const consoleFilter = filterConsoleFilterSelect.value;
+            if (consoleFilter !== 'all') {
+                if (game.console !== consoleFilter) return false;
             }
-            return 0;
+
+            const ctrlFilter = filterControllerSelect.value;
+            const gameCtrls = game.controllers || "";
+            
+            if (ctrlFilter === 'none') {
+                const ctrlData = getControllerStringFromHTML(gameCtrls);
+                if (ctrlData.text !== "Missing") return false;
+            } else if (ctrlFilter !== 'all') {
+                if (!gameCtrls.includes(ctrlFilter)) return false;
+            }
+
+            return true;
         });
 
+        const sortMode = sortSelect.value;
+        processedGames.sort((a, b) => {
+            if (sortMode === 'dateNew') {
+                return parseDate(b.date) - parseDate(a.date);
+            } else if (sortMode === 'dateOld') {
+                return parseDate(a.date) - parseDate(b.date);
+            } else if (sortMode === 'pointsHigh') {
+                return parsePoints(b.points) - parsePoints(a.points);
+            } else if (sortMode === 'pointsLow') {
+                return parsePoints(a.points) - parsePoints(b.points);
+            } else {
+                const titleA = (a.title || "").toUpperCase();
+                const titleB = (b.title || "").toUpperCase();
+                if (titleA < titleB) return -1;
+                if (titleA > titleB) return 1;
+                return 0;
+            }
+        });
+
+        renderTable(processedGames);
+    }
+
+    function renderTable(games) {
         const allKeys = new Set();
         games.forEach(game => {
             Object.keys(game).forEach(key => allKeys.add(key));
@@ -137,6 +230,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         
         table.innerHTML = '';
 
+        if (games.length === 0) {
+            table.innerHTML = '<tr><td colspan="14" style="text-align:center; padding: 20px;">No results found.</td></tr>';
+            return;
+        }
+
         const headerRow = document.createElement('tr');
         sortedKeys.forEach(key => {
             const th = document.createElement('th');
@@ -148,7 +246,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         games.forEach(game => {
             const row = document.createElement('tr');
             
-            if (purplePublishers.includes(game.publisher)) {
+            if (game.isCustom) {
                 row.style.color = "#d940ffff";
             }
             
@@ -183,15 +281,26 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
+    sortSelect.addEventListener('change', updateTable);
+    filterControllerSelect.addEventListener('change', updateTable);
+    filterConsoleFilterSelect.addEventListener('change', updateTable); 
+    filterInclusionSelect.addEventListener('change', updateTable);
+
     btnsDiv.addEventListener('click', (event) => {
         if (event.target.tagName === 'BUTTON') {
             const selectedRegion = event.target.textContent;
             
             regionSpan.textContent = selectedRegion;
 
-            const filteredGames = allGamesData.filter(game => game.region === selectedRegion);
+            sortSelect.value = 'alpha';
+            filterControllerSelect.value = 'all';
+            filterInclusionSelect.value = 'all';
 
-            renderTable(filteredGames);
+            currentRegionGames = allGamesData.filter(game => game.region === selectedRegion);
+
+            populateConsoleDropdown();
+
+            updateTable();
 
             tableNotice.style.display = 'none';
             tableContainer.style.display = 'block';
@@ -203,11 +312,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         tableNotice.style.display = 'block';
         table.innerHTML = '';
         regionSpan.textContent = '';
+        currentRegionGames = [];
+        filterConsoleFilterSelect.innerHTML = '<option value="all">All Consoles</option>';
     });
 
     await fetchGamesData();
 });
-
-// fun fact, the gem in Gemdation stands for Gemini
-// ok bro
-// orb ko

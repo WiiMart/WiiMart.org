@@ -258,11 +258,30 @@ const errorCodes = {
     "205621": "Unknown error (possibly ECS gift error?)",
     // CAS
     "205627": "Can't buy DLC for a title you don't own.",
+    "206710": "No content is being distributed for purchase/re-download. (DLC Shop exclusive)",
+    "205002": "(CAS) Error retrieving title",
+    "205009": "(CAS) Unable to obtain DLC title from database",
+    "205005": "(CAS) Either AttributeFilters key did not exist, invalid TitleKind was passed by SOAP or mandatory key is not present",
+    "205501": "(CAS) Missing mandatory key (either ApplicationId, Name, or Value)",
+    "205502": "(CAS) Missing mandatory key (ListResultOffset)",
+    "205503": "(CAS) Either couldn't convert ListResultOffset to integer, unable to marshal offer types JSON or unable to parse XML file",
+    "205504": "(CAS) Either unable to convert ListResultTotalSize to integer or couldn't get content metadata",
+    "205505": "(CAS) ListResultOffset cannot be bigger than ListResultTotalSize",
+    "205506": "(CAS) Either unable to marshal offer types JSON or couldn't get content index",
+    "205507": "DLC is not implemented yet for the title you've tried to use.",
+    "205508": "(CAS) Missing mandatory key (ListResultOffset)",
+    "205509": "(CAS) Couldn't convert ListResultOffset to integer",
+    "205510": "(CAS) Unable to get offer types for the title you've tried to use",
+    "205511": "(CAS) Unable to get offer types for the title you've tried to use",
+    "205512": "(CAS) Unable to open XML file",
+    "205555": "(CAS) Request error (empty values)",
+    "205624": "(CAS) Couldn't Title ID(s)",
 
     // Misc (ETS, PAS, OSS)
     "205800": "Generic PAS (PaymentAuthorizationSOAP) error.",
     "205825": "Generic PAS (PaymentAuthorizationSOAP) error. (PAS_ERROR_CODE)",
     "205700": "Generic ETS (ETicketSOAP) error.",
+    // WS errors end
 
     // Shop errors start
     "206600": "Generic OSS error.",
@@ -282,7 +301,7 @@ const errorCodes = {
     "205969": "Server under heavy load",
     "206601": "Authentication error, missing required parameters",
     "206651": "Mistake while entering the console's serial number",
-    "206663": "An operation is in progress",
+    "206663": "An operation is in progress (???OSS_ERROR_IN_PROCESS???)",
     "250943": "Problems with your Club Nintendo account. It can't get connected with your shop account", // is this correct actually?
     "206653": "Nickname or password wrong",
     "206660": "No progress was made in the last operation",
@@ -317,6 +336,7 @@ const errorCodes = {
     // SSL errors end
 
     // Console errors start
+    "205100": "Most likely an error when gifting a title from Dolphin, it is unsupported.",
     "205007": "Invalid NAND Dump (Dolphin only)",
     "205540": "This software doesn't work in the vWii",
     "206670": "Invalid friend code",
@@ -334,7 +354,7 @@ const errorCodes = {
     "205810": "You don't have enough Wii Points / Error while redeeming your download ticket",
     "205818": "This card number can only be used for a specific title, it is not a Wii Points Card.",
     "205906": "Problem with your online account",
-    "206668": "Happens when current points count + new points would exceed the wii points limit",
+    "206668": "Your Wii Points balance cannot exceed the limit (usually 10.000 (Nintendo EU,AU) or 20.000 (Nintendo US,JP,KR) Wii Points)",
     "206673": "Invalid registration status",
     // Account errors end
 
@@ -343,8 +363,9 @@ const errorCodes = {
     "107006": "NWC24_ERR_FULL: The file NWC24 tried to download is too large.",
     // NWC24 errors end
 
-    // Wii Points/Download ticket redeem errors start (these should never occur)
+    // Wii Points/Download ticket redeem errors start
     "206602": "Error while entering Wii Points Card code. Try again later.",
+    "206699": "The Wii Points card number you entered is incorrect (it must be 16 digits, numbers only)",
     "206669": "Wii Points card invalid",
     "206607": "Error while retrieving the served content",
     "206608": "Error redeeming Wii Download Ticket",
@@ -405,7 +426,6 @@ const errorCodes = {
 
     // Misc. errors start
     "205645": "Issue with your DSi shop account?",
-    "206699": "Try again later",
     "051330": "Internet connection error. The Wii needs a 2.4gHz signal with 802.11b/g/n enabled, and the security set to WPA2-PSK (AES). The channel must also either be set to auto or be less than 12.",
     "206112": "The free title promotion has ended (ICR_END)",
     "206401": "Invalid characters in nick or password",
@@ -480,7 +500,7 @@ const errorCodes = {
     "372508": "Flash channel returned HTTP 508 Loop Detected",
     "372510": "Flash channel returned HTTP 510 Not Extended",
     "372511": "Flash channel returned HTTP 511 Network Authentication Required",
-    "362523": "Flash channel returned HTTP 523 Origin Is Unreachable"
+    "372523": "Flash channel returned HTTP 523 Origin Is Unreachable"
     // Flash HTTP errors end
     // Channel specific errors end
 };

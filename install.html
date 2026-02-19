@@ -3,20 +3,19 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <style>@font-face {font-family: 'Shop'; src: url('meta/shop.ttf') format('truetype'); font-weight: normal; font-style: normal;}</style>
     <script src="meta/loader.js"></script>
     <title>Install WiiMart</title>
-    <meta content="Download WiiMart" property="og:title">
-    <meta content="Here are the installation instructions for WiiMart and the patched IOS WADs!" property="og:description">
-    <meta content="https://wiimart.org/media/branding-bag.png" property="og:image">
-    <meta content="https://wiimart.org/install" property="og:url">
-    <meta content="#1164E9" data-react-helmet="true" name="theme-color">
-    <meta name="keywords" content="WiiMart, Wii Shop, homebrew">
+    <meta property="og:title" content="Download WiiMart">
+    <meta property="og:description" content="Here are the installation instructions for WiiMart and the patched IOS WADs!">
+    <meta property="og:image" content="https://wiimart.org/media/branding-bag.png">
+    <meta property="og:url" content="https://wiimart.org/install">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="WiiMart, Wii Shop, homebrew">
+    <meta name="theme-color" content="#1164E9">
     <link rel="stylesheet" href="meta/main.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
-        img {width:100%}
+        div img {width:100%}
         button.r {outline: 1px solid #9A9A9A}
         button.r:hover {box-shadow: inset 0 0 0 3px #9A9A9A}
         div.box#start {display:block}
@@ -27,6 +26,8 @@
         a {text-decoration:none}
         a button, button:disabled {width:100%}
         span.descrip {color:rgb(172, 172, 172);font-size: smaller}
+        summary {color:red;text-decoration: underline;list-style: none;font-weight: bold;user-select: none;cursor: pointer;padding-top:5px;}
+        details {outline: solid 1px red;padding-bottom: 5px;margin-bottom: 10px;text-align: center;h2 {color:red};}
     </style>
 </head>
 <body>
@@ -34,7 +35,7 @@
 
 <h1><a href="/">WiiMart</a></h1>
 
-<nav><span class="active">Install</span> <a href="support" class="btn">Support</a> <a href="errors" class="btn">Errors</a> <a href="branding" class="btn">Branding</a> <a href="specials" class="btn">Specials</a> <a href="credits" class="btn">Credits</a></nav>
+<nav><span class="active">Install</span> <a href="dlc" class="btn">DLC</a> <a href="support" class="btn">Support</a> <a href="titles" class="btn">Titles</a> <a href="specials" class="btn">Specials</a> <a href="credits" class="btn">Credits</a> <a href="https://discord.gg/wiimart-1346485785284575335" class="btn"><img src="meta/em-discord.svg" class="platform"></a> <a href="https://github.com/WiiMart" class="btn"><img src="meta/em-github.svg" class="platform"></a></nav>
 
 <script>function showDiv(divId) {const divs = document.querySelectorAll('.box'); divs.forEach(div => {div.style.display = 'none'; });document.getElementById(divId).style.display = 'block';}</script>
 
@@ -61,13 +62,7 @@
 
 
     <div id="platform" class="box">
-        <!--
-        <h2 id="Auto">Automatic Installation</h2>
-        <button onclick="showDiv('inst')" style="background-image: url(media/screenshot-hbc-blank.png);background-size: cover;"><img src="media/button-inst.png" alt=""><b>WiiMart Installer</b> for<br>The Homebrew Channel</button><br>
-        <p><mark class="new">NEW!</mark> This in-aprogress installer tool can install WiiMart and IOS WADs with just one app!</p>
-        <hr>
-        -->
-        <h2 id="Manual">Manual Installation</h2>
+        <h2>Installation</h2>
 
         <h3>What platform are you on?</h3>
         <button onclick="showDiv('Wii')"><img src="media/button-wii.png" alt="">Wii</button><br>
@@ -77,27 +72,6 @@
         <p><b>Important:</b> No matter which option you pick, you will need to have a homebrewed console. If you don't have it homebrewed, see <a href="https://wii.hacks.guide"><b>wii.hacks.guide</b></a> before looking at this guide.</p>
         <button onclick="showDiv('warning')" style="width:auto" class="r">Back</button><br>
     </div>
-   <!--
-
-   <div id="inst" class="box" style="display:none">
-      <h2>WiiMart Installer</h2>
-      <span style="color:red;font-weight:bold">Do not use on Korean Wii consoles.</span>
-      <h3>Download and Placing</h3>
-      <p><a href="inst/WiiMartInstaller.V1.4.zip" onclick="spinnerallowed=false;">Download WiiMart Installer</a></p>
-      <p>Put the <b>wiimartinstaller</b> folder in the <b>apps</b> folder of your SD Card or USB Drive. Like 
-         in the example shown.</p>
-      <img src="media/screenshot-files-1.png">
-      <p><b>wiimartinstaller</b> will go with the rest of your apps.</p>
-      <img src="media/screenshot-files-2-issue.png" style="outline: solid 2px red">
-      <p style="color:red">Do not nest it under an extra folder. It has to be drive://apps/wiimartinstaller</p>
-      <h3>Launching</h3>
-      <img src="media/screenshot-hbc-wm-inst-2.png">
-      <p>Simply press <b>Load</b> and you will be taken to the installer.</p>
-      <p>If anything goes wrong involving tickets (e.g. TView), it is recommended that you head over to the <a href="#Manual" onclick="showDiv('start')">Manual Installation</a>.</p>
-
-      <button onclick="showDiv('start')" class="r">Back</button>
-   </div>
-   -->
 
     <div id="dolphin" class="box">
         <h2>Dolphin</h2>
@@ -125,7 +99,7 @@
         <h3>Downloading WADs</h3>
         <p>Download <i>one</i> of the WADs below.</p>
         <p><a href="wad/WiiMart.wad" onclick="spinnerallowed=false;"><button>Download WiiMart<br><span class="descrip">This is a <em style="color:#ff6680">required</em> file for the main service.</span></button></a></p>
-        <p><a href="wad/WiiMartOB.wad" onclick="spinnerallowed=false;"><button>Download WiiMart (2006)<br><span class="descrip">Instead of the regular banner, you can get one with the 2006 banner.</span></button></a><br><span class="descrip">You cannot have two WiiMarts installed at once. To see screenshots of the 2006 banner, click <a href="support#OldBanner" onclick="spinnerallowed=false;">here</a>.</span></p>
+        <p><a href="wad/WiiMartOB.wad" onclick="spinnerallowed=false;"><button>Download WiiMart (2006)<br><span class="descrip">Instead of the regular one, you can get a WAD that has a 2006 banner.</span></button></a><br><span class="descrip">You cannot have two WiiMarts installed at once. To see screenshots of the 2006 banner, click <a href="support#OldBanner" onclick="spinnerallowed=false;">here</a>.</span></p>
         <h3>Installing WADs</h3>
         <img src="media/screenshot-dolphin-vwii-install.png" alt="Hover menus to install a WAD">
         <p>Go to <b>Tools</b>, <b>Install WAD</b>, and select the WAD you downloaded.</p>
@@ -146,13 +120,21 @@
         <p><a href="wad/IOS56(vWii).wad" onclick="spinnerallowed=false;"><button>Download IOS56 for vWii<br><span class="descrip">This is a <em style="color:#ff6680">required</em> file to download and install titles.</span></button></a></p>
         <p><button disabled>IOS80 can be installed from the <a href="https://oscwii.org/library/app/Patched_IOS80_Installer_for_vWii" onclick="spinnerallowed=false;" target="_blank">homebrew patcher</a><br><span class="descrip" style="font-weight:normal">This is an optional file to install titles to the SD Card.</span></button></p>
         <p><a href="wad/WiiMart.wad" onclick="spinnerallowed=false;"><button>Download WiiMart<br><span class="descrip">This is a <em style="color:#ff6680">required</em> file for the main service.</span></button></a></p>
-        <p><a href="wad/WiiMartOB.wad" onclick="spinnerallowed=false;"><button>Download WiiMart (2006)<br><span class="descrip">Instead of the regular banner, you can get one with the 2006 banner.</span></button></a><br><span class="descrip">You cannot have two WiiMarts installed at once. To see screenshots of the 2006 banner, click <a href="support#OldBanner" onclick="spinnerallowed=false;">here</a>.</span></p>
+        <p><a href="wad/WiiMartOB.wad" onclick="spinnerallowed=false;"><button>Download WiiMart (2006)<br><span class="descrip">Instead of the regular one, you can get a WAD that has a 2006 banner.</span></button></a><br><span class="descrip">You cannot have two WiiMarts installed at once. To see screenshots of the 2006 banner, click <a href="support#OldBanner" onclick="spinnerallowed=false;">here</a>.</span></p>
         <h3>Installing WADs</h3>
         <p>Use <a href="https://oscwii.org/library/app/yawmME" target="_blank" onclick="spinnerallowed=false;">YAWWME</a> as it is <i>the</i> recommended WAD manager for it's brick protection.</p>
         <img src="media/screenshot-yawmme-vwii.png" alt="WAD manager screenshot">
         <p>Install the patched IOS and the WiiMart WAD you chose, remember that you can overwrite the WADs most of the time. Press <b>+</b> on both WADs to select them, and then A to show the options, then A again to install.</p>
-        <h4 style="color:red">Error -1022 or -1029?</h4>
-        <p>Press <b>-</b> to mark the WAD for uninstallation, press A two times to uninstall. Now try to install it again.</p>
+        
+        <details>
+            <summary>If you received error -1022 or error -1029, click here!</summary>
+            <h2>Resolving ticket issues</h2>
+            <p>Press <b>-</b> to mark the WAD for uninstallation, press A two times to uninstall. Now try to install it again.</p>
+            <p>If that does not work, please try the <a href="https://oscwii.org/library/app/WiiUnShoplifter">WiiUnShoplifter</a> tool to resolve the tickets.</p>
+
+            <p>Proceed with the installation again.</p>
+        </details>
+
         <h4>Finished!</h4>
         <img src="media/screenshot-system-menu-vwii.png" alt="Wii Menu with the cursor hovering over Wii Shop">
         <p>You can now go to the Wii Menu and launch the Wii Shop Channel.</p>
@@ -167,13 +149,21 @@
         <p><a href="wad/IOS56(Wii).wad" onclick="spinnerallowed=false;"><button>Download IOS56 for Wii<br><span class="descrip">This is a <em style="color:#ff6680">required</em> file to download and install titles.</span></button></a></p>
         <p><a href="wad/IOS80(Wii).wad" onclick="spinnerallowed=false;"><button>Download IOS80 for Wii<br><span class="descrip" style="font-weight:normal">This is an optional file to install titles to the SD Card.</span></button></a></p>
         <p><a href="wad/WiiMart.wad" onclick="spinnerallowed=false;"><button>Download WiiMart<br><span class="descrip">This is a <em style="color:#ff6680">required</em> file for the main service.</span></button></a></p>
-        <p><a href="wad/WiiMartOB.wad" onclick="spinnerallowed=false;"><button>Download WiiMart (2006)<br><span class="descrip">Instead of the regular banner, you can get one with the 2006 banner.</span></button></a><br><span class="descrip">You cannot have two WiiMarts installed at once. To see screenshots of the 2006 banner, click <a href="support#OldBanner" onclick="spinnerallowed=false;">here</a>.</span></p>
+        <p><a href="wad/WiiMartOB.wad" onclick="spinnerallowed=false;"><button>Download WiiMart (2006)<br><span class="descrip">Instead of the regular one, you can get a WAD that has a 2006 banner.</span></button></a><br><span class="descrip">You cannot have two WiiMarts installed at once. To see screenshots of the 2006 banner, click <a href="support#OldBanner" onclick="spinnerallowed=false;">here</a>.</span></p>
         <h3>Installing WADs</h3>
         <p>Use <a href="https://oscwii.org/library/app/yawmME" target="_blank" onclick="spinnerallowed=false;">YAWWME</a> as it is <i>the</i> recommended WAD manager for it's brick protection.</p>
         <img src="media/screenshot-yawmme-wii.png" alt="WAD manager screenshot">
         <p>Install the patched IOS and the WiiMart WAD you chose, remember that you can overwrite the WADs most of the time. Press <b>+</b> on both WADs to select them, and then A to show the options, then A again to install.</p>
-        <h4 style="color:red">Error -1022 or -1029?</h4>
-        <p>Press <b>-</b> to mark the WAD for uninstallation, press A two times to uninstall. Now try to install it again.</p>
+        
+        <details>
+            <summary>If you received error -1022 or error -1029, click here!</summary>
+            <h2>Resolving ticket issues</h2>
+            <p>Press <b>-</b> to mark the WAD for uninstallation, press A two times to uninstall. Now try to install it again.</p>
+            <p>If that does not work, please try the <a href="https://oscwii.org/library/app/WiiUnShoplifter">WiiUnShoplifter</a> tool to resolve the tickets.</p>
+
+            <p>Proceed with the installation again.</p>
+        </details>
+        
         <h3>Finished!</h3>
         <img src="media/screenshot-system-menu-wii.png" alt="Wii Menu with the cursor hovering over Wii Shop">
         <p>You can now go to the Wii Menu and launch the Wii Shop Channel.</p>
