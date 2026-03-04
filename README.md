@@ -31,4 +31,4 @@ This is the source code of WiiMart's website. It contains WADs, branding, and pr
 * `errors.html` Redirect for `support.html`
 * `title-sheet.html` Redirect for `titles.html`
 
-*The WiiMart Team is not affiliated with Nintendo or any related parties. To contact, please send an email to support@wiimart.org*
+*The WiiMart Team is not affiliated with Nintendo or any related parties.*
