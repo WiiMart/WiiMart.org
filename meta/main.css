@@ -38,7 +38,7 @@ details li a img:hover {outline:solid 2px #9900FF}
 details li img.pf {outline:none}
 
 /* add to the <details> element class="details-impt-info" if the <details> contains Important Info, obvously. */
-.details-impt-info *:not(summary,.date){opacity:0%;transition:.5s ease-in-out;} .details-impt-info[open] *:not(summary,.date) {opacity:100%;transition:.5s ease-in-out;}
+.details-impt-info *:not(summary,.date,sup,img){opacity:0%;transition:.5s ease-in-out;} .details-impt-info[open] *:not(summary,.date) {opacity:100%;transition:.5s ease-in-out;}
 .details-impt-info summary {padding-left:5px;padding-right:5px;cursor:pointer;user-select:none;border-radius:5px;margin-bottom:3px;}
 .details-impt-info summary:hover {background-color:#73bad14d;}
 .details-impt-info summary:active {background-color:#73bad16b;}
