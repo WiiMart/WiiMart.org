@@ -62,6 +62,7 @@ img.wb {outline:solid 1px black}
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {-webkit-appearance:none;margin:0;}
 input [type="number"] {-moz-appearance:textfield;}
 input {border-top-width:2px;border-right-width:2px;border-bottom-width:2px;border-left-width:2px;border-top-style:solid;border-right-style:solid;border-bottom-style:solid;border-left-style:solid;border-top-color:#CCCCCC;border-right-color:#CCCCCC;border-bottom-color:#EAEAEA;border-left-color:#CCCCCC;	}
+blockquote {font-style:italic;font-weight:bold;}
 
 mark {color:white;background:#34BEED;font-weight:bold;}
 mark.new {background-color:#fff090 /* fallback */;background-image:url("/meta/NEW_bg.png");background-size:cover;border-radius:5px;padding-right:5px;padding-left:5px;font-weight:bold;}
