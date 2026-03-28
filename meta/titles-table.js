@@ -62,7 +62,8 @@ document.addEventListener('DOMContentLoaded', async () => {
         "UselessMan",
         "RollPlayStation",
         "Waluigi",
-        "Team Twiizers"
+        "Team Twiizers",
+        "ZodiaKGalXy"
     ];
 
     function initControllerDropdown() {
