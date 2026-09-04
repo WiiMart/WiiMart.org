@@ -1,3 +1,4 @@
+<!-- WiiMart README.md -->
 # [WiiMart.org](https://wiimart.org)
 
 <img src="media/branding-bag-no-bg.png" width="100" align="right">
