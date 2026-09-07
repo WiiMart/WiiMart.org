@@ -1,4 +1,3 @@
-<!-- WiiMart README.md -->
 # [WiiMart.org](https://wiimart.org)
 
 <img src="media/branding-bag-no-bg.png" width="100" align="right">
@@ -27,8 +26,6 @@ This is the source code of WiiMart's website. It contains WADs, branding, and pr
 
 ### Redirects
 
-* `branding.html` Redirect for `specials.html#Branding`
-* `download.html` Redirect for `install.html`
 * `errors.html` Redirect for `support.html`
 * `title-sheet.html` Redirect for `titles.html`
 
