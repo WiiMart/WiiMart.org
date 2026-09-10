@@ -1,76 +1,89 @@
-function preloadArrows() {
-    function preloadImages() {//v1.0
-        var doc = document, args = arguments; if (!doc.img) doc.img = new Array();
-        for (var i = 0; i < args.length; i++) { doc.img[i] = new Image; doc.img[i].src = args[i]; }
-    }
-    preloadImages(
-        "/meta/arrow-right-hover.png",
-        "/meta/arrow-left-hover.png",
-        "/meta/arrow-right-pressed.png",
-        "/meta/arrow-left-pressed.png"
-    );
-}
+(() => {
+    const arrowSources = {
+        left: "/meta/arrow-left.png",
+        leftHover: "/meta/arrow-left-hover.png",
+        leftPressed: "/meta/arrow-left-pressed.png",
+        right: "/meta/arrow-right.png",
+        rightHover: "/meta/arrow-right-hover.png",
+        rightPressed: "/meta/arrow-right-pressed.png"
+    };
 
-const galleries = document.querySelectorAll('.gallery');
-
-galleries.forEach(gallery => {
-    const images = gallery.querySelectorAll('img');
-    let currentIndex = 0;
-
-    const leftArrow = document.createElement('img');
-    leftArrow.src = 'meta/arrow-left.png';
-    leftArrow.classList.add('arrow', 'left');
-    gallery.appendChild(leftArrow);
-
-    const rightArrow = document.createElement('img');
-    rightArrow.src = 'meta/arrow-right.png';
-    rightArrow.classList.add('arrow', 'right');
-    gallery.appendChild(rightArrow);
-
-    function showImage(index) {
-        images.forEach((img, i) => {
-            img.style.display = (i === index) ? 'block' : 'none';
+    function preloadArrows() {
+        Object.values(arrowSources).forEach(source => {
+            const image = new Image();
+            image.src = source;
         });
     }
 
-    function handleArrowClick(isLeftArrow) {
-        currentIndex = isLeftArrow 
-            ? (currentIndex === 0 ? images.length - 1 : currentIndex - 1) 
-            : (currentIndex === images.length - 1 ? 0 : currentIndex + 1);
-        
-        showImage(currentIndex);
-
-        if (isLeftArrow) {
-            leftArrow.src = 'meta/arrow-left-pressed.png';
-            rightArrow.src = 'meta/arrow-right.png';
-            setTimeout(() => {
-                leftArrow.src = 'meta/arrow-left.png';
-            }, 200);
-        } else {
-            rightArrow.src = 'meta/arrow-right-pressed.png';
-            leftArrow.src = 'meta/arrow-left.png';
-            setTimeout(() => {
-                rightArrow.src = 'meta/arrow-right.png';
-            }, 200);
-        }
+    function createArrow(direction) {
+        const arrow = document.createElement("img");
+        arrow.src = arrowSources[direction];
+        arrow.alt = "";
+        arrow.classList.add("arrow", direction);
+        arrow.setAttribute("role", "button");
+        arrow.setAttribute("aria-label", direction === "left" ? "Previous image" : "Next image");
+        arrow.tabIndex = 0;
+        return arrow;
     }
 
-    leftArrow.addEventListener('click', () => handleArrowClick(true));
-    rightArrow.addEventListener('click', () => handleArrowClick(false));
+    function initializeGallery(gallery) {
+        const images = Array.from(gallery.querySelectorAll("img.slide"));
+        if (images.length === 0) {
+            return;
+        }
+        let currentIndex = 0;
+        const leftArrow = createArrow("left");
+        const rightArrow = createArrow("right");
+        gallery.append(leftArrow, rightArrow);
 
-    leftArrow.addEventListener('mouseover', () => {
-        leftArrow.src = 'meta/arrow-left-hover.png';
-    });
-    leftArrow.addEventListener('mouseout', () => {
-        leftArrow.src = 'meta/arrow-left.png';
-    });
+        function showImage(index) {
+            images.forEach((image, imageIndex) => {
+                image.style.display = imageIndex === index ? "block" : "none";
+                image.setAttribute("aria-hidden", imageIndex === index ? "false" : "true");
+            });
+        }
 
-    rightArrow.addEventListener('mouseover', () => {
-        rightArrow.src = 'meta/arrow-right-hover.png';
-    });
-    rightArrow.addEventListener('mouseout', () => {
-        rightArrow.src = 'meta/arrow-right.png';
-    });
+        function navigate(direction) {
+            currentIndex = direction === "left"
+                ? (currentIndex + images.length - 1) % images.length
+                : (currentIndex + 1) % images.length;
+            showImage(currentIndex);
+            const activeArrow = direction === "left" ? leftArrow : rightArrow;
+            const inactiveArrow = direction === "left" ? rightArrow : leftArrow;
+            activeArrow.src = arrowSources[`${direction}Pressed`];
+            inactiveArrow.src = arrowSources[direction === "left" ? "right" : "left"];
+            window.setTimeout(() => {
+                activeArrow.src = arrowSources[direction];
+            }, 200);
+        }
 
-    showImage(currentIndex);
-});
+        function bindArrow(arrow, direction) {
+            arrow.addEventListener("click", () => navigate(direction));
+            arrow.addEventListener("keydown", event => {
+                if (event.key === "Enter" || event.key === " ") {
+                    event.preventDefault();
+                    navigate(direction);
+                }
+            });
+            arrow.addEventListener("mouseenter", () => {
+                arrow.src = arrowSources[`${direction}Hover`];
+            });
+            arrow.addEventListener("mouseleave", () => {
+                arrow.src = arrowSources[direction];
+            });
+        }
+
+        bindArrow(leftArrow, "left");
+        bindArrow(rightArrow, "right");
+        showImage(currentIndex);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const galleries = document.querySelectorAll(".gallery");
+        if (galleries.length === 0) {
+            return;
+        }
+        preloadArrows();
+        galleries.forEach(initializeGallery);
+    });
+})();

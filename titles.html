@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script src="meta/music.js"></script>
-    <script src="meta/loader.js"></script>
-    <script src="meta/titles-table.js"></script>
+    <script src="meta/music.js" defer></script>
+    <script src="meta/loader.js" defer></script>
+    <script src="meta/titles-table.js" defer></script>
     <meta charset="utf-8">
     <title>Title Sheet</title>
     <meta http-equiv="X-UA-compatible" content="IE=edge">
@@ -17,10 +17,10 @@
     <link rel="stylesheet" href="meta/main.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
-        div.table-container {overflow-x:auto;display:none;}     
+        div.table-container {overflow-x:auto;display:none;}
         div.table-controls {padding: 10px;margin-bottom: 10px;flex-wrap: wrap;gap:15px;align-items: center;}
         div.control-group {display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 10px;}
-        div.table-controls label {font-weight:bold;margin-right:5px;}
+        div.table-controls label, div.table-controls .control-label {font-weight:bold;margin-right:5px;}
         div.table-controls select {border-radius:5px;padding:5px;font-family:'Shop',sans-serif;padding: 5px;outline: 1px solid #34BEED;border-radius: 3px;filter: drop-shadow(1px 1px 3.4px #bbbbbb);border:none; transition: transform 0.4s ease-in-out;}
         div.table-controls select:hover {box-shadow:inset 0 0 0 3px #34BEED;cursor:pointer}
         table a {text-decoration:none;}
@@ -33,43 +33,43 @@
     </style>
 </head>
 <body>
-<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" onload="loadrimg();" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();" style="display:none;" title="BGM player">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="spinnerallowed=false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">Ply?</button></a><a href="javascript:deactivatebgmplayer();" onclick="spinnerallowed=false;"><button>Close</button></a></div>   </div>
+<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" src="/meta/grey-loader.png" alt=""><img id="wscspinnershadow" src="/meta/grey-loader.png" alt=""></div><div class="box" id="bgmplayer" data-audio-src="/meta/shop.wav" style="display:none;" title="BGM player">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><button type="button" id="shopbgm" aria-pressed="false" title="Enable audio autoplay in your browser for it to continue playing throughout the website.">Ply?</button><button type="button" id="closebgm">Close</button></div>   </div>
 
 <h1><a href="/">WiiMart</a></h1>
-<nav><a href="install" class="btn">Install</a> <a href="dlc" class="btn">DLC</a> <a href="support" class="btn">Support</a> <span class="active">Titles</span> <a href="specials" class="btn">Specials</a> <a href="credits" class="btn">Credits</a> <a href="https://discord.gg/wiimart-1346485785284575335" class="btn"><img src="meta/em-discord.svg" class="platform"></a> <a href="https://github.com/WiiMart" class="btn"><img src="meta/em-github.svg" class="platform"></a></nav>
+<nav><a href="install" class="btn">Install</a> <a href="dlc" class="btn">DLC</a> <a href="support" class="btn">Support</a> <span class="active">Titles</span> <a href="specials" class="btn">Specials</a> <a href="credits" class="btn">Credits</a> <a href="https://discord.gg/wiimart-1346485785284575335" class="btn" aria-label="Discord"><img src="meta/em-discord.svg" class="platform" alt=""></a> <a href="https://github.com/WiiMart" class="btn" aria-label="GitHub"><img src="meta/em-github.svg" class="platform" alt=""></a></nav>
 
 <div class="box" style="padding:0;">
     <div class="table-notice">
-        <header style="background-color:#34BEED;color:white;font-weight:bold;width:100%;">Title Sheet</header>
+        <header aria-label="Title Sheet introduction" style="background-color:#34BEED;color:white;font-weight:bold;width:100%;">Title Sheet</header>
         <h2>Ready to view?</h2>
         <p>This spreadsheet is large and may not work on certain hardware.</p>
         <p>To begin viewing, press a region code.</p>
-     
+
         <div style="padding-bottom:10px" id="btns">
-            <button>US</button>
-            <button>CA</button>
-            <button>MX</button>
-            <button>ES</button>
-            <button>GB</button>
-            <button>DE</button>
-            <button>IT</button>
-            <button>FR</button>
-            <button>JP</button>
-            <button>NL</button>
+            <button type="button">US</button>
+            <button type="button">CA</button>
+            <button type="button">MX</button>
+            <button type="button">ES</button>
+            <button type="button">GB</button>
+            <button type="button">DE</button>
+            <button type="button">IT</button>
+            <button type="button">FR</button>
+            <button type="button">JP</button>
+            <button type="button">NL</button>
         </div>
     </div>
 
     <div class="table-container">
         <div class="nevigation">
-            <header style="background-color:#34BEED;color:white;font-weight:bold;width:100%">Title Sheet</header>
-            
+            <header aria-label="Title Sheet controls" style="background-color:#34BEED;color:white;font-weight:bold;width:100%">Title Sheet</header>
+
             <div class="table-controls" style="margin-bottom:0">
                 <div class="control-group">
                     <div>
-                        <label for="region">Region</label>
-                        <button style="padding:7px;margin-bottom:0"><span id="region"></span></button>
+                        <span class="control-label" id="region-label">Region</span>
+                        <button type="button" style="padding:7px;margin-bottom:0" data-return-to-regions aria-labelledby="region-label region"><span id="region"></span></button>
                     </div>
-                </div>        
+                </div>
                 <div class="control-group">
                     <div>
                         <label for="sortBy">Sort</label>
@@ -91,16 +91,16 @@
                             <option value="custom">Only Custom</option>
                         </select>
                     </div>
-                </div>    
+                </div>
                 <div class="control-group">
                     <div>
                         <label for="filterConsoleFilter">Filter</label>
                         <select id="filterConsoleFilter">
                             <option value="all">All Consoles</option>
                         </select>
-                    </div>                
+                    </div>
                     <div>
-                        <select id="filterController">
+                        <select id="filterController" aria-label="Controller">
                             <option value="all">All Controllers</option>
                             <option value="none">"Missing"</option>
                         </select>
@@ -109,7 +109,7 @@
             </div>
         </div>
         <div class="box" style="padding:0;margin:0 auto;border:none;border-radius:0;scrollbar-width:none;">
-            <table id="titles">
+            <table id="titles" aria-label="Title Sheet">
             </table>
         </div>
     </div>

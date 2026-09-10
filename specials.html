@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <script src="meta/music.js"></script>
-    <script src="meta/loader.js"></script>
+    <script src="meta/music.js" defer></script>
+    <script src="meta/loader.js" defer></script>
+    <script src="meta/specials.js" defer></script>
     <title>WiiMart Specials</title>
     <meta property="og:title" content="WiiMart Specials">
     <meta property="og:description" content="This page contains some special content for WiiMart.">
@@ -26,16 +27,16 @@
     </style>
 </head>
 <body>
-<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" onload="loadrimg();" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();" style="display:none;" title="BGM player">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="spinnerallowed=false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">Ply?</button></a><a href="javascript:deactivatebgmplayer();" onclick="spinnerallowed=false;"><button>Close</button></a></div>   </div>
+<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" src="/meta/grey-loader.png" alt=""><img id="wscspinnershadow" src="/meta/grey-loader.png" alt=""></div><div class="box" id="bgmplayer" data-audio-src="/meta/shop.wav" style="display:none;" title="BGM player">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><button type="button" id="shopbgm" aria-pressed="false" title="Enable audio autoplay in your browser for it to continue playing throughout the website.">Ply?</button><button type="button" id="closebgm">Close</button></div>   </div>
 
 <h1><a href="/">WiiMart</a></h1>
-<nav><a href="install" class="btn">Install</a> <a href="dlc" class="btn">DLC</a> <a href="support" class="btn">Support</a> <a href="titles" class="btn">Titles</a> <span class="active">Specials</span> <a href="credits" class="btn">Credits</a> <a href="https://discord.gg/wiimart-1346485785284575335" class="btn"><img src="meta/em-discord.svg" class="platform"></a> <a href="https://github.com/WiiMart" class="btn"><img src="meta/em-github.svg" class="platform"></a></nav>
+<nav><a href="install" class="btn">Install</a> <a href="dlc" class="btn">DLC</a> <a href="support" class="btn">Support</a> <a href="titles" class="btn">Titles</a> <span class="active">Specials</span> <a href="credits" class="btn">Credits</a> <a href="https://discord.gg/wiimart-1346485785284575335" class="btn" aria-label="Discord"><img src="meta/em-discord.svg" class="platform" alt=""></a> <a href="https://github.com/WiiMart" class="btn" aria-label="GitHub"><img src="meta/em-github.svg" class="platform" alt=""></a></nav>
 
 <div class="row">
 
-    <div class="box" id="3DS">
+    <div class="box" id="threeDS">
         <h2>3DS Theme</h2>
-        <img src="media/screenshot-3ds-theme.png" style="width: 100%;border-radius: 5px;" alt="Theme screenshots">
+        <img loading="lazy" src="media/screenshot-3ds-theme.png" style="width: 100%;border-radius: 5px;" alt="Theme screenshots">
         <p>This cute theme brings WiiMart to your 3DS alongside the Wii Shop Channel background music.</p>
         <a href="extras/WiiMart3DS.zip" class="btn" download>Download</a>
         <p>Put the ZIP file into <b>sd:/Themes</b> and install it with the Anenome themeing tool.</p>
@@ -44,10 +45,10 @@
     <div class="box">
         <h2>Wii U Forwarder</h2>
         <div class="gallery">
-        <img src="media/screenshot-wii-u-forwarder-icon.png" class="slide" alt="Forwarder icon in the Wii U Menu">
-        <img src="media/screenshot-wii-u-forwarder-banner.png" class="slide" alt="Forwarder's launching banner">
+        <img loading="lazy" src="media/screenshot-wii-u-forwarder-icon.png" class="slide" alt="Forwarder icon in the Wii U Menu">
+        <img loading="lazy" src="media/screenshot-wii-u-forwarder-banner.png" class="slide" alt="Forwarder's launching banner">
         </div>
-        <p>This handy forwarder takes you from the Wii U Menu straight to WiiMart!<!--ha--> (Launches in TV and GamePad view.)</p>
+        <p>This handy forwarder takes you from the Wii U Menu straight to WiiMart! (Launches in TV and GamePad view.)</p>
         <a href="extras/WiiMartForwarder.wuhb" class="btn" download>Download</a>
         <p>Put this WUHB file into <b>SD:/wiiu/apps</b>. Aroma required!</p>
     </div>
@@ -56,33 +57,28 @@
         <h2>Blocks Converter</h2>
         <p>Convert Nintendo's block format into readable bytes!</p>
         <ul style="list-style:none;padding-left:25px;text-align:left">
-            <li><input type="number" id="blocks" maxlength="6"> Blocks</li>
-            <li><input type="number" id="mega" maxlength="6"> Megabytes</li>
-            <li><input type="number" id="giga" maxlength="6"> Gigabytes</li>
+            <li><label><input type="number" id="blocks" step="any"> Blocks</label></li>
+            <li><label><input type="number" id="mega" step="any"> Megabytes</label></li>
+            <li><label><input type="number" id="giga" step="any"> Gigabytes</label></li>
         </ul>
-        <script>
-            // over
-            function updateBlocks() { const blocksInput = document.getElementById('blocks'); const megaInput = document.getElementById('mega'); const gigaInput = document.getElementById('giga'); if (document.activeElement === blocksInput) {const blocks = parseFloat(blocksInput.value) || 0; const megabytes = blocks * 0.128; const gigabytes = blocks * 0.000125; megaInput.value = megabytes.toFixed(2); gigaInput.value = gigabytes.toFixed(4);} else if (document.activeElement === megaInput) {const megabytes = parseFloat(megaInput.value) || 0; const blocks = megabytes / 0.128; const gigabytes = megabytes / 1024; blocksInput.value = blocks.toFixed(2); gigaInput.value = gigabytes.toFixed(4);} else if (document.activeElement === gigaInput) {const gigabytes = parseFloat(gigaInput.value) || 0; const megabytes = gigabytes * 1024; const blocks = megabytes / 0.128; blocksInput.value = blocks.toFixed(2); megaInput.value = megabytes.toFixed(2);}} document.getElementById('blocks').addEventListener('input',updateBlocks); document.getElementById('mega').addEventListener('input',updateBlocks); document.getElementById('giga').addEventListener('input',updateBlocks);
-        </script>
     </div>
 
     <div class="box">
         <h2>Wii Points Generator</h2>
         <p id="code">XXXX-XXXX-XXXX-XXXX</p>
-        <button onclick="generateCode()">Generate</button>
+        <button type="button" data-generate-code>Generate</button>
         <p>Click on the button below to generate a random Wii Points Card number. It will not work when used on WiiMart.</p>
 
-        <script>function generateCode() {const charset = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789"; let code = ""; for (let i = 0; i < 4; i++) {let segment = ""; for (let j = 0; j < 4; j++) {segment += charset.charAt(Math.floor(Math.random() * charset.length));} code += segment + (i < 3 ? "-" : "");} document.getElementById("code").textContent = code;}</script>
     </div>
 
     <div class="box" id="Branding">
         <h2>Branding</h2>
         <h3>Wordmarks</h3>
-        <div style="border-color:#1164E9;background-color: #1164E9" class="wm"><img loading="lazy" src="media/branding-wordmark-white.png" class="wm"></div>
-        <div style="background-color: white;border-color: white;" class="wm"><img loading="lazy" src="media/branding-wordmark-blue.png" class="wm"></div>
-        <div style="background-color: white;border-color: white;" class="wm"><img loading="lazy" src="media/branding-wordmark-black.png" class="wm"></div>
+        <div style="border-color:#1164E9;background-color: #1164E9" class="wm"><img loading="lazy" src="media/branding-wordmark-white.png" class="wm" alt="White WiiMart wordmark"></div>
+        <div style="background-color: white;border-color: white;" class="wm"><img loading="lazy" src="media/branding-wordmark-blue.png" class="wm" alt="Blue WiiMart wordmark"></div>
+        <div style="background-color: white;border-color: white;" class="wm"><img loading="lazy" src="media/branding-wordmark-black.png" class="wm" alt="Black WiiMart wordmark"></div>
         <p>The wordmarks should be visible on the background they are in, like shown.</p>
-        <p><a href="media/branding-wordmark.svg" class="btn" download onclick="spinnerallowed=false;">Download SVG</a></p>
+        <p><a href="media/branding-wordmark.svg" class="btn" download>Download SVG</a></p>
 
         <h3>Colors</h3>
         <mark style="background-color: #1164E9;">WiiMart Blue&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#1164E9</mark>
@@ -90,24 +86,24 @@
         <br><mark style="background-color:#001F50">WiiMart Darker Blue&nbsp;&nbsp;&nbsp;#001F50</mark>
 
         <h3>Icons</h3>
-        <img loading="lazy" src="media/branding-bag.png" width="200px" height="200px" style="min-width:200px; min-height:200px;">
-        <img loading="lazy" src="media/branding-bag-no-bg.png" height="200px">
-        <img loading="lazy" src="media/branding-wfc-joke.png" width="200px" height="200px" style="min-width:200px; min-height:200px;">
+        <img loading="lazy" src="media/branding-bag.png" width="200" height="200" style="min-width:200px; min-height:200px;" alt="WiiMart bag icon">
+        <img loading="lazy" src="media/branding-bag-no-bg.png" height="200" alt="WiiMart bag icon without a background">
+        <img loading="lazy" src="media/branding-wfc-joke.png" width="200" height="200" style="min-width:200px; min-height:200px;" alt="WiiMart WFC joke icon">
         <p>Here are two shop icons with one WFC joke.</p>
-        <p><a href="media/branding-bag.svg" class="btn" download onclick="spinnerallowed=false;">Download SVG</a></p>
+        <p><a href="media/branding-bag.svg" class="btn" download>Download SVG</a></p>
 
 
         <h3>Banners</h3>
-        <img loading="lazy" src="media/branding-banner.png" width="100%" height="100%" style="min-width:100%; min-height:100%;">
-        <img loading="lazy" src="media/branding-super-center.png" width="100%" height="100%" style="min-width:100%; min-height:100%;">
-        <img loading="lazy" src="media/branding-wiimart-wednesday.png" width="100%" height="100%" style="min-width:100%; min-height:100%;">
+        <img loading="lazy" src="media/branding-banner.png" style="width:100%;height:100%;min-width:100%;min-height:100%;" alt="WiiMart banner">
+        <img loading="lazy" src="media/branding-super-center.png" style="width:100%;height:100%;min-width:100%;min-height:100%;" alt="WiiMart Super Center banner">
+        <img loading="lazy" src="media/branding-wiimart-wednesday.png" style="width:100%;height:100%;min-width:100%;min-height:100%;" alt="WiiMart Wednesday banner">
 
         <h3>Extra Information</h3>
         <p>The icons and banners are recolors of Wii Shop Channel textures, WiiMart itself is primarily a parody of 90s Walmart branding,
-        <a href="/meta/Walmart90s.ttf" target="_blank" onclick="spinnerallowed=true; /*doesntworkwithoutthis??*/">font included</a>.</p>
+        <a href="/meta/Walmart90s.ttf" target="_blank" rel="noopener noreferrer">font included</a>.</p>
 
     </div>
-    
+
     <div class="box">
         <h2>List of Shop URLs</h2>
         <p>If you weren't already aware, the Wii Shop Channel is a web app. The original Wii Shop Channel was hosted at

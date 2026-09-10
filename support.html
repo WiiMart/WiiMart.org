@@ -3,9 +3,10 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <script src="meta/music.js"></script>
-    <script src="meta/loader.js"></script>
+    <script src="meta/music.js" defer></script>
+    <script src="meta/loader.js" defer></script>
     <script src="meta/error.js" defer></script>
+    <script src="meta/support.js" defer></script>
     <title>Support for WiiMart</title>
     <meta property="og:title" content="Support for WiiMart">
     <meta property="og:description" content="WiiMart's error code checker, guides, uninstall info, and FAQ.">
@@ -20,39 +21,41 @@
     <style>
         div img, div img.slide {width:100%} input {border: 2px solid #CCCCCC;border-bottom-color: #EAEAEA;margin-bottom: 15px;} #results {display:none;}
         summary {color:red;text-decoration: underline;list-style: none;font-weight: bold;user-select: none;cursor: pointer;padding-top:5px;}
-        details {outline: solid 1px red;padding-bottom: 5px;margin-bottom: 10px;text-align: center;h2 {color:red};}
+        details {outline: solid 1px red;padding-bottom: 5px;margin-bottom: 10px;text-align: center;}
+        details h2 {color:red;}
         button#scrollUp {position:fixed;bottom: 10px; right: 10px; display: none; transform: translateY(20px); transition: opacity 0.3s ease, transform 0.3s ease;padding-bottom:0;z-index:1000;}
         button#scrollUp.show {display:block;opacity:1;transform: translateY(0);}
         input {margin-bottom: 15px;}
         #results {display:none;border-color:red;text-align:left}
         #results h2 {color:#FF0000;}
+        .visually-hidden {position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;}
         #results p {color:#FF0000}
     </style>
 </head>
-<body >
-<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" onload="loadrimg();" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();" style="display:none;" title="BGM player">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="spinnerallowed=false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">Ply?</button></a><a href="javascript:deactivatebgmplayer();" onclick="spinnerallowed=false;"><button>Close</button></a></div>   </div>
+<body>
+<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" src="/meta/grey-loader.png" alt=""><img id="wscspinnershadow" src="/meta/grey-loader.png" alt=""></div><div class="box" id="bgmplayer" data-audio-src="/meta/shop.wav" style="display:none;" title="BGM player">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><button type="button" id="shopbgm" aria-pressed="false" title="Enable audio autoplay in your browser for it to continue playing throughout the website.">Ply?</button><button type="button" id="closebgm">Close</button></div>   </div>
 
 <h1><a href="/">WiiMart</a></h1>
 
-<nav><a href="install" class="btn">Install</a> <a href="dlc" class="btn">DLC</a> <span class="active">Support</span> <a href="titles" class="btn">Titles</a> <a href="specials" class="btn">Specials</a> <a href="credits" class="btn">Credits</a> <a href="https://discord.gg/wiimart-1346485785284575335" class="btn"><img src="meta/em-discord.svg" class="platform"></a> <a href="https://github.com/WiiMart" class="btn"><img src="meta/em-github.svg" class="platform"></a></nav>
+<nav><a href="install" class="btn">Install</a> <a href="dlc" class="btn">DLC</a> <span class="active">Support</span> <a href="titles" class="btn">Titles</a> <a href="specials" class="btn">Specials</a> <a href="credits" class="btn">Credits</a> <a href="https://discord.gg/wiimart-1346485785284575335" class="btn" aria-label="Discord"><img src="meta/em-discord.svg" class="platform" alt=""></a> <a href="https://github.com/WiiMart" class="btn" aria-label="GitHub"><img src="meta/em-github.svg" class="platform" alt=""></a></nav>
 
-<button id="scrollUp" title="Go to top"><img src="meta/scroll-up.svg" style="width: 30px;" alt="Scroll up"></button>
+<button type="button" id="scrollUp" title="Go to top"><img loading="lazy" src="meta/scroll-up.svg" style="width: 30px;" alt="Scroll up"></button>
 
 <div class="row">
 
 
     <div class="box" id="input">
         <h2>Error Code Checker <b style="color:red">BETA</b></h2>
-        <input type="number" id="errorCode" maxlength="6"><br>
-        <button id="submitBtn" style="margin-bottom:10px">Submit</button>
-        <p style="color:grey;font-size:smaller;margin:0 auto;">Want to contribute to this? Go see the <a href="https://github.com/WiiMart/WiiMart.org/blob/main/meta/error.js" target="_blank">error.js</a> file over at GitHub.</p>
+        <input type="text" inputmode="numeric" pattern="[0-9]{1,6}" maxlength="6" id="errorCode" aria-label="Error code"><br>
+        <button type="button" id="submitBtn" style="margin-bottom:10px">Submit</button>
+        <p style="color:grey;font-size:smaller;margin:0 auto;">Want to contribute to this? Go see the <a href="https://github.com/WiiMart/WiiMart.org/blob/main/meta/error.js" target="_blank" rel="noopener noreferrer">error.js</a> file over at GitHub.</p>
     </div>
 
 
-    <div class="box" id="results" style="transition:.3s easein-out; text-align:center;">
-        <h2 id="code"></h2>
+    <div class="box" id="results" aria-live="polite" aria-atomic="true" style="transition:.3s ease-in-out; text-align:center;">
+        <h2 id="code"><span class="visually-hidden">Error code</span></h2>
         <p id="issue"></p>
-        <p><a href="javascript:reseterrorcodeform();" onclick="spinnerallowed=false;" style="color: #FF4242;cursor:pointer;text-align:center; text-decoration:underline;"><b>Check another error</b></a></p>    
+        <p><a href="#input" data-reset-error style="color: #FF4242;cursor:pointer;text-align:center;text-decoration:underline;"><b>Check another error</b></a></p>
     </div>
 
 <h2>Shop-related</h2>
@@ -69,14 +72,6 @@
         <p>A patched IOS80 WAD is needed. To get it, go through the <a href="install">Install</a> page.</p>
         <h3>How do I change the region?</h3>
         <p>Sorry, the Change Region button is gone while it is being fixed.</p>
-        <!--
-        <div class="gallery" style="width:100%">
-        <img src="media/screenshot-region-help-1.png" class="slide" alt="Shop main menu">
-        <img src="media/screenshot-region-help-2.png" class="slide" alt="Shop settings, scrolled to regions">
-        <img src="media/screenshot-region-help-3.png" class="slide" alt="Shop region options">
-        </div>
-        <p>Go to Wii Shop settings and look for the <b>Change Region</b> button.</p>
-        -->
     </div>
 
 <h2>Title-related</h2>
@@ -84,20 +79,20 @@
     <div class="box">
         <h3 id="blackscreen">My title says 'This channel can't be used.' or just has a black screen!</h3>
         <div class="gallery" style="width:100%">
-        <img src="media/screenshot-priiloader-help-1.png" class="slide" alt="Priiloader main menu">
-        <img src="media/screenshot-priiloader-help-3.png" class="slide" alt="Priiloader settings">
-        <img src="media/screenshot-priiloader-help-5.png" class="slide" alt="Priiloader saved settings">
+        <img loading="lazy" src="media/screenshot-priiloader-help-1.png" class="slide" alt="Priiloader main menu">
+        <img loading="lazy" src="media/screenshot-priiloader-help-3.png" class="slide" alt="Priiloader settings">
+        <img loading="lazy" src="media/screenshot-priiloader-help-5.png" class="slide" alt="Priiloader saved settings">
         </div>
         <p>Install <a href="https://wii.hacks.guide/priiloader">Priiloader</a> and enable the
         <b>Region Free EVERYTHING</b> option in System Menu Hacks, then launch it again.</p>
 
         <h3 id="OldBanner">What is the old banner WiiMart?</h3>
         <div class="gallery">
-        <img src="media/screenshot-ob-1.png" class="slide" alt="Cursor hovering over the old banner">
-        <img src="media/screenshot-ob-2.png" class="slide" alt="">
-        <img src="media/screenshot-ob-3.png" class="slide" alt="Old banner showing on Wii Menu">
-        <img src="media/screenshot-ob-4.png" class="slide" alt="">
-        <img src="media/screenshot-ob-5.png" class="slide" alt="">
+        <img loading="lazy" src="media/screenshot-ob-1.png" class="slide" alt="Cursor hovering over the old banner">
+        <img loading="lazy" src="media/screenshot-ob-2.png" class="slide" alt="">
+        <img loading="lazy" src="media/screenshot-ob-3.png" class="slide" alt="Old banner showing on Wii Menu">
+        <img loading="lazy" src="media/screenshot-ob-4.png" class="slide" alt="">
+        <img loading="lazy" src="media/screenshot-ob-5.png" class="slide" alt="">
         </div>
         <p>It is a version of WiiMart using the old 2006-2007 banner on the Wii Menu, note that the dynamic banner is not supported with this version.</p>
 
@@ -110,7 +105,7 @@
         <h4>vWii</h4>
         <p><a href="wad/IOS56(vWiiOriginal).wad" class="btn">Download IOS56 for vWii</a></p>
         <p><a href="wad/IOS80(vWiiOriginal).wad" class="btn">Download IOS80 for vWii</a></p>
-        <p><a href="wad/WiiShop(vWiiOriginal).wad" class="btn">Download Wii Shop for vWii</a></p> 
+        <p><a href="wad/WiiShop(vWiiOriginal).wad" class="btn">Download Wii Shop for vWii</a></p>
     </div>
 
     <h2>Project-related</h2>
@@ -132,60 +127,60 @@
     <h2 id="EULA">User Agreements</h2>
 
     <div class="box">
-        <img src="media/screenshot-eula-help-0.png" alt="Shop user agreements message">
+        <img loading="lazy" src="media/screenshot-eula-help-0.png" alt="Shop user agreements message">
 
         <p>If you've come across this screen then the following will help. Click on that <b>User Agreements</b> button, if it takes you to the Wii Menu then you can go to it manually.</p>
         <p><b style="color:red">Precaution:</b> Please make sure you do not have a DNS set that interferes with the EULA. (e.g. str2hax)</p>
         <h3>Accepting the User Agreements</h3>
-        <img src="media/screenshot-system-menu-wii.png" alt="Wii Menu">
+        <img loading="lazy" src="media/screenshot-system-menu-wii.png" alt="Wii Menu">
         <p>Click on the bottom right Wii icon to go to <b>Wii Options</b>, then click on <b>Wii System Settings</b>.</p>
-        
+
         <details>
         <summary>If you are on vWii and don't see the Wii System Settings, click here!</summary>
         <h2>Re-enabling Wii System Settings</h2>
         <p>Install <a href="https://wii.hacks.guide/priiloader">Priiloader</a> and load in to it.</p>
-        <img src="media/screenshot-priiloader-help-2.png" alt="Priilaoder main menu">
+        <img loading="lazy" src="media/screenshot-priiloader-help-2.png" alt="Priilaoder main menu">
         <p>Go to <b>System Menu Hacks</b></p>
-        <img src="media/screenshot-priiloader-help-4.png" alt="Priiloader settings">
+        <img loading="lazy" src="media/screenshot-priiloader-help-4.png" alt="Priiloader settings">
         <p>Select <b>Wii System Settings via Options Button</b> and <b>Permanent vWii System Settings</b> to enable them.</p>
-        <img src="media/screenshot-priiloader-help-5.png" alt="Priiloader saved settings">
+        <img loading="lazy" src="media/screenshot-priiloader-help-5.png" alt="Priiloader saved settings">
         <p>Save the settings and then proceed with the guide.</p>
         </details>
 
-        <img src="media/screenshot-eula-help-1.png" alt="Wii Settings, Internet hovering">
+        <img loading="lazy" src="media/screenshot-eula-help-1.png" alt="Wii Settings, Internet hovering">
         <p>Go to page 2 and click on <b>Internet</b>, then click on <b>User Agreements</b>.</p>
 
         <details>
-        <summary><img src="media/screenshot-eula-help-2-issue.png" alt="vWii update dialog">If you are on vWii and you see this message, click here!</summary>
+        <summary><img loading="lazy" src="media/screenshot-eula-help-2-issue.png" alt="vWii update dialog">If you are on vWii and you see this message, click here!</summary>
         <h2>Manually Downloading the EULA</h2>
         <p>Before you go to the User Agreements you will need to install the vWii EULA applet.</p>
         <p>Download the <a href="https://oscwii.org/library/app/system-channel-restorer">System Channel Restorer</a> app and launch it from The Homebrew Channel, select EULA (and some other channels you might like as well).</p>
-        <img src="media/screenshot-scr-1.png" alt="Restorer main menu">
+        <img loading="lazy" src="media/screenshot-scr-1.png" alt="Restorer main menu">
         <p>The homebrew app will look like this.</p>
-        <img src="media/screenshot-scr-2.png" alt="Restorer, EULA hovered">
+        <img loading="lazy" src="media/screenshot-scr-2.png" alt="Restorer, EULA hovered">
         <p>Press A to select the EULA, you can also get other channels while here.</p>
-        <img src="media/screenshot-scr-3.png" alt="Restorer, EULA downloaded">
+        <img loading="lazy" src="media/screenshot-scr-3.png" alt="Restorer, EULA downloaded">
         <p>Press the <b>+ START</b> button to begin downloading. Once it is done, proceed with this guide.</p>
         </details>
 
-        <img src="media/screenshot-eula-help-2.png" alt="EULA pre-launch">
+        <img loading="lazy" src="media/screenshot-eula-help-2.png" alt="EULA pre-launch">
 
         <p>Click on <b>Yes</b>.</p>
 
         <details>
-        <summary><img src="media/screenshot-eula-help-3-issue.png" alt="EULA 'not offered' message"> If you see this screen, click here!</summary>
+        <summary><img loading="lazy" src="media/screenshot-eula-help-3-issue.png" alt="EULA 'not offered' message"> If you see this screen, click here!</summary>
         <h2>How to bypass WiiConnect24 'not offered' message</h2>
         <p>This screen appears because the console is set to a country that was not supported by the original Wii Network Services.</p>
-        <img src="media/screenshot-country-help-1.png" alt="Wii Settings, hovering Country">
+        <img loading="lazy" src="media/screenshot-country-help-1.png" alt="Wii Settings, hovering Country">
         <p>Try switching to a country that you think is supported (e.g. United States for North America, United Kingdom for Europe, etc.)</p>
-        <img src="media/screenshot-country-help-2.png" alt="Wii Settings, selecting United States">
+        <img loading="lazy" src="media/screenshot-country-help-2.png" alt="Wii Settings, selecting United States">
         <p>Now go back to the EULA.</p>
         </details>
 
-        <img src="media/screenshot-eula-help-3.png" alt="EULA launch">
+        <img loading="lazy" src="media/screenshot-eula-help-3.png" alt="EULA launch">
         <p>Click on <b>Next</b>.</p>
 
-        <img src="media/screenshot-eula-help-4.png" alt="EULA contents">
+        <img loading="lazy" src="media/screenshot-eula-help-4.png" alt="EULA contents">
         <p>Click on the <b>I ACCEPT</b> button, you'll now return to the Wii Menu.</p>
 
         <p>You will now be able to load into WiiMart.</p>
@@ -193,30 +188,6 @@
 </div>
 
 <footer><p>The WiiMart Team is not affiliated with Nintendo or any related parties. To contact, please send an email to <a href="mailto:wiimart@post.com"><b>wiimart@post.com</b></a>.</p></footer>
-
-<script>
-  const scrollUp = document.getElementById("scrollUp");
-
-  window.addEventListener("scroll", () => {
-  const scrollTop = document.documentElement.scrollTop || document.body.scrollTop;
-  const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-  const scrollPercent = scrollTop / scrollHeight;
-
-  if (scrollPercent > 0.3) {
-    scrollUp.classList.add("show");
-  } else {
-    scrollUp.classList.remove("show");
-  }
-  });
-
-  scrollUp.addEventListener("click", () => {
-  window.scrollTo({
-    top: 0,
-    behavior: "smooth"
-  });
-  });
-</script>
-
 
 </body>
 </html>

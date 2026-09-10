@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <script src="meta/music.js"></script>
-    <script src="meta/loader.js"></script>
+    <script src="meta/music.js" defer></script>
+    <script src="meta/loader.js" defer></script>
+    <script src="meta/credits.js" defer></script>
     <title>WiiMart Credits</title>
     <meta property="og:title" content="WiiMart Credits">
     <meta property="og:description" content="View the credits for WiiMart here.">
@@ -20,17 +21,20 @@
         figure img.pfp {margin-left:-30px;width:150px;height:100%;object-fit: cover;border-radius:5px;}
         figcaption {padding-left:10px;text-align:left;margin-right:-35px;}
         hr {border-style:dashed}
-        div#Contribute button {min-width:300px;}
-        div#Contribute button img {float:left;}
+        a.credit-button {margin-bottom:6px;font-family:'Shop',sans-serif;font-size:13.3333px;line-height:normal;padding:5px;outline:1px solid #34BEED;border-radius:3px;filter:drop-shadow(1px 1px 3.4px #bbbbbb);border:none;transition:transform 0.4s ease-in-out;background-color:buttonface;color:buttontext;text-decoration:none;font-weight:normal;display:inline-block;box-sizing:border-box;vertical-align:middle;}
+        a.credit-button:hover {box-shadow:inset 0 0 0 3px #34BEED;cursor:pointer;}
+        div#Contribute a.credit-button {min-width:300px;}
+        div#Contribute a.credit-button img {float:left;}
+        @media (prefers-color-scheme:dark) {a.credit-button {background-color:#3b3b3b;color:#e0e0e0;filter:drop-shadow(1px 1px 3.4px #747474);}}
     </style>
     <script src="meta/gallery.js" defer></script>
 </head>
 <body>
-<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" onload="loadrimg();" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div><div class="box" id="bgmplayer" onclick="activatebgmplayer();" style="display:none;" title="BGM player">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><a href="javascript:playBGM();" onclick="spinnerallowed=false;" id="shopbgmselector" title="Enable audio autoplay in your browser for it to continue playing throughout the website."><button id="shopbgm">Ply?</button></a><a href="javascript:deactivatebgmplayer();" onclick="spinnerallowed=false;"><button>Close</button></a></div>   </div>
+<div id="backgroundd" style="display:none;"></div><div id="wscspinnerbg" style="display:none;"><img id="wscspinner" src="/meta/grey-loader.png" alt=""><img id="wscspinnershadow" src="/meta/grey-loader.png" alt=""></div><div class="box" id="bgmplayer" data-audio-src="/meta/shop.wav" style="display:none;" title="BGM player">  <div id="bgmplayerBG"></div> <div id="mainplayer"><p id="bgmplrtitle">bgm plr..</p><button type="button" id="shopbgm" aria-pressed="false" title="Enable audio autoplay in your browser for it to continue playing throughout the website.">Ply?</button><button type="button" id="closebgm">Close</button></div>   </div>
 
 <h1><a href="/">WiiMart</a></h1>
 
-<nav><a href="install" class="btn">Install</a> <a href="dlc" class="btn">DLC</a> <a href="support" class="btn">Support</a> <a href="titles" class="btn">Titles</a> <a href="specials" class="btn">Specials</a> <span class="active">Credits</span> <a href="https://discord.gg/wiimart-1346485785284575335" class="btn"><img src="meta/em-discord.svg" class="platform"></a> <a href="https://github.com/WiiMart" class="btn"><img src="meta/em-github.svg" class="platform"></a></nav>
+<nav><a href="install" class="btn">Install</a> <a href="dlc" class="btn">DLC</a> <a href="support" class="btn">Support</a> <a href="titles" class="btn">Titles</a> <a href="specials" class="btn">Specials</a> <span class="active">Credits</span> <a href="https://discord.gg/wiimart-1346485785284575335" class="btn" aria-label="Discord"><img src="meta/em-discord.svg" class="platform" alt=""></a> <a href="https://github.com/WiiMart" class="btn" aria-label="GitHub"><img src="meta/em-github.svg" class="platform" alt=""></a></nav>
 
 <div class="row">
 
@@ -41,38 +45,38 @@
         <hr>
 
         <figure>
-            <img loading="lazy" src="media/pfp-ocarina.png" class="pfp" style="cursor:help">
+            <img loading="lazy" src="media/pfp-ocarina.png" class="pfp" style="cursor:help" alt="Ocarina">
+            <audio preload="none" src="media/sound-zelda.mp3"></audio>
             <figcaption>
                 <b><i>Ocarina</i></b> is the creator of WiiMart! He began working on it after the unsuccess of Rii Shop. As the owner, he maintains the shop entirely.
                 <br><br>
-                <a target="_blank" href="https://github.com/Ocarinaoftime"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitHub"></button></a>
-                <a target="_blank" href="https://www.youtube.com/@Epicboss16"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
-                <a target="_blank" href="extras/whatsapp.jpg"><button><img loading="lazy" src="meta/ico-whatsapp.png" class="ico"></button></a>
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/Ocarinaoftime" class="credit-button" aria-label="Ocarina on GitHub"><img loading="lazy" src="meta/ico-git.png" class="ico" alt=""></a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@Epicboss16" class="credit-button" aria-label="Ocarina on YouTube"><img loading="lazy" src="meta/ico-yt.png" class="ico" alt=""></a>
+                <a target="_blank" rel="noopener noreferrer" href="extras/whatsapp.jpg" class="credit-button" aria-label="Ocarina on WhatsApp"><img loading="lazy" src="meta/ico-whatsapp.png" class="ico" alt=""></a>
             </figcaption>
-            <audio src="media/sound-zelda.mp3"></audio>
         </figure>
 
         <hr>
 
         <figure>
-            <img loading="lazy" src="media/pine-avatar.png" class="pfp">
+            <img loading="lazy" src="media/pine-avatar.png" class="pfp" alt="Pinecone">
             <figcaption>
                 <b>Pinecone</b> is a Discord administrator and server hoster for WiiMart.
                 <br><br>
-                <a target="_blank" href="https://github.com/Pinecone-22"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitHub"></button></a>
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/Pinecone-22" class="credit-button" aria-label="Pinecone on GitHub"><img loading="lazy" src="meta/ico-git.png" class="ico" alt=""></a>
             </figcaption>
         </figure>
 
         <hr>
 
         <figure>
-            <img loading="lazy" src="media/pfp-wabagg.png" title="Wabagg123" class="pfp">
+            <img loading="lazy" src="media/pfp-wabagg.png" title="Wabagg123" class="pfp" alt="Wabagg123">
             <figcaption>
                 <b>Wabagg123</b> is one of the developers for WiiMart that contributes to the WiiConnect24 and Wii SOAP part of the shop.
                 <br><br>
-                <a target="_blank" href="https://www.youtube.com/@wabagg123/"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@wabagg123/" class="credit-button" aria-label="Wabagg123 on YouTube"><img loading="lazy" src="meta/ico-yt.png" class="ico" alt=""></a>
             </figcaption>
-        </figure>     
+        </figure>
 
         <hr>
 
@@ -81,61 +85,61 @@
         <hr>
 
         <figure id="RM05">
-            <img src="media/pfp-rm05.png" class="pfp">
+            <img loading="lazy" src="media/pfp-rm05.png" class="pfp" alt="RM05">
             <figcaption><b>RM05</b> is a Discord moderator and WiiMart translation contributor.
                 <br><br>
-                <a target="_blank" href="https://www.youtube.com/@Mr_RM05"><button><img src="meta/ico-yt.png" class="ico"></button></a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@Mr_RM05" class="credit-button" aria-label="RM05 on YouTube"><img loading="lazy" src="meta/ico-yt.png" class="ico" alt=""></a>
             </figcaption>
         </figure>
 
         <hr>
 
         <figure id="Yoshi">
-            <img loading="lazy" src="media/pfp-yoshi.png" class="pfp" style="cursor:help">
+            <img loading="lazy" src="media/pfp-yoshi.png" class="pfp" style="cursor:help" alt="ThatOneYoshi">
+            <audio preload="none" src="media/sound-yoshi.mp3"></audio>
             <figcaption>
                 <b><i>ThatOneYoshi</i></b> is one of the Discord administrators, they have contributed with some Virtual Console injects.
                 <br><br>
-                <a target="_blank" href="https://thatoneyoshi.org/"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
-                <a target="_blank" href="https://github.com/ThatOneYoshi"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitHub"></button></a>
-                <a target="_blank" href="https://bsky.app/profile/thatoneyoshi.link"><button><img loading="lazy" src="meta/ico-bsky.png" class="ico"></button></a>
-                <a target="_blank" href="https://www.youtube.com/@thatoneyoshifan-balls"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                <a target="_blank" rel="noopener noreferrer" href="https://thatoneyoshi.org/" class="credit-button" aria-label="ThatOneYoshi's website"><img loading="lazy" src="meta/ico-web.png" class="ico" alt=""></a>
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/ThatOneYoshi" class="credit-button" aria-label="ThatOneYoshi on GitHub"><img loading="lazy" src="meta/ico-git.png" class="ico" alt=""></a>
+                <a target="_blank" rel="noopener noreferrer" href="https://bsky.app/profile/thatoneyoshi.link" class="credit-button" aria-label="ThatOneYoshi on Bluesky"><img loading="lazy" src="meta/ico-bsky.png" class="ico" alt=""></a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@thatoneyoshifan-balls" class="credit-button" aria-label="ThatOneYoshi on YouTube"><img loading="lazy" src="meta/ico-yt.png" class="ico" alt=""></a>
             </figcaption>
-            <audio src="media/sound-yoshi.mp3"></audio>
-        </figure>   
+        </figure>
 
         <hr>
 
         <figure>
-            <img loading="lazy" src="media/pfp-cosmo.png" class="pfp" style="cursor:help">
+            <img loading="lazy" src="media/pfp-cosmo.png" class="pfp" style="cursor:help" alt="cosmobona56">
+            <audio preload="none" src="media/sound-undertale-save.mp3"></audio>
             <figcaption>
                 <b><i>cosmobona56</i></b> is one of the Discord administrators.
                 <br><br>
-                <a target="_blank" href="https://github.com/cosmobona56"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitHub"></button></a>
-                <a target="_blank" href="https://www.youtube.com/@cosmo.tv_de"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
-                <a target="_blank" href="https://cosmobona56.de"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
+                <a target="_blank" rel="noopener noreferrer" href="https://github.com/cosmobona56" class="credit-button" aria-label="cosmobona56 on GitHub"><img loading="lazy" src="meta/ico-git.png" class="ico" alt=""></a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@cosmo.tv_de" class="credit-button" aria-label="cosmobona56 on YouTube"><img loading="lazy" src="meta/ico-yt.png" class="ico" alt=""></a>
+                <a target="_blank" rel="noopener noreferrer" href="https://cosmobona56.de" class="credit-button" aria-label="cosmobona56's website"><img loading="lazy" src="meta/ico-web.png" class="ico" alt=""></a>
             </figcaption>
-            <audio src="media/sound-undertale-save.mp3"></audio>
         </figure>
 
         <hr>
 
         <figure id="AFA">
-            <img loading="lazy" src="media/pfp-afa.png" class="pfp">
+            <img loading="lazy" src="media/pfp-afa.png" class="pfp" alt="A for Animation">
             <figcaption>
                 <b>A for Animation</b> is one of the Discord moderators, they have contributed with some Virtual Console injects.
                 <br><br>
-                <a target="_blank" href="https://www.youtube.com/@AforAnimation888"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@AforAnimation888" class="credit-button" aria-label="A for Animation on YouTube"><img loading="lazy" src="meta/ico-yt.png" class="ico" alt=""></a>
             </figcaption>
         </figure>
 
         <hr>
 
         <figure id="Archive">
-            <img loading="lazy" src="media/pfp-forgorarchive.png" class="pfp">
+            <img loading="lazy" src="media/pfp-forgorarchive.png" class="pfp" alt="YumeSoul">
             <figcaption>
-                <b>YumeSoul</b><!--at least i think thats the preferred name--> is one of the Discord moderators, they have contributed with some Virtual Console injects.
+                <b>YumeSoul</b> is one of the Discord moderators, they have contributed with some Virtual Console injects.
                 <br><br>
-                <a target="_blank" href="https://www.youtube.com/channel/UCuga0ZNSKSSCxymuFyVLraw"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/channel/UCuga0ZNSKSSCxymuFyVLraw" class="credit-button" aria-label="YumeSoul on YouTube"><img loading="lazy" src="meta/ico-yt.png" class="ico" alt=""></a>
             </figcaption>
         </figure>
 </div>
@@ -144,74 +148,74 @@
             <h2 style="text-shadow:0 2px 4px #9900FF;color:#9900FF;">Contributors</h2>
 
             <figure id="Defeat">
-                <img loading="lazy" src="media/pfp-def.png" class="pfp">
+                <img loading="lazy" src="media/pfp-def.png" class="pfp" alt="DefeatOf13">
                 <figcaption><b>DefeatOf13</b> created the mascot Miis for WiiMart and the upcoming DSiMart. He also made the WiiMart 3DS theme along with the Wii U forwarder.
                     <br><br>
-                    <a target="_blank" href="https://www.youtube.com/@defeatof13"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
-                    <a target="_blank" href="https://defitmods.xyz"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@defeatof13" class="credit-button" aria-label="DefeatOf13 on YouTube"><img loading="lazy" src="meta/ico-yt.png" class="ico" alt=""></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://defitmods.xyz" class="credit-button" aria-label="DefeatOf13's website"><img loading="lazy" src="meta/ico-web.png" class="ico" alt=""></a>
                 </figcaption>
             </figure>
 
             <hr>
 
             <figure>
-                <img loading="lazy" src="media/pfp-rou.png" class="pfp" style="cursor:help">
+                <img loading="lazy" src="media/pfp-rou.png" class="pfp" style="cursor:help" alt="Roulettz">
+                <audio preload="none" src="media/sound-shop-finish.wav"></audio>
                 <figcaption><b><i>Roulettz</i></b> created the first 2006 banner WiiMart WAD.</figcaption>
-                <audio src="media/sound-shop-finish.wav"></audio>
             </figure>
 
             <hr>
 
             <figure>
-                <img loading="lazy" src="media/pfp-comp.gif" class="pfp" style="cursor:help">
-                <figcaption>
-                    <b><i>Nathan Boehm</i></b>'s project, <a target="_blank" href="https://wiishopchannel.net">WiiShopChannel.net</a>, often helped out WiiMart for reference purposes.
+                <img loading="lazy" src="media/pfp-comp.gif" class="pfp" style="cursor:help" alt="Nathan Boehm">
+                <audio preload="none" src="media/sound-points.mp3"></audio>
+            <figcaption>
+                    <b><i>Nathan Boehm</i></b>'s project, <a target="_blank" rel="noopener noreferrer" href="https://wiishopchannel.net">WiiShopChannel.net</a>, often helped out WiiMart for reference purposes.
                     <br><br>
-                    <a target="_blank" href="https://nathanboehm.com"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
-                    <a target="_blank" href="https://www.youtube.com/@NathanBoehm"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://nathanboehm.com" class="credit-button" aria-label="Nathan Boehm's website"><img loading="lazy" src="meta/ico-web.png" class="ico" alt=""></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@NathanBoehm" class="credit-button" aria-label="Nathan Boehm on YouTube"><img loading="lazy" src="meta/ico-yt.png" class="ico" alt=""></a>
                 </figcaption>
-                <audio src="media/sound-points.mp3"></audio>
             </figure>
 
             <hr>
 
             <figure id="Saul">
-                <img loading="lazy" src="media/pfp-saul.png" class="pfp" style="cursor:help">
-                <figcaption><b><i>saulfabreg</i></b> is one of the Virtual Console inject creators. They've made injects for Nintendo 64 and NES.
+                <img loading="lazy" src="media/pfp-saul.png" class="pfp" style="cursor:help" alt="saulfabreg">
+                <audio preload="none" src="media/sound-vc.mp3"></audio>
+            <figcaption><b><i>saulfabreg</i></b> is one of the Virtual Console inject creators. They've made injects for Nintendo 64 and NES.
                     <br><br>
-                    <a target="_blank" href="http://saulfabreg-wiivc.blogspot.com"><button><img loading="lazy" src="meta/ico-web.png" class="ico"></button></a>
-                    <a target="_blank" href="http://twitter.com/saulfabregwiivc"><button><img loading="lazy" src="meta/ico-twt.png" class="ico"></button></a>
-                    <a target="_blank" href="https://www.youtube.com/@saulfabregwiivc"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://saulfabreg-wiivc.blogspot.com" class="credit-button" aria-label="saulfabreg's website"><img loading="lazy" src="meta/ico-web.png" class="ico" alt=""></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://twitter.com/saulfabregwiivc" class="credit-button" aria-label="saulfabreg on Twitter"><img loading="lazy" src="meta/ico-twt.png" class="ico" alt=""></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@saulfabregwiivc" class="credit-button" aria-label="saulfabreg on YouTube"><img loading="lazy" src="meta/ico-yt.png" class="ico" alt=""></a>
                 </figcaption>
-                <audio src="media/sound-vc.mp3"></audio>
             </figure>
 
             <hr>
 
             <figure id="Onion">
-                <img loading="lazy" src="media/pfp-onion.png" class="pfp">
+                <img loading="lazy" src="media/pfp-onion.png" class="pfp" alt="Onion Mastori">
                 <figcaption><b>Onion Mastori</b> is one of the Virtual Console inject creators. They've made injects for SNES, Sega Geneis, and more.
                     <br><br>
-                    <a target="_blank" href="https://www.youtube.com/@onionmastori" title="Onion Mastori"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
-                    <a target="_blank" href="https://www.youtube.com/@xboxnostalgic101" title="Xbox Nostalgic 101"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@onionmastori" title="Onion Mastori" class="credit-button" aria-label="Onion Mastori on YouTube"><img loading="lazy" src="meta/ico-yt.png" class="ico" alt=""></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@xboxnostalgic101" title="Xbox Nostalgic 101" class="credit-button" aria-label="Xbox Nostalgic 101 on YouTube"><img loading="lazy" src="meta/ico-yt.png" class="ico" alt=""></a>
                 </figcaption>
             </figure>
 
             <hr>
 
             <figure id="Zodiak">
-                <img loading="lazy" src="media/pfp-zodiak.png" class="pfp" style="cursor:help">
+                <img loading="lazy" src="media/pfp-zodiak.png" class="pfp" style="cursor:help" alt="ZodiaKGalXy">
+                <audio preload="none" src="media/sound-reachstars.mp3"></audio>
                 <figcaption><b><i>ZodiaKGalXy</i></b> is one of the custom-title creators. He has injected Flash titles.
                     <br><br>
-                    <a target="_blank" href="https://www.youtube.com/@ZodiaKGalXy"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@ZodiaKGalXy" class="credit-button" aria-label="ZodiaKGalXy on YouTube"><img loading="lazy" src="meta/ico-yt.png" class="ico" alt=""></a>
                 </figcaption>
-                <audio src="media/sound-reachstars.mp3"></audio>
             </figure>
 
             <hr>
 
             <figure id="Waluigi">
-                <img loading="lazy" src="media/pfp-waluigi.png" class="pfp">
+                <img loading="lazy" src="media/pfp-waluigi.png" class="pfp" alt="Waluigi">
                 <figcaption><b>Waluigi</b> is one of the Virtual Console inject creators. They've made injects for SNES and Sega Geneis.
                 </figcaption>
             </figure>
@@ -219,32 +223,30 @@
             <hr>
 
             <figure id="BabyGaga">
-                <img loading="lazy" src="media/pfp-babyga.png" class="pfp">
+                <img loading="lazy" src="media/pfp-babyga.png" class="pfp" alt="GΛGΛ">
                 <figcaption><b>GΛGΛ</b> is one of the contributors.
                     <br><br>
-                    <a target="_blank" href="https://www.youtube.com/@Bbabygaga"><button><img loading="lazy" src="meta/ico-yt.png" class="ico"></button></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://www.youtube.com/@Bbabygaga" class="credit-button" aria-label="GΛGΛ on YouTube"><img loading="lazy" src="meta/ico-yt.png" class="ico" alt=""></a>
                 </figcaption>
             </figure>
 
             <hr>
 
             <figure id="yunyl">
-                <img loading="lazy" src="media/pfp-yunyl.png" class="pfp">
+                <img loading="lazy" src="media/pfp-yunyl.png" class="pfp" alt="yunyl">
                 <figcaption><b>yunyl</b> contributes to Just Dance DLC. They are a developer for the <a href="https://dnceprty.co/">Dance Party</a> project.
                     <br><br>
-                    <a target="_blank" href="https://github.com/yunylz"><button><img loading="lazy" src="meta/ico-git.png" class="ico"></button></a>
+                    <a target="_blank" rel="noopener noreferrer" href="https://github.com/yunylz" class="credit-button" aria-label="yunyl on GitHub"><img loading="lazy" src="meta/ico-git.png" class="ico" alt=""></a>
                 </figcaption>
             </figure>
         </div>
 
-        <script>document.addEventListener('DOMContentLoaded', function() {const pfpDivs = document.querySelectorAll('figure'); pfpDivs.forEach(function(pfpDiv) {const clickableImage = pfpDiv.querySelector('img'); const sound = pfpDiv.querySelector('audio'); if (clickableImage && sound) {clickableImage.addEventListener('click', function() {const newSound = new Audio(sound.src);newSound.play();});}});});</script>
-
     <div class="box" id="Contribute">
         <p>Want to also contribute to this project? See what you can do below!</p>
         <ul style="list-style:none;line-height:40px;padding:0">
-            <li><a target="_blank" href="https://github.com/WiiMart/"><button><img loading="lazy" src="meta/ico-git.png" class="ico" alt="GitHub"> Tinker with the source</button></a></li>
-            <li><a target="_blank" href="https://appeal.gg/wiimart-1346485785284575335"><button><img loading="lazy" src="meta/ico-discord.png" class="ico" alt="Discord"> Interact with the community</button></a></li>
-            <li><a target="_blank" href="https://docs.google.com/document/d/1J7OlDChuB5bJdBQf8WAVP7mwajSYNgszR1FNpMzc_zA/"><button><img loading="lazy" src="meta/ico-doc.png" class="ico" alt="Documents"> Get <i>your very own inject</i> on WiiMart!</button></a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://github.com/WiiMart/" class="credit-button"><img loading="lazy" src="meta/ico-git.png" class="ico" alt=""> Tinker with the source</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://appeal.gg/wiimart-1346485785284575335" class="credit-button"><img loading="lazy" src="meta/ico-discord.png" class="ico" alt=""> Interact with the community</a></li>
+            <li><a target="_blank" rel="noopener noreferrer" href="https://docs.google.com/document/d/1J7OlDChuB5bJdBQf8WAVP7mwajSYNgszR1FNpMzc_zA/" class="credit-button"><img loading="lazy" src="meta/ico-doc.png" class="ico" alt=""> Get <i>your very own inject</i> on WiiMart!</a></li>
         </ul>
     </div>
 </div>

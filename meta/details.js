@@ -1,52 +1,50 @@
-function handleDateReposition() {
-    const breakpoint = 600;
-    const isSmallScreen = window.innerWidth < breakpoint;
+(() => {
+    const mediaQuery = window.matchMedia("(max-width: 600px)");
 
-    const detailElements = document.querySelectorAll('.details-impt-info');
-
-    detailElements.forEach(details => {
-        const dateSpan = details.querySelector('.date');
-        
-        if (!dateSpan) {
+    function restoreDate(details, date, container) {
+        const summary = details.querySelector("summary");
+        if (!summary || !container || !container.contains(date)) {
             return;
         }
+        date.style.removeProperty("float");
+        summary.appendChild(date);
+        container.remove();
+    }
 
-        if (isSmallScreen) {
-            if (dateSpan.parentElement.tagName.toLowerCase() === 'summary') {
-                dateSpan.style.float = 'none';
-                
-                const dateContainer = document.createElement('div');
-                dateContainer.setAttribute('data-moved-date', '');
-                
-                dateContainer.style.textAlign = 'center';
-                dateContainer.style.marginTop = '10px';
-                dateContainer.style.fontStyle = 'normal';
-                
-                dateContainer.appendChild(dateSpan);
-                
-                details.appendChild(dateContainer);
-            }
-        } else {
-            const summary = details.querySelector('summary');
-            const dateContainer = details.querySelector('[data-moved-date]');
-
-            if (dateContainer && dateContainer.contains(dateSpan)) {
-                dateSpan.style.removeProperty('float');
-                
-                summary.appendChild(dateSpan);
-                
-                dateContainer.remove();
-            }
+    function moveDate(details, date) {
+        if (!date.parentElement || date.parentElement.tagName.toLowerCase() !== "summary") {
+            return;
         }
-    });
-}
+        date.style.float = "none";
+        const container = document.createElement("div");
+        container.dataset.movedDate = "";
+        container.style.textAlign = "center";
+        container.style.marginTop = "10px";
+        container.style.fontStyle = "normal";
+        container.appendChild(date);
+        details.appendChild(container);
+    }
 
-const mediaQuery = window.matchMedia('(max-width: 600px)');
+    function refreshImportantInfoDates() {
+        document.querySelectorAll(".details-impt-info").forEach(details => {
+            const date = details.querySelector(".date");
+            if (!date) {
+                return;
+            }
+            const container = details.querySelector("[data-moved-date]");
+            if (mediaQuery.matches) {
+                moveDate(details, date);
+            } else {
+                restoreDate(details, date, container);
+            }
+        });
+    }
 
-function mediaQueryListener(event) {
-    handleDateReposition();
-}
-
-mediaQuery.addListener(mediaQueryListener);
-
-handleDateReposition();
+    document.addEventListener("DOMContentLoaded", refreshImportantInfoDates);
+    if (typeof mediaQuery.addEventListener === "function") {
+        mediaQuery.addEventListener("change", refreshImportantInfoDates);
+    } else {
+        mediaQuery.addListener(refreshImportantInfoDates);
+    }
+    window.refreshImportantInfoDates = refreshImportantInfoDates;
+})();

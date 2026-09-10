@@ -1,5 +1,4 @@
 const errorCodes = {
-    // Title Downloading errors start
     "201012": "Invalid signature type (for signed blobs)",
     "201016": "Maximum amount of handles exceeded (3 handles, as there are only 3 contexts)",
     "201017": "Invalid arguments",
@@ -17,9 +16,6 @@ const errorCodes = {
     "201037": "Installed number of contents doesn't match TMD (only for the system menu [check])",
     "201039": "Returned by DI as an ES error code when TMD not supplied for disc/nand game",
     "202000": "Permission denied (returned when accessing an object for which the caller has no permission)",
-    // Title downloading errors end
-
-    // SD Card/Storage errors start
     "201009": "Read failure (short read)",
     "201010": "Write failure (short write)",
     "209631": "Invalid SD Card",
@@ -57,9 +53,6 @@ const errorCodes = {
 
     "209666": "Available space error in B-09 on checking remain size",
     "209667": "Available space is not sufficient (NAND)",
-    // SD Card/Storage errors end
-
-    // Channel errors start
     "206674": "Unexpected ECLib error",
     "201005": "Invalid public key type in certificate",
     "201026": "Incorrect access rights (according to the TMD)",
@@ -90,9 +83,6 @@ const errorCodes = {
     "202014": "Invalid size",
     "202015": "Invalid address",
     "202016": "Unaligned data",
-    // Channel errors end
-
-    // IOSC Errors start
     "202001": "IOSC_EEXIST",
     "202003": "IOSC_EMAX",
     "202004": "IOSC_ENOENT",
@@ -103,9 +93,6 @@ const errorCodes = {
     "202009": "IOSC_INVALID_VERSION",
     "202010": "IOSC_INVALID_SIGNER",
     "202011": "IOSC_FAIL_CHECKVALUE",
-    // IOSC Errors end
-
-    // EC Errors start
     "204000": "EC_ERROR_OK: No error",
     "204001": "EC_ERROR_FAIL: Generic error",
     "204002": "EC_ERROR_NOT_SUPPORTED: Feature not implemented",
@@ -164,9 +151,6 @@ const errorCodes = {
     "204997": "EC_ERROR_NHTTP_PDE",
     "204998": "EC_ERROR_NHTTP_PDR",
     "204999": "EC_ERROR_NHTTP_SRA",
-    // EC Errors end
-
-    // Standard HTTP errors start
     "204501": "HTTP 201 Created",
     "204502": "HTTP 202 Accepted",
     "204503": "HTTP 203 Non-Authoritative Information",
@@ -187,7 +171,7 @@ const errorCodes = {
     "204702": "HTTP 402 Payment Required",
     "204703": "HTTP 403 Forbidden",
     "204704": "HTTP 404 Not Found",
-    "209531": "HTTP 404 Not Found", // not a client error response, but still means HTTP 404
+    "209531": "HTTP 404 Not Found",
     "204705": "HTTP 405 Method Not Allowed",
     "204706": "HTTP 406 Not Acceptable",
     "204707": "HTTP 407 Proxy Authentication Required",
@@ -219,10 +203,6 @@ const errorCodes = {
     "204804": "HTTP 504 Gateway Timeout",
     "204805": "HTTP 505 HTTP Version Not Supported",
     "204811": "HTTP 511 Network Authentication Required",
-    // Standard HTTP errors end
-
-    // NHTTP Errors start
-    // from TWLSDK
     "204900": "NHTTP_ERROR_NONE: No NHTTP error.",
     "204901": "NHTTP_ERROR_ALLOC: Allocation has failed.",
     "204902": "NHTTP_ERROR_TOOMANYREQ: Too many requests (This error never occurs).",
@@ -241,22 +221,15 @@ const errorCodes = {
     "204915": "NHTTP_ERROR_BUSY: Indicates that a request is currently running.",
     "204916": "NHTTP_ERROR_ROOTCA: Root Certificate Authority (CA) configuration failed.",
     "204917": "NHTTP_ERROR_CLIENTCA: Client certificate configuration failed.",
-    // from TWLSDK
-    // NHTTP Errors end
-
-    // WS Errors stard
-    // IAS
     "205900": "Generic IAS (IdentityAuthenticationSOAP) error.",
     "206400": "Generic IAS (IdentityAuthenticationSOAP) error.",
     "204927": "IAS Unknown issuer of device cert",
-    // ECS
     "205600": "Generic ECS (ECommerceSOAP) error.",
     "205646": "Unable to send present (ECS Gift)",
     "205672": "ECS Account mismatch",
     "205625": "ECS Gift error",
     "205626": "Unable to send present (ECS gift error)",
     "205621": "Unknown error (possibly ECS gift error?)",
-    // CAS
     "205627": "Can't buy DLC for a title you don't own.",
     "206710": "No content is being distributed for purchase/re-download. (DLC Shop exclusive)",
     "205002": "(CAS) Error retrieving title",
@@ -277,13 +250,9 @@ const errorCodes = {
     "205555": "(CAS) Request error (empty values)",
     "205624": "(CAS) Couldn't Title ID(s)",
 
-    // Misc (ETS, PAS, OSS)
     "205800": "Generic PAS (PaymentAuthorizationSOAP) error.",
     "205825": "Generic PAS (PaymentAuthorizationSOAP) error. (PAS_ERROR_CODE)",
     "205700": "Generic ETS (ETicketSOAP) error.",
-    // WS errors end
-
-    // Shop errors start
     "206600": "Generic OSS error.",
     "206652": "Wrong PIN three times (parental controls)",
     "206650": "Wrong PIN (parental controls)",
@@ -302,7 +271,7 @@ const errorCodes = {
     "206601": "Authentication error, missing required parameters",
     "206651": "Mistake while entering the console's serial number",
     "206663": "An operation is in progress (???OSS_ERROR_IN_PROCESS???)",
-    "250943": "Problems with your Club Nintendo account. It can't get connected with your shop account", // is this correct actually?
+    "250943": "Problems with your Club Nintendo account. It can't get connected with your shop account",
     "206653": "Nickname or password wrong",
     "206660": "No progress was made in the last operation",
     "241000": "Not enough RAM",
@@ -318,9 +287,6 @@ const errorCodes = {
     "240020": "Unsupported file format",
     "244002": "SSL handshake failed.",
     "244003": "Invalid Root CA",
-    // Shop errors end
-
-    // SSL Errors start
     "204961": "SSL_EFAILED",
     "204962": "SSL_EWANT_READ",
     "204963": "SSL_EWANT_WRITE",
@@ -333,18 +299,12 @@ const errorCodes = {
     "204970": "SSL_EVERIFY_CHAIN",
     "204971": "SSL_EVERIFY_DATE",
     "204972": "SSL_EGET_SERVER_CERT",
-    // SSL errors end
-
-    // Console errors start
     "205100": "Most likely an error when gifting a title from Dolphin, it is unsupported.",
     "205007": "Invalid NAND Dump (Dolphin only)",
     "205540": "This software doesn't work in the vWii",
     "206670": "Invalid friend code",
     "205968": "Invalid friend code",
     "205901": "Wii number invalid!",
-    // Console errors end
-
-    // Account errors start
     "205104": "Could not retrieve points balance",
     "205114": "Could not convert points balance to integer",
     "205124": "Cannot find sender friend code",
@@ -356,14 +316,8 @@ const errorCodes = {
     "205906": "Problem with your online account",
     "206668": "Your Wii Points balance cannot exceed the limit (usually 10.000 (Nintendo EU,AU) or 20.000 (Nintendo US,JP,KR) Wii Points)",
     "206673": "Invalid registration status",
-    // Account errors end
-
-    // NWC24 errors start
     "222001": "There is a NWC24 error, but it could not be obtained.",
     "107006": "NWC24_ERR_FULL: The file NWC24 tried to download is too large.",
-    // NWC24 errors end
-
-    // Wii Points/Download ticket redeem errors start
     "206602": "Error while entering Wii Points Card code. Try again later.",
     "206699": "The Wii Points card number you entered is incorrect (it must be 16 digits, numbers only)",
     "206669": "Wii Points card invalid",
@@ -383,9 +337,6 @@ const errorCodes = {
     "206667": "Wii download ticket invalid",
     "205830": "Wii Points Card code is invalid",
     "205819": "Wii Points Card code is invalid",
-    // Wii Points/Download ticket redeem errors end
-
-    // Credit card errors start (these should never occur)
     "208000": "You have entered the wrong state",
     "208001": "Unable to process for credit cards (some kind of blacklist?)",
     "208002": "Billing address invalid",
@@ -414,34 +365,20 @@ const errorCodes = {
     "208025": "Empty security code",
     "206661": "Credit card type invalid",
     "206662": "Credit card number invalid",
-    // Credit card errors end
-
-    // Unknown errors start
     "205928": "Unknown error",
     "205958": "Unknown error",
     "205642": "Unknown error",
     "205643": "Unknown error",
     "205903": "Unknown error",
-    // Unknown errors end
-
-    // Misc. errors start
     "205645": "Issue with your DSi shop account?",
     "051330": "Internet connection error. The Wii needs a 2.4gHz signal with 802.11b/g/n enabled, and the security set to WPA2-PSK (AES). The channel must also either be set to auto or be less than 12.",
     "206112": "The free title promotion has ended (ICR_END)",
     "206401": "Invalid characters in nick or password",
     "206499": "Maintenance. Login not possible",
     "205942": "Maintenance. Login not possible",
-    // Misc. errors end
-
-    // NINTENDOWIFI errors start
     "20110": "Nintendo Wi-Fi Connection for the title has been discontinued. (The title/game was not patched with <a href=\"https://wiimmfi.de\">Wiimmfi</a>)",
-    // NINTENDOWIFI errors end
-
-    // Channel specific errors start
     "371410": "Unable to contact YouTube (applies if <a href=\"https://revivemii.xyz/\">RiiviveTube</a> is installed).",
 
-    // Flash HTTP errors start
-    // These errors apply to: Kirby TV, BBC iPlayer, YouTube
     "372201": "Flash channel returned HTTP 201 Created",
     "372202": "Flash channel returned HTTP 202 Accepted",
     "372203": "Flash channel returned HTTP 203 Non-Authoritative Information",
@@ -501,30 +438,55 @@ const errorCodes = {
     "372510": "Flash channel returned HTTP 510 Not Extended",
     "372511": "Flash channel returned HTTP 511 Network Authentication Required",
     "372523": "Flash channel returned HTTP 523 Origin Is Unreachable"
-    // Flash HTTP errors end
-    // Channel specific errors end
 };
 
-document.getElementById("submitBtn").addEventListener("click", function() {
-    const codeInput = document.getElementById("errorCode").value;
+function showErrorResult() {
+    const codeInput = document.getElementById("errorCode").value.trim();
     const resultsDiv = document.getElementById("results");
     const inputDiv = document.getElementById("input");
+    const codeOutput = document.getElementById("code");
+    const issueOutput = document.getElementById("issue");
+
+    const label = codeOutput.querySelector(".visually-hidden") || document.createElement("span");
+    label.className = "visually-hidden";
+    label.textContent = "Error code";
 
     if (errorCodes[codeInput]) {
-        document.getElementById("code").innerText = codeInput;
-        document.getElementById("issue").innerHTML = errorCodes[codeInput];
-        inputDiv.style.display = "none";
-        resultsDiv.style.display = "block";
+        codeOutput.replaceChildren(label, document.createTextNode(codeInput));
+        issueOutput.innerHTML = errorCodes[codeInput];
     } else {
-        document.getElementById("code").innerText = "Error!";
-        document.getElementById("issue").innerHTML = "Invalid error code. Please enter a valid 6-digit error code.<br />(The error might not be filed yet, if you have any issue, please join the Discord server for support.)";
-        inputDiv.style.display = "none";
-        resultsDiv.style.display = "block";
+        codeOutput.replaceChildren(label, document.createTextNode("Error!"));
+        issueOutput.innerHTML = "Invalid error code. Please enter a valid 6-digit error code.<br>(The error might not be filed yet, if you have any issue, please join the Discord server for support.)";
     }
-});
+    inputDiv.style.display = "none";
+    resultsDiv.style.display = "block";
+}
 
 function reseterrorcodeform() {
-    document.getElementById("errorCode").value="";
-    document.getElementById("results").style.display="none";
-    document.getElementById("input").style.display="block";
+    document.getElementById("errorCode").value = "";
+    document.getElementById("results").style.display = "none";
+    document.getElementById("input").style.display = "block";
 }
+
+document.addEventListener("DOMContentLoaded", () => {
+    const errorInput = document.getElementById("errorCode");
+    const submitButton = document.getElementById("submitBtn");
+    const resetButton = document.querySelector("[data-reset-error]");
+    if (!errorInput || !submitButton) {
+        return;
+    }
+    submitButton.addEventListener("click", showErrorResult);
+    errorInput.addEventListener("keydown", event => {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            showErrorResult();
+        }
+    });
+    if (resetButton) {
+        resetButton.addEventListener("click", event => {
+            event.preventDefault();
+            reseterrorcodeform();
+            errorInput.focus();
+        });
+    }
+});

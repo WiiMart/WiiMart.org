@@ -7,14 +7,14 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="/meta/main.css">
    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-   <script src="meta/loader.js"></script>
+   <script src="/meta/loader.js" defer></script>
 </head>
 <body>
-<div id="wscspinnerbg" style="display:none;"><img id="wscspinner" onload="loadrimg();" src="/meta/grey-loader.png" alt="spin"><img id="wscspinnershadow" src="/meta/grey-loader.png" alt="s"></div>
+<div id="wscspinnerbg" style="display:none;"><img id="wscspinner" src="/meta/grey-loader.png" alt=""><img id="wscspinnershadow" src="/meta/grey-loader.png" alt=""></div>
 
 <h1 style="color:#ff3d3d;">404 Page Not Found</h1>
 
-<a href="/" class="btn">Home page</a> <a onclick="history.back(1);" class="btn" style="cursor:pointer;">Previous page</button>
+<a href="/" class="btn">Home page</a> <a href="/" class="btn" style="cursor:pointer;" data-history-back>Previous page</a>
 
 </body>
 </html>

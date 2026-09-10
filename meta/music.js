@@ -1,120 +1,209 @@
-// Wii Shop BGM Player, suggested by @legamer66 (https://discord.com/channels/1346485785284575335/1346485786039681056/1351527080546009259 - image of msg: https://i.ibb.co/BHqMSSQp/LEEe.png (WiiMart BGM played originally added on March 18th, 2025, Completely recoded/fixed on Aug 18th, 2025)
+(() => {
+    const storageKey = "bgmcurrenttime";
+    let player = null;
+    let audio = null;
+    let playButton = null;
+    let closeButton = null;
+    let fadeFrame = null;
+    let resumeTime = 0;
+    let persistPlayback = true;
 
-var wscmusic = null; var browsercanplayaudio = false; var browserchecksdone = 0; var initialvolume = 0.01; var currenttiime = localStorage.getItem("bgmcurrenttime") || 0;
-
-document.addEventListener("DOMContentLoaded", function() {
-
- checkbrowsercompatability();
- if (browserchecksdone === 1) {
-    setTimeout(loadwscmusic,200); // less load on browser :)
-    firebgmbox();
- }
-
-});
-
-function checkbrowsercompatability() {
-const userAgent = navigator.userAgent.toLowerCase();
- const isConsoleBrowser = userAgent.includes('wii') || userAgent.includes('nintendo ds') || userAgent.includes('nintendo 3ds') || userAgent.includes('nintendo');
- if (isConsoleBrowser) {
-    browsercanplayaudio = false;
-}  else 
-{
- browsercanplayaudio = true;
-}
-
-browserchecksdone = 1;
-
-}
-
-
-/* reduce stress on browsers */
-function loadwscmusic() {
-    var wscmusicloaded = 0;
-    wscmusic = new Audio("/meta/shop.wav");
-    wscmusic.load(); wscmusicloaded = 1; wscmusic.loop = true; document.getElementById("bgmplayer").style.display="block"; document.getElementById("shopbgm").innerText = "Play";
-     return wscmusic;
-}
-
-
-
-/* wscmusic = loadwscmusic(); */
-
-function playBGMonload() {
-   localStorage.setItem("wmtsiteBGMplaying","playing");
-    if (currenttiime > 0) {
-        wscmusic.currentTime=currenttiime;
-        wscmusic.volume = initialvolume;
-        fadeinbgm();
+    function readResumeTime() {
+        try {
+            const value = Number.parseFloat(localStorage.getItem(storageKey) || "0");
+            return Number.isFinite(value) && value > 0 ? value : 0;
+        } catch {
+            return 0;
+        }
     }
-}
 
-function playBGM() {
-       localStorage.setItem("wmtsiteBGMplaying","playing");
-        wscmusic.play();
-        document.getElementById("shopbgm").innerText = "Pause";
-        document.getElementById("shopbgmselector").href = "javascript:pauseBGM();";
-}
+    function saveResumeTime() {
+        if (!audio || !persistPlayback) {
+            return;
+        }
+        try {
+            localStorage.setItem(storageKey, String(audio.currentTime || 0));
+        } catch {
+            return;
+        }
+    }
 
-function pauseBGM() {localStorage.setItem("wmtsiteBGMplaying","paused");wscmusic.pause(); document.getElementById("shopbgm").innerText = "Play"; document.getElementById("shopbgmselector").href = "javascript:playBGM();";}
+    function isConsoleBrowser() {
+        const userAgent = navigator.userAgent.toLowerCase();
+        return userAgent.includes("wii") || userAgent.includes("nintendo");
+    }
 
-function fadeinbgm() {
-wscmusic.play();
-var volchangee = setTimeout(fadeinbgm,13); document.getElementById("shopbgm").setAttribute("disabled","true"); document.getElementById("shopbgm").innerText = "Pause";
+    function setButtonState(playing) {
+        if (!playButton) {
+            return;
+        }
+        playButton.textContent = playing ? "Pause" : "Play";
+        playButton.setAttribute("aria-pressed", playing ? "true" : "false");
+        playButton.disabled = false;
+    }
 
-  if (initialvolume < 0.8) {
-    initialvolume += 0.01; wscmusic.volume = initialvolume;
-  }
-  if (initialvolume > 0.8) {
-    clearTimeout(volchangee); initialvolume = 0.8; wscmusic.volume = 0.8;
-    document.getElementById("shopbgmselector").href = "javascript:pauseBGM();";
-    document.getElementById("shopbgm").removeAttribute("disabled");
-    document.getElementById("shopbgm").style.opacity="90%";
-  }
+    function cancelFade() {
+        if (fadeFrame !== null) {
+            cancelAnimationFrame(fadeFrame);
+            fadeFrame = null;
+        }
+    }
 
-}
+    function fadeToPlaybackVolume() {
+        cancelFade();
+        const startedAt = performance.now();
+        const startVolume = 0.01;
+        const targetVolume = 0.8;
+        playButton.disabled = true;
+        const step = now => {
+            const progress = Math.min(1, (now - startedAt) / 1000);
+            audio.volume = startVolume + (targetVolume - startVolume) * progress;
+            if (progress < 1 && !audio.paused) {
+                fadeFrame = requestAnimationFrame(step);
+                return;
+            }
+            fadeFrame = null;
+            playButton.disabled = false;
+        };
+        fadeFrame = requestAnimationFrame(step);
+    }
 
+    async function playBGM(useFade = false) {
+        if (!audio) {
+            return;
+        }
+        if (resumeTime > 0 && audio.currentTime === 0) {
+            try {
+                audio.currentTime = Math.min(resumeTime, Number.isFinite(audio.duration) ? audio.duration : resumeTime);
+            } catch {
+                audio.currentTime = 0;
+            }
+        }
+        audio.volume = useFade ? 0.01 : 0.8;
+        try {
+            await audio.play();
+            setButtonState(true);
+            if (useFade) {
+                fadeToPlaybackVolume();
+            }
+            resumeTime = 0;
+        } catch {
+            setButtonState(false);
+        }
+    }
 
-window.onbeforeunload = function () {
-/* just found out this doesnt work for safari, womp womp */
-if (wscmusic) { localStorage.setItem("bgmcurrenttime",wscmusic.currentTime);};
-}
+    function pauseBGM() {
+        if (!audio) {
+            return;
+        }
+        cancelFade();
+        audio.pause();
+        saveResumeTime();
+        setButtonState(false);
+    }
 
+    function activatebgmplayer() {
+        if (!player) {
+            return;
+        }
+        player.classList.add("bgmplayerdisplayed");
+        const title = document.getElementById("bgmplrtitle");
+        if (title) {
+            title.textContent = "BGM player";
+            title.style.marginTop = "0px";
+        }
+        player.style.backdropFilter = "blur(1.8px)";
+    }
 
-/* bgm player show */
+    function deactivatebgmplayer() {
+        if (!player) {
+            return;
+        }
+        player.classList.remove("bgmplayerdisplayed");
+        const title = document.getElementById("bgmplrtitle");
+        if (title) {
+            title.textContent = "bgm plr..";
+            title.style.marginTop = "-5px";
+        }
+        player.style.backgroundColor = "#0000";
+        player.style.border = "1px solid #34BEED";
+        player.style.backdropFilter = "blur(0px)";
+    }
 
-function firebgmbox() {
-var currenttiime = localStorage.getItem("bgmcurrenttime") || 0;
+    function focusPlayer() {
+        const background = document.getElementById("backgroundd");
+        activatebgmplayer();
+        player.classList.add("bgmplayeropenanim");
+        player.style.opacity = "100%";
+        player.style.backgroundColor = "#1164e9da";
+        player.style.border = "4px solid #34ededff";
+        if (background) {
+            background.style.display = "block";
+            background.style.backgroundImage = "url('/meta/fadebg-bgm.png')";
+        }
+        window.setTimeout(() => {
+            player.classList.remove("bgmplayeropenanim");
+            player.classList.add("bgmplayerdisplayed");
+            player.style.backgroundImage = "url('/meta/fadebg-bgm.png')";
+            player.style.backgroundColor = "#0000";
+            player.style.border = "2px solid #34BEED";
+            if (background) {
+                background.style.display = "none";
+            }
+        }, 500);
+    }
 
-    if (currenttiime > 0) {
-      localStorage.setItem("wmtsiteBGMplaying","paused");
-        activatebgmplayerfocus();
-        document.getElementById("shopbgmselector").href = "javascript:playBGMonload();";
-    } 
-}
+    function initializePlayer() {
+        player = document.getElementById("bgmplayer");
+        if (!player || isConsoleBrowser()) {
+            return;
+        }
+        playButton = document.getElementById("shopbgm");
+        closeButton = document.getElementById("closebgm");
+        if (!playButton || !closeButton) {
+            return;
+        }
+        const source = player.dataset.audioSrc || "/meta/shop.wav";
+        persistPlayback = player.dataset.audioPersist !== "false";
+        resumeTime = persistPlayback ? readResumeTime() : 0;
+        audio = new Audio(source);
+        audio.loop = true;
+        audio.preload = "metadata";
+        audio.addEventListener("ended", () => setButtonState(false));
+        audio.addEventListener("error", () => {
+            pauseBGM();
+            player.style.display = "none";
+        });
+        playButton.addEventListener("click", event => {
+            event.stopPropagation();
+            if (audio.paused) {
+                void playBGM(resumeTime > 0);
+            } else {
+                pauseBGM();
+            }
+        });
+        closeButton.addEventListener("click", event => {
+            event.stopPropagation();
+            deactivatebgmplayer();
+        });
+        player.addEventListener("click", event => {
+            if (event.target === player || event.target.id === "bgmplayerBG" || event.target.id === "bgmplrtitle") {
+                activatebgmplayer();
+            }
+        });
+        window.setTimeout(() => {
+            player.style.display = "block";
+            setButtonState(false);
+            if (resumeTime > 0 && persistPlayback) {
+                focusPlayer();
+            }
+        }, 200);
+    }
 
-
-function activatebgmplayerfocus() {
-  bgmplayerfocus();
-  document.getElementById('bgmplayer').classList.add('bgmplayeropenanim');
-  document.getElementById("bgmplrtitle").innerText="BGM player"; document.getElementById("bgmplrtitle").style.marginTop="0px";
-    document.getElementById("bgmplayer").style.backdropFilter="blur(1.8px)";
-}
-
-function bgmplayerfocus() {
-/* bring attention to the player that you can play where ya left off */
-  document.getElementById("bgmplayer").style.opacity="100%";document.getElementById("bgmplayer").style.backgroundColor="#1164e9da";  document.getElementById("bgmplayer").style.border="4px solid #34ededff"; document.getElementById("backgroundd").style.display="block"; document.getElementById("backgroundd").style.backgroundImage=('url("/meta/fadebg-bgm.png")');  document.getElementById("shopbgm").innerText = "Play";
- setTimeout(function(){  document.getElementById('bgmplayer').classList.remove('bgmplayeropenanim'); document.getElementById('bgmplayer').classList.add('bgmplayerdisplayed'); document.getElementById("bgmplayer").style.backgroundImage='url("/meta/fadebg-bgm.png")'; document.getElementById("bgmplayer").style.backgroundColor="#0000"; document.getElementById("bgmplayer").style.border="2px solid #34BEED"; document.getElementById("backgroundd").style.display="none";},500);
-}
-
-function activatebgmplayer() {
-  document.getElementById('bgmplayer').classList.add('bgmplayerdisplayed');
-  document.getElementById("bgmplrtitle").innerText="BGM player"; document.getElementById("bgmplrtitle").style.marginTop="0px";
-    document.getElementById("bgmplayer").style.backdropFilter="blur(1.8px)";
-}
-function deactivatebgmplayer() {
-  document.getElementById('bgmplayer').classList.remove('bgmplayerdisplayed');
-  document.getElementById("bgmplrtitle").innerText="bgm plr..";  document.getElementById("bgmplrtitle").style.marginTop="-5px";
-  document.getElementById("bgmplayer").style.backgroundColor="#0000"; document.getElementById("bgmplayer").style.backgroundColor="#0000"; document.getElementById("bgmplayer").style.border="1px solid #34BEED";
-  document.getElementById("bgmplayer").style.backdropFilter="blur(0px)";
-}
-
+    document.addEventListener("DOMContentLoaded", initializePlayer);
+    window.addEventListener("pagehide", saveResumeTime);
+    window.playBGM = playBGM;
+    window.pauseBGM = pauseBGM;
+    window.activatebgmplayer = activatebgmplayer;
+    window.deactivatebgmplayer = deactivatebgmplayer;
+})();
