@@ -18,6 +18,7 @@ const errorCodes = {
     "202000": "Permission denied (returned when accessing an object for which the caller has no permission)",
     "201009": "Read failure (short read)",
     "201010": "Write failure (short write)",
+    "209569": "WiiMart servers are down at the moment",
     "209631": "Invalid SD Card",
     "209632": "The SD Card is inserted(?)",
     "209633": "The SD Card is not inserted",
